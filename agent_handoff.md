@@ -18,12 +18,16 @@ oldenburg-stadt/
 ├── README.md                     # General project documentation
 ├── agent_handoff.md              # This handoff file
 ├── download_osm_bike.py          # Queries Overpass API for local bike network GeoJSON
-├── score_reports.py              # Spatial mapping, metric projection, scoring engine
+├── classify_reports_llm.py       # Queries Gemini for Pydantic structured classifications
+├── score_reports.py              # Spatial mapping, metric projection, scoring engine (LLM & regex fallback)
+├── evaluate_rules.py             # Computes Accuracy, F1, Precision, and Recall for regex heuristic
+├── optimize_regex.py             # Runs greedy keyword pattern searches to optimize rules
+├── llm_classification_cache.json # Cached LLM output mapping report ID to classification details
 ├── generate_data_js.py           # Packs compiled databases into data.js
 ├── data.js                       # Frontend static data store (avoids local CORS issues)
 ├── index.html                    # Dashboard main UI structure
 ├── style.css                     # Premium styling, animations, responsive design rules
-└── app.js                        # Leaflet map logic, custom pins, UI filters, markdown generator
+└── app.js                        # Leaflet map logic, custom pins, UI filters, newsletter generator
 ```
 
 ### 1. Spatial Geometry & Metric Projections (`pyproj`)
@@ -34,25 +38,38 @@ oldenburg-stadt/
 ### 2. Proximity Matching & The Scoring Formula
 We compute a cycling confidence score ($0$ to $100+$) for each report using a multi-factor formula defined in [score_reports.py](file:///Volumes/T7/projects/oldenburg-stadt/score_reports.py):
 
-$$\text{Score} = \text{KeywordMatch} + \text{ProximityScore} + \text{CategoryScore} + \text{CorridorBonus} + \text{StatusAgeAdjustment}$$
+$$\text{Score} = \text{LLMMatch} + \text{LLMPenalty} + \text{ProximityScore} + \text{CategoryScore} + \text{CorridorBonus} + \text{StatusAgeAdjustment}$$
 
-*   **Keyword Match (+50):** Description matches German cycling keywords (e.g., *Radweg*, *Fahrrad*, *Radspur*, *Lastenrad*).
+*   **LLM Match (+50):** Description is classified as cycling-related by the LLM (or falls back to the optimized regex heuristic).
+*   **LLM Confidence Penalty (-45):** A strong negative score is applied if the LLM is confident that the issue does not affect cycling infrastructure (e.g. issues on main car lanes), suppressing false positives.
 *   **Proximity to OSM Bike Network:**
     *   $\le 10\text{m}$: **+35 pts**
     *   $\le 25\text{m}$: **+20 pts**
     *   $\le 50\text{m}$: **+10 pts**
 *   **Category Relevance:**
-    *   *Fundräder* (Abandoned bikes): **+50 pts** (almost 100% cycling-relevant)
-    *   *Roads, Signs, Lights, Overhanging foliage*: **+15 pts** (often impacts safety/visibility)
+    *   *Fundräder* (Abandoned bikes): **+50 pts**
+    *   *Roads, Signs, Lights, Overhanging foliage*: **+15 pts**
     *   *Trees/Branches*: **+10 pts**
-*   **ADFC/City Priority Corridor Bonus (+20):** If within 50m of an official priority bicycle corridor (such as *FAST FLIN*, *Green Wave*, *Pophankenweg*, *Ammerländer Heerstraße*).
+*   **ADFC/City Priority Corridor Bonus (+20):** If within 50m of an official priority bicycle corridor.
 *   **Ticket Status & Age Adjustments:**
     *   Open/Active: **+10 pts**
     *   Closed/Fixed: **-20 pts**
     *   Not Responsible/External: **-15 pts**
     *   Older than 180 days: **-10 pts**
 
-### 3. Frontend Data Binding (`data.js`)
+### 3. Classification Engine (LLM vs Heuristic Fallback)
+*   **Google GenAI SDK Integration:** [classify_reports_llm.py](file:///Volumes/T7/projects/oldenburg-stadt/classify_reports_llm.py) runs the primary categorization using `gemini-2.5-flash-lite`. It extracts:
+    *   `is_cycling_related` (boolean)
+    *   `subcategory` (10 specific cycling tiers like `pothole_damage`, `glass_debris`, etc.)
+    *   `confidence` (float)
+    *   `explanation_de` (German context text)
+*   **Local Cache (`llm_classification_cache.json`):** Persists LLM API responses to control cost and latency.
+*   **Regex Rule-Set:** When a report is not present in the LLM cache, [score_reports.py](file:///Volumes/T7/projects/oldenburg-stadt/score_reports.py) uses an optimized regex rule-set that matches the LLM with **84.45% accuracy** and an **83.96% F1 score**.
+*   **Diagnostics:**
+    *   [evaluate_rules.py](file:///Volumes/T7/projects/oldenburg-stadt/evaluate_rules.py) evaluates the regex rules against the LLM cache.
+    *   [optimize_regex.py](file:///Volumes/T7/projects/oldenburg-stadt/optimize_regex.py) performs greedy pattern optimization.
+
+### 4. Frontend Data Binding (`data.js`)
 To allow the dashboard to run out-of-the-box by double-clicking `index.html` (under `file://` protocols), we do not make dynamic HTTP `fetch()` requests to JSON databases. This bypasses the browser's local Cross-Origin Resource Sharing (CORS) sandbox block.
 *   [generate_data_js.py](file:///Volumes/T7/projects/oldenburg-stadt/generate_data_js.py) translates our processed data models into a single JavaScript file ([data.js](file:///Volumes/T7/projects/oldenburg-stadt/data.js)) containing:
     *   `CLASSIFIED_REPORTS`: Array of the 553 classified citizen tickets.
@@ -86,7 +103,7 @@ If the user requests additional features or improvements, here are recommended i
 
 ### 2. Live Overpass Queries in Python
 *   **Goal**: Ensure data is completely up to date with OSM.
-*   **Implementation**: Enhance `download_osm_bike.py` to optionally pull the latest Overpass elements programmatically without hardcoded mirror links if they fail.
+*   **Implementation**: Enhance `download_osm_bike.py` to programmatically pull the latest Overpass elements without relying on hardcoded mirror links if they fail.
 
 ### 3. Drag-and-Drop Newsletter Layouts
 *   **Goal**: Allow editing the order of newsletter reports before copying.

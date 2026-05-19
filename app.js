@@ -3,12 +3,28 @@ let map;
 let geojsonLayer;
 let markerLayerGroup;
 let activeFilter = 'all'; // 'all', 'cycling-only', or specific label
+let timeFilter = 'all'; // 'all', '7d', '30d', '90d', 'custom'
+let customStartDate = null;
+let customEndDate = null;
 let currentSlideIndex = 0;
+
+const SUBCATEGORY_NAMES = {
+    'pothole_damage': 'Schlagloch / Fahrbahnschaden 🕳️',
+    'glass_debris': 'Scherben / Verschmutzung 🧹',
+    'vegetation_block': 'Überhängendes Grün / Äste 🌿',
+    'illegal_parking_obstruction': 'Falschparker / Hindernis 🚗',
+    'signal_light_timing': 'Ampelschaltung / Sensor 🚦',
+    'crossing_safety': 'Gefährliche Kreuzung ⚠️',
+    'signage_detours': 'Wegweisung / Umleitung 🪧',
+    'bike_parking': 'Fahrradständer 🚲',
+    'other_cycling': 'Sonstiges Radthema 🚴',
+    'unrelated': 'Nicht radspezifisch ⚪'
+};
 
 // Initialize when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initTabs();
-    initStats();
+    updateStats();
     initMap();
     renderIssueList();
     generateNewsletter();
@@ -55,7 +71,7 @@ function initTabs() {
 }
 
 // 2. Metrics Statistics
-function initStats() {
+function updateStats() {
     let counts = {
         'Confirmed cycling issue': 0,
         'Likely cycling issue': 0,
@@ -63,7 +79,9 @@ function initStats() {
         'Not cycling-specific': 0
     };
 
-    CLASSIFIED_REPORTS.forEach(r => {
+    const timeFiltered = getTimeFilteredReports(true);
+
+    timeFiltered.forEach(r => {
         if (counts.hasOwnProperty(r.cyclist_impact_label)) {
             counts[r.cyclist_impact_label]++;
         }
@@ -186,17 +204,87 @@ function getLabelColor(label) {
 }
 
 // 5. Filtering Functions
-function getFilteredReports() {
-    if (activeFilter === 'all') {
-        return CLASSIFIED_REPORTS;
-    } else if (activeFilter === 'cycling-only') {
-        return CLASSIFIED_REPORTS.filter(r => 
-            r.cyclist_impact_label === 'Confirmed cycling issue' || 
-            r.cyclist_impact_label === 'Likely cycling issue'
-        );
-    } else {
-        return CLASSIFIED_REPORTS.filter(r => r.cyclist_impact_label === activeFilter);
+function getReferenceDate() {
+    const now = new Date();
+    if (!CLASSIFIED_REPORTS || CLASSIFIED_REPORTS.length === 0) {
+        return now;
     }
+    
+    let latestTimestamp = 0;
+    CLASSIFIED_REPORTS.forEach(r => {
+        if (r.createdAt) {
+            const dateVal = new Date(r.createdAt).getTime();
+            if (dateVal > latestTimestamp) {
+                latestTimestamp = dateVal;
+            }
+        }
+    });
+    
+    if (latestTimestamp === 0) {
+        return now;
+    }
+    
+    const latestReportDate = new Date(latestTimestamp);
+    const diffTime = Math.abs(now - latestReportDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    
+    if (diffDays > 14) {
+        return latestReportDate;
+    }
+    return now;
+}
+
+function getTimeFilteredReports(excludeConfidence = false) {
+    let reports = CLASSIFIED_REPORTS;
+    
+    if (timeFilter !== 'all') {
+        const ref = getReferenceDate();
+        let minDate = null;
+        
+        if (timeFilter === '7d') {
+            minDate = new Date(ref.getTime() - 7 * 24 * 60 * 60 * 1000);
+        } else if (timeFilter === '30d') {
+            minDate = new Date(ref.getTime() - 30 * 24 * 60 * 60 * 1000);
+        } else if (timeFilter === '90d') {
+            minDate = new Date(ref.getTime() - 90 * 24 * 60 * 60 * 1000);
+        } else if (timeFilter === 'custom') {
+            const start = customStartDate ? new Date(customStartDate) : null;
+            const end = customEndDate ? new Date(customEndDate) : null;
+            
+            reports = reports.filter(r => {
+                if (!r.createdAt) return false;
+                const itemDate = new Date(r.createdAt);
+                if (start && itemDate < start) return false;
+                if (end) {
+                    const endOfDay = new Date(end);
+                    endOfDay.setHours(23, 59, 59, 999);
+                    if (itemDate > endOfDay) return false;
+                }
+                return true;
+            });
+        }
+        
+        if (minDate && timeFilter !== 'custom') {
+            reports = reports.filter(r => r.createdAt && new Date(r.createdAt) >= minDate);
+        }
+    }
+    
+    if (!excludeConfidence) {
+        if (activeFilter === 'cycling-only') {
+            reports = reports.filter(r => 
+                r.cyclist_impact_label === 'Confirmed cycling issue' || 
+                r.cyclist_impact_label === 'Likely cycling issue'
+            );
+        } else if (activeFilter !== 'all') {
+            reports = reports.filter(r => r.cyclist_impact_label === activeFilter);
+        }
+    }
+    
+    return reports;
+}
+
+function getFilteredReports() {
+    return getTimeFilteredReports(false);
 }
 
 function filterByConfidence(label) {
@@ -240,6 +328,54 @@ function filterCyclingOnly() {
     
     renderIssueList();
     updateMapMarkers();
+}
+
+function handleTimePresetChange() {
+    const select = document.getElementById('time-preset-select');
+    timeFilter = select.value;
+    
+    const customInputs = document.getElementById('custom-date-inputs');
+    if (timeFilter === 'custom') {
+        customInputs.classList.remove('hidden');
+        
+        // Populate default values for date inputs if they are empty
+        const ref = getReferenceDate();
+        const formattedRef = ref.toISOString().split('T')[0];
+        
+        const startInput = document.getElementById('start-date');
+        const endInput = document.getElementById('end-date');
+        
+        if (!startInput.value) {
+            // Default start to 30 days before reference date
+            const defaultStart = new Date(ref.getTime() - 30 * 24 * 60 * 60 * 1000);
+            startInput.value = defaultStart.toISOString().split('T')[0];
+            customStartDate = startInput.value;
+        }
+        if (!endInput.value) {
+            endInput.value = formattedRef;
+            customEndDate = endInput.value;
+        }
+    } else {
+        customInputs.classList.add('hidden');
+    }
+    
+    // Trigger updates for all reactive components
+    updateStats();
+    renderIssueList();
+    updateMapMarkers();
+    generateNewsletter();
+    generateSocialAssets();
+}
+
+function handleCustomDateChange() {
+    customStartDate = document.getElementById('start-date').value;
+    customEndDate = document.getElementById('end-date').value;
+    
+    updateStats();
+    renderIssueList();
+    updateMapMarkers();
+    generateNewsletter();
+    generateSocialAssets();
 }
 
 // 6. Issue List Sidebar Rendering
@@ -314,14 +450,41 @@ function showMapDetails(report) {
     document.getElementById('overlay-date').textContent = `Gemeldet am: ${dateObj.toLocaleString('de-DE')}`;
     document.getElementById('overlay-desc').textContent = report.replacingText || "Keine Textbeschreibung.";
     
+    // Render LLM classification details
+    const llmBox = document.getElementById('overlay-llm-box');
+    if (report.subcategory) {
+        const subcatPretty = SUBCATEGORY_NAMES[report.subcategory] || report.subcategory;
+        const isCycling = report.is_cycling_related;
+        const borderColor = isCycling ? '#10b981' : '#64748b';
+        const bgColor = isCycling ? 'rgba(16, 185, 129, 0.05)' : 'rgba(100, 116, 139, 0.05)';
+        const titleColor = isCycling ? '#10b981' : '#94a3b8';
+        
+        llmBox.innerHTML = `
+            <div class="llm-info-box card-glass" style="margin-top: 12px; margin-bottom: 12px; padding: 10px; border-left: 3px solid ${borderColor}; background: ${bgColor}; border-radius: 4px;">
+                <div style="font-weight: 600; font-size: 0.85rem; color: ${titleColor}; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                    🤖 <span>KI-Klassifizierung: ${subcatPretty}</span>
+                </div>
+                <div style="font-style: italic; font-size: 0.85rem; color: #cbd5e1;">"${report.explanation_de}"</div>
+            </div>
+        `;
+    } else {
+        llmBox.innerHTML = '';
+    }
+
     // Stats grid
     const statsGrid = document.getElementById('overlay-stats-grid');
+    let penaltyHtml = '';
+    if (report.score_penalty && report.score_penalty < 0) {
+        penaltyHtml = `<div class="stat-item">LLM Penalty: <span style="color: #ef4444">${report.score_penalty}</span></div>`;
+    }
+    
     statsGrid.innerHTML = `
         <div class="stat-item">Relevance Score: <span>${report.confidence_score} pts</span></div>
         <div class="stat-item">Distance to path: <span>${report.distance_to_bike_path_meters} m</span></div>
         <div class="stat-item">Category Bonus: <span>+${report.score_category}</span></div>
         <div class="stat-item">Path Distance: <span>+${report.score_distance}</span></div>
-        <div class="stat-item">Keyword Match: <span>+${report.score_keywords}</span></div>
+        <div class="stat-item">LLM Match: <span>+${report.score_keywords}</span></div>
+        ${penaltyHtml}
         <div class="stat-item">Status / Recency: <span>${report.score_state + report.score_recency}</span></div>
     `;
     
@@ -351,13 +514,15 @@ function hideMapDetails() {
 
 // 8. Weekly Newsletter Auto-Generator
 function generateNewsletter() {
+    const timeFiltered = getTimeFilteredReports(true);
+    
     // Filter active issues only (OPEN or IN_PROCESS)
-    const activeReports = CLASSIFIED_REPORTS.filter(r => r.state === 'OPEN' || r.state === 'IN_PROCESS');
+    const activeReports = timeFiltered.filter(r => r.state === 'OPEN' || r.state === 'IN_PROCESS');
     
     // Filter by cyclist impact level
     const confirmed = activeReports.filter(r => r.cyclist_impact_label === 'Confirmed cycling issue');
     const likely = activeReports.filter(r => r.cyclist_impact_label === 'Likely cycling issue');
-    const resolved = CLASSIFIED_REPORTS.filter(r => r.state === 'CLOSED' && r.cyclist_impact_label !== 'Not cycling-specific');
+    const resolved = timeFiltered.filter(r => r.state === 'CLOSED' && r.cyclist_impact_label !== 'Not cycling-specific');
     
     const countConfirmed = confirmed.length;
     const countLikely = likely.length;
@@ -484,8 +649,10 @@ function copyNewsletterMarkup(format) {
 
 // 9. Telegram & Instagram Social Media Generation
 function generateSocialAssets() {
+    const timeFiltered = getTimeFilteredReports(true);
+    
     // A. Telegram Broadcast Template
-    const activeReports = CLASSIFIED_REPORTS.filter(r => r.state === 'OPEN' || r.state === 'IN_PROCESS');
+    const activeReports = timeFiltered.filter(r => r.state === 'OPEN' || r.state === 'IN_PROCESS');
     const confirmedCount = activeReports.filter(r => r.cyclist_impact_label === 'Confirmed cycling issue').length;
     const likelyCount = activeReports.filter(r => r.cyclist_impact_label === 'Likely cycling issue').length;
     
