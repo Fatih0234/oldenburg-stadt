@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rad-Verbesserer Oldenburg | Bike Infrastructure Analyzer</title>
+    <!-- Google Fonts: Outfit for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation & Controls -->
+        <aside class="sidebar">
+            <header class="sidebar-header">
+                <div class="logo-area">
+                    <span class="logo-icon">🚴‍♂️</span>
+                    <div>
+                        <h1>Rad-Verbesserer</h1>
+                        <p class="subtitle">Oldenburg Cycling Analyzer</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Navigation Tabs -->
+            <nav class="sidebar-tabs">
+                <button class="tab-btn active" data-tab="dashboard">
+                    <span class="tab-icon">📊</span> Map & Stats
+                </button>
+                <button class="tab-btn" data-tab="newsletter">
+                    <span class="tab-icon">📰</span> Newsletter Draft
+                </button>
+                <button class="tab-btn" data-tab="social">
+                    <span class="tab-icon">📱</span> Social Assets
+                </button>
+            </nav>
+
+            <!-- Tab Content Panel -->
+            <div class="sidebar-content">
+                <!-- Tab 1: Dashboard -->
+                <section class="tab-panel active" id="panel-dashboard">
+                    <!-- Metric Cards Grid -->
+                    <div class="metrics-grid">
+                        <div class="metric-card gradient-confirmed" onclick="filterByConfidence('Confirmed cycling issue')">
+                            <h3>Confirmed</h3>
+                            <div class="value" id="count-confirmed">-</div>
+                            <p class="metric-label">High Confidence</p>
+                        </div>
+                        <div class="metric-card gradient-likely" onclick="filterByConfidence('Likely cycling issue')">
+                            <h3>Likely</h3>
+                            <div class="value" id="count-likely">-</div>
+                            <p class="metric-label">Medium-High</p>
+                        </div>
+                        <div class="metric-card gradient-possible" onclick="filterByConfidence('Possibly affects cyclists')">
+                            <h3>Possible</h3>
+                            <div class="value" id="count-possible">-</div>
+                            <p class="metric-label">Medium-Low</p>
+                        </div>
+                        <div class="metric-card gradient-generic" onclick="filterByConfidence('Not cycling-specific')">
+                            <h3>Other</h3>
+                            <div class="value" id="count-generic">-</div>
+                            <p class="metric-label">General Streets</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick filters -->
+                    <div class="control-group">
+                        <label class="group-title">Confidence Filters</label>
+                        <div class="filter-pills">
+                            <button class="pill active" id="pill-all" onclick="clearFilters()">All Issues</button>
+                            <button class="pill" id="pill-cycling-only" onclick="filterCyclingOnly()">Cycling Only (Score &ge; 40)</button>
+                        </div>
+                    </div>
+
+                    <!-- Scrollable Issue List -->
+                    <div class="issue-list-container">
+                        <div class="list-header">
+                            <h2>Recent Issues</h2>
+                            <span id="filtered-count" class="badge">0</span>
+                        </div>
+                        <div class="issue-list" id="issue-list-elements">
+                            <!-- Injected dynamically -->
+                            <div class="loading-state">Lade Berichte...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tab 2: Newsletter -->
+                <section class="tab-panel" id="panel-newsletter">
+                    <div class="panel-intro">
+                        <h2>Weekly Bike Route Health Report</h2>
+                        <p>Weekly issue generated from active Stadtverbesserer reports matching the cycling network. Ready to copy for email, Substack, or blogging.</p>
+                    </div>
+
+                    <div class="newsletter-controls">
+                        <button class="btn btn-primary" onclick="generateNewsletter()">🔄 Report regenerieren</button>
+                        <button class="btn btn-secondary" onclick="copyNewsletterMarkup('markdown')">📋 Markdown kopieren</button>
+                    </div>
+
+                    <div class="newsletter-preview-container">
+                        <div class="preview-tabs">
+                            <button class="preview-tab active" data-format="rendered">Vorschau</button>
+                            <button class="preview-tab" data-format="markdown">Markdown Code</button>
+                        </div>
+                        <div class="preview-content">
+                            <div id="newsletter-rendered" class="rendered-html-preview">
+                                <!-- Generated HTML -->
+                            </div>
+                            <pre id="newsletter-markdown" class="code-preview hidden"><code><!-- Generated Markdown --></code></pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tab 3: Social Media -->
+                <section class="tab-panel" id="panel-social">
+                    <div class="panel-intro">
+                        <h2>Social Media Pack</h2>
+                        <p>Generate swipeable Instagram carousels and concise Telegram messages with quick stats and critical cycling reports.</p>
+                    </div>
+
+                    <!-- Telegram Section -->
+                    <div class="social-section card-glass">
+                        <div class="section-header">
+                            <span class="social-icon">✈️</span>
+                            <h3>Telegram Broadcast Template</h3>
+                        </div>
+                        <textarea class="social-textarea" id="telegram-text" readonly></textarea>
+                        <button class="btn btn-secondary btn-full" onclick="copyText('telegram-text')">📋 Text kopieren</button>
+                    </div>
+
+                    <!-- Instagram Section -->
+                    <div class="social-section card-glass">
+                        <div class="section-header">
+                            <span class="social-icon">📸</span>
+                            <h3>Instagram Carousel Preview</h3>
+                        </div>
+                        <p class="section-sub">Visual card layout for sliding posts. Screen capture these slides directly for your post!</p>
+                        
+                        <!-- Carousel Slides Mockup -->
+                        <div class="carousel-preview-wrapper">
+                            <div class="carousel-track" id="insta-carousel-track">
+                                <!-- Slides will be injected here -->
+                            </div>
+                            <div class="carousel-controls">
+                                <button class="carousel-nav-btn prev" onclick="slideCarousel(-1)">❮</button>
+                                <span class="carousel-indicator-text" id="carousel-indicator-text">Slide 1 / 4</span>
+                                <button class="carousel-nav-btn next" onclick="slideCarousel(1)">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- Leaflet Map Container -->
+        <main class="map-container">
+            <div id="map"></div>
+            <!-- Floating Map Details Overlay -->
+            <div class="map-overlay-card card-glass hidden" id="map-details-card">
+                <button class="close-overlay-btn" onclick="hideMapDetails()">×</button>
+                <div class="overlay-scroll-content">
+                    <span class="badge" id="overlay-label">Label</span>
+                    <h3 id="overlay-category">Category</h3>
+                    <p class="overlay-date" id="overlay-date">Date</p>
+                    <p class="overlay-desc" id="overlay-desc">Description</p>
+                    <div id="overlay-stats-grid" class="overlay-stats">
+                        <!-- Score breakdowns -->
+                    </div>
+                    <div id="overlay-image-container" class="overlay-img-box hidden">
+                        <img id="overlay-image" src="" alt="Report image">
+                    </div>
+                    <a id="overlay-direction-link" href="#" target="_blank" class="btn btn-primary btn-sm btn-full margin-top-sm">🗺️ In Google Maps öffnen</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Load data.js (which defines CLASSIFIED_REPORTS and BIKE_NETWORK_GEOJSON) -->
+    <script src="data.js"></script>
+    
+    <!-- Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
