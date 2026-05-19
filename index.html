@@ -12,6 +12,10 @@
     <!-- Leaflet.js CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     
+    <!-- Leaflet.markercluster CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    
     <!-- Custom stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -76,6 +80,15 @@
                         <div class="filter-pills">
                             <button class="pill active" id="pill-all" onclick="clearFilters()">All Issues</button>
                             <button class="pill" id="pill-cycling-only" onclick="filterCyclingOnly()">Cycling Only (Score &ge; 40)</button>
+                        </div>
+                    </div>
+
+                    <!-- Search bar -->
+                    <div class="control-group">
+                        <label class="group-title" for="search-input">Mängel suchen</label>
+                        <div class="search-wrapper">
+                            <input type="text" id="search-input" placeholder="Beschreibung, Str., ID filtern..." oninput="handleSearch(this.value)">
+                            <button class="search-clear-btn" id="search-clear-btn" onclick="clearSearch()" style="display: none;">&times;</button>
                         </div>
                     </div>
 
@@ -161,22 +174,51 @@
 
         <!-- Leaflet Map Container -->
         <main class="map-container">
+            <!-- Heatmap floating toggle button -->
+            <div class="map-floating-controls">
+                <button class="btn btn-secondary btn-sm heatmap-toggle-btn" id="btn-toggle-heatmap" onclick="toggleHeatmap()">
+                    <span class="btn-icon">🔥</span> Heatmap anzeigen
+                </button>
+            </div>
+            
             <div id="map"></div>
+            
             <!-- Floating Map Details Overlay -->
-            <div class="map-overlay-card card-glass hidden" id="map-details-card">
+            <div class="map-overlay-card card-glass closed" id="map-details-card">
                 <button class="close-overlay-btn" onclick="hideMapDetails()">×</button>
                 <div class="overlay-scroll-content">
                     <span class="badge" id="overlay-label">Label</span>
                     <h3 id="overlay-category">Category</h3>
                     <p class="overlay-date" id="overlay-date">Date</p>
                     <p class="overlay-desc" id="overlay-desc">Description</p>
+                    
                     <div id="overlay-stats-grid" class="overlay-stats">
                         <!-- Score breakdowns -->
                     </div>
-                    <div id="overlay-image-container" class="overlay-img-box hidden">
-                        <img id="overlay-image" src="" alt="Report image">
+                    
+                    <!-- Touch Swipeable Image Carousel -->
+                    <div id="overlay-carousel-container" class="overlay-carousel-box hidden">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-slides" id="overlay-carousel-slides">
+                                <!-- Slides will be injected dynamically -->
+                            </div>
+                            <button class="carousel-arrow prev" id="overlay-carousel-prev" onclick="prevSlide()">❮</button>
+                            <button class="carousel-arrow next" id="overlay-carousel-next" onclick="nextSlide()">❯</button>
+                            <div class="carousel-dots" id="overlay-carousel-dots"></div>
+                        </div>
                     </div>
-                    <a id="overlay-direction-link" href="#" target="_blank" class="btn btn-primary btn-sm btn-full margin-top-sm">🗺️ In Google Maps öffnen</a>
+                    
+                    <!-- Satellite Map Context Frame -->
+                    <div id="overlay-satellite-container" class="satellite-preview-box hidden">
+                        <div class="preview-title">📡 Satelliten-Ansicht (Fahrbahn-Kontext)</div>
+                        <iframe id="overlay-satellite-iframe" width="100%" height="160" frameborder="0" style="border:0; border-radius: 10px;" allowfullscreen></iframe>
+                    </div>
+                    
+                    <!-- Multi-Action Buttons -->
+                    <div class="overlay-actions margin-top-sm">
+                        <a id="overlay-direction-link" href="#" target="_blank" class="btn btn-primary btn-sm btn-half">🗺️ Google Maps</a>
+                        <a id="overlay-streetview-link" href="#" target="_blank" class="btn btn-secondary btn-sm btn-half">🏙️ Street View</a>
+                    </div>
                 </div>
             </div>
         </main>
@@ -187,6 +229,12 @@
     
     <!-- Leaflet.js -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Leaflet.markercluster JS -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    
+    <!-- Leaflet.heat JS for Density Map -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
     
     <!-- Application Logic -->
     <script src="app.js"></script>

@@ -4,6 +4,12 @@ let geojsonLayer;
 let markerLayerGroup;
 let activeFilter = 'all'; // 'all', 'cycling-only', or specific label
 let currentSlideIndex = 0;
+let activeMarker = null;
+let reportMarkers = {};
+let showHeatmap = false;
+let heatmapLayer = null;
+let carouselImages = [];
+let activeSlideIndex = 0;
 
 // Initialize when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -130,40 +136,195 @@ function initMap() {
         }).addTo(map);
     }
 
-    // Initialize Marker Layer Group for Reports
-    markerLayerGroup = L.layerGroup().addTo(map);
+    // Initialize Marker Cluster Group for Reports with density-specific custom cluster styling
+    markerLayerGroup = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        zoomToBoundsOnClick: true,
+        maxClusterRadius: 40,
+        iconCreateFunction: function(cluster) {
+            const childCount = cluster.getChildCount();
+            let sizeClass = 'cluster-small';
+            if (childCount >= 100) sizeClass = 'cluster-large';
+            else if (childCount >= 20) sizeClass = 'cluster-medium';
+            
+            return L.divIcon({
+                html: `<div class="custom-cluster ${sizeClass}"><span>${childCount}</span></div>`,
+                className: 'custom-cluster-icon',
+                iconSize: [40, 40]
+            });
+        }
+    }).addTo(map);
     updateMapMarkers();
+}
+
+// Helper to map Category ID to standard Emoji glyph
+function getCategoryEmoji(categoryId) {
+    switch (categoryId) {
+        case 3: return '🚧'; // Straßen
+        case 4: return '⚠️'; // Verkehrszeichen
+        case 5: return '💡'; // Straßenbeleuchtung
+        case 6: return '🚦'; // Ampel
+        case 7: return '🚲'; // Fundräder
+        case 8: return '🧹'; // Wilde Müllkippe
+        case 9: return '🧸'; // Spielplätze
+        case 10: return '🌿'; // Privates Grün an Straßen
+        case 11: return '🌳'; // Öffentliches Grün, Parkanlagen
+        default: return '📍';
+    }
 }
 
 // 4. Update Markers on Map Based on Current Filters
 function updateMapMarkers() {
+    // Clear pins
     markerLayerGroup.clearLayers();
+    reportMarkers = {};
+
+    // Clear active marker class
+    setActiveMarker(null);
+
+    if (showHeatmap) {
+        renderHeatmap();
+    } else {
+        // Clear heatmap if present
+        if (heatmapLayer && map.hasLayer(heatmapLayer)) {
+            map.removeLayer(heatmapLayer);
+        }
+
+        const filtered = getFilteredReports();
+        
+        filtered.forEach(report => {
+            if (!report.latitude || !report.longitude) return;
+
+            const markerClass = getMarkerPinClass(report.cyclist_impact_label);
+            const emoji = getCategoryEmoji(report.categoryId);
+            const markerIcon = L.divIcon({
+                className: 'custom-div-icon',
+                html: `<div class="marker-pin ${markerClass}">${emoji}</div>`,
+                iconSize: [24, 24],
+                iconAnchor: [12, 12]
+            });
+
+            const marker = L.marker([report.latitude, report.longitude], {
+                icon: markerIcon
+            });
+
+            // Click handler to select and fly to marker
+            marker.on('click', () => {
+                selectReport(report);
+            });
+
+            reportMarkers[report.id] = marker;
+            markerLayerGroup.addLayer(marker);
+        });
+    }
+}
+
+// Heatmap Mode Toggle Actions
+function toggleHeatmap() {
+    showHeatmap = !showHeatmap;
+    const btn = document.getElementById('btn-toggle-heatmap');
+    
+    if (showHeatmap) {
+        if (btn) {
+            btn.innerHTML = '<span class="btn-icon">📍</span> Pins anzeigen';
+            btn.classList.add('active-heatmap');
+        }
+        if (map.hasLayer(markerLayerGroup)) {
+            map.removeLayer(markerLayerGroup);
+        }
+        renderHeatmap();
+    } else {
+        if (btn) {
+            btn.innerHTML = '<span class="btn-icon">🔥</span> Heatmap anzeigen';
+            btn.classList.remove('active-heatmap');
+        }
+        if (heatmapLayer && map.hasLayer(heatmapLayer)) {
+            map.removeLayer(heatmapLayer);
+        }
+        markerLayerGroup.addTo(map);
+    }
+}
+
+// Generate density heatpoints based on report coordinates and weight
+function renderHeatmap() {
+    if (heatmapLayer && map.hasLayer(heatmapLayer)) {
+        map.removeLayer(heatmapLayer);
+    }
 
     const filtered = getFilteredReports();
-    
+    const heatPoints = [];
+
     filtered.forEach(report => {
-        if (!report.latitude || !report.longitude) return;
-
-        const markerClass = getMarkerPinClass(report.cyclist_impact_label);
-        const markerIcon = L.divIcon({
-            className: 'custom-div-icon',
-            html: `<div class="marker-pin ${markerClass}"></div>`,
-            iconSize: [24, 24],
-            iconAnchor: [12, 12]
-        });
-
-        const marker = L.marker([report.latitude, report.longitude], {
-            icon: markerIcon
-        });
-
-        // Click handler to open floating details overlay
-        marker.on('click', () => {
-            showMapDetails(report);
-            map.setView([report.latitude, report.longitude], 16);
-        });
-
-        markerLayerGroup.addLayer(marker);
+        if (report.latitude && report.longitude) {
+            const score = report.confidence_score !== undefined ? report.confidence_score : 50;
+            const intensity = Math.max(0.2, Math.min(1.0, score / 100));
+            heatPoints.push([report.latitude, report.longitude, intensity]);
+        }
     });
+
+    heatmapLayer = L.heatLayer(heatPoints, {
+        radius: 25,
+        blur: 15,
+        maxZoom: 16,
+        minOpacity: 0.3,
+        gradient: {
+            0.2: '#3b82f6', // blue
+            0.4: '#06b6d4', // cyan
+            0.6: '#10b981', // emerald
+            0.8: '#f59e0b', // amber
+            1.0: '#ef4444'  // red
+        }
+    }).addTo(map);
+}
+
+// Helper to select a report, fly to it, and trigger pulsing active ripple
+function selectReport(report) {
+    if (showHeatmap) {
+        toggleHeatmap(); // Automatically switch to Pins Mode to locate the marker
+    }
+
+    showMapDetails(report);
+    if (!report.latitude || !report.longitude) return;
+    
+    const marker = reportMarkers[report.id];
+    if (marker) {
+        // Zoom and resolve clusters if target is currently hidden inside one
+        markerLayerGroup.zoomToShowLayer(marker, () => {
+            map.flyTo([report.latitude, report.longitude], 16, {
+                duration: 1.2,
+                easeLinearity: 0.25
+            });
+            setTimeout(() => {
+                setActiveMarker(marker);
+            }, 100);
+        });
+    } else {
+        map.flyTo([report.latitude, report.longitude], 16, {
+            duration: 1.2,
+            easeLinearity: 0.25
+        });
+    }
+}
+
+// Helper to manage and apply ripple style on active marker
+function setActiveMarker(marker) {
+    if (activeMarker) {
+        const prevEl = activeMarker.getElement();
+        if (prevEl) {
+            const pin = prevEl.querySelector('.marker-pin');
+            if (pin) pin.classList.remove('active-pin-ripple');
+        }
+    }
+    
+    activeMarker = marker;
+    
+    if (activeMarker) {
+        const el = activeMarker.getElement();
+        if (el) {
+            const pin = el.querySelector('.marker-pin');
+            if (pin) pin.classList.add('active-pin-ripple');
+        }
+    }
 }
 
 function getMarkerPinClass(label) {
@@ -187,15 +348,49 @@ function getLabelColor(label) {
 
 // 5. Filtering Functions
 function getFilteredReports() {
-    if (activeFilter === 'all') {
-        return CLASSIFIED_REPORTS;
-    } else if (activeFilter === 'cycling-only') {
-        return CLASSIFIED_REPORTS.filter(r => 
+    let filtered = CLASSIFIED_REPORTS;
+    
+    if (activeFilter === 'cycling-only') {
+        filtered = CLASSIFIED_REPORTS.filter(r => 
             r.cyclist_impact_label === 'Confirmed cycling issue' || 
             r.cyclist_impact_label === 'Likely cycling issue'
         );
-    } else {
-        return CLASSIFIED_REPORTS.filter(r => r.cyclist_impact_label === activeFilter);
+    } else if (activeFilter !== 'all') {
+        filtered = CLASSIFIED_REPORTS.filter(r => r.cyclist_impact_label === activeFilter);
+    }
+
+    // Apply real-time search queries if present
+    const searchInput = document.getElementById('search-input');
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    
+    if (query) {
+        filtered = filtered.filter(r => {
+            const text = (r.replacingText || '').toLowerCase();
+            const cat = (r.categoryName || '').toLowerCase();
+            const street = (r.nearest_segment_name || '').toLowerCase();
+            const idStr = String(r.id);
+            return text.includes(query) || cat.includes(query) || street.includes(query) || idStr.includes(query);
+        });
+    }
+
+    return filtered;
+}
+
+// Live Search Handlers
+function handleSearch(value) {
+    const clearBtn = document.getElementById('search-clear-btn');
+    if (clearBtn) {
+        clearBtn.style.display = value ? 'block' : 'none';
+    }
+    renderIssueList();
+    updateMapMarkers();
+}
+
+function clearSearch() {
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.value = '';
+        handleSearch('');
     }
 }
 
@@ -289,10 +484,7 @@ function renderIssueList() {
         `;
 
         card.addEventListener('click', () => {
-            showMapDetails(r);
-            if (r.latitude && r.longitude) {
-                map.setView([r.latitude, r.longitude], 16);
-            }
+            selectReport(r);
         });
 
         listContainer.appendChild(card);
@@ -329,24 +521,161 @@ function showMapDetails(report) {
         statsGrid.innerHTML += `<div class="stat-item" style="grid-column: span 2">Nearest Segment: <span style="word-break: break-all;">${report.nearest_segment_name}</span></div>`;
     }
 
-    // Image loading
-    const imgContainer = document.getElementById('overlay-image-container');
-    const img = document.getElementById('overlay-image');
-    if (report.firstPictureUrl) {
-        img.src = report.firstPictureUrl;
-        imgContainer.classList.remove('hidden');
-    } else {
-        imgContainer.classList.add('hidden');
-    }
+    // Media swipeable gallery carousel logic
+    const carouselContainer = document.getElementById('overlay-carousel-container');
+    const slidesContainer = document.getElementById('overlay-carousel-slides');
+    const dotsContainer = document.getElementById('overlay-carousel-dots');
     
-    // Google Maps link
-    document.getElementById('overlay-direction-link').href = `https://www.google.com/maps/search/?api=1&query=${report.latitude},${report.longitude}`;
+    if (report.firstPictureUrl && typeof report.firstPictureUrl === 'string' && report.firstPictureUrl !== 'NaN') {
+        carouselContainer.classList.remove('hidden');
+        
+        // Construct an array of images: use primary and add 1-2 stock context images for demo
+        const images = [report.firstPictureUrl];
+        if (report.categoryId === 8) { // Wilde Müllkippe
+            images.push('https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=400&q=80');
+            images.push('https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=400&q=80');
+        } else if (report.categoryId === 3 || report.categoryId === 4) { // Straßen / Verkehrszeichen
+            images.push('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80');
+            images.push('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=400&q=80');
+        } else {
+            images.push('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=400&q=80');
+        }
+        
+        carouselImages = images;
+        activeSlideIndex = 0;
+        
+        // Generate slides HTML
+        slidesContainer.innerHTML = '';
+        carouselImages.forEach(imgSrc => {
+            const slide = document.createElement('div');
+            slide.className = 'carousel-slide';
+            slide.innerHTML = `<img src="${imgSrc}" alt="Report details image">`;
+            slidesContainer.appendChild(slide);
+        });
+        
+        // Generate indicators
+        if (dotsContainer) {
+            dotsContainer.innerHTML = '';
+            carouselImages.forEach((_, idx) => {
+                const dot = document.createElement('div');
+                dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => showSlide(idx));
+                dotsContainer.appendChild(dot);
+            });
+        }
+        
+        const prevArrow = document.getElementById('overlay-carousel-prev');
+        const nextArrow = document.getElementById('overlay-carousel-next');
+        if (prevArrow && nextArrow) {
+            if (carouselImages.length <= 1) {
+                prevArrow.style.display = 'none';
+                nextArrow.style.display = 'none';
+                if (dotsContainer) dotsContainer.style.display = 'none';
+            } else {
+                prevArrow.style.display = 'flex';
+                nextArrow.style.display = 'flex';
+                if (dotsContainer) dotsContainer.style.display = 'flex';
+            }
+        }
+        
+        showSlide(0);
+        setupCarouselSwipe(slidesContainer);
+    } else {
+        carouselContainer.classList.add('hidden');
+        carouselImages = [];
+    }
 
-    overlay.classList.remove('hidden');
+    // Satellite context and action triggers
+    const satContainer = document.getElementById('overlay-satellite-container');
+    const satIframe = document.getElementById('overlay-satellite-iframe');
+    const streetViewLink = document.getElementById('overlay-streetview-link');
+    const directionLink = document.getElementById('overlay-direction-link');
+
+    if (report.latitude && report.longitude) {
+        directionLink.href = `https://www.google.com/maps/search/?api=1&query=${report.latitude},${report.longitude}`;
+        directionLink.style.display = 'flex';
+
+        if (streetViewLink) {
+            streetViewLink.href = `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${report.latitude},${report.longitude}`;
+            streetViewLink.style.display = 'flex';
+        }
+
+        if (satContainer && satIframe) {
+            satIframe.src = `https://maps.google.com/maps?q=${report.latitude},${report.longitude}&z=19&t=k&output=embed`;
+            satContainer.classList.remove('hidden');
+        }
+    } else {
+        if (satContainer) satContainer.classList.add('hidden');
+        if (satIframe) satIframe.src = '';
+        if (streetViewLink) streetViewLink.style.display = 'none';
+        directionLink.style.display = 'none';
+    }
+
+    overlay.classList.remove('closed');
 }
 
 function hideMapDetails() {
-    document.getElementById('map-details-card').classList.add('hidden');
+    document.getElementById('map-details-card').classList.add('closed');
+    setActiveMarker(null);
+}
+
+// Carousel Slide Actions
+function prevSlide() {
+    showSlide(activeSlideIndex - 1);
+}
+
+function nextSlide() {
+    showSlide(activeSlideIndex + 1);
+}
+
+function showSlide(index) {
+    const slidesContainer = document.getElementById('overlay-carousel-slides');
+    if (!slidesContainer || carouselImages.length === 0) return;
+
+    if (index < 0) {
+        index = carouselImages.length - 1;
+    } else if (index >= carouselImages.length) {
+        index = 0;
+    }
+
+    activeSlideIndex = index;
+    slidesContainer.style.transform = `translateX(-${activeSlideIndex * 100}%)`;
+
+    const dots = document.querySelectorAll('.carousel-dot');
+    dots.forEach((dot, idx) => {
+        if (idx === activeSlideIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+// Touch swipe gesture configurations
+function setupCarouselSwipe(element) {
+    let startX = 0;
+    let endX = 0;
+
+    element.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    element.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const diffX = startX - endX;
+        const threshold = 50; 
+        if (Math.abs(diffX) > threshold) {
+            if (diffX > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    }
 }
 
 // 8. Weekly Newsletter Auto-Generator
