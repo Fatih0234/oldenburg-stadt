@@ -93,6 +93,47 @@ We completed a comprehensive UI/UX audit to polish the design and make it produc
 
 ---
 
+## 🗺️ Premium Interactive UI/UX Architecture
+
+We have implemented key upgrades that transform the dashboard into a state-of-the-art interactive tool:
+
+### 1. Marker Clustering & Pin Glyphs
+*   **Clustering**: Integrated `Leaflet.markercluster` via CDN. The cluster node uses a custom `divIcon` with class `.custom-cluster`. Highlight rings indicate item count density: `.cluster-small` (emerald, <20 items), `.cluster-medium` (cyan, 20–99 items), and `.cluster-large` (coral, >=100 items).
+*   **Emoji Glyphs**: Every map pin is represented as a custom HTML tag containing a subcategory-specific emoji glyph inside `.marker-pin`. When hovered, the pin inflates to `1.4x` via CSS transform transitions (`cubic-bezier(0.175, 0.885, 0.32, 1.275)`).
+
+### 2. Smooth Glides & Selected Ripple
+*   **Glides**: Swapped immediate map movements with `map.flyTo([lat, lng], 16, { duration: 1.2, easeLinearity: 0.25 })`.
+*   **Ripple Pulse**: Triggered by `setActiveMarker()`. It adds class `.active-pin-ripple` to the selected pin's element. It draws an absolute-positioned pseudo-element expanding outward via a CSS keyframe animation (`pinRipple`), pulsing in the color of the selected report's classification tier.
+
+### 3. Slide-Out Details Sidebar
+*   **Layout**: Converted the details block `#map-details-card` into a fixed right sidebar.
+*   **Transitions**: Instead of toggling `display`, it transitions the X-axis transform (`translateX(100%)` to `translateX(0)`) using `transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)`.
+
+### 4. Dynamic Density Heatmap Mode
+*   **Heatmap**: Uses `Leaflet.heat` (`L.heatLayer`). Points are constructed dynamically in `renderHeatmap()` as `[latitude, longitude, intensity]`. Intensity is scaled based on confidence score (from `0.2` to `1.0`).
+*   **State Control**: Toggled via `toggleHeatmap()`, which manages the `showHeatmap` global boolean, replaces the HTML button state, and swaps Leaflet layers (`markerLayerGroup` vs `heatmapLayer`).
+*   **Smart Fallback**: Clicking an issue from the sidebar list auto-disables Heatmap Mode (`showHeatmap = false`) and loads the pins layer so that `selectReport` can target the specific pin element and trigger the selection ripple.
+
+### 5. Multi-Image Media Carousel
+*   **Data Injection**: Renders inside `#overlay-carousel-slides` dynamically using the global `carouselImages` array. Mocks secondary slides for testing category actions if only one photo is present.
+*   **Slide Transitions**: Sliding is controlled via `showSlide(index)` which applies a horizontal translation (`translateX(-index * 100%)`) on the slides track.
+*   **Touch Gesture Support**: Configured inside `setupCarouselSwipe(element)` using passive listeners for `touchstart` and `touchend`. Calculates horizontal drag delta (`startX - endX`) and triggers `nextSlide()` or `prevSlide()` on swipe thresholds of >50px.
+
+### 6. Embedded Satellite Map & Action Deep-Links
+*   **Preview Iframe**: Renders a Google Maps embed iframe `#overlay-satellite-iframe` pointed to `q={latitude},{longitude}&z=19&t=k&output=embed` inside the details sidebar, showing real-world surface conditions.
+*   **Direct Viewport Panoramas**: Configures direct deep-links to external Google Street View using viewpoints:
+    ```
+    https://www.google.com/maps/@?api=1&map_action=pano&viewpoint={latitude},{longitude}
+    ```
+
+### 7. Unified Filtering Pipeline
+*   **Pipeline**: All lists and map layers are filtered through `getFilteredReports()`. It runs the query sequentially:
+    1. Apply time preset or custom date range filters inside `getTimeFilteredReports()`.
+    2. Apply confidence classification filter card filters.
+    3. Apply live text input search queries matching report ID, text description, subcategory, or street.
+
+---
+
 ## 🔮 Roadmap & Potential Future Tasks
 
 If the user requests additional features or improvements, here are recommended implementation paths:

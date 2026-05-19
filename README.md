@@ -51,8 +51,17 @@ Tickets are scored ($0$ to $100+$ points) based on their spatial metrics and cat
 * 🟡 **Possibly affects cyclists (Score 20-39):** Street-level reports near cycleways that might impede visibility or traffic.
 * ⚪ **Not cycling-specific (Score < 20):** General road complaints not directly related to cycling infrastructure.
 
-### 5. Zero-CORS Web Dashboard
-`generate_data_js.py` compiles the GeoJSON bike network and classified reports into a single unified JavaScript variable file `data.js`. This allows you to double-click `index.html` and run the dashboard locally in your web browser without encountering CORS (Cross-Origin Resource Sharing) local fetch errors.
+### 5. Interactive Premium Web Dashboard (Zero-CORS)
+`generate_data_js.py` compiles the GeoJSON bike network and classified reports into a single unified JavaScript variable file `data.js`. This allows you to run the dashboard locally by opening `index.html` directly in a browser without CORS (Cross-Origin Resource Sharing) local fetch errors.
+
+The dashboard features premium, state-of-the-art interactive upgrades:
+*   **Marker Clustering & Custom Pins:** Groups 553 reports with density-responsive custom glass-morphic nodes. Individual pins contain category emoji glyphs (e.g., 🚧, 🧹, 🚦) and spring-inflate on hover.
+*   **Smooth Glide & Selection Ripple:** Camera movements are animated using Leaflet's `map.flyTo()`, and the selected marker pulses a glowing ripple halo matching its classification tier.
+*   **Slide-Out Details Panel:** Replaces static boxes with a modern sidebar panel that slides in from off-screen right using custom ease-in-out transitions.
+*   **Dynamic Density Heatmap Mode:** A floating glassmorphic button toggles a Leaflet heat gradient of report hot-spots, weighting intensities based on confidence scores.
+*   **Google Satellite & Street View Context:** Features a mini satellite hybrid imagery iframe previewing coordinate surroundings, alongside Google Maps directions and deep-linked Street View panorama buttons.
+*   **Touch-Swipeable Photo Carousel:** Swipe gestures or navigation controls transition horizontally through multiple report photos with indicator dots.
+*   **Live Search Bar & Time Filters:** Real-time multi-field text search queries integrated with preset (7d, 30d, 90d) and custom range date picker filters.
 
 ---
 
