@@ -1,0 +1,3320 @@
+{
+  "25": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine abgesackte Stelle auf einer allgemeinen Straße, ohne spezifischen Bezug zum Radverkehr."
+  },
+  "35": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft stehendes Regenwasser aufgrund eines verstopften Gullys, was ein allgemeines Straßenproblem ist."
+  },
+  "36": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Verstopfte Gullys und nicht ablaufendes Wasser an einer Straßenecke sind ein allgemeines Problem und nicht spezifisch radverkehrsrelevant."
+  },
+  "37": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung bezieht sich auf eine defekte Sitzbank in einer Parkanlage und hat keinen Bezug zum Radverkehr."
+  },
+  "40": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "explanation_de": "Ein abgemeldetes Fahrzeug in einer Parkbucht ist ein allgemeines Problem und nicht spezifisch radverkehrsrelevant."
+  },
+  "51": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Lose Steine auf der Straße werden explizit als gefährlich für Radfahrer beschrieben, was auf eine direkte Beeinträchtigung hinweist."
+  },
+  "52": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung beschreibt Vandalismus in einem Geschäft und hat keinen Bezug zur öffentlichen Infrastruktur oder zum Radverkehr."
+  },
+  "64": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft stehendes Wasser auf einem Gehweg, was primär Fußgänger betrifft und nicht spezifisch radverkehrsrelevant ist."
+  },
+  "67": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "explanation_de": "Ein abgestellter Wohnwagen, der eine Ausfahrt behindert, ist ein allgemeines Problem und nicht spezifisch radverkehrsrelevant."
+  },
+  "70": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.7,
+    "explanation_de": "Ein im Wassergraben gefundenes Lastenrad ist zwar kein Infrastrukturproblem, aber ein fahrradbezogenes Anliegen, das unter 'andere Radverkehrsthemen' fallen kann."
+  },
+  "72": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt herumfliegenden Müll durch unsachgemäße Lagerung von Zeitungen, was ein allgemeines Sauberkeitsproblem ist."
+  },
+  "73": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "explanation_de": "Ein seit Wochen abgestelltes Fahrzeug im öffentlichen Raum ist ein allgemeines Problem und nicht spezifisch radverkehrsrelevant."
+  },
+  "75": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "explanation_de": "Ein altes, abgemeldetes Fahrzeug auf einem öffentlichen Parkplatz ist ein allgemeines Problem und nicht spezifisch radverkehrsrelevant."
+  },
+  "79": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung beschreibt Schlaglöcher in dem Bereich der Straße, der für Radfahrer vorgesehen ist, und weist auf eine direkte Gefahr für diese hin."
+  },
+  "81": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein tiefer Absatz in dem für Radfahrer vorgesehenen Bereich der Straße stellt eine direkte physische Gefahr für den Radverkehr dar."
+  },
+  "84": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Lose Pflastersteine auf der Fahrbahn nach Erdarbeiten stellen eine Gefahr für Radfahrer dar."
+  },
+  "86": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.95,
+    "explanation_de": "Überhängende Sträucher auf dem Radweg behindern die Durchfahrt."
+  },
+  "91": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein umgestürzter Baum in einer Parkanlage ist kein spezifisches Radverkehrsproblem."
+  },
+  "92": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Frage nach der Langlebigkeit von Reparaturmaterialien ist kein spezifisches Radverkehrsproblem."
+  },
+  "94": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Dauerhaftes Wasser auf der Straße an einer Kreuzung mit Ampel beeinträchtigt Radfahrer und Fußgänger."
+  },
+  "105": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.85,
+    "explanation_de": "Bewuchs und parkende Fahrzeuge auf dem Gehweg behindern Radfahrer und Fußgänger."
+  },
+  "106": {
+    "is_cycling_related": true,
+    "subcategory": "bike_parking",
+    "confidence": 0.8,
+    "explanation_de": "Ein seit langem dort stehendes Fahrrad könnte als Fundrad gemeldet werden, was indirekt mit Fahrradabstellplätzen zusammenhängt."
+  },
+  "111": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Große, tiefe Löcher im Fahrspurbereich stellen eine erhebliche Gefahr für Radfahrer dar."
+  },
+  "117": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein abgemeldeter Sprinter ist ein allgemeines Ordnungsrechtsproblem, kein spezifisches Radverkehrsproblem."
+  },
+  "126": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein wiederholt provisorisch verschlossenes Loch stellt eine gefährliche Situation für Radfahrer dar."
+  },
+  "133": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Abgemeldete PKW auf einem Parkplatz sind ein allgemeines Ordnungsrechtsproblem, kein spezifisches Radverkehrsproblem."
+  },
+  "140": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein Laub-Gestrüpphaufen, der einen Abfluss blockiert, ist kein spezifisches Radverkehrsproblem."
+  },
+  "141": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müll auf einem Pendlerparkplatz ist ein allgemeines Sauberkeitsproblem, kein spezifisches Radverkehrsproblem."
+  },
+  "142": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Beschädigte Beeteinfassungen und Poller können Radfahrer gefährden."
+  },
+  "144": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Eine defekte Beleuchtung eines Sperrbalkens ist kein spezifisches Radverkehrsproblem."
+  },
+  "145": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Umgekippte Bäume können Radwege blockieren oder gefährlich machen, insbesondere wenn sie über eine Fahrradroute hängen."
+  },
+  "146": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Löcher in der Straße stellen eine Gefahr für Radfahrer dar und können zu Schäden führen."
+  },
+  "156": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein nicht begehbarer Weg bei Regen deutet auf erhebliche Schäden oder Verstopfungen hin, die auch Radfahrer beeinträchtigen können."
+  },
+  "164": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Schlagloch auf einer Straße ist eine direkte Gefahr für Radfahrer."
+  },
+  "168": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die beschriebene Kuhle mit Wasser und Schlamm oder Eis stellt eine erhebliche Sturzgefahr dar, insbesondere für Menschen mit Beeinträchtigungen und potenziell auch für Radfahrer, die diese Stelle passieren müssen."
+  },
+  "169": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Loch im Bürgersteig, das nicht zu übersehen ist, kann auch Radfahrer beeinträchtigen, die auf dem Gehweg fahren müssen oder diesen Bereich kreuzen."
+  },
+  "171": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "explanation_de": "Überhängende Zweige auf dem Gehweg können Radfahrer behindern, insbesondere wenn sie auf dem Gehweg fahren müssen."
+  },
+  "186": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine Fahrbahnbreite, die mit Defekten übersät ist, stellt eine erhebliche Gefahr für Radfahrer dar."
+  },
+  "198": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Absackungen des Pflasters können eine Stolpergefahr darstellen und sind auch für Radfahrer problematisch."
+  },
+  "202": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine Straße in sehr schlechtem Zustand mit der Notwendigkeit einer neuen Asphaltdecke beeinträchtigt die Sicherheit und den Komfort von Radfahrern."
+  },
+  "214": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Ein verwaistes Auto kann den Radweg oder die Fahrbahn blockieren und stellt eine Gefahrenquelle dar."
+  },
+  "215": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Überfüllte Container mit Textilien sind ein allgemeines Müllproblem und nicht spezifisch für Radfahrer."
+  },
+  "229": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Eine in den Straßenraum ragende Hecke behindert den Begegnungsverkehr und kann Radfahrer gefährden, insbesondere auf einem Schulweg."
+  },
+  "231": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein abgesackter Gulli und die Pflasterung stellen eine Gefahr für Radfahrer dar."
+  },
+  "233": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Überwucherung, die den Blindenleitstreifen und den Gehweg blockiert, kann auch Radfahrer beeinträchtigen, die auf dem Gehweg fahren müssen oder diesen Bereich passieren."
+  },
+  "247": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein verstopfter Gully an einer Bushaltestelle ist kein primär radfahrbezogenes Problem."
+  },
+  "252": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Ein nicht zugelassenes Fahrzeug blockiert den Parkstreifen, was indirekt den Verkehrsfluss für Radfahrer beeinträchtigen kann."
+  },
+  "255": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Ein Obdachlosenlager auf öffentlichem Grund ist kein spezifisches Radverkehrsproblem."
+  },
+  "256": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.9,
+    "explanation_de": "Ein umgefallenes Baustellenschild auf dem Fußweg stellt eine Stolpergefahr dar und kann Radfahrer beeinträchtigen."
+  },
+  "258": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein hervorstehender Gullydeckel auf einem Radweg stellt eine direkte Sturzgefahr für Radfahrer dar."
+  },
+  "260": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Schlaglöcher und Matsch auf einem kombinierten Rad- und Fußweg beeinträchtigen die Nutzbarkeit und Sicherheit für Radfahrer."
+  },
+  "290": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Überwuchernde Hecken und Müllansammlungen auf dem Gehweg sind zwar störend, aber kein primäres Radverkehrsproblem."
+  },
+  "304": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein gefährliches Loch auf dem Radweg stellt eine direkte Gefahr dar und sollte mit Asphalt repariert werden."
+  },
+  "306": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein abgesackter Gullydeckel oder ein Schlagloch auf dem Radweg stellt eine Sturzgefahr dar."
+  },
+  "321": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.9,
+    "explanation_de": "Ein verdecktes Ampelsignal beeinträchtigt die sichere Verkehrsregelung für alle Verkehrsteilnehmer, einschließlich Radfahrer."
+  },
+  "335": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Nicht angemeldete Anhänger, die an der Straße stehen, können den Verkehrsraum für Radfahrer einschränken."
+  },
+  "344": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Hervorstehende Pflastersteine auf dem Radweg machen ihn unbrauchbar und erhöhen das Unfallrisiko, da Radfahrer auf den Gehweg ausweichen."
+  },
+  "357": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein hochstehender Randstein an einer Fußgängerinsel auf einer Straße mit Radverkehr stellt eine erhebliche Unfallgefahr dar."
+  },
+  "360": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein überfüllter Textilcontainer ist ein allgemeines Müllproblem und kein spezifisches Radverkehrsproblem."
+  },
+  "368": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Ein zugewachsener Rad- und Fußweg mit schlechter Sichtbarkeit des Schildes beeinträchtigt die sichere Nutzung durch Radfahrer."
+  },
+  "392": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft illegale Müllentsorgung und hat keinen direkten Bezug zur Radinfrastruktur."
+  },
+  "396": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Eine Absenkung der Straßenpflasterung kann Radwege beeinträchtigen und stellt eine Gefahr dar."
+  },
+  "399": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein riesiges Schlagloch auf einem Weg, der auch von Radfahrern genutzt wird, ist eine direkte Gefahr."
+  },
+  "400": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher und Schutt auf der Straße beeinträchtigen die Sicherheit von Radfahrern."
+  },
+  "414": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein abgesackter Gulli, der ein Schlagloch verursacht, ist eine Gefahr für Radfahrer."
+  },
+  "415": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch auf der Fahrbahn, kurz hinter dem Ortsschild, beeinträchtigt die Radfahrsicherheit."
+  },
+  "416": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes und tiefes Schlagloch in der Nähe einer Fußgängerampel stellt eine Gefahr für Radfahrer dar."
+  },
+  "418": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Schlaglöcher und beschädigter Fahrbahnbelag im Kreuzungsbereich und Radüberweg beeinträchtigen die Radfahrsicherheit erheblich."
+  },
+  "422": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Zugewachsener und verschmutzter Bürgersteig, der den Weg verengt, beeinträchtigt auch Radfahrer auf kombinierten Wegen."
+  },
+  "423": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Schlaglöcher, Wasserpfützen, Matsch und Dreck auf einem Rad- und Wanderweg sind eine direkte Beeinträchtigung und Gefahr für Radfahrer."
+  },
+  "424": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Eine absackende Pflasterung durch eine Undichtigkeit kann zu gefährlichen Unebenheiten für Radfahrer führen."
+  },
+  "426": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Tiefe Löcher auf der Straße stellen eine Gefahr für Radfahrer dar."
+  },
+  "427": {
+    "is_cycling_related": true,
+    "subcategory": "bike_parking",
+    "confidence": 0.7,
+    "explanation_de": "Ein herrenloses Fahrrad, das über längere Zeit im Regen steht, deutet auf ein Problem mit der Fahrradabstellung oder -verwaltung hin."
+  },
+  "430": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Abgestellte E-Scooter auf einem reinen Wohngebiet können den Weg für Radfahrer und Fußgänger blockieren."
+  },
+  "431": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.8,
+    "explanation_de": "Abgefahrener Grünstreifen mit tiefen Reifenspuren, der zu Verschmutzung und Verengung des Weges führt, beeinträchtigt Radfahrer."
+  },
+  "435": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Große Schlaglöcher auf einer Straße können auch Radfahrer gefährden."
+  },
+  "436": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher auf der Fahrbahn stellen eine Gefahr für Radfahrer dar."
+  },
+  "438": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Ein Anhänger ohne Kennzeichen auf einem Parkplatz kann Radwege blockieren oder die Sicht behindern."
+  },
+  "440": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Laub auf Rasenflächen ist kein spezifisches Radverkehrsproblem."
+  },
+  "445": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher auf der Fahrbahn können Radfahrer gefährden."
+  },
+  "448": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Eine allgemeine Meldung von Müll ohne Ortsangabe oder spezifischem Bezug zum Radverkehr."
+  },
+  "453": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Maroder Asphalt und Schlaglöcher auf einer Straße können Radfahrer gefährden."
+  },
+  "455": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein Müllsack am Wegrand ist kein spezifisches Radverkehrsproblem."
+  },
+  "456": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch auf einer Straße kann Radfahrer gefährden."
+  },
+  "459": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "explanation_de": "Ein verdecktes Straßenschild kann die Orientierung für Radfahrer erschweren."
+  },
+  "460": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Vermatschte und tiefe Pfützen, die das Durchfahren mit dem Rad unmöglich machen, sind ein Radverkehrsproblem."
+  },
+  "463": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Eine über den Gehweg wachsende Hecke schränkt den Platz für Radfahrer und Fußgänger ein."
+  },
+  "469": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Dauerhaft abgestellte Fahrzeuge, die die Sicht behindern und zu gefährlichen Situationen führen, beeinträchtigen den Radverkehr."
+  },
+  "473": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Explizit auf dem Radweg befindliche Schlaglöcher stellen ein direktes Risiko für Radfahrer dar."
+  },
+  "474": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.8,
+    "explanation_de": "Laub auf dem Gehweg kann die Fahrbahn für Radfahrer rutschig machen und sollte entfernt werden."
+  },
+  "476": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Das Loch befindet sich mitten in der Fahrbahn und betrifft primär Autofahrer, nicht spezifisch Radwege oder Radfahrer."
+  },
+  "482": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Überfüllte Textilcontainer sind ein allgemeines städtisches Problem und nicht spezifisch radfahrbezogen."
+  },
+  "486": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.9,
+    "explanation_de": "Ein Fahrrad liegt im Gebüsch neben einer Bushaltestelle, was auf eine mögliche Gefahrenstelle oder ein Problem mit der Fahrradentsorgung hinweisen könnte."
+  },
+  "502": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein umgefahrener Poller, der hinter dem Fußweg liegt, stellt keine direkte Gefahr oder Behinderung für Radfahrer dar."
+  },
+  "503": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Das beschriebene Schlagloch befindet sich explizit im Bereich des Radweges und stellt eine Sturzgefahr für Radfahrer dar."
+  },
+  "504": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Beschädigter Grünstreifen durch Erdarbeiten betrifft primär die Grünfläche und nicht direkt die Radinfrastruktur."
+  },
+  "515": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Beschädigte Gehwege durch einen Schwertransport sind ein allgemeines Infrastrukturproblem und nicht spezifisch radfahrbezogen."
+  },
+  "522": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgestellter Wohnwagen auf der Straße ist ein allgemeines Parkproblem, das nicht primär Radfahrer betrifft."
+  },
+  "530": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Hoch stehende Pflastersteine können eine Stolper- und Sturzgefahr für Radfahrer darstellen, insbesondere auf Radwegen oder gemeinsamen Gehwegen."
+  },
+  "535": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Löcher neben der Fahrbahn, die durch breitere Fahrzeuge durchfahren werden und eine Gefahr für Fußgänger darstellen, können auch Radfahrer beeinträchtigen, insbesondere wenn sie Teil der Fahrbahn oder eines kombinierten Weges sind."
+  },
+  "539": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.9,
+    "explanation_de": "Ein 'Fundfahrrad' auf dem Wall kann als Hindernis oder als Hinweis auf mangelnde Fahrradabstellmöglichkeiten interpretiert werden."
+  },
+  "540": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Beschädigte Teerdecke mit Löchern, die von Autofahrern umfahren werden und für Radfahrer kaum passierbar sind, stellt eine klare Beeinträchtigung der Radinfrastruktur dar."
+  },
+  "546": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher in der Nähe einer Hausnummer können sich auf die Fahrbahn oder angrenzende Radwege auswirken und sind daher relevant."
+  },
+  "547": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Provisorisch mit Pflastersteinen verschlossene Kanäle, die sich lösen und hoch stehen, stellen eine gefährliche Situation für Radfahrer dar."
+  },
+  "553": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Ein dauerhaft abgestellter Anhänger, der den Gehweg behindert, kann auch Radwege oder den Verkehrsfluss für Radfahrer beeinträchtigen."
+  },
+  "567": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Beschreibung erwähnt große Schlaglöcher und Wellen auf einem Weg, die das Ausweichen und die Gefährdung anderer Verkehrsteilnehmer verursachen, was direkt Radfahrer betrifft."
+  },
+  "575": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung beschreibt illegale Müllentsorgung neben Containern und eine Auseinandersetzung mit einem Autofahrer, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "578": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Die Beschreibung bemängelt eine mangelhafte und außer Acht gelassene Einmündung, was die Radverkehrsinfrastruktur beeinträchtigt."
+  },
+  "584": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Eine abgebrannte Mülltonne blockiert den Geh- und Radweg und stellt somit eine Behinderung für Radfahrer dar."
+  },
+  "596": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Der Fahrradweg wird als in einem sehr schlechten Zustand beschrieben, was auf Schäden wie Schlaglöcher hindeutet."
+  },
+  "598": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Der Fußweg ist in einem sehr schlechten Zustand mit hochstehenden Steinen, was eine Unfallgefahr darstellt und auch Radfahrer auf gemeinsamen Wegen betreffen kann."
+  },
+  "602": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Eine abgesenkte Fläche, auf der sich Wasser sammelt und die für Fahrradfahrer gefährlich ist, deutet auf Straßenschäden hin."
+  },
+  "606": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt ausgefahrene Seitenstreifen und tiefe Schlaglöcher auf einem Weg, was direkt die Radverkehrssicherheit beeinträchtigt."
+  },
+  "612": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.7,
+    "explanation_de": "Ein Auto ohne Kennzeichen steht an einer Kreuzung, was potenziell den Verkehrsfluss und die Sicht behindern kann, auch für Radfahrer."
+  },
+  "617": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Ein Fahrzeug ohne Kennzeichen blockiert einen eingezeichneten Parkplatz, was indirekt die Parkraumnutzung und potenziell den Verkehrsfluss beeinflusst."
+  },
+  "618": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft das Verbot von Hunden auf Spielplätzen und die Durchsetzung von Regeln, was kein spezifisches Radverkehrsproblem ist."
+  },
+  "622": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgemeldetes Fahrzeug befindet sich seit Monaten an einer Stelle, was als Behinderung oder Beeinträchtigung des öffentlichen Raums gewertet werden kann, auch für Radfahrer."
+  },
+  "625": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Beschreibung erwähnt tiefe Schlaglöcher am Rand der Straße, die für Radfahrer gefährlich sind."
+  },
+  "627": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Schlagloch am Ahlkenweg wird gemeldet, was eine direkte Gefahr für Radfahrer darstellt."
+  },
+  "633": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgemeldetes Feuerwehrauto ohne Kennzeichen steht auf einem öffentlichen Parkplatz und blockiert potenziell Raum, was auch Radfahrer betreffen kann."
+  },
+  "635": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Mehrere Vertiefungen und Mängel an der Straße, die auch Radwege betreffen können."
+  },
+  "644": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Abgestellte Anhänger und Fahrzeuge unter einer Autobahnbrücke sind kein spezifisches Radverkehrsproblem."
+  },
+  "650": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein beklebter Ampelmast ist ein allgemeines städtisches Problem und nicht spezifisch für den Radverkehr."
+  },
+  "651": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Graffiti auf einem Verkehrszeichen ist ein allgemeines städtisches Problem und nicht spezifisch für den Radverkehr."
+  },
+  "653": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Fußballaufkleber an einer Brücke sind ein allgemeines städtisches Problem und nicht spezifisch für den Radverkehr."
+  },
+  "665": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Schlagloch am Rand der Straße kann Radfahrer gefährden."
+  },
+  "672": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine tiefe Absenkung in der Straße stellt eine Gefahr für alle Verkehrsteilnehmer dar, einschließlich Radfahrer."
+  },
+  "673": {
+    "is_cycling_related": true,
+    "subcategory": "bike_parking",
+    "confidence": 0.9,
+    "explanation_de": "Abgestellte, nicht fahrbereite Fahrräder im öffentlichen Raum beeinträchtigen die Nutzbarkeit und das Erscheinungsbild, was auch für Radfahrer relevant ist."
+  },
+  "674": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Beschädigter Radweg durch Baumwurzeln ist ein direktes Problem für Radfahrer."
+  },
+  "679": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch auf der Straße ist ein direktes Sicherheitsproblem für Radfahrer."
+  },
+  "683": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Mehrere tiefe Schlaglöcher in einer Kurve stellen eine Gefahr für Radfahrer dar."
+  },
+  "699": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Abfall auf einem Verbindungsweg ist ein allgemeines Problem und nicht spezifisch für den Radverkehr."
+  },
+  "704": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine stark eingesackte Asphaltfläche in der Fahrbahnmitte stellt eine erhebliche Gefahr für alle Verkehrsteilnehmer, einschließlich Radfahrer, dar."
+  },
+  "708": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Beschmierung eines Ladekrans ist kein spezifisches Radverkehrsproblem."
+  },
+  "710": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgestellter Einkaufswagen ist ein allgemeines Problem und nicht spezifisch für den Radverkehr."
+  },
+  "718": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.8,
+    "explanation_de": "Ein nicht lesbares Hinweisschild kann Radfahrer auf Umleitungen oder Gefahren aufmerksam machen."
+  },
+  "723": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.7,
+    "explanation_de": "Schäden an Verkehrsinseln können die Fahrbahn für Radfahrer beeinträchtigen."
+  },
+  "724": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Das Problem betrifft einen öffentlichen Parkplatz und nicht direkt die Radinfrastruktur."
+  },
+  "738": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Ein abgestellter Anhänger am Straßenrand ist kein spezifisches Radverkehrsproblem."
+  },
+  "739": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.7,
+    "explanation_de": "Müll neben einer Bushaltestelle kann den Bürgersteig blockieren, der auch von Radfahrern genutzt wird."
+  },
+  "740": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher im Asphalt stellen eine direkte Gefahr für Radfahrer dar."
+  },
+  "745": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.8,
+    "explanation_de": "Abgelagerter Sperrmüll, der in den Fußweg ragt, beeinträchtigt die Nutzbarkeit für Radfahrer und Fußgänger."
+  },
+  "750": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Eine scharfe Abbruchkante, die in den Radweg ragt, ist eine direkte Stolpergefahr für Radfahrer."
+  },
+  "752": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein beschädigter Fußweg mit Sturzgefahr kann auch Radfahrer beeinträchtigen, die diesen mitbenutzen."
+  },
+  "758": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.8,
+    "explanation_de": "Ein umgefahrenes Schild kann wichtige Informationen für Radfahrer, wie Umleitungen, enthalten."
+  },
+  "760": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.5,
+    "explanation_de": "Die defekte Beleuchtung an einer Brücke ist kein spezifisches Radverkehrsproblem."
+  },
+  "762": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Ein abgestellter Roller und Müll neben einem Parkplatz sind keine direkten Radverkehrsprobleme."
+  },
+  "769": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schadhafter Straßenbelag mit Löchern stellt eine Gefahr für Radfahrer dar."
+  },
+  "774": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.9,
+    "explanation_de": "Wilde Müllkippe mit Gegenständen, die auf den Fahrrad-/Gehweg ragen, beeinträchtigt die Nutzbarkeit und Sicherheit."
+  },
+  "790": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Vermehrt Schlaglöcher auf der Straße stellen eine direkte Gefahr für Radfahrer dar."
+  },
+  "791": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Straßenschäden auf einem Weg, der auch von Radfahrern genutzt wird."
+  },
+  "797": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großer Hügel auf der Straße, der eine Gefahr für alle Verkehrsteilnehmer, einschließlich Radfahrer, darstellt."
+  },
+  "802": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Illegale Müllentsorgung im Landschaftsschutzgebiet, die keinen direkten Bezug zum Radverkehr hat."
+  },
+  "808": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Abgesackte Pflasterung in Radwegen, die eine Gefahr darstellt."
+  },
+  "818": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.8,
+    "explanation_de": "Fehlendes Verkehrszeichen und schlecht begradigter Weg nach Bauarbeiten beeinträchtigen Radfahrer."
+  },
+  "821": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Baumwurzeln haben die Pflastersteine des Radwegs angehoben, was eine Gefahr darstellt."
+  },
+  "823": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.7,
+    "explanation_de": "Überhängende Äste und Bewuchs ragen in den Gehweg und verengen ihn, was auch Radfahrer auf gemeinsamen Wegen beeinträchtigen kann."
+  },
+  "825": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Die Beschreibung bezieht sich auf Rabatten und deren Fertigstellung, was keinen direkten Bezug zur Radinfrastruktur hat."
+  },
+  "826": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Das Problem betrifft die Beschilderung für Autofahrer und hat keinen direkten Bezug zum Radverkehr."
+  },
+  "833": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Großflächige und gefährliche Asphaltschäden auf der Straße, die auch Radfahrer betreffen."
+  },
+  "836": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "explanation_de": "Grünzeug ragt in den Gehweg und Laub blockiert den Rad-/Gehweg, was die Nutzbarkeit für Radfahrer einschränkt."
+  },
+  "837": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.8,
+    "explanation_de": "Verrottetes Laub auf Straße und Gehweg beeinträchtigt die Nutzbarkeit, auch für Radfahrer."
+  },
+  "846": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Verschmutzte Straßenschilder sind ein allgemeines Problem und haben keinen spezifischen Bezug zum Radverkehr."
+  },
+  "847": {
+    "is_cycling_related": true,
+    "subcategory": "crossing_safety",
+    "confidence": 0.8,
+    "explanation_de": "Ein neu aufgemalter Zebrastreifen im Bereich der Verkehrsberuhigung kann die Sicherheit für Radfahrer an dieser Stelle beeinflussen."
+  },
+  "848": {
+    "is_cycling_related": true,
+    "subcategory": "crossing_safety",
+    "confidence": 0.8,
+    "explanation_de": "Eine selbst gemalte Fußgängerüberquerung in der Nähe eines Kindergartens kann die Sicherheit für Radfahrer beeinflussen."
+  },
+  "851": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Hochstehende Pflastersteine auf einem Bürgersteig können für Radfahrer, die diesen nutzen müssen, eine Stolperfalle darstellen."
+  },
+  "859": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.8,
+    "explanation_de": "Ein verbogenes Verkehrszeichen kann die Orientierung für Radfahrer beeinträchtigen, insbesondere an Kreuzungen."
+  },
+  "867": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein Loch am Rand einer Straße, das nicht explizit einen Radweg oder eine Radverkehrsanlage betrifft, ist kein primäres Radverkehrsproblem."
+  },
+  "869": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Schlaglöcher auf einem geschotterten Weg beeinträchtigen direkt die Befahrbarkeit für Radfahrer."
+  },
+  "870": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Der Radweg ist durch Wurzeln, Schachtdeckel und Fugen sehr holprig, was die Sicherheit und den Komfort für Radfahrer stark beeinträchtigt."
+  },
+  "878": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.85,
+    "explanation_de": "Ein zugewachsener Durchgangsweg kann die Durchfahrt für Radfahrer und andere Nutzer einschränken, auch wenn er nicht explizit als Radweg ausgewiesen ist."
+  },
+  "882": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ausgefahrene Seitenbefestigungen und tiefe Schlaglöcher stellen eine Gefahr für Radfahrer dar, insbesondere wenn sie auf diese ausweichen müssen."
+  },
+  "885": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein herrenloser Anhänger mit Gartenabfällen ist ein allgemeines Ordnungsproblem und betrifft nicht spezifisch den Radverkehr."
+  },
+  "887": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Ein verschütteter Graben, der den Regenwasserabfluss behindert, ist ein allgemeines Infrastrukturproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "898": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.8,
+    "explanation_de": "Weiße Farbe auf dem Gehweg kann für Radfahrer, die diesen mitbenutzen, eine Rutschgefahr darstellen."
+  },
+  "909": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Ein verlassenes Fahrzeug, das Parkplätze blockiert und Anwohner zum Parken auf der Straße zwingt, kann indirekt den Radverkehr beeinträchtigen, indem es zu gefährlicheren Verkehrssituationen führt."
+  },
+  "910": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 1.0,
+    "explanation_de": "Ein Wohnmobil, das mehr als die Hälfte des Rad- und Gehwegs einnimmt, stellt eine erhebliche Gefährdung für Radfahrer und Fußgänger dar."
+  },
+  "913": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein Auto ohne Kennzeichen auf einem Parkstreifen ist ein allgemeines Ordnungsproblem und betrifft nicht spezifisch den Radverkehr."
+  },
+  "915": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Schlagloch auf der Straße kann eine Gefahr für Radfahrer darstellen, wenn es sich auf ihrer Fahrspur befindet."
+  },
+  "916": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Defekte Holzverkleidungen und Schlamm in einem Entwässerungsgraben sind keine direkten Probleme für den Radverkehr."
+  },
+  "918": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Der Geruch aus den Gullys ist ein allgemeines städtisches Problem und betrifft Radfahrer nicht spezifisch."
+  },
+  "924": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Das Zuparken des Wendehamms behindert LKW und Busse und kann auch für Radfahrer gefährlich sein, besonders wenn ein Halteverbotsschild fehlt."
+  },
+  "926": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher auf der Fahrbahn stellen eine Gefahr für alle Verkehrsteilnehmer dar, einschließlich Radfahrer."
+  },
+  "941": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Müllsäcke neben einem Entwässerungsgraben sind ein allgemeines Sauberkeitsproblem und nicht spezifisch für Radfahrer."
+  },
+  "942": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.7,
+    "explanation_de": "Ein verdeckter Regenwasserabfluss kann zu Wasseransammlungen führen, die Radwege beeinträchtigen können."
+  },
+  "944": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgemeldetes Auto auf einem Grünstreifen ist ein allgemeines Parkproblem und betrifft Radfahrer nicht direkt."
+  },
+  "945": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Ein dauerhaft abgestellter Anhänger in einer Kurve behindert die Sicht und stellt eine Gefahr dar, auch für Radfahrer."
+  },
+  "946": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Beschädigungen des Geh- und Radwegs durch Baumwurzeln beeinträchtigen direkt die Radinfrastruktur."
+  },
+  "955": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Beschwerde über das Beschneiden von Efeu und Laub auf der Straße ist kein direktes Sicherheitsproblem für Radfahrer."
+  },
+  "964": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.9,
+    "explanation_de": "Ein umgefahrenes Schild an einer Wegkreuzung kann Radfahrer fehlleiten oder wichtige Informationen vorenthalten."
+  },
+  "968": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Zwei Blöcke auf dem Gehweg gegenüber der Feuerwehr sind ein allgemeines Hindernis und nicht spezifisch für Radfahrer."
+  },
+  "971": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine stark erhöhte Straße und ein unfertiger Gehweg stellen Probleme für die Befahrbarkeit dar, auch für Radfahrer."
+  },
+  "973": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein altes Auto auf einem Parkstreifen ist ein allgemeines Parkproblem und betrifft Radfahrer nicht direkt."
+  },
+  "974": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgemeldeter Polo, der Parkplätze belegt, ist ein allgemeines Parkproblem und nicht spezifisch für Radfahrer."
+  },
+  "981": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch an einer Abbiegespur stellt eine erhebliche Gefahr für alle Verkehrsteilnehmer, einschließlich Radfahrer, dar."
+  },
+  "984": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Der Fahrradweg ist abgesackt, was eine direkte Gefahr für Radfahrer darstellt."
+  },
+  "988": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Verstopfte Gullys am Straßenrand sind ein allgemeines städtisches Problem und nicht spezifisch für Radfahrer."
+  },
+  "990": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Der Weg ist beschädigt, was die Radwegnutzung beeinträchtigt."
+  },
+  "991": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Kreuzung ist stark beschädigt und beeinträchtigt die Sicherheit von Radfahrern."
+  },
+  "993": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Viele Schlaglöcher auf beiden Straßenseiten beeinträchtigen die Radwegnutzung."
+  },
+  "995": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein umgestürzter Baum in einer Böschung ist kein spezifisches Radverkehrsproblem."
+  },
+  "1001": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher in einer Kurve stellen eine Gefahr für Radfahrer dar."
+  },
+  "1003": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgestelltes Auto ohne Kennzeichen ist ein allgemeines Parkproblem und nicht spezifisch für Radfahrer."
+  },
+  "1004": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein verstopfter Gully am Straßenrand ist ein allgemeines städtisches Problem und nicht spezifisch für Radfahrer."
+  },
+  "1009": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein verschmutzter Graben ist kein direktes Radverkehrsproblem."
+  },
+  "1016": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Verschmutzte Wasserabläufe sind ein allgemeines Infrastrukturproblem und nicht spezifisch für Radfahrer."
+  },
+  "1020": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "explanation_de": "Ein zugewachsener Fußweg zwingt Radfahrer auf die Straße und beeinträchtigt die Sicherheit."
+  },
+  "1023": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Überwachsener Fußweg zwingt Radfahrer und andere Nutzer auf die Straße, was eine Gefahr darstellt."
+  },
+  "1035": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.8,
+    "explanation_de": "Beschädigte oder fehlende Beschilderung und Poller beeinträchtigen die Radwegführung und Sicherheit."
+  },
+  "1037": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.8,
+    "explanation_de": "Ein beschmiertes Verkehrszeichen beeinträchtigt die Lesbarkeit und damit die korrekte Wegweisung für Radfahrer."
+  },
+  "1040": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.9,
+    "explanation_de": "Glasscherben auf Radwegen und Wegen neben dem Hafen stellen eine Gefahr für Radfahrer dar und führen zu platten Reifen."
+  },
+  "1049": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Ein nicht zugelassenes Fahrzeug blockiert den Parkstreifen, was potenziell den Radverkehr beeinträchtigen kann."
+  },
+  "1057": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Baumwurzeln haben den Radweg angehoben, was eine erhebliche Unfallgefahr darstellt."
+  },
+  "1063": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Eine Versackung in der Fahrbahn, die auf einen defekten Kanal hindeutet, betrifft primär den Autoverkehr und nicht spezifisch den Radverkehr."
+  },
+  "1077": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein Anhänger, der einen öffentlichen Parkplatz blockiert, ist kein spezifisches Radverkehrsproblem."
+  },
+  "1083": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Schlaglöcher in der Straße sind ein allgemeines Verkehrsproblem und nicht spezifisch für Radfahrer."
+  },
+  "1086": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Verschmutzte und verbogene Vorfahrtsschilder sind ein allgemeines Verkehrssicherheitsproblem, das nicht primär Radfahrer betrifft."
+  },
+  "1089": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.5,
+    "explanation_de": "Ein verwesendes Tiergeruch in der Nähe von Büschen ist kein Radverkehrsproblem."
+  },
+  "1090": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein defekter Holzgraben ist ein Infrastrukturproblem, das nicht spezifisch den Radverkehr betrifft."
+  },
+  "1093": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Eine herumliegende Straßenabsperrung und Müll sind allgemeine Probleme, die nicht spezifisch den Radverkehr betreffen."
+  },
+  "1094": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Überwuchernde Vorgartenpflanzen zwingen Radfahrer auf den Radweg auszuweichen, was eine gefährliche Situation schafft."
+  },
+  "1099": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein nicht lesbares Straßennamensschild ist ein allgemeines Problem der Beschilderung, das nicht spezifisch Radfahrer betrifft."
+  },
+  "1102": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein von einem Busch zugewuchertes Straßenschild ist ein allgemeines Beschilderungsproblem, das nicht spezifisch Radfahrer betrifft."
+  },
+  "1109": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein umgefallener Betonpoller ist ein allgemeines Infrastrukturproblem, das nicht spezifisch Radfahrer betrifft."
+  },
+  "1110": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Nicht richtig eingefasste Kanaldeckel sind ein Problem für den gesamten Fahrzeugverkehr und nicht spezifisch für Radfahrer."
+  },
+  "1112": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Tiefe Löcher in einer Straße, die Radfahrer beeinträchtigen können."
+  },
+  "1123": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "explanation_de": "Ein nicht zugelassenes Fahrzeug blockiert den Parkstreifen, was potenziell den Verkehrsfluss für Radfahrer beeinträchtigen kann."
+  },
+  "1129": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Abgesackte Pflasterung auf einem Bürgersteig, die auch von Radfahrern genutzt werden kann oder eine Gefahr darstellt."
+  },
+  "1133": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.7,
+    "explanation_de": "Überwucherung und Einengungen durch Pflanzen, die Radwege oder Sichtlinien beeinträchtigen können."
+  },
+  "1135": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Roller blockieren den Gehweg und beeinträchtigen die Nutzbarkeit für Radfahrer und andere Verkehrsteilnehmer."
+  },
+  "1138": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Stark beschädigter Asphalt am Straßenrand, der eine Gefahr für Radfahrer darstellt."
+  },
+  "1140": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Schlaglöcher und unklare Parkmarkierungen, die zu unsicherem Parkverhalten und potenziellen Gefahren für Radfahrer führen."
+  },
+  "1141": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Straße ist mit zahlreichen Schlaglöchern übersät, was die Sicherheit von Radfahrern beeinträchtigt."
+  },
+  "1142": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.8,
+    "explanation_de": "Ein verbogenes und schiefes Schild beeinträchtigt die Verkehrssicherheit und Wegweisung für Radfahrer."
+  },
+  "1143": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch in der Nähe einer Bushaltestelle kann für Radfahrer gefährlich sein."
+  },
+  "1147": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine aufgebrochene Stelle in der Straße stellt eine Gefahr für Radfahrer dar."
+  },
+  "1152": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein verlassenes Auto auf einem Parkplatz ist kein spezifisches Radverkehrsproblem."
+  },
+  "1167": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.7,
+    "explanation_de": "Anhänger auf einer Parkfläche können den Verkehrsfluss und die Sichtlinien für Radfahrer beeinträchtigen."
+  },
+  "1172": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein nicht zugelassenes Auto ist ein allgemeines Ordnungswidrigkeitsproblem und kein spezifisches Radverkehrsproblem."
+  },
+  "1180": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch in der Straße stellt eine Gefahr für Radfahrer dar."
+  },
+  "1181": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch in der Nähe einer Ampel kann für Radfahrer gefährlich sein, insbesondere beim Abbiegen."
+  },
+  "1182": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Schlaglöcher auf einer Strecke beeinträchtigen die Radwegqualität und Sicherheit."
+  },
+  "1183": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Schlaglöcher auf der genannten Strecke können auch Radfahrer beeinträchtigen, die diese Route nutzen."
+  },
+  "1184": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Starke Asphaltbeschädigungen beeinträchtigen die Befahrbarkeit für Radfahrer und die Sicherheit."
+  },
+  "1186": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "explanation_de": "Überhängende Sträucher auf dem Gehweg schränken die Nutzbarkeit für Radfahrer auf gemeinsamen Wegen ein und stellen eine Gefahr dar."
+  },
+  "1188": {
+    "is_cycling_related": true,
+    "subcategory": "bike_parking",
+    "confidence": 0.7,
+    "explanation_de": "Ein nicht abgeschlossenes Fahrrad, das verschoben wird, kann als Hindernis oder als unsachgemäß abgestelltes Fahrrad betrachtet werden."
+  },
+  "1192": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Wucherndes Grün schränkt die Sicht auf den Verkehr ein, was für Radfahrer an Kreuzungen gefährlich ist."
+  },
+  "1205": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein zugewachsener und mit Schlaglöchern versehener Radweg verringert die nutzbare Fläche und führt zu gefährlichen Situationen."
+  },
+  "1326": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müll auf dem Gehweg ist ein allgemeines Stadtproblem und betrifft Radfahrer nicht spezifisch oder unverhältnismäßig."
+  },
+  "1454": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Die Einrichtung von Parkplätzen für PKW ist ein allgemeines städtisches Problem und kein spezifisches Radverkehrsproblem."
+  },
+  "1474": {
+    "is_cycling_related": true,
+    "subcategory": "bike_parking",
+    "confidence": 0.8,
+    "explanation_de": "Abgestellte, ungenutzte Fahrräder mit Müll stellen eine Beeinträchtigung der Fahrradabstellmöglichkeiten und des Erscheinungsbildes dar."
+  },
+  "1584": {
+    "is_cycling_related": true,
+    "subcategory": "bike_parking",
+    "confidence": 0.8,
+    "explanation_de": "Langfristig abgestellte, ungenutzte Fahrräder mit Müll beeinträchtigen die Fahrradabstellmöglichkeiten und das Erscheinungsbild."
+  },
+  "1636": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Rattensichtungen und Müll bei Containern sind ein allgemeines Hygieneproblem und kein spezifisches Radverkehrsproblem."
+  },
+  "1666": {
+    "is_cycling_related": true,
+    "subcategory": "crossing_safety",
+    "confidence": 0.8,
+    "explanation_de": "Eine schlechte Einsicht in eine Kurve auf einem Radweg kann durch einen Spiegel verbessert werden, um die Sicherheit zu erhöhen."
+  },
+  "1694": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Die Entsorgung von Möbeln und anderem ist ein allgemeines Problem der illegalen Müllentsorgung und betrifft Radfahrer nicht spezifisch."
+  },
+  "1703": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft einen defekten Spielplatz und hat keinen Bezug zum Radverkehr."
+  },
+  "1715": {
+    "is_cycling_related": true,
+    "subcategory": "signal_light_timing",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung beschreibt eine schlechte Sichtbarkeit einer Ampel für Radfahrer an einer Kreuzung, was die Sicherheit und den Verkehrsfluss beeinträchtigt."
+  },
+  "1730": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft Müllentsorgungsprobleme und hat keinen direkten Bezug zum Radverkehr oder zur Radinfrastruktur."
+  },
+  "1746": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung beschreibt vermülltes Grundstück und Hecke, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "1779": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft die Entfernung von Absperrungen und hat keinen Bezug zum Radverkehr."
+  },
+  "1795": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft gefährliche Pflanzen im öffentlichen Grün, aber nicht spezifisch auf Radwegen oder für Radfahrer."
+  },
+  "2139": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung beschreibt extreme Schlaglöcher an einer Kreuzung, die auch für Radfahrer gefährlich sind."
+  },
+  "2565": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft einen defekten Spielplatz und hat keinen Bezug zum Radverkehr."
+  },
+  "2804": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft eine defekte Spielgeräteausstattung und hat keinen Bezug zum Radverkehr."
+  },
+  "2807": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft einen überlaufenden Mülleimer und hat keinen spezifischen Bezug zum Radverkehr."
+  },
+  "2855": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung beschreibt einen zu schmalen und zugewachsenen Fuß- und Radweg, der die Sicherheit von Radfahrern und Fußgängern beeinträchtigt."
+  },
+  "2863": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft die Entsorgung von Poolwasser auf Grünflächen und hat keinen direkten Bezug zum Radverkehr."
+  },
+  "2869": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft eine beschmierte Infotafel und hat keinen spezifischen Bezug zum Radverkehr."
+  },
+  "2911": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt wachsendes Grünzeug, aber nicht spezifisch auf Radwegen oder für Radfahrer."
+  },
+  "3373": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft herumliegende Zeitungen im Gebüsch und hat keinen Bezug zum Radverkehr."
+  },
+  "3525": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Straßenbeleuchtung ist ein allgemeines städtisches Problem und nicht spezifisch für Radfahrer."
+  },
+  "3528": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung bezieht sich auf die Umwandlung einer Straße in eine Fahrradstraße, was direkt die Radinfrastruktur betrifft."
+  },
+  "3617": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "explanation_de": "Ein umgestürzter Baum blockiert einen Radweg und stellt eine Gefahr dar."
+  },
+  "3731": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Instabil befestigte Poller auf einem Gehweg können auch Radwege beeinträchtigen und stellen eine Gefahr dar."
+  },
+  "3743": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müllsäcke in einem Grünstreifen sind ein allgemeines Sauberkeitsproblem und nicht spezifisch für Radfahrer."
+  },
+  "3836": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müll auf dem Bürgersteig ist ein allgemeines Sauberkeitsproblem und nicht spezifisch für Radfahrer."
+  },
+  "4490": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müllsäcke im Straßengraben und Gebüsch sind ein allgemeines Sauberkeitsproblem und nicht spezifisch für Radfahrer."
+  },
+  "4637": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein umgekippter Mülleimer an einer Haltestelle, dessen Müll auf die Straße fällt, ist ein allgemeines Sauberkeitsproblem."
+  },
+  "4791": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müllsäcke im Grünstreifen sind ein allgemeines Sauberkeitsproblem und nicht spezifisch für Radfahrer."
+  },
+  "4836": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Illegale Müllentsorgung bei Glascontainern ist ein allgemeines Sauberkeitsproblem und nicht spezifisch für Radfahrer."
+  },
+  "4851": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schrottfahrrad, das auf dem Bürgersteig liegt und diesen versperrt, behindert Radfahrer und Fußgänger."
+  },
+  "4861": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Überfüllte Glascontainer sind ein allgemeines Sauberkeitsproblem und nicht spezifisch für Radfahrer."
+  },
+  "4890": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein illegal entsorgter Kühlschrank ist ein allgemeines Problem der illegalen Müllentsorgung und nicht spezifisch für Radfahrer."
+  },
+  "4891": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein illegal entsorgtes Terrarium ist ein allgemeines Problem der illegalen Müllentsorgung und nicht spezifisch für Radfahrer."
+  },
+  "4892": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein Einkaufswagen an einer Bushaltestelle ist ein allgemeines Problem der illegalen Müllentsorgung und nicht spezifisch für Radfahrer."
+  },
+  "4895": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4905": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe am Seeufer, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4915": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt Abfall im Grünstreifen, der keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4920": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe mit Möbeln, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4925": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe mit einem Ceranfeld, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4958": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe mit einem Kühlschrank und Restmüll, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4962": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine illegale Müllhalde, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4967": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe mit Schrankteilen, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "4996": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "explanation_de": "Die Meldung beschreibt Müll auf dem Gehweg, der das Passieren erschwert und somit den Radverkehr beeinträchtigt."
+  },
+  "5135": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe an einem Containerstellplatz, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "5146": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt Silvestermüll auf Parkstreifen und in einem Park, der keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "5248": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt Müllablage am Weg in einem Wäldchen, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "5300": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "explanation_de": "Die Meldung beschreibt Schrankteile auf dem Gehweg, die das Passieren erschweren und somit den Radverkehr beeinträchtigen."
+  },
+  "5315": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung beschreibt Müll auf einem Rad- und Wanderweg, der die Benutzung direkt beeinträchtigt."
+  },
+  "5393": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe, die keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "5547": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine illegale Müllentsorgung und ein totes Tier in einem Regenrückhaltebecken, was keine direkten Auswirkungen auf den Radverkehr hat."
+  },
+  "5559": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft illegale Müllentsorgung neben Altglas- und Altkleidercontainern, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "5849": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt die Entsorgung von Weihnachtsbäumen und anderem Müll in einem Tunnel und Wendekreis, was keine direkte Auswirkung auf den Radverkehr hat."
+  },
+  "5894": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung ist zu vage und beschreibt nur 'Müll' ohne spezifischen Ort oder Bezug zum Radverkehr."
+  },
+  "5940": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft Müll und alte Koffer auf Grünflächen neben einer Straße, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "5966": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt Farbeimer und allgemeinen Müll im Gebüsch und am Straßenrand, was keine direkte Beeinträchtigung für Radfahrer darstellt."
+  },
+  "6024": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft Müllsäcke und zerhäkselten Müll im Gebüsch entlang einer Straße, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "6038": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt Sperrmüll und allgemeinen Müll auf einem Parkplatz und im Graben, was keine direkte Auswirkung auf den Radverkehr hat."
+  },
+  "6213": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt eine Mikrowelle, die im Regen liegt, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "6220": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung beschreibt ein Loch im Asphalt auf einer Brücke, was eine Gefahr für Radfahrer darstellen kann."
+  },
+  "6229": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft einen unberechtigt abgestellten Sofa vor einer Haustür, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "6271": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung ist zu vage und beschreibt nur 'Müll', ohne spezifischen Ort oder Bezug zum Radverkehr."
+  },
+  "6282": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt Vermüllung auf einem P+R Parkplatz, was keine direkte Auswirkung auf den Radverkehr hat."
+  },
+  "6320": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung ist zu vage und beschreibt nur 'jede menge Müll', ohne spezifischen Ort oder Bezug zum Radverkehr."
+  },
+  "6404": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt die Entsorgung von Steinen im Graben und am Straßenrand nach Fertigstellung von Häusern, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "6474": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Meldung von wildem Müll, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6479": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Meldung von wildem Müll und Autoreifen, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6480": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Große Löcher in der Straße beeinträchtigen die Radverkehrssicherheit."
+  },
+  "6491": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein vergessenes Schlagloch auf einer Straße stellt eine Gefahr für Radfahrer dar."
+  },
+  "6495": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Meldung bezüglich der Leerung einer Biotonne, was kein Radverkehrsproblem ist."
+  },
+  "6498": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "explanation_de": "Straßenschäden und fehlende Leitpfosten auf einem Grünstreifen, der von Radfahrern genutzt werden könnte, beeinträchtigen die Sicherheit und Infrastruktur."
+  },
+  "6499": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Aufgeschnittener und unsachgemäß aufgefüllter Gehweg stellt eine erhebliche Gefahr für Radfahrer und Fußgänger dar."
+  },
+  "6500": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Extrem tiefe Schlaglöcher auf einer Autobahnzufahrt stellen eine Gefahr für Radfahrer dar."
+  },
+  "6501": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Fehlendes Parkverbotsschild und blockierte Rettungswege beeinträchtigen die Sicherheit und Zugänglichkeit für alle Verkehrsteilnehmer, einschließlich Radfahrer."
+  },
+  "6502": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Eingeschränkte Sicht durch eine Hecke und parkende Autos an einer Einmündung gefährden Radfahrer und den Abbiegeverkehr."
+  },
+  "6503": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein tiefes Schlagloch auf der Fahrbahn stellt eine Gefahr für Radfahrer dar."
+  },
+  "6504": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein extrem tiefes und großes Schlagloch im Asphalt stellt eine Gefahr für Radfahrer dar."
+  },
+  "6505": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Defekte Fahrbahn mit Löchern und Erhebungen in einer Kurve beeinträchtigen die Sicherheit von Radfahrern."
+  },
+  "6506": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Tiefe Straßenschäden stellen eine Gefahr für Radfahrer dar."
+  },
+  "6507": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Meldung von verstreutem Müll durch gelbe Säcke, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6515": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Der defekte Fußgängertaster an einer Ampel beeinträchtigt Radfahrer nicht direkt."
+  },
+  "6520": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein überlaufender Graben ist kein direktes Radverkehrsproblem."
+  },
+  "6521": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein fehlender Leitpfosten ist kein spezifisches Problem für Radfahrer."
+  },
+  "6523": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch auf der Fahrbahn kann für Radfahrer gefährlich sein und zu Plattfüßen führen."
+  },
+  "6524": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Schlagloch stellt eine Gefahr für Radfahrer dar."
+  },
+  "6525": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schlagloch auf dem Weg kann für Radfahrer gefährlich sein."
+  },
+  "6526": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.9,
+    "explanation_de": "Müllablagerung zwischen Fahrradweg und Straße stellt eine Verschmutzung und potenzielle Gefahr für Radfahrer dar."
+  },
+  "6534": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Der Wunsch nach einem Bushaltestellenhaus betrifft nicht direkt den Radverkehr."
+  },
+  "6537": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein loses Schild unter einer Brücke ist kein spezifisches Problem für Radfahrer."
+  },
+  "6538": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Wilde Müllablagerung auf einem Parkplatz, nicht auf einem Radweg oder in dessen Nähe."
+  },
+  "6540": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Zwei große und tiefe Schlaglöcher in der Fahrspur sind gefährlich für Radfahrer."
+  },
+  "6546": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.8,
+    "explanation_de": "Altreifen und Müll auf oder neben einem Radweg stellen eine Verschmutzung und ein Hindernis dar."
+  },
+  "6551": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.8,
+    "explanation_de": "Ratten und Müll auf dem Gehweg und in der Nähe des Radwegs stellen ein Hygieneproblem und eine Beeinträchtigung dar."
+  },
+  "6564": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Volle Mülleimer und Müll im Park sind ein allgemeines Problem, das nicht spezifisch den Radverkehr betrifft."
+  },
+  "6567": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Eine wilde Müllhalde auf einem ehemaligen Sportgelände ist kein spezifisches Problem für Radfahrer."
+  },
+  "6575": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Beschreibung \"Straßenbelag beschädigt\" deutet auf eine Beschädigung der Fahrbahn hin, die auch Radwege betreffen kann."
+  },
+  "6581": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.7,
+    "explanation_de": "Die Verbesserung der Sichtbarkeit an einer Kreuzung und die Forderung nach einem abgesenkten Bordstein sind relevant für die Radverkehrssicherheit und Komfort, insbesondere für Familien."
+  },
+  "6588": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein nicht zugelassenes Fahrzeug auf einem öffentlichen Parkplatz ist ein allgemeines Parkplatzproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6591": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Wilde Müllkippen sind ein allgemeines städtisches Problem und nicht spezifisch auf den Radverkehr bezogen, es sei denn, sie blockieren direkt Radwege."
+  },
+  "6598": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgestellter Wohnwagen, der Parkplätze blockiert, ist ein allgemeines Parkplatzproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6602": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein seit langem abgestelltes Fahrzeug mit Ölfleck ist ein allgemeines Problem mit abgestellten Fahrzeugen und nicht spezifisch radverkehrsbezogen."
+  },
+  "6607": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein verstopfter Graben ist ein allgemeines Entwässerungsproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6617": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Das Auslegen von Futter für Tauben unter einer Brücke mit Rattenbefall ist ein Problem der öffentlichen Hygiene und nicht spezifisch radverkehrsbezogen."
+  },
+  "6622": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein loses Hinweisschild ist ein allgemeines Verkehrssicherheitsproblem, aber nicht spezifisch auf den Radverkehr bezogen, da es sich um ein EWE Arena Schild handelt."
+  },
+  "6625": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine abgesackte Straße, die von Fußgängern und Rollstuhlfahrern genutzt wird und zu Stürzen führt, beeinträchtigt die Nutzbarkeit und Sicherheit von Wegen, was auch für Radfahrer relevant ist."
+  },
+  "6632": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Loch in der Straße ist eine direkte Beschädigung der Fahrbahn, die für Radfahrer gefährlich ist."
+  },
+  "6633": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Viele kleine bis mittelgroße Löcher in der Straße stellen eine Gefahr für Radfahrer dar."
+  },
+  "6635": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Wilde Müllkippen vor einer Grundschule sind ein allgemeines Problem der Müllentsorgung und nicht spezifisch radverkehrsbezogen."
+  },
+  "6638": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein schrottiger, mit Abfällen gefüllter Wohnwagen, der als Verkehrsgefährdung und illegale Abfallentsorgung gemeldet wird, ist ein allgemeines Problem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6643": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgemeldetes Fahrzeug auf einem Parkstreifen ist ein allgemeines Parkplatzproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6647": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Loch im Asphalt auf einer Straße kann Radfahrer beeinträchtigen und zu Schäden führen."
+  },
+  "6651": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "explanation_de": "Glasscherben auf Gehwegen und Straßen stellen eine Gefahr für Radfahrer dar."
+  },
+  "6652": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft einen defekten Sehbehindertenknopf an einer Ampel, was primär Fußgänger und nicht Radfahrer betrifft."
+  },
+  "6657": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "explanation_de": "Abgemeldete Fahrzeuge auf einem öffentlichen Parkplatz sind ein allgemeines Ordnungsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6658": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "explanation_de": "Ein abgemeldeter und vermüllter Wohnwagen auf öffentlichem Grund ist ein allgemeines Ordnungsproblem, das nicht primär Radfahrer betrifft."
+  },
+  "6660": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Eine wilde Müllkippe hinter Glascontainern ist ein allgemeines Umweltproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6663": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Ein großes Schlagloch auf der Fahrbahn, insbesondere auf der Reifenspur, stellt eine erhebliche Gefahr für Radfahrer dar."
+  },
+  "6665": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Eine unsachgemäß reparierte Fahrbahn nach einem Wasserrohrbruch, die zu Rissen im Asphalt führt, beeinträchtigt die Radwegeoberfläche."
+  },
+  "6671": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Ständig zugeparkte Parkverbotszonen und geringe Abstände von parkenden Autos können Radwege blockieren oder gefährlich machen."
+  },
+  "6676": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.95,
+    "explanation_de": "Ein Verkehrszeichen, das mitten auf einem Radweg steht, ist eine direkte Behinderung und Gefährdung für Radfahrer."
+  },
+  "6677": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "explanation_de": "Teppiche in Müllsäcken an einer Wegkreuzung sind ein allgemeines Müllproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6680": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Schlagloch vor Garagen kann Radfahrer gefährden, wenn es auf der Fahrbahn liegt, die auch von Radfahrern genutzt wird."
+  },
+  "6684": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein abgesackter Gully auf der Straße stellt eine Gefahr für Radfahrer dar, da er zu Stürzen führen kann."
+  },
+  "6694": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.8,
+    "explanation_de": "Ein verstopfter Regenwassergully kann zu Wasseransammlungen auf Radwegen führen, was die Befahrbarkeit beeinträchtigt."
+  },
+  "6698": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Überwucherte Halteverbotschilder können die Sichtbarkeit von Verkehrsregeln beeinträchtigen, die auch für Radfahrer relevant sind."
+  },
+  "6699": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Die Beschreibung bezieht sich auf nicht erkennbare Halteverbotsschilder aufgrund von Grünbewuchs, was die Verkehrssicherheit beeinträchtigen kann."
+  },
+  "6704": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt tiefe Straßenschäden an einer Kreuzung, die auch Radfahrer betreffen können."
+  },
+  "6707": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein Schrottauto auf einem öffentlichen Parkplatz ist kein spezifisches Radverkehrsproblem."
+  },
+  "6710": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 1.0,
+    "explanation_de": "Die Meldung beschreibt Dachziegelscherben auf einem Weg, die eine erhebliche Gefahr für Radfahrer und Fußgänger darstellen."
+  },
+  "6715": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Eine nicht wieder gepflasterte Einfahrt nach einer Baustelle kann eine Unebenheit darstellen, die Radfahrer beeinträchtigt."
+  },
+  "6717": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein verstopfter Graben ist ein allgemeines Infrastrukturproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6720": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Der Bericht beschreibt einen holprigen Rad- und Fußweg, der eine Gefahr für Radfahrer darstellt."
+  },
+  "6724": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müllsäcke auf einer Grünfläche sind ein allgemeines Problem der Müllentsorgung und nicht spezifisch radverkehrsbezogen."
+  },
+  "6727": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt erhebliche Straßenschäden, die auch Radfahrer betreffen können."
+  },
+  "6731": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Müllablagerungen unter einer Autobahnbrücke sind ein allgemeines Problem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6735": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein stinkender Müllbeutel auf dem Bürgersteig ist ein allgemeines Hygieneproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6736": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Die Nutzung des Gehwegs als Cafeterrasse blockiert den Weg für Fußgänger und potenziell auch für Radfahrer, die den Gehweg nutzen müssen."
+  },
+  "6738": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgemeldetes Auto auf dem Seitenstreifen ist ein allgemeines Parkproblem und nicht spezifisch radverkehrsbezogen."
+  },
+  "6739": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein Loch im Gehweg stellt eine Stolperfalle dar und ist somit ein Sicherheitsproblem für Radfahrer und Fußgänger."
+  },
+  "6740": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Platzierung einer Bushaltestelle ist ein Problem der öffentlichen Verkehrsmittelplanung und nicht spezifisch radverkehrsbezogen."
+  },
+  "6741": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgebrochener Begrenzungspfeiler kann eine Gefahr für Radfahrer darstellen, insbesondere wenn er lose im Weg steckt."
+  },
+  "6757": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Das Parken von Wohnwagen auf Parkplätzen ist ein allgemeines Ordnungsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6761": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Zugeparkte Gehwege an Kreuzungen behindern Radfahrer und Fußgänger und schaffen gefährliche Situationen."
+  },
+  "6762": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Müll auf der Straße in einem Wohngebiet ist ein allgemeines Sauberkeitsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6763": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Ablagerung von Sperrmüll ist ein allgemeines Sauberkeitsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6764": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Eine allgemeine Meldung über wilde Müllentsorgung ohne spezifischen Ort oder Bezug zu Radwegen."
+  },
+  "6766": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein verlassenes Auto auf einem öffentlichen Parkplatz ist ein allgemeines Ordnungsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6771": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.8,
+    "explanation_de": "Hohe Bordsteine und abschüssige Straßen an provisorischen Ampeln können für Radfahrer und Personen mit Rollatoren problematisch sein."
+  },
+  "6772": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Eine allgemeine Meldung über illegale Müllentsorgung ohne spezifischen Ort oder Bezug zu Radwegen."
+  },
+  "6773": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Das Parken eines Wohnwagens auf der Straße ist ein allgemeines Ordnungsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6774": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Ablagerung von Gartenabfällen und Paletten ist ein allgemeines Sauberkeitsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6775": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Entsorgung von Elektrogeräten in einem Graben ist ein allgemeines Sauberkeitsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6777": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.8,
+    "explanation_de": "Eine hohe Bordsteinkante an einer Abzweigung kann für Radfahrer, Rollstuhlfahrer und Kinderwagen problematisch sein."
+  },
+  "6784": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Illegale Müllentsorgung, die detailliert beschrieben wird, aber keinen direkten Bezug zu Radwegen oder Radfahrern hat."
+  },
+  "6789": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Müll vor einem Bauzaun ist ein allgemeines Sauberkeitsproblem und nicht spezifisch radfahrbezogen."
+  },
+  "6793": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.9,
+    "explanation_de": "Ein fehlender Leitpfosten kann Radfahrer auf Radwegen oder in deren Nähe beeinträchtigen."
+  },
+  "6797": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Die Beschreibung erwähnt eine unbefahrbare Radwegoberfläche mit Steinreihen und Verschmutzung, was die Radnutzung beeinträchtigt."
+  },
+  "6802": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllkippe auf einem Privatgrundstück und Vandalismus, was keine direkten Auswirkungen auf die Radinfrastruktur hat."
+  },
+  "6805": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.9,
+    "explanation_de": "Ein beschädigtes Verkehrszeichen kann die Navigation und Sicherheit von Radfahrern beeinträchtigen."
+  },
+  "6806": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein Einkaufswagen mit Müll auf dem Gehweg ist ein allgemeines Stadtreinigungsproblem und betrifft Radfahrer nicht spezifisch."
+  },
+  "6807": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine wilde Müllkippe auf dem Gehweg neben einer Schule ist ein allgemeines Stadtreinigungsproblem und betrifft Radfahrer nicht spezifisch."
+  },
+  "6808": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.7,
+    "explanation_de": "Die Idee einer Fundbox im Wald könnte die Nutzung von Radwegen im Wald verbessern, indem sie die Wege sauberer hält."
+  },
+  "6809": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung beschreibt Schlaglöcher auf einer Straße, die als 'Schleichweg' für Radfahrer genutzt wird."
+  },
+  "6813": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllkippe in der Nähe eines Schalthauses und eines Bahnübergangs, was keine direkten Auswirkungen auf die Radinfrastruktur hat."
+  },
+  "6817": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.7,
+    "explanation_de": "Ein verstopfter Gully auf dem Gehweg kann die Nutzung für Radfahrer behindern oder zu gefährlichen Situationen führen."
+  },
+  "6818": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung beschreibt eine wilde Müllkippe, die kein spezifisches Problem für Radfahrer darstellt."
+  },
+  "6820": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft eine nicht erfolgte Müllabfuhr, was kein Problem der Radinfrastruktur ist."
+  },
+  "6821": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.9,
+    "explanation_de": "Viele Scherben auf dem Fuß-/Radweg stellen eine direkte Gefahr für Radfahrer dar."
+  },
+  "6824": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Zerdepperte Stühle in einer Bushaltestelle sind ein Stadtreinigungsproblem und betreffen Radfahrer nicht spezifisch."
+  },
+  "6827": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Abgelegter Gartenmüll ist ein allgemeines Stadtreinigungsproblem und hat keine direkten Auswirkungen auf die Radinfrastruktur."
+  },
+  "6828": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Es handelt sich um eine wilde Müllkippe, die nicht spezifisch Radfahrer oder Radwege betrifft."
+  },
+  "6830": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Es handelt sich um eine allgemeine Meldung von Müll, die nicht spezifisch Radfahrer oder Radwege betrifft."
+  },
+  "6836": {
+    "is_cycling_related": true,
+    "subcategory": "signal_light_timing",
+    "confidence": 0.9,
+    "explanation_de": "Eine defekte Ampel, auch eine Behelfsampel, kann den Verkehrsfluss und die Sicherheit für alle Verkehrsteilnehmer, einschließlich Radfahrer, beeinträchtigen."
+  },
+  "6844": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "explanation_de": "Ein Wohnwagenanhänger, der die Sicht versperrt, stellt eine Gefahr für die Verkehrssicherheit dar, insbesondere für Radfahrer, die möglicherweise schlecht eingesehen werden."
+  },
+  "6845": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Obwohl es sich um Müll handelt, wird die Meldung als allgemeines Problem der Müllentsorgung betrachtet und nicht als spezifische Behinderung von Radwegen."
+  },
+  "6848": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Der Radweg wird als in schlechtem Zustand beschrieben, mit Rumpeln, wackelnden Steinen und Lücken, was direkt die Radfahrsicherheit beeinträchtigt."
+  },
+  "6850": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Die Beschreibung von sich verschiebenden Pflastersteinen, Lücken und herausragenden Steinen auf einer gepflasterten Straße stellt eine direkte Gefahr für Radfahrer dar."
+  },
+  "6854": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein nicht zugelassenes Fahrzeug auf einem Parkstreifen ist ein allgemeines Ordnungsproblem und keine direkte Beeinträchtigung für Radfahrer oder Radwege."
+  },
+  "6856": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein verlassenes Fahrzeug auf der Straße ist ein allgemeines Problem und keine spezifische Gefährdung für Radfahrer oder Radwege."
+  },
+  "6857": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Schaden an der Fahrbahn, auch wenn er klein ist, kann für Radfahrer gefährlich sein, insbesondere bei starkem Verkehrsaufkommen."
+  },
+  "6858": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft wilde Müllkippen (Lampe, Tisch), die nicht spezifisch Radfahrer oder Radwege beeinträchtigen."
+  },
+  "6859": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft Sperrmüll bei Sportplätzen und ist keine spezifische Beeinträchtigung für Radfahrer oder Radwege."
+  },
+  "6863": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllkippe mit Gelben Säcken und ist kein spezifisches Problem für Radfahrer oder Radwege."
+  },
+  "6864": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllkippe mit Gelben Säcken und ist kein spezifisches Problem für Radfahrer oder Radwege."
+  },
+  "6865": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllkippe mit Gelben Säcken und ist kein spezifisches Problem für Radfahrer oder Radwege."
+  },
+  "6867": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Müllablagerung an einem Kreisverkehr ist ein allgemeines städtisches Problem und nicht spezifisch für Radfahrer."
+  },
+  "6872": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Das Parken von Anhängern und das Betanken von Booten sind allgemeine Probleme und nicht spezifisch für Radfahrer."
+  },
+  "6873": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein Einkaufswagen in einer Parkbucht ist ein allgemeines Problem und nicht spezifisch für Radfahrer."
+  },
+  "6877": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Der beschriebene Zustand des Gehwegs mit Stolperfallen und Ausweichverkehr auf die Straße beeinträchtigt auch Radfahrer und die allgemeine Verkehrssicherheit."
+  },
+  "6878": {
+    "is_cycling_related": true,
+    "subcategory": "signal_light_timing",
+    "confidence": 0.9,
+    "explanation_de": "Geänderte Ampelschaltungen, die zu erheblichen Verkehrsproblemen und Rückstaus führen, können auch Radfahrer beeinträchtigen."
+  },
+  "6881": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Vandalismus und Müllablagerung an einem See sind allgemeine Probleme und nicht spezifisch für Radfahrer."
+  },
+  "6883": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine Matratze auf einem Grünstreifen ist ein allgemeines Problem und nicht spezifisch für Radfahrer."
+  },
+  "6884": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgestellter Wohnwagen ist ein allgemeines Problem und nicht spezifisch für Radfahrer."
+  },
+  "6891": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine wilde Müllkippe auf einem öffentlichen Platz ist ein allgemeines Problem und nicht spezifisch für Radfahrer."
+  },
+  "6892": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Nicht mehr benötigte Poller auf einem Platz sind ein allgemeines städtisches Problem und nicht spezifisch für Radfahrer."
+  },
+  "6893": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Straßenschäden können Radfahrer direkt beeinträchtigen und stellen ein Sicherheitsrisiko dar."
+  },
+  "6894": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Ablagerung von Sperrmüll auf einem öffentlichen Platz ist ein allgemeines Problem und nicht spezifisch für Radfahrer."
+  },
+  "6895": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine Matratze auf der Straße ist ein allgemeines Problem und nicht spezifisch für Radfahrer."
+  },
+  "6896": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Schlaglöcher und Unebenheiten auf der Straße stellen ein direktes Sicherheitsrisiko für Radfahrer dar."
+  },
+  "6899": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die illegale Entsorgung von Autoreifen auf einem Parkplatz ist ein allgemeines Problem und nicht spezifisch für Radfahrer."
+  },
+  "6901": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Beschreibung bezieht sich auf absackende Seitenstreifen und freigelegte Versorgungsleitungen, was kein direktes Radverkehrsproblem darstellt."
+  },
+  "6902": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft Sperrmüll an einer Straßenecke, was ein allgemeines Stadtreinigungsproblem ist und nicht spezifisch Radfahrer betrifft."
+  },
+  "6904": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung 'Müll abgelegt' ist zu unspezifisch und bezieht sich wahrscheinlich auf ein allgemeines Vermüllungsproblem, nicht auf Radwege."
+  },
+  "6905": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Ein nicht zugelassenes Fahrzeug ist ein allgemeines Ordnungsproblem und kein spezifisches Radverkehrsproblem."
+  },
+  "6906": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein abgelegter Altreifen unter einer Brücke ist ein allgemeines Entsorgungsproblem und betrifft nicht direkt die Radinfrastruktur."
+  },
+  "6908": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Fehlende und zu hohe Pflastersteine vor einem Restaurant stellen eine Stolpergefahr und ein Hindernis für Radfahrer dar."
+  },
+  "6909": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung 'Wilde Müllkippe' ist zu unspezifisch und bezieht sich wahrscheinlich auf ein allgemeines Vermüllungsproblem, nicht auf Radwege."
+  },
+  "6911": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Müll im Graben neben einer Bushaltestelle ist ein allgemeines Vermüllungsproblem und betrifft nicht direkt Radwege."
+  },
+  "6912": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Eine wilde Müllkippe an der Einfahrt zu einem Parkplatz ist ein allgemeines Vermüllungsproblem und betrifft nicht direkt Radwege."
+  },
+  "6913": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Eine wilde Müllkippe am Eingang zu einem Parkplatz ist ein allgemeines Vermüllungsproblem und betrifft nicht direkt Radwege."
+  },
+  "6915": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.9,
+    "explanation_de": "Ein umgefallenes Tempolimit-Schild auf der Fahrbahn oder Böschung kann Radfahrer gefährden oder verwirren."
+  },
+  "6916": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Rissbildung und Verdacht auf Unterspülung einer Straße, insbesondere bei erhöhter Verkehrsbelastung, kann die Sicherheit von Radfahrern beeinträchtigen."
+  },
+  "6917": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Müll hinter einer Litfaßsäule ist ein allgemeines Vermüllungsproblem und betrifft nicht direkt Radwege."
+  },
+  "6918": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein abgesackter Fußweg kann auch von Radfahrern genutzt werden oder deren sichere Passage beeinträchtigen."
+  },
+  "6919": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Abgesacktes Pflaster stellt eine Gefahr für Radfahrer dar, insbesondere wenn es sich auf Radwegen oder angrenzenden Flächen befindet."
+  },
+  "6920": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Wilde Müllkippen sind in der Regel allgemeine städtische Probleme und nicht spezifisch radfahrbezogen, es sei denn, sie blockieren direkt Radwege."
+  },
+  "6922": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Tiefe Schlaglöcher auf einer Straße, die von vielen Schulkindern auf dem Fahrrad benutzt wird, stellen eine direkte Gefahr für Radfahrer dar."
+  },
+  "6932": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Eine wilde Müllkippe ist ein allgemeines städtisches Problem und nicht spezifisch radfahrbezogen."
+  },
+  "6937": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.95,
+    "explanation_de": "Falschparkende Autos und Mülleimer, die im Halteverbot stehen, behindern den Durchgangsverkehr und können auch Radwege blockieren oder gefährlich machen."
+  },
+  "6939": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein verstopfter Gully ist ein allgemeines Problem der Straßenentwässerung und nicht spezifisch radfahrbezogen."
+  },
+  "6942": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Ein abgestelltes Motorrad, das einen Parkplatz blockiert, ist kein spezifisches Radfahrproblem, auch wenn es sich um ein Zweirad handelt."
+  },
+  "6949": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Sperrmüll ist ein allgemeines städtisches Problem und nicht spezifisch radfahrbezogen."
+  },
+  "6951": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.95,
+    "explanation_de": "Ein privater Anhänger, der öffentliche Parkplätze blockiert, kann indirekt Radfahrer beeinträchtigen, indem er den verfügbaren Platz reduziert oder zu gefährlichen Ausweichmanövern zwingt."
+  },
+  "6954": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.9,
+    "explanation_de": "Ein beschädigtes 'Spielstraße'-Schild kann die Sicherheit und Klarheit der Verkehrsführung für alle Verkehrsteilnehmer, einschließlich Radfahrer, beeinträchtigen."
+  },
+  "6958": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Ein tiefes Schlagloch in der Fahrbahn stellt eine erhebliche Gefahr für Radfahrer dar."
+  },
+  "6961": {
+    "is_cycling_related": true,
+    "subcategory": "signal_light_timing",
+    "confidence": 0.9,
+    "explanation_de": "Ein defekter Drücker an einer Bedarfsampel beeinträchtigt die Nutzbarkeit der Infrastruktur für Fußgänger und potenziell auch für Radfahrer, die diese Ampel nutzen müssen."
+  },
+  "6963": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.95,
+    "explanation_de": "Ein abgestellter Wohnwagen in einer Kurve und im Halteverbot, kurz vor einer Busschleuse, blockiert die Fahrbahn und stellt eine erhebliche Gefahr und Behinderung für alle Verkehrsteilnehmer, einschließlich Radfahrer, dar."
+  },
+  "6964": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "explanation_de": "Gefährliche Höhenunterschiede auf einem Rad- und Gehweg stellen eine direkte Sturzgefahr für Radfahrer dar."
+  },
+  "6965": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Große Schlaglöcher im gesamten Straßenverlauf stellen eine erhebliche Gefahr für Radfahrer dar."
+  },
+  "6966": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "explanation_de": "Obwohl Ratten und Abfälle unangenehm sind, ist dies ein allgemeines Hygieneproblem und nicht spezifisch radfahrbezogen, es sei denn, die Abfälle blockieren direkt Radwege."
+  },
+  "6969": {
+    "is_cycling_related": true,
+    "subcategory": "crossing_safety",
+    "confidence": 0.9,
+    "explanation_de": "Fahrzeuge parken an einer Kreuzung und behindern die Sicht für abbiegende Radfahrer und Autofahrer."
+  },
+  "6970": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung beschreibt ein Problem mit der Parkraumbewirtschaftung und der Enge für Fußgänger und Rollstuhlfahrer, nicht spezifisch für Radfahrer."
+  },
+  "6971": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft wilde Müllkippen und herumfliegenden Müll, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6973": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung beschreibt Probleme mit der Ampelschaltung und Verkehrsfluss, die nicht spezifisch auf Radfahrer abzielen."
+  },
+  "6976": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Der Rad- und Fußweg ist nach Verlegung von Kabeln uneben und hat Senken/Hügel, was das Radfahren beeinträchtigt."
+  },
+  "6979": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft einen beschmierten Parkscheinautomaten, was kein Radverkehrsproblem ist."
+  },
+  "6983": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllkippe unter einer Autobahnbrücke, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6984": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft die Abholung einer alten Matratze, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6985": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllkippe, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6986": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung beschreibt eine gefährliche Gehwegkante, die nicht spezifisch Radfahrer betrifft."
+  },
+  "6992": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung lobt Tempo 30 und schlägt dessen Ausweitung vor, was die Fahrradfreundlichkeit erhöht."
+  },
+  "6993": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft eine wilde Müllhalde, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6995": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft ein Spülbecken am Straßenrand/Graben, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6996": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft eine illegale Müllablagerung, was kein spezifisches Radverkehrsproblem darstellt."
+  },
+  "6997": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Der Weg ist wegen Wurzeln und Unebenheiten schlecht befahrbar und enthält Müll, was das Radfahren beeinträchtigt."
+  },
+  "7010": {
+    "is_cycling_related": true,
+    "subcategory": "signal_light_timing",
+    "confidence": 0.9,
+    "explanation_de": "Die Meldung betrifft eine Ampel, die für Radfahrende aus einer Fahrradstraße schlecht erreichbar ist und deren Schaltung optimiert werden sollte."
+  },
+  "7011": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Meldung betrifft eine illegale Schadstoffentsorgung neben einem Bahngelände, was keine direkte Auswirkung auf den Radverkehr hat."
+  },
+  "7021": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft Müll in Grünanlagen, der keine spezifische Beeinträchtigung für Radwege darstellt."
+  },
+  "7024": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.6,
+    "explanation_de": "Die Meldung betrifft die Instandhaltung von Sportgeräten an einer öffentlichen Einrichtung, nicht direkt Radinfrastruktur."
+  },
+  "7029": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft Müll und ein Holzregal an einer Bushaltestelle, was keine primäre Radverkehrsbeeinträchtigung darstellt."
+  },
+  "7034": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft wilden Müll auf einem Parkplatz, was keine direkte Auswirkung auf Radwege hat."
+  },
+  "7037": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "explanation_de": "Ein großer Ast hängt auf dem Geh- und Radweg und beeinträchtigt die Nutzbarkeit."
+  },
+  "7042": {
+    "is_cycling_related": true,
+    "subcategory": "crossing_safety",
+    "confidence": 0.95,
+    "explanation_de": "Die Ampelschaltung an einer gefährlichen Kreuzung mit hoher Kinderfrequenz birgt Risiken für Radfahrer und Fußgänger, insbesondere durch abbiegende Autos."
+  },
+  "7047": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft Müll auf einem Bürgersteig, der zwar beseitigt wurde, aber keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "7052": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "explanation_de": "Ein Straßenschild ist schräg und teilweise lose, was die Orientierung für Radfahrende beeinträchtigen kann."
+  },
+  "7053": {
+    "is_cycling_related": true,
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "explanation_de": "Zwei Halte- bzw. Parkverbotsschilder sind schräg und drohen umzufallen, was die Verkehrssicherheit und Radwegnutzung beeinflussen kann."
+  },
+  "7054": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "explanation_de": "Die Bürgersteigpflasterung vor einem Neubau ist noch nicht wiederhergestellt, was die Radwegqualität beeinträchtigt."
+  },
+  "7059": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Meldung betrifft Sperrmüll auf der Straße, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "7061": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Ein Sessel steht an einer Kreuzung, was keine spezifische Radverkehrsbeeinträchtigung darstellt."
+  },
+  "7062": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein Baufahrzeug hat den Bürgersteig beschädigt, was die eingeschränkte Befahrbarkeit des Fahrradwegs und Gehwegs zur Folge hat."
+  },
+  "7064": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein verstopfter Gully auf dem Gehweg ist ein allgemeines städtisches Problem und betrifft Radwege nicht direkt."
+  },
+  "7066": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "explanation_de": "Schwere Maschinen haben einen Radweg beschädigt, was eine direkte Auswirkung auf die Radinfrastruktur hat."
+  },
+  "7069": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 1.0,
+    "explanation_de": "Eine Umlaufsperre mit zu geringem Abstand beeinträchtigt die Durchfahrt von Lastenrädern und ist ein Komfortproblem für Radfahrer."
+  },
+  "7070": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "explanation_de": "Die Beschädigung von Grünflächen und Asphalt durch Bauarbeiten ist ein allgemeines Problem, das nicht spezifisch Radfahrer betrifft, auch wenn ein Auto aufsetzte."
+  },
+  "7076": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein beschmierter Parkscheinautomat ist kein spezifisches Radverkehrsproblem."
+  },
+  "7079": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein liegender Absperrpfahl ist ein allgemeines Hindernis, aber nicht spezifisch für den Radverkehr gemeldet."
+  },
+  "7080": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein Wohnwagen, der zwischen Bushaltestellen parkt, ist ein allgemeines Verkehrshindernis, aber nicht spezifisch für Radfahrer."
+  },
+  "7081": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Sich stauendes Regenwasser, das nicht abfließt, ist ein allgemeines städtisches Problem und betrifft Radwege nicht direkt."
+  },
+  "7083": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine wilde Müllkippe ist ein allgemeines Problem der öffentlichen Ordnung und nicht spezifisch für den Radverkehr."
+  },
+  "7085": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "explanation_de": "Dies ist ein Vorschlag zur Verbesserung der Meldeplattform und kein physischer Mangel."
+  },
+  "7087": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein Wohnwagen, der als Hindernis abgestellt ist, ist ein allgemeines Verkehrsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7089": {
+    "is_cycling_related": true,
+    "subcategory": "glass_debris",
+    "confidence": 0.9,
+    "explanation_de": "Ein umgeschmissener Farbeimer macht den Fußweg unbenutzbar, was auch Radfahrer auf gemeinsamen Wegen beeinträchtigen kann."
+  },
+  "7090": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Illegale Müllablagerungen sind ein allgemeines Problem und nicht spezifisch für den Radverkehr gemeldet."
+  },
+  "7091": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine wilde Müllkippe mit verschiedenen Gegenständen ist ein allgemeines Problem und nicht spezifisch für den Radverkehr."
+  },
+  "7092": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein beschmierter Parkscheinautomat ist kein spezifisches Radverkehrsproblem."
+  },
+  "7093": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein verlassenes Auto ist ein allgemeines städtisches Problem und betrifft Radfahrer nicht direkt."
+  },
+  "7094": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein Teppich auf dem Bürgersteig ist ein allgemeines Problem der Müllentsorgung und beeinträchtigt Radwege nicht."
+  },
+  "7095": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein großer Bildschirm auf dem Bürgersteig ist ein allgemeines Problem der Müllentsorgung und beeinträchtigt Radwege nicht."
+  },
+  "7099": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Illegale Müllentsorgung an Glascontainern ist ein allgemeines Problem der Müllentsorgung und betrifft Radwege nicht direkt."
+  },
+  "7102": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein herrenloser Einkaufswagen auf dem Fußweg ist ein allgemeines Problem der Müllentsorgung und beeinträchtigt Radwege nicht."
+  },
+  "7104": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine Beschädigung an einem Brückenpfeiler ist kein spezifisches Radverkehrsproblem."
+  },
+  "7107": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Müllsäcke bei Glascontainern sind ein allgemeines Problem der Müllentsorgung und beeinträchtigen Radwege nicht."
+  },
+  "7113": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Unrat und Holzreste vor einem Gebäude sind ein allgemeines Problem der Müllentsorgung und beeinträchtigen Radwege nicht."
+  },
+  "7114": {
+    "is_cycling_related": true,
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "explanation_de": "Ein großes Schlagloch auf einer Straße, die auch von Radfahrern genutzt wird, stellt eine Gefahr dar."
+  },
+  "7117": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Illegal entsorgter Sperrmüll ist ein allgemeines Problem der Müllentsorgung und beeinträchtigt Radwege nicht direkt."
+  },
+  "7118": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Sperrmüll im Graben ist ein allgemeines Problem der Müllentsorgung und beeinträchtigt Radwege nicht."
+  },
+  "7121": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Illegale Müllentsorgung an Altkleidercontainern ist ein allgemeines Problem der Müllentsorgung und beeinträchtigt Radwege nicht direkt."
+  },
+  "7122": {
+    "is_cycling_related": true,
+    "subcategory": "other_cycling",
+    "confidence": 0.9,
+    "explanation_de": "Raserei auf der Bremer Heerstraße stellt eine erhebliche Gefahr für alle Verkehrsteilnehmer, einschließlich Radfahrer, dar."
+  },
+  "7126": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Ein Kratzbaum, eine Lampe und ein Schrank auf dem Gehweg sind ein allgemeines Problem der Müllentsorgung und beeinträchtigen Radwege nicht."
+  },
+  "7127": {
+    "is_cycling_related": true,
+    "subcategory": "crossing_safety",
+    "confidence": 0.9,
+    "explanation_de": "Fehlende Fahrbahnmarkierung an einer Kreuzung führt zu gefährlichen und unübersichtlichen Situationen für Radfahrer."
+  },
+  "7128": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Müll auf dem Bürgersteig ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7131": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Müll neben Containern ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7132": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Sperrmüll auf einem Buswendeplatz ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7133": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Grünabfall auf einer Freifläche ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7134": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine allgemeine wilde Müllkippe ist kein spezifisches Radfahrproblem."
+  },
+  "7135": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Die Reinigung eines Grabens ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7136": {
+    "is_cycling_related": true,
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "explanation_de": "Eine nicht geschnittene Buchenhecke beeinträchtigt die Befahrbarkeit des Radwegs und stellt ein Sicherheitsrisiko dar."
+  },
+  "7145": {
+    "is_cycling_related": true,
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 1.0,
+    "explanation_de": "Eine Matratze und Müll auf dem Gehweg versperren die Benutzung und beeinträchtigen indirekt die Radwegeinfrastruktur."
+  },
+  "7146": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Schlaglöcher auf der Straße sind ein allgemeines Straßenproblem, das nicht spezifisch Radwege betrifft, es sei denn, es wird explizit erwähnt."
+  },
+  "7147": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Müll neben Containern ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7151": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Müll und Möbel neben einem Stromkasten sind ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7155": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Müll im Gebüsch eines Parks ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  },
+  "7156": {
+    "is_cycling_related": false,
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "explanation_de": "Eine wilde Müllkippe an einer Straßenecke ist ein allgemeines Stadtreinigungsproblem und nicht spezifisch für Radfahrer."
+  }
+}

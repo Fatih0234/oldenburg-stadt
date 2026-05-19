@@ -92,6 +92,31 @@
                         </div>
                     </div>
 
+                    <!-- Time Filters -->
+                    <div class="control-group margin-top-md">
+                        <label class="group-title">Time Filter</label>
+                        <div class="time-filters-container">
+                            <select id="time-preset-select" class="custom-select" onchange="handleTimePresetChange()">
+                                <option value="all" selected>All Time</option>
+                                <option value="7d">Last 7 Days</option>
+                                <option value="30d">Last 30 Days</option>
+                                <option value="90d">Last 90 Days</option>
+                                <option value="custom">Custom Range...</option>
+                            </select>
+                            
+                            <div id="custom-date-inputs" class="custom-date-inputs hidden">
+                                <div class="date-input-wrapper">
+                                    <label for="start-date">Von</label>
+                                    <input type="date" id="start-date" class="date-picker" onchange="handleCustomDateChange()">
+                                </div>
+                                <div class="date-input-wrapper">
+                                    <label for="end-date">Bis</label>
+                                    <input type="date" id="end-date" class="date-picker" onchange="handleCustomDateChange()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Scrollable Issue List -->
                     <div class="issue-list-container">
                         <div class="list-header">
@@ -191,7 +216,7 @@
                     <h3 id="overlay-category">Category</h3>
                     <p class="overlay-date" id="overlay-date">Date</p>
                     <p class="overlay-desc" id="overlay-desc">Description</p>
-                    
+                    <div id="overlay-llm-box"></div>
                     <div id="overlay-stats-grid" class="overlay-stats">
                         <!-- Score breakdowns -->
                     </div>

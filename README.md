@@ -8,16 +8,18 @@ The dashboard provides automated tools for cycling advocacy, including generatin
 
 ## 🏗️ Architecture & Processing Pipeline
 
-The project follows a 4-step pipeline to extract, project, classify, and visualize the data:
+The project follows a 5-step pipeline to extract, project, classify, and visualize the data:
 
 ```mermaid
 graph TD
     A[OpenStreetMap API] -->|download_osm_bike.py| B(oldenburg_osm_bike.json)
-    C[gemeinsam.oldenburg.de CSV] -->|score_reports.py| D{UTM 32N Spatial Metric Match}
-    B --> D
-    D -->|Classify & Score| E(classified_reports.csv / .json)
-    E -->|generate_data_js.py| F(data.js)
-    F -->|Local Script Load| G[index.html Dashboard]
+    C[gemeinsam.oldenburg.de CSV] -->|classify_reports_llm.py| D(llm_classification_cache.json)
+    B --> E(score_reports.py)
+    C --> E
+    D --> E
+    E -->|Classify & Score| F(classified_reports.csv / .json)
+    F -->|generate_data_js.py| G(data.js)
+    G -->|Local Script Load| H[index.html Dashboard]
 ```
 
 ### 1. Cycling Network Extraction
@@ -28,13 +30,20 @@ The raw coordinates in OpenStreetMap and citizen tickets are in degrees (WGS84).
 * We use `pyproj` to project all coordinates into **UTM Zone 32N (EPSG:32632)**, which provides Cartesian coordinates in **meters**.
 * We construct `shapely` `LineString` elements for the cycleways and measure the exact distance in meters from each citizen ticket to the nearest bike segment.
 
-### 3. Confidence Classification Model
-Tickets are classified based on their cycling impact into four categories using a point-scoring system (`0` to `100+` points):
-* **Keyword Match (+50 pts):** Contains German bike-related keywords (*Radweg*, *Fahrrad*, *Radspur*, *Fahrradstraße*, etc.).
-* **Proximity (+10 to +35 pts):** Within 10m (+35), 25m (+20), or 50m (+10).
-* **Category Relevance (+10 to +50 pts):** *Fundräder/Abandoned bikes* (+50), *Road/Signs/Lighting/Hedges* (+15), *Fallen trees/branches* (+10).
-* **Priority Corridor Bonus (+20 pts):** Located within 50m of an official priority bicycle corridor (e.g. FAST FLIN, Green Wave, Pophankenweg, Ammerländer Heerstraße).
-* **Status & Age Adjustments (+10 to -20 pts):** Open/Active (+10), Closed (-20), Not Responsible (-15), Older than 180 days (-10).
+### 3. LLM-Based & Heuristic Classification
+Reports are classified using a hybrid model:
+*   **LLM Classification (Ground Truth):** Programmatically queries the Google GenAI SDK (using model `gemini-2.5-flash-lite` and strict Pydantic JSON schemas) to determine if a report is cycling-related. It classifies issues into 10 subcategories (e.g. `pothole_damage`, `glass_debris`, `vegetation_block`, `illegal_parking_obstruction`) and provides a short German explanation.
+*   **Local Cache:** Classification results are cached locally in `llm_classification_cache.json` to prevent re-querying the API.
+*   **Heuristic Fallback (Regex):** For reports that are not cached, a highly optimized regex heuristic runs as a fallback. By using boundary-aware patterns, negation keywords, and allowed overrides, the regex heuristic matches the LLM predictions with **84.45% accuracy** and an **83.96% F1 score**.
+
+### 4. Relevance Scoring System
+Tickets are scored ($0$ to $100+$ points) based on their spatial metrics and category matches:
+*   **LLM Match (+50 pts):** Confirmed as cycling-related by the LLM (or regex fallback).
+*   **LLM Confidence Penalty (-45 pts):** Confined penalty if the LLM confidently marks the report as unrelated, suppressing false positives located close to cycle paths (e.g. general car lanes).
+*   **Proximity (+10 to +35 pts):** Within 10m (+35), 25m (+20), or 50m (+10).
+*   **Category Relevance (+10 to +50 pts):** *Fundräder/Abandoned bikes* (+50), *Road/Signs/Lighting/Hedges* (+15), *Fallen trees/branches* (+10).
+*   **Priority Corridor Bonus (+20 pts):** Located within 50m of an official ADFC priority bicycle corridor.
+*   **Status & Age Adjustments (+10 to -20 pts):** Open/Active (+10), Closed (-20), Not Responsible (-15), Older than 180 days (-10).
 
 #### Classification Tiers:
 * 🔴 **Confirmed cycling issue (Score &ge; 70):** Direct path blockages, path potholes, or abandoned bikes on paths.
@@ -42,7 +51,7 @@ Tickets are classified based on their cycling impact into four categories using 
 * 🟡 **Possibly affects cyclists (Score 20-39):** Street-level reports near cycleways that might impede visibility or traffic.
 * ⚪ **Not cycling-specific (Score < 20):** General road complaints not directly related to cycling infrastructure.
 
-### 4. Zero-CORS Web Dashboard
+### 5. Zero-CORS Web Dashboard
 `generate_data_js.py` compiles the GeoJSON bike network and classified reports into a single unified JavaScript variable file `data.js`. This allows you to double-click `index.html` and run the dashboard locally in your web browser without encountering CORS (Cross-Origin Resource Sharing) local fetch errors.
 
 ---
@@ -56,8 +65,11 @@ Tickets are classified based on their cycling impact into four categories using 
 | **`app.js`** | Interactive mapping logic, filter actions, newsletter compilation, and Instagram indicator controller. |
 | **`data.js`** | Unified JavaScript file storing the pre-compiled reports and simplified OSM bike network GeoJSON. |
 | **`download_osm_bike.py`** | Script to fetch bicycle network geometries from OpenStreetMap Overpass mirrors. |
-| **`score_reports.py`** | Core script executing the coordinate projection, distance calculations, and confidence classification. |
-| **`generate_data_js.py`** | Pipeline compiler transforming JSON databases into the browser-compatible `data.js` file. |
+| **`classify_reports_llm.py`** | Standalone script that uses `google-genai` and `gemini-2.5-flash-lite` to classify reports. |
+| **`score_reports.py`** | Core script executing coordinate projections, distance calculations, and scoring using LLM data/regex fallback. |
+| **`evaluate_rules.py`** | Diagnostic script measuring regex heuristic performance (Accuracy, Precision, Recall, F1) against LLM labels. |
+| **`optimize_regex.py`** | Optimizer utility that performs greedy keyword association search to maximize heuristic alignment with the LLM. |
+| **`llm_classification_cache.json`** | Local JSON database storing all processed LLM classifications to reduce API costs. |
 | **`stadtverbesserer_snapshot.csv`** | Original dataset of 553 citizen reports from the Oldenburg Gemeinsam platform. |
 | **`classified_reports.csv`** | Processed spreadsheet output containing coordinates, distances, scores, and confidence classifications. |
 | **`agent_handoff.md`** | Handoff documentation designed for future AI agents to continue development of this project. |
@@ -80,15 +92,27 @@ Since all data is embedded inside `data.js`, you can open the dashboard with zer
 
 ### Re-running the Data Pipeline
 If you update the dataset or want to update the OSM bike network, run:
+
 1. **Download OSM Bike Network:**
    ```bash
    uv run --with requests download_osm_bike.py
    ```
-2. **Re-calculate Scores & Classifications:**
+2. **Perform LLM Classification:**
+   ```bash
+   export GEMINI_API_KEY="your_api_key_here"
+   uv run --with google-genai --with pydantic --with pandas classify_reports_llm.py
+   ```
+3. **Re-calculate Scores & Classifications:**
    ```bash
    uv run --with pandas --with numpy --with shapely --with pyproj score_reports.py
    ```
-3. **Compile Browser Assets:**
+4. **Compile Browser Assets:**
    ```bash
    uv run generate_data_js.py
    ```
+
+### Running Rule Evaluation & Diagnostics
+To test heuristic rule matches or run keyword optimization, use:
+* **Evaluate current rules:** `uv run --with pandas evaluate_rules.py`
+* **Optimize regex patterns:** `uv run --with pandas optimize_regex.py`
+
