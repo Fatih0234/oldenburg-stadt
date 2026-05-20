@@ -58,9 +58,46 @@ function resolveTheme(preference = themePreference) {
 function initTheme() {
     applyTheme(themePreference);
 
+    const themeTrigger = document.getElementById('theme-menu-trigger');
+    const themePopover = document.getElementById('theme-popover');
+
+    function closeThemeMenu() {
+        if (!themeTrigger || !themePopover) return;
+        themePopover.hidden = true;
+        themeTrigger.setAttribute('aria-expanded', 'false');
+    }
+
+    function openThemeMenu() {
+        if (!themeTrigger || !themePopover) return;
+        themePopover.hidden = false;
+        themeTrigger.setAttribute('aria-expanded', 'true');
+    }
+
+    if (themeTrigger && themePopover) {
+        themeTrigger.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (themePopover.hidden) {
+                openThemeMenu();
+            } else {
+                closeThemeMenu();
+            }
+        });
+
+        themePopover.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+
+        document.addEventListener('click', closeThemeMenu);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeThemeMenu();
+        });
+    }
+
     document.querySelectorAll('[data-theme-choice]').forEach(button => {
         button.addEventListener('click', () => {
             applyTheme(button.dataset.themeChoice);
+            closeThemeMenu();
+            if (themeTrigger) themeTrigger.focus();
         });
     });
 
@@ -86,6 +123,7 @@ function applyTheme(preference, options = {}) {
     document.querySelectorAll('[data-theme-choice]').forEach(button => {
         const isActive = button.dataset.themeChoice === themePreference;
         button.setAttribute('aria-pressed', String(isActive));
+        button.setAttribute('aria-checked', String(isActive));
     });
 
     updateBaseTileLayer();
