@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateMonthlyDigest();
     initMap();
     renderIssueList();
+    updateResetFiltersButton();
     initSidebarToggle();
     initOnboarding();
 });
@@ -701,6 +702,39 @@ function getFilteredReports() {
     return filtered;
 }
 
+function getActiveFilterCount() {
+    let count = activeFilters.size;
+
+    const searchInput = document.getElementById('search-input');
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    if (query) count += 1;
+
+    if (timeFilter !== 'all') count += 1;
+
+    return count;
+}
+
+function updateResetFiltersButton() {
+    const resetButton = document.getElementById('reset-filters-btn');
+    const resetCount = document.getElementById('reset-filters-count');
+    if (!resetButton) return;
+
+    const activeCount = getActiveFilterCount();
+    const isActive = activeCount > 0;
+
+    resetButton.classList.toggle('hidden', !isActive);
+    resetButton.setAttribute(
+        'aria-label',
+        isActive
+            ? `Alle Filter zurücksetzen (${activeCount} aktive Filter)`
+            : 'Alle Filter zurücksetzen'
+    );
+
+    if (resetCount) {
+        resetCount.textContent = isActive ? `${activeCount} aktiv` : '0 aktiv';
+    }
+}
+
 // Live Search Handlers
 function handleSearch(value) {
     const clearBtn = document.getElementById('search-clear-btn');
@@ -709,6 +743,7 @@ function handleSearch(value) {
     }
     renderIssueList();
     updateMapMarkers();
+    updateResetFiltersButton();
 }
 
 function clearSearch() {
@@ -825,13 +860,55 @@ function updateFilterUI() {
             }
         }
     }
+
+    updateResetFiltersButton();
 }
 
 function clearFilters() {
+    resetAllFilters();
+}
+
+function resetAllFilters() {
     activeFilters.clear();
+    timeFilter = 'all';
+    customStartDate = null;
+    customEndDate = null;
+
+    const searchInput = document.getElementById('search-input');
+    const clearBtn = document.getElementById('search-clear-btn');
+    const select = document.getElementById('time-preset-select');
+    const customInputs = document.getElementById('custom-date-inputs');
+    const startInput = document.getElementById('start-date');
+    const endInput = document.getElementById('end-date');
+
+    if (searchInput) {
+        searchInput.value = '';
+    }
+    if (clearBtn) {
+        clearBtn.style.display = 'none';
+    }
+    if (select) {
+        select.value = 'all';
+    }
+    if (customInputs) {
+        customInputs.classList.add('hidden');
+    }
+    if (startInput) {
+        startInput.value = '';
+    }
+    if (endInput) {
+        endInput.value = '';
+    }
+
     updateFilterUI();
+    updateStats();
     renderIssueList();
     updateMapMarkers();
+    updateResetFiltersButton();
+
+    if (searchInput) {
+        searchInput.focus({ preventScroll: true });
+    }
 }
 
 function handleTimePresetChange() {
@@ -867,6 +944,7 @@ function handleTimePresetChange() {
     updateStats();
     renderIssueList();
     updateMapMarkers();
+    updateResetFiltersButton();
 }
 
 function handleCustomDateChange() {
@@ -876,6 +954,7 @@ function handleCustomDateChange() {
     updateStats();
     renderIssueList();
     updateMapMarkers();
+    updateResetFiltersButton();
 }
 
 function setRollingThirtyDayView() {
@@ -901,6 +980,8 @@ function setSearchQuery(query) {
     if (clearBtn) {
         clearBtn.style.display = query ? 'block' : 'none';
     }
+
+    updateResetFiltersButton();
 }
 
 function refreshDashboardViews() {
@@ -908,6 +989,7 @@ function refreshDashboardViews() {
     updateFilterUI();
     renderIssueList();
     updateMapMarkers();
+    updateResetFiltersButton();
 }
 
 function focusReportsOnMap(reports) {
