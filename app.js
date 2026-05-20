@@ -754,38 +754,10 @@ function updateFilterUI() {
             }
         }
     }
-    
-    // Synchronize preset pills
-    const pillAll = document.getElementById('pill-all');
-    const pillCyclingOnly = document.getElementById('pill-cycling-only');
-    
-    if (pillAll && pillCyclingOnly) {
-        pillAll.classList.remove('active');
-        pillCyclingOnly.classList.remove('active');
-        
-        if (activeFilters.size === 0) {
-            pillAll.classList.add('active');
-        } else if (
-            activeFilters.size === 2 &&
-            activeFilters.has('Confirmed cycling issue') &&
-            activeFilters.has('Likely cycling issue')
-        ) {
-            pillCyclingOnly.classList.add('active');
-        }
-    }
 }
 
 function clearFilters() {
     activeFilters.clear();
-    updateFilterUI();
-    renderIssueList();
-    updateMapMarkers();
-}
-
-function filterCyclingOnly() {
-    activeFilters.clear();
-    activeFilters.add('Confirmed cycling issue');
-    activeFilters.add('Likely cycling issue');
     updateFilterUI();
     renderIssueList();
     updateMapMarkers();
@@ -1077,16 +1049,16 @@ function showMapDetails(report) {
     const statsGrid = document.getElementById('overlay-stats-grid');
     let penaltyHtml = '';
     if (report.score_penalty && report.score_penalty < 0) {
-        penaltyHtml = `<div class="stat-item">LLM Penalty: <span class="stat-val penalty-val">${report.score_penalty}</span></div>`;
+        penaltyHtml = `<div class="stat-item">AI downrank: <span class="stat-val penalty-val">${report.score_penalty}</span></div>`;
     }
     
     const formatScore = (val) => val >= 0 ? `+${val}` : `${val}`;
     
     statsGrid.innerHTML = `
         <div class="stat-item">Distance to path: <span class="stat-val">${report.distance_to_bike_path_meters} m</span></div>
-        <div class="stat-item">Category Bonus: <span class="stat-val bonus-val">+${report.score_category}</span></div>
-        <div class="stat-item">Path Distance: <span class="stat-val bonus-val">${formatScore(report.score_distance)}</span></div>
-        <div class="stat-item">LLM Match: <span class="stat-val bonus-val">+${report.score_keywords}</span></div>
+        <div class="stat-item">Category signal: <span class="stat-val bonus-val">+${report.score_category}</span></div>
+        <div class="stat-item">Route proximity: <span class="stat-val bonus-val">${formatScore(report.score_distance)}</span></div>
+        <div class="stat-item">Text signal: <span class="stat-val bonus-val">+${report.score_keywords}</span></div>
         ${penaltyHtml}
         <div class="stat-item">Status / Recency: <span class="stat-val">${formatScore(report.score_state + report.score_recency)}</span></div>
     `;

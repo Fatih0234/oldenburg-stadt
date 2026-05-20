@@ -99,36 +99,27 @@
                     <div class="metrics-grid">
                         <div class="metric-card gradient-confirmed" onclick="toggleConfidenceFilter('Confirmed cycling issue')">
                             <span class="card-indicator"></span>
-                            <h3>Confirmed</h3>
+                            <h3>Clearly cycling-related</h3>
                             <div class="value" id="count-confirmed">-</div>
-                            <p class="metric-label">High Confidence</p>
+                            <p class="metric-label">Confirmed</p>
                         </div>
                         <div class="metric-card gradient-likely" onclick="toggleConfidenceFilter('Likely cycling issue')">
                             <span class="card-indicator"></span>
-                            <h3>Likely</h3>
+                            <h3>Likely cycling-related</h3>
                             <div class="value" id="count-likely">-</div>
-                            <p class="metric-label">Medium-High</p>
+                            <p class="metric-label">Strong signal</p>
                         </div>
                         <div class="metric-card gradient-possible" onclick="toggleConfidenceFilter('Possibly affects cyclists')">
                             <span class="card-indicator"></span>
-                            <h3>Possible</h3>
+                            <h3>Possibly relevant</h3>
                             <div class="value" id="count-possible">-</div>
-                            <p class="metric-label">Medium-Low</p>
+                            <p class="metric-label">Review bucket</p>
                         </div>
                         <div class="metric-card gradient-generic" onclick="toggleConfidenceFilter('Not cycling-specific')">
                             <span class="card-indicator"></span>
-                            <h3>Other</h3>
+                            <h3>General report</h3>
                             <div class="value" id="count-generic">-</div>
-                            <p class="metric-label">General Streets</p>
-                        </div>
-                    </div>
-
-                    <!-- Quick filters -->
-                    <div class="control-group">
-                        <label class="group-title">Confidence Filters</label>
-                        <div class="filter-pills">
-                            <button class="pill active" id="pill-all" onclick="clearFilters()">All Issues</button>
-                            <button class="pill" id="pill-cycling-only" onclick="filterCyclingOnly()">Cycling Only (Score &ge; 40)</button>
+                            <p class="metric-label">Not cycling-specific</p>
                         </div>
                     </div>
 
@@ -239,7 +230,7 @@
                     <div class="details-stats-dashboard">
                         <div class="relevance-score-widget">
                             <div class="relevance-value" id="relevance-score-value">--</div>
-                            <div class="relevance-label">Relevance</div>
+                            <div class="relevance-label">Relevance score</div>
                         </div>
                         <div id="overlay-stats-grid" class="overlay-stats">
                             <!-- Score breakdowns -->
