@@ -152,6 +152,10 @@ body {
     color: var(--text-muted);
 }
 
+.sidebar-utility-btn {
+    text-decoration: none;
+}
+
 .sidebar-utility-btn:hover,
 .sidebar-toggle:hover {
     color: var(--accent-cyan);
@@ -175,6 +179,31 @@ body {
 .sidebar-utility-btn:active,
 .sidebar-toggle:active {
     transform: scale(0.95);
+}
+
+.sidebar-github-link {
+    color: var(--text-muted);
+    border-color: rgba(148, 163, 184, 0.18);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.015);
+}
+
+.sidebar-github-link:hover {
+    color: #f8fafc;
+    border-color: rgba(6, 182, 212, 0.52);
+    background:
+        linear-gradient(180deg, rgba(6, 182, 212, 0.08), rgba(255, 255, 255, 0.02)),
+        var(--floating-control-bg-hover);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(6, 182, 212, 0.08);
+}
+
+.sidebar-github-link:focus-visible {
+    border-color: rgba(6, 182, 212, 0.72);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.16);
+}
+
+.github-icon-svg {
+    width: 18px;
+    height: 18px;
 }
 
 .utility-icon-svg,
@@ -210,7 +239,7 @@ body {
 
 .sidebar-header {
     position: relative;
-    padding: 24px calc(var(--sidebar-gutter) + 132px) 18px var(--sidebar-gutter);
+    padding: 24px calc(var(--sidebar-gutter) + 186px) 18px var(--sidebar-gutter);
     border-bottom: 1px solid var(--border-color);
     background: var(--header-surface);
 }
@@ -1868,7 +1897,7 @@ body {
     }
 
     .sidebar-header {
-        padding-right: 150px;
+        padding-right: 204px;
     }
 
     .sidebar-actions {

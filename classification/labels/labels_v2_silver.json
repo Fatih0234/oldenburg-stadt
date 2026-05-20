@@ -1,0 +1,4979 @@
+[
+  {
+    "id": "25",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Es handelt sich um eine allgemeine Straßenschadensmeldung ohne expliziten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "35",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Überflutete Straßenbereiche und verstopfte Gullys beeinträchtigen Radfahrer erheblich."
+  },
+  {
+    "id": "36",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Verstopfte Gullys an Kreuzungen stellen ein Sicherheitsrisiko für den Radverkehr dar."
+  },
+  {
+    "id": "37",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine defekte Sitzbank ist nicht für den Radverkehr relevant."
+  },
+  {
+    "id": "40",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Abgemeldete Fahrzeuge ohne Behinderung des Radverkehrs sind nicht relevant."
+  },
+  {
+    "id": "51",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Lose Steine auf der Straße stellen eine direkte Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "52",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Vermüllung innerhalb eines privaten Ladens ist nicht relevant für die öffentliche Radinfrastruktur."
+  },
+  {
+    "id": "64",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Der Bericht bezieht sich explizit auf Gehwege, nicht auf Radwege."
+  },
+  {
+    "id": "67",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Wohnwagen, der eine private Ausfahrt blockiert, ist nicht radverkehrsrelevant."
+  },
+  {
+    "id": "70",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein im Graben liegendes Lastenrad betrifft die cycling-Sicherheit oder die Infrastruktur."
+  },
+  {
+    "id": "72",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Vermüllung durch Zeitungen ist ein allgemeines Problem der Stadtsauberkeit ohne direkten Radbezug."
+  },
+  {
+    "id": "73",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein parkendes Auto ohne Behinderung ist nicht radverkehrsrelevant."
+  },
+  {
+    "id": "75",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein parkendes Auto ohne Behinderung ist nicht radverkehrsrelevant."
+  },
+  {
+    "id": "79",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Schlaglöcher im Fahrbereich von Radfahrern stellen eine direkte Gefahr dar."
+  },
+  {
+    "id": "81",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein gefährlicher Absatz in der Fahrbahn stellt ein hohes Sturzrisiko für Radfahrende dar."
+  },
+  {
+    "id": "84",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Lose Pflastersteine auf der Fahrbahn stellen eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "86",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Sträucher ragen direkt in einen gemeinsamen Geh- und Radweg hinein."
+  },
+  {
+    "id": "91",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein blockierter Weg in einem Park ist oft Teil der Radinfrastruktur, erfordert aber eine Standortprüfung."
+  },
+  {
+    "id": "92",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Dies ist ein allgemeiner Verbesserungsvorschlag zur Instandhaltungsqualität ohne konkreten Schadensbezug."
+  },
+  {
+    "id": "94",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Wasseransammlungen an einer Kreuzung behindern Radfahrende massiv und zwingen sie zum Ausweichen."
+  },
+  {
+    "id": "105",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Durch Bewuchs verursachte Engstellen auf Gehwegen betreffen Radfahrende, falls der Gehweg zur Radnutzung freigegeben ist."
+  },
+  {
+    "id": "106",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Es handelt sich um ein möglicherweise abgestelltes oder herrenloses Fahrrad im öffentlichen Raum."
+  },
+  {
+    "id": "111",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Tiefe Löcher im Fahrspurbereich sind eine direkte Gefahr für Radfahrende."
+  },
+  {
+    "id": "117",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Fahrzeug ist ohne Hinweis auf eine Blockade von Radwegen nicht direkt radverkehrsrelevant."
+  },
+  {
+    "id": "126",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Wiederkehrende Straßenschäden an derselben Stelle beeinträchtigen die Sicherheit von Radfahrenden."
+  },
+  {
+    "id": "133",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Abgemeldete PKW auf einem Parkplatz haben keinen direkten Einfluss auf die Radinfrastruktur."
+  },
+  {
+    "id": "140",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein blockierter Wasserabfluss in einem Wasserzug ist primär ein Entwässerungsproblem und erfordert eine Überprüfung der Lage."
+  },
+  {
+    "id": "141",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Müll auf einem Pendlerparkplatz betrifft den Radverkehr nicht direkt."
+  },
+  {
+    "id": "142",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Defekte Poller und Beeteinfassungen können Radwege gefährden, bedürfen aber einer örtlichen Prüfung."
+  },
+  {
+    "id": "144",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Eine mangelhafte Beleuchtung von Hindernissen im Straßenraum gefährdet Radfahrende bei Dunkelheit."
+  },
+  {
+    "id": "145",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein umgekippter Baum behindert direkt eine explizit benannte Fahrradroute."
+  },
+  {
+    "id": "146",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Die Meldung ist zu vage, um einen spezifischen Bezug zum Radverkehr herzustellen."
+  },
+  {
+    "id": "156",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Es wird ein Weg zur Haarenniederung beschrieben, der bei Regen unpassierbar ist, was Radfahrer betreffen kann."
+  },
+  {
+    "id": "164",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Schlagloch an einer Kreuzung stellt eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "168",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Das Problem betrifft den Zugang zu einem Privatgrundstück und stellt kein spezifisches Radverkehrsthema dar."
+  },
+  {
+    "id": "169",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein Gehwegschaden betrifft Radfahrer im Regelfall nicht, sofern es sich nicht um einen gemeinsamen Geh- und Radweg handelt."
+  },
+  {
+    "id": "171",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Behinderung auf dem Gehweg ist primär ein Problem für Fußgänger."
+  },
+  {
+    "id": "186",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Großflächige Straßenschäden an einer Hauptverkehrsstraße gefährden Radfahrende im Mischverkehr."
+  },
+  {
+    "id": "198",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Pflasterabsenkungen an einem Gebäude sind nicht zwingend für den Radverkehr relevant."
+  },
+  {
+    "id": "202",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein allgemeiner schlechter Straßenzustand ohne spezifischen Hinweis auf Radwege ist zu unpräzise."
+  },
+  {
+    "id": "214",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Fahrzeug ohne Kennzeichen ist kein direktes Radverkehrshindernis."
+  },
+  {
+    "id": "215",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Überfüllte Textilcontainer betreffen nicht die Befahrbarkeit für Radfahrer."
+  },
+  {
+    "id": "229",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "vegetation_block",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Überwucherung an einer Straße, die als Schulweg dient, beeinträchtigt die Sicherheit aller Verkehrsteilnehmer, inklusive Radfahrer."
+  },
+  {
+    "id": "231",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein abgesackter Gulli stellt eine signifikante Sturzgefahr für Radfahrende dar."
+  },
+  {
+    "id": "233",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine Behinderung an einer Bushaltestelle und an einem Blindenleitstreifen betrifft primär Fußgänger und ÖPNV-Nutzer."
+  },
+  {
+    "id": "247",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein verstopfter Gully kann zu Aquaplaning oder Pfützenbildung auf der Fahrbahn führen, die Radfahrer gefährden."
+  },
+  {
+    "id": "252",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Auto auf einem Parkstreifen ohne Hinweis auf eine Behinderung des Radverkehrs ist nicht unmittelbar fahrradrelevant."
+  },
+  {
+    "id": "255",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung über einen Schlafplatz betrifft keine fahrradspezifische Infrastruktur oder Sicherheit."
+  },
+  {
+    "id": "256",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein auf dem Fußweg liegendes Schild ist primär ein Hindernis für Fußgänger, solange keine Beeinträchtigung des Radverkehrs explizit erwähnt wird."
+  },
+  {
+    "id": "258",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Gully befindet sich explizit auf dem Radweg und stellt eine direkte Sturzgefahr für Radfahrer dar."
+  },
+  {
+    "id": "260",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Schlaglöcher auf einem expliziten Rad- und Fußweg stellen eine direkte Beeinträchtigung dar."
+  },
+  {
+    "id": "290",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Die Meldung bezieht sich spezifisch auf den Gehweg, eine fahrradspezifische Relevanz ist nicht erkennbar."
+  },
+  {
+    "id": "304",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Das Schlagloch auf der Straße stellt eine potenzielle Gefahr für Radfahrer dar, erfordert aber die Überprüfung, ob Radverkehr dort stattfindet."
+  },
+  {
+    "id": "306",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher in der Straße sind für Radfahrer gefährlich, die genaue Örtlichkeit erfordert eine Prüfung bezüglich der Radverkehrsführung."
+  },
+  {
+    "id": "321",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signal_light_timing",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine verdeckte Ampel stellt eine allgemeine Verkehrsbehinderung dar, die auch Radfahrende betrifft."
+  },
+  {
+    "id": "335",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Abgestellte Anhänger an der Straße sind ohne Angabe, ob sie den Radweg blockieren, nicht direkt fahrradrelevant."
+  },
+  {
+    "id": "344",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die mangelhafte Beschaffenheit des Radweges führt zu gefährlichem Ausweichverhalten auf den Gehweg."
+  },
+  {
+    "id": "357",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "crossing_safety",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein hoher Randstein an einer Überweginsel stellt ein direktes Sturzrisiko für Radfahrer dar."
+  },
+  {
+    "id": "360",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein übervoller Textilcontainer hat keinen direkten Bezug zur Sicherheit oder Infrastruktur des Radverkehrs."
+  },
+  {
+    "id": "368",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signage_detours",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Unkenntlichkeit von Beschilderung auf einem Rad- und Fußweg durch Überwuchs ist eine direkte Beeinträchtigung."
+  },
+  {
+    "id": "392",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Illegale Sperrmüllentsorgung stellt keinen direkten Bezug zur Fahrradinfrastruktur her."
+  },
+  {
+    "id": "396",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Allgemeine Absenkung der Straßenoberfläche erfordert eine Prüfung, ob sie die Radspur betrifft."
+  },
+  {
+    "id": "399",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch auf der Fahrbahn stellt für Radfahrer ein erhebliches Sicherheitsrisiko dar."
+  },
+  {
+    "id": "400",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher und loser Schutt am Fahrbahnrand sind für den Radverkehr gefährlich."
+  },
+  {
+    "id": "414",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgesackter Gulli am rechten Fahrbahnrand gefährdet unmittelbar den Radverkehr."
+  },
+  {
+    "id": "415",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch auf der Fahrbahn ist für Radfahrende gefährlich, muss aber lokal geprüft werden."
+  },
+  {
+    "id": "416",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein großes Schlagloch auf der Fahrbahn stellt ein hohes Unfallrisiko für Radfahrende dar."
+  },
+  {
+    "id": "418",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft explizit einen Radüberweg, der bereits stark beschädigt ist."
+  },
+  {
+    "id": "422",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein zugewachsener Bürgersteig kann für Radfahrende relevant sein, sofern er zur Mitbenutzung freigegeben ist."
+  },
+  {
+    "id": "423",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung bezieht sich explizit auf den Zustand eines Rad- und Wanderweges."
+  },
+  {
+    "id": "424",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Einsinkende Pflastersteine können den Radverkehr gefährden, eine Prüfung der Lage ist erforderlich."
+  },
+  {
+    "id": "426",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher auf der Straße erfordern eine Prüfung der Relevanz für den Radverkehr."
+  },
+  {
+    "id": "427",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Fundfahrrad im öffentlichen Raum ist ein direkt radrelevanter Fall."
+  },
+  {
+    "id": "430",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Abgestellte E-Scooter behindern den öffentlichen Verkehrsraum und können Radwege blockieren."
+  },
+  {
+    "id": "431",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Verschmutzte Wege und Gehwege sind für Radfahrer oft ein Hindernis, bedarf aber der Prüfung der Örtlichkeit."
+  },
+  {
+    "id": "435",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Schlaglöcher im Mittelstreifen betreffen den motorisierten Verkehr, nicht den Radverkehr."
+  },
+  {
+    "id": "436",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung bezieht sich auf allgemeine Straßenschäden für Autos an einer Hauptstraße ohne Hinweis auf Radverkehrsnutzung."
+  },
+  {
+    "id": "438",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestellter Anhänger auf einem Parkplatz stellt keine direkte Behinderung für den Radverkehr dar."
+  },
+  {
+    "id": "440",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Laub auf Rasenflächen hat keine direkte Auswirkung auf die Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "445",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": false,
+    "reason_de": "Es wird lediglich von Schlaglöchern auf der Fahrbahn gesprochen, ohne Radbezug."
+  },
+  {
+    "id": "448",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Kein räumlicher oder funktionaler Bezug zum Radverkehr erkennbar."
+  },
+  {
+    "id": "453",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Allgemeiner Straßenzustand ohne erkennbaren Bezug zum Radweg oder Radverkehr."
+  },
+  {
+    "id": "455",
+    "is_cycling_related": false,
+    "directness": "nearby_only",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein Müllsack am Wegrand könnte den Radverkehr stören, ist aber ohne genaueren Ort unklar."
+  },
+  {
+    "id": "456",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Das Schlagloch könnte auf einem Radweg liegen, ist aber unpräzise beschrieben."
+  },
+  {
+    "id": "459",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ob das Straßenschild oder die Laterne für den Radverkehr relevant ist, ist nicht spezifiziert."
+  },
+  {
+    "id": "460",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht erwähnt explizit, dass Radfahren aufgrund von Matsch und Pfützen unmöglich ist."
+  },
+  {
+    "id": "463",
+    "is_cycling_related": false,
+    "directness": "nearby_only",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Die Hecke beeinträchtigt primär den Gehweg, nicht zwingend den Radverkehr."
+  },
+  {
+    "id": "469",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Eingeschränkte Sicht an einer Einmündung ist eine Gefahr für alle Verkehrsteilnehmer, einschließlich Radfahrer."
+  },
+  {
+    "id": "473",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft explizit Schlaglöcher auf einem Radweg."
+  },
+  {
+    "id": "474",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Laubarbeiten auf dem Gehweg betreffen primär Fußgänger."
+  },
+  {
+    "id": "476",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein tiefes Loch in der Fahrspur stellt ein Sicherheitsrisiko für Radfahrende dar, sofern kein separater Radweg genutzt wird."
+  },
+  {
+    "id": "482",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Überfüllte Textilcontainer betreffen die Abfallwirtschaft und haben keinen direkten Bezug zur Radverkehrssicherheit."
+  },
+  {
+    "id": "486",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Zurückgelassene Fahrräder an einer Haltestelle könnten auf Schrott oder Fundräder hindeuten und stellen eine potenzielle Blockade dar."
+  },
+  {
+    "id": "502",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Der umgefallene Poller befindet sich hinter dem Fußweg und ist somit für den Radverkehr nicht relevant."
+  },
+  {
+    "id": "503",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Das Schlagloch befindet sich direkt auf einem Radweg und stellt eine akute Sturzgefahr dar."
+  },
+  {
+    "id": "504",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Beschädigte Grünstreifen nach Erdarbeiten haben ohne spezifische Angabe zur Wegeführung keinen unmittelbaren Bezug zum Radverkehr."
+  },
+  {
+    "id": "515",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Schäden an Gehwegen betreffen primär Fußgänger und nicht explizit die Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "522",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestellter Wohnwagen ist ein allgemeines Parkproblem ohne direkten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "530",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Hochstehende Pflastersteine sind eine Gefahr für Radfahrende, sofern der Bereich Teil der Verkehrsfläche ist."
+  },
+  {
+    "id": "535",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung bezieht sich explizit auf die Sicherheit von Fußgängern und Löcher neben der Fahrbahn."
+  },
+  {
+    "id": "539",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Meldung eines Fundfahrrads ist ein direkter Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "540",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die beschädigte Teerdecke macht den Weg für Radfahrende gefährlich und unpassierbar."
+  },
+  {
+    "id": "546",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher auf der Straße können für Radfahrende gefährlich sein, sofern kein Radweg vorhanden ist."
+  },
+  {
+    "id": "547",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Provisorisch verschlossene Kanäle auf Verkehrsflächen stellen eine Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "553",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Anhänger auf einem Parkplatz behindert den Gehweg, ist aber kein direktes Hindernis für den Radverkehr."
+  },
+  {
+    "id": "567",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Die beschriebenen Schlaglöcher gefährden den gesamten Verkehr, inklusive Radfahrende, erfordert aber Prüfung, ob es sich um eine Radverkehrsführung handelt."
+  },
+  {
+    "id": "575",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Es handelt sich um eine Meldung über illegale Müllentsorgung ohne Bezug zum Radverkehr."
+  },
+  {
+    "id": "578",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Der Zustand der Einmündung betrifft auch Radfahrende, eine Vor-Ort-Prüfung der Infrastruktur ist jedoch erforderlich."
+  },
+  {
+    "id": "584",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Tonne blockiert direkt den Geh- und Radweg."
+  },
+  {
+    "id": "596",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Fahrradweg befindet sich laut Meldung in einem sehr schlechten Zustand."
+  },
+  {
+    "id": "598",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung bezieht sich spezifisch auf den Fußweg."
+  },
+  {
+    "id": "602",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die abgesenkte Fläche sammelt Wasser und stellt eine direkte Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "606",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Die Schlaglöcher im Seitenstreifen sind für Radfahrende gefährlich, eine Prüfung der genauen Örtlichkeit ist notwendig."
+  },
+  {
+    "id": "612",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Auto ohne Kennzeichen auf einem Parkplatz ist ohne spezifischen Bezug zum Radverkehr nicht relevant."
+  },
+  {
+    "id": "617",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Fahrzeug auf einem Parkplatz ist für den Radverkehr nicht direkt relevant."
+  },
+  {
+    "id": "618",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Das Thema betrifft Spielplatzregeln und Hunde, keinen Radverkehr."
+  },
+  {
+    "id": "622",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgemeldetes Fahrzeug stellt ohne weiteren Kontext keine spezifische Radverkehrsgefahr dar."
+  },
+  {
+    "id": "625",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher am Straßenrand betreffen Radfahrende, es muss jedoch geprüft werden, ob dies eine Radverkehrsführung ist."
+  },
+  {
+    "id": "627",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch auf der Fahrbahn ist für Radfahrende gefährlich, eine Prüfung der Örtlichkeit ist sinnvoll."
+  },
+  {
+    "id": "633",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Fahrzeug auf einem Parkplatz hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "635",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Schäden am Fahrbahnbelag an mehreren Einmündungen können für Radfahrende gefährlich sein."
+  },
+  {
+    "id": "644",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Abgemeldete Fahrzeuge unter einer Brücke sind ohne Hinweis auf eine Blockierung des Radwegs nicht unmittelbar radrelevant."
+  },
+  {
+    "id": "650",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Aufkleber auf einem Ampelmast stellen keine unmittelbare Verkehrsgefährdung für den Radverkehr dar."
+  },
+  {
+    "id": "651",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Graffiti auf Verkehrszeichen ohne Beeinträchtigung der Lesbarkeit sind nicht radrelevant."
+  },
+  {
+    "id": "653",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Fußballaufkleber an einer Brücke stellen keine Verkehrsgefährdung dar."
+  },
+  {
+    "id": "665",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein 10 cm tiefes Schlagloch am Fahrbahnrand stellt ein erhebliches Sicherheitsrisiko für Radfahrende dar."
+  },
+  {
+    "id": "672",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Starke Fahrbahnabsackungen sind für Radfahrende aufgrund der Sturzgefahr kritisch."
+  },
+  {
+    "id": "673",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "bike_parking",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine Ansammlung von Schrottfahrrädern blockiert öffentlichen Raum, der für ordnungsgemäße Fahrradstellplätze benötigt wird."
+  },
+  {
+    "id": "674",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Wurzelschäden direkt auf dem Radweg stellen eine klare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "679",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Unspezifische Schlaglochmeldung erfordert Prüfung, ob die betroffene Fläche vom Radverkehr genutzt wird."
+  },
+  {
+    "id": "683",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Mehrere tiefe Schlaglöcher in einer Kurve sind für Radfahrende besonders gefahrenträchtig."
+  },
+  {
+    "id": "699",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Müll auf einem Verbindungsweg, der vermutlich von Radfahrenden genutzt wird, stellt eine Gefahrenquelle dar."
+  },
+  {
+    "id": "704",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Starke Fahrbahnschäden und Erhebungen im Asphalt sind für Radfahrende eine Unfallquelle."
+  },
+  {
+    "id": "708",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Graffiti an einem Ladekran ist eine ästhetische Störung, beeinträchtigt aber nicht die Sicherheit oder Infrastruktur des Radverkehrs."
+  },
+  {
+    "id": "710",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein abgestellter Einkaufswagen kann am Übergang eine Behinderung für den Radverkehr darstellen."
+  },
+  {
+    "id": "718",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Das unlesbare Schild könnte ein wichtiges Verkehrszeichen für den Radverkehr sein."
+  },
+  {
+    "id": "723",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Schäden an Verkehrsinseln können die Sicherheit von Radfahrenden an Querungen beeinträchtigen."
+  },
+  {
+    "id": "724",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Das abgestellte Fahrzeug auf einem Parkplatz hat keinen direkten Bezug zum Radverkehr."
+  },
+  {
+    "id": "738",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein Anhänger am Straßenrand ist nicht zwangsläufig ein Hindernis für Radfahrende."
+  },
+  {
+    "id": "739",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Müllablagerung betrifft primär den Bürgersteig und nicht die Radinfrastruktur."
+  },
+  {
+    "id": "740",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Allgemeine Schlaglöcher ohne spezifischen Bezug zum Radweg erfordern eine Prüfung der Lage."
+  },
+  {
+    "id": "745",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Sperrmüll auf dem Fuß- und Radweg stellt eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "750",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Abbruchkante ragt direkt in den Radweg und stellt eine erhebliche Sturzgefahr dar."
+  },
+  {
+    "id": "752",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": true,
+    "reason_de": "Die Meldung bezieht sich explizit auf einen Fußweg ohne Erwähnung einer gemeinsamen Radwegnutzung."
+  },
+  {
+    "id": "758",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein umgefahrenes Schild kann die Orientierung oder Sicherheit von Radfahrenden beeinträchtigen."
+  },
+  {
+    "id": "760",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Schaden an der Brückenbeleuchtung ist für die Radverkehrssicherheit in der Regel nicht kritisch."
+  },
+  {
+    "id": "762",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Das abgestellte Fahrzeug und der Müll am Parkplatz beeinträchtigen den Radverkehr wahrscheinlich nicht."
+  },
+  {
+    "id": "769",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Straßenschäden an einer Zufahrt sind ohne genaue Prüfung der Radverkehrsführung nicht als direkt radrelevant einzustufen."
+  },
+  {
+    "id": "774",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Müll auf dem Rad- und Gehweg stellt eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "790",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Allgemeine Schlaglöcher auf einer Straße bedürfen der Klärung, ob sie die Radverkehrsfläche betreffen."
+  },
+  {
+    "id": "791",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Allgemeine Straßenschäden ohne expliziten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "797",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein großer Hügel in der Fahrbahn stellt eine erhebliche Sturzgefahr für Radfahrende dar."
+  },
+  {
+    "id": "802",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Illegale Müllentsorgung im Landschaftsschutzgebiet ohne direkten Bezug zum Radweg."
+  },
+  {
+    "id": "808",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung beschreibt explizit Radwegschäden."
+  },
+  {
+    "id": "818",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Der Weg ist für Radfahrende schlecht passierbar und es fehlt wichtige Beschilderung."
+  },
+  {
+    "id": "821",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Wurzelschäden direkt auf dem Radweg werden explizit gemeldet."
+  },
+  {
+    "id": "823",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Betrifft primär den Gehweg; ein Bezug zum Radverkehr ist nicht ersichtlich."
+  },
+  {
+    "id": "825",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Es geht um die Gestaltung von Parkstreifen und Rabatten, kein Radverkehrsbezug."
+  },
+  {
+    "id": "826",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Dies ist ein Hinweis zur Umleitungsbeschilderung für den Autoverkehr."
+  },
+  {
+    "id": "833",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Großflächige Asphaltschäden an einer Hauptstraße beeinträchtigen Radfahrende massiv."
+  },
+  {
+    "id": "836",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "vegetation_block",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Die Behinderung eines Geh- und Radwegs durch Grünzeug ist sicherheitsrelevant."
+  },
+  {
+    "id": "837",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Laub auf Gehweg und Straße ohne direkten Fahrradbezug."
+  },
+  {
+    "id": "846",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Verschmutzte Straßenschilder sind für den Radverkehr in der Regel nicht kritisch."
+  },
+  {
+    "id": "847",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Dies betrifft eine verkehrsrechtliche Anordnung für die Fahrbahn ohne Radverkehrsbezug."
+  },
+  {
+    "id": "848",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Illegale Markierungen sind zwar sicherheitsrelevant, haben aber keinen direkten Fahrradbezug."
+  },
+  {
+    "id": "851",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": true,
+    "reason_de": "Der Bericht bezieht sich auf einen Gehweg und ist daher primär für Fußgänger relevant."
+  },
+  {
+    "id": "859",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Es wird lediglich ein allgemeines Verkehrsschild auf einer Rasenfläche gemeldet, ohne Bezug zum Radverkehr."
+  },
+  {
+    "id": "867",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": true,
+    "reason_de": "Der Schaden liegt am Rand der Fahrbahn bei einem Parkplatz und hat keinen spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "869",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Schotterwege ohne spezifische Radinfrastruktur-Kennzeichnung sind für Radfahrende oft kritisch, bedürfen aber einer Prüfung ob Radnutzung erlaubt ist."
+  },
+  {
+    "id": "870",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht beschreibt explizit einen Radweg mit Oberflächenschäden durch Wurzeln und Schachtdeckel."
+  },
+  {
+    "id": "878",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der Bericht konzentriert sich auf die Barrierefreiheit für Personen mit Rollatoren auf einem Durchgangsweg."
+  },
+  {
+    "id": "882",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Allgemeine Straßenschäden am Fahrbahnrand sind nicht explizit Radinfrastruktur."
+  },
+  {
+    "id": "885",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Anhänger in einer Parkbucht oder auf dem Grünstreifen blockiert keine Radverkehrsflächen."
+  },
+  {
+    "id": "887",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Problem mit der Entwässerung eines Grabens hat keinen direkten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "898",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": true,
+    "reason_de": "Die Verschmutzung eines Gehwegs durch Farbe ist kein sicherheitsrelevantes Radinfrastruktur-Problem."
+  },
+  {
+    "id": "909",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Falschparken auf Kfz-Parkplätzen betrifft den Radverkehr nicht direkt."
+  },
+  {
+    "id": "910",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Das Wohnmobil blockiert direkt den Rad- und Gehweg, was eine unmittelbare Behinderung für Radfahrende darstellt."
+  },
+  {
+    "id": "913",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein fahruntüchtiges Kfz auf einem Parkstreifen stellt keine direkte Gefahr für den Radverkehr dar."
+  },
+  {
+    "id": "915",
+    "is_cycling_related": false,
+    "directness": "nearby_only",
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch auf einer Straße ist ohne Information ob es sich um den Radweg handelt nicht als direkt radrelevant zu klassifizieren."
+  },
+  {
+    "id": "916",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Instandhaltung von Entwässerungsgräben abseits der Radwege ist nicht radrelevant."
+  },
+  {
+    "id": "918",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Geruchsemissionen aus Gullys sind kein sicherheitsrelevantes Problem für den Radverkehr."
+  },
+  {
+    "id": "924",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Das Zuparken eines Wendehammers betrifft primär den Lkw- und Busverkehr, nicht spezifisch Radinfrastruktur."
+  },
+  {
+    "id": "926",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher in einer Kurve können für Radfahrende gefährlich sein, die Klassifizierung der Fahrbahn als reine Kfz-Straße ist jedoch unklar."
+  },
+  {
+    "id": "941",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Müll neben einem Entwässerungsgraben ist kein direktes Hindernis für Radfahrende."
+  },
+  {
+    "id": "942",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Ein abgedeckter Regenwasserabfluss kann eine Gefahrenstelle für Fahrräder darstellen, die genaue Lage erfordert eine Prüfung."
+  },
+  {
+    "id": "944",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein auf dem Grünstreifen abgestelltes Auto beeinträchtigt den Radverkehr nicht unmittelbar."
+  },
+  {
+    "id": "945",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Die eingeschränkte Sicht in einer Kurve durch einen Anhänger stellt ein Sicherheitsrisiko für alle Verkehrsteilnehmer, einschließlich Radfahrender, dar."
+  },
+  {
+    "id": "946",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Baumwurzelschäden auf einem Geh- und Radweg sind ein direktes Hindernis für den Radverkehr."
+  },
+  {
+    "id": "955",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Pflege von Efeu an Eichen ist ein ökologisches Thema ohne direkten Bezug zur Radverkehrssicherheit."
+  },
+  {
+    "id": "964",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein umgefahrenes Schild kann die Verkehrssicherheit an einer Kreuzung beeinträchtigen, die Relevanz für Radfahrende hängt vom Standort ab."
+  },
+  {
+    "id": "968",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Objekte, die auf einem Gehweg liegen, behindern den Fuß- und Radverkehr."
+  },
+  {
+    "id": "971",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Das Problem betrifft die Bodenfreiheit von Kfz beim Befahren von Einfahrten und nicht die Radinfrastruktur."
+  },
+  {
+    "id": "973",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein auf einem Parkstreifen abgestelltes Fahrzeug blockiert keinen Radweg oder gefährdet den Radverkehr nicht direkt."
+  },
+  {
+    "id": "974",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Belegung von Kfz-Parkplätzen durch abgemeldete Fahrzeuge ist kein radverkehrsspezifisches Problem."
+  },
+  {
+    "id": "981",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch in einer Abfahrt ist für Radfahrende eine erhebliche Gefahrenstelle."
+  },
+  {
+    "id": "984",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Fahrradweg ist direkt durch das Absacken der Fahrbahn beschädigt und gefährdet Radfahrende."
+  },
+  {
+    "id": "988",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Verstopfte Gullys am Straßenrand stellen ein Sicherheitsrisiko für Radfahrende dar, sofern sie den Fahrbahnbereich betreffen."
+  },
+  {
+    "id": "990",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Es ist unklar, ob sich der Weg um einen Radweg oder einen reinen Fußweg handelt, daher ist eine Prüfung erforderlich."
+  },
+  {
+    "id": "991",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Schäden an Kreuzungen betreffen Radfahrende häufig, aber es ist unklar, ob Radinfrastruktur betroffen ist."
+  },
+  {
+    "id": "993",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher auf Fahrbahnen gefährden Radfahrende, es muss jedoch geklärt werden, ob es eine für Radfahrende relevante Strecke ist."
+  },
+  {
+    "id": "995",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein umgestürzter Baum in einer Böschung betrifft ohne weitere Angaben primär nicht die Radinfrastruktur."
+  },
+  {
+    "id": "1001",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher in Kurven sind für Radfahrende besonders gefährlich, erfordern aber eine Prüfung des Standorts."
+  },
+  {
+    "id": "1003",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein unzulässiges Fahrzeug ohne Kennzeichen blockiert hier nicht spezifisch eine Radverkehrsanlage."
+  },
+  {
+    "id": "1004",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Verstopfte Gullys im Straßenbereich können für Radfahrende ein Hindernis oder eine Gefahr darstellen."
+  },
+  {
+    "id": "1009",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Graben hinter einem Haus hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "1016",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Verschmutzte Wasserabläufe an Hauptstraßen können bei Regen zur Pfützenbildung auf Radwegen führen."
+  },
+  {
+    "id": "1020",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Das Zuwachsen eines Fußwegs und fehlende Bepflanzung sind keine primär radverkehrsrelevanten Probleme."
+  },
+  {
+    "id": "1023",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Dies betrifft explizit die Nutzung von Gehwegen durch Fußgänger, Kinderwagen und Rollstühle."
+  },
+  {
+    "id": "1035",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Beschädigte Sperrpoller und nicht reflektierende Absperrungen stellen eine Gefahr für Radfahrende dar, insbesondere nachts."
+  },
+  {
+    "id": "1037",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Verschmutzung eines Schildes beeinträchtigt die allgemeine Verkehrssicherheit, ist aber kein spezifisches Radverkehrsproblem."
+  },
+  {
+    "id": "1040",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Glasscherben auf Radwegen verursachen direkte Gefahren für Radfahrende und Reifenschäden."
+  },
+  {
+    "id": "1049",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": true,
+    "reason_de": "Ein parkendes Auto auf einem Parkstreifen ohne Kennzeichen ist primär ein ordnungsrechtliches Thema und nicht zwingend radrelevant."
+  },
+  {
+    "id": "1057",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Baumwurzeln im Radweg stellen eine akute Unfallgefahr für Radfahrende dar."
+  },
+  {
+    "id": "1063",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein Straßenschaden in der Fahrbahn ist ohne weitere Ortsbeschreibung nicht spezifisch genug als radrelevant einzustufen."
+  },
+  {
+    "id": "1077",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein blockierter öffentlicher Parkplatz durch einen Anhänger hat keinen direkten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "1083",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.7,
+    "needs_human_review": true,
+    "reason_de": "Allgemeine Schlaglöcher auf einer Straße ohne expliziten Bezug zum Radweg erfordern eine Prüfung vor Ort."
+  },
+  {
+    "id": "1086",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Schlechte Sichtbarkeit von Vorfahrtsschildern an Kreiseln gefährdet auch den Radverkehr an Knotenpunkten."
+  },
+  {
+    "id": "1089",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Entsorgung eines Tierkadavers hat keinen unmittelbaren Bezug zur Radverkehrssicherheit."
+  },
+  {
+    "id": "1090",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Reparatur einer Grabenverkleidung am Straßenrand betrifft primär den Straßenerhalt, nicht die Radinfrastruktur."
+  },
+  {
+    "id": "1093",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Herumliegende Absperrungen und Müll am Straßenrand stellen eine potenzielle Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "1094",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Überwucherung des Gehwegs zwingt Radfahrende in den Fahrbahn- oder Gegenverkehr, was eine direkte Gefährdung darstellt."
+  },
+  {
+    "id": "1099",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein unleserliches Straßennamensschild ist für Radfahrende kaum sicherheitsrelevant."
+  },
+  {
+    "id": "1102",
+    "is_cycling_related": false,
+    "directness": "nearby_only",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein zugewuchertes Straßenschild ist eher ein allgemeines Orientierungsproblem als ein direktes Sicherheitsrisiko für den Radverkehr."
+  },
+  {
+    "id": "1109",
+    "is_cycling_related": false,
+    "directness": "nearby_only",
+    "subcategory": "unrelated",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein umgefallener Betonpoller erfordert eine Prüfung, ob er eine Gefahr für Radwege darstellt oder nur allgemeiner Straßenraum ist."
+  },
+  {
+    "id": "1110",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Der Melder bezieht sich explizit auf Gefahren für PKWs, nicht für Radfahrende."
+  },
+  {
+    "id": "1112",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Tiefe Schlaglöcher im Straßenbelag stellen eine erhebliche Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "1123",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Fahrzeug ohne Kennzeichen ist ohne explizite Behinderung des Radwegs keine direkte Angelegenheit für die Radinfrastruktur."
+  },
+  {
+    "id": "1129",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Da Radfahrende in Deutschland oft auf dem Gehweg fahren dürfen oder müssen, ist eine abgesackte Pflasterung relevant."
+  },
+  {
+    "id": "1133",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Überwucherungen am Straßenrand schränken die nutzbare Breite für Radfahrende direkt ein."
+  },
+  {
+    "id": "1135",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich explizit auf die Behinderung von Fußgängern auf dem Gehweg."
+  },
+  {
+    "id": "1138",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Beschädigungen an der Straßenkante, wo Radfahrende oft fahren, stellen eine direkte Sturzgefahr dar."
+  },
+  {
+    "id": "1140",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Schlaglöcher auf einer Straße beeinträchtigen die Sicherheit von Radfahrenden im fließenden Verkehr."
+  },
+  {
+    "id": "1141",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine Straße, die flächendeckend mit Schlaglöchern übersät ist, ist für Radfahrende gefährlich."
+  },
+  {
+    "id": "1142",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein beschädigtes Dreiecksschild (vermutlich Vorfahrtsschild) ist eine allgemeine verkehrsrechtliche Angelegenheit ohne direkten Radbezug."
+  },
+  {
+    "id": "1143",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein Schlagloch in der Straße nahe einer Haltestelle stellt ein potenzielles Sicherheitsrisiko für den Radverkehr dar."
+  },
+  {
+    "id": "1147",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Aufgebrochene Stellen in der Fahrbahn erfordern eine Überprüfung, ob Radwege betroffen sind."
+  },
+  {
+    "id": "1152",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein verlassener PKW stellt ohne Blockierung der Radinfrastruktur kein radspezifisches Problem dar."
+  },
+  {
+    "id": "1167",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Abgestellte Hänger auf Parkflächen betreffen im Regelfall nicht die Radverkehrsführung."
+  },
+  {
+    "id": "1172",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgemeldetes Fahrzeug stellt keine direkte Behinderung für die Radinfrastruktur dar."
+  },
+  {
+    "id": "1180",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Schlaglöcher auf Straßen, die als Radrouten dienen, beeinträchtigen die Fahrsicherheit erheblich."
+  },
+  {
+    "id": "1181",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein Schlagloch an einer Kreuzung stellt ein Sicherheitsrisiko für Radfahrende dar."
+  },
+  {
+    "id": "1182",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.75,
+    "needs_human_review": true,
+    "reason_de": "Es ist unklar, ob sich die Schlaglöcher auf der Fahrbahn oder auf Radwegen befinden."
+  },
+  {
+    "id": "1183",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": false,
+    "reason_de": "Schlaglöcher im Kreuzungsbereich gefährden Radfahrende im fließenden Verkehr."
+  },
+  {
+    "id": "1184",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich auf allgemeine Fahrbahnschäden und Lärmbelastung durch Busse, nicht spezifisch auf Radinfrastruktur."
+  },
+  {
+    "id": "1186",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "vegetation_block",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Es ist zu prüfen, ob der Gehweg für Radfahrende freigegeben ist, da er durch Hecken stark eingeschränkt wird."
+  },
+  {
+    "id": "1188",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Es handelt sich um ein abgestelltes Fahrrad, das keine direkte Störung der Infrastruktur darstellt."
+  },
+  {
+    "id": "1192",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Sichteinschränkungen durch Vegetation an Kreuzungen gefährden die Sicherheit von Radfahrenden."
+  },
+  {
+    "id": "1205",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein explizit genannter Radweg ist durch Überwucherung und Schlaglöcher beeinträchtigt."
+  },
+  {
+    "id": "1326",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Dies betrifft private Müllentsorgung vor einem Hauseingang ohne Relevanz für den Radverkehr."
+  },
+  {
+    "id": "1454",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich ausschließlich auf den Parkplatzmangel für PKWs und Wohnmobile."
+  },
+  {
+    "id": "1474",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Abgestellte Fahrräder sind ohne konkrete Blockade der Infrastruktur keine sicherheitskritische Behinderung."
+  },
+  {
+    "id": "1584",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Wie bei ID 1474 handelt es sich um abgestellte Fahrräder ohne direkte Beeinträchtigung der Radwegnutzung."
+  },
+  {
+    "id": "1636",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft Rattenproblematik an Containern und ist nicht fahrradbezogen."
+  },
+  {
+    "id": "1666",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "crossing_safety",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft explizit die Sichtverhältnisse auf einem Fuß- und Radweg."
+  },
+  {
+    "id": "1694",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Es handelt sich um illegale Müllentsorgung von Möbeln ohne direkten Radbezug."
+  },
+  {
+    "id": "1703",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein defekter Hebel an einer Wasserpumpe auf einem Spielplatz hat keinen direkten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "1715",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signal_light_timing",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht beschreibt eine schlechte Sichtbarkeit einer Radverkehrsampel, was ein direktes Sicherheitsproblem für Radfahrende darstellt."
+  },
+  {
+    "id": "1730",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um eine Beschwerde über falsch entsorgten Müll auf einem Grünstreifen, was keinen direkten Bezug zur Radverkehrsinfrastruktur hat."
+  },
+  {
+    "id": "1746",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Verschmutzung eines privaten Grundstücks und einer Hecke hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "1779",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung bezieht sich auf zurückgelassene Absperrelemente in einer Grünanlage, ohne erkennbaren Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "1795",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Riesenbärenklau stellt ein allgemeines Gesundheitsrisiko dar, steht jedoch nicht in direktem oder materiellem Bezug zum Radverkehr oder der Radinfrastruktur."
+  },
+  {
+    "id": "2139",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Extreme Schlaglöcher in einem Kreuzungsbereich stellen ein erhebliches Sicherheitsrisiko für Radfahrende dar."
+  },
+  {
+    "id": "2565",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein Defekt an einem Spielplatzgerät hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "2804",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht betrifft einen Defekt an Sportgeräten auf einem Spielplatz und hat keinen Bezug zum Radverkehr."
+  },
+  {
+    "id": "2807",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein überlaufender Mülleimer hat keinen direkten Bezug zur Fahrradinfrastruktur oder Radverkehrssicherheit."
+  },
+  {
+    "id": "2855",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Vegetation versperrt den kombinierten Fuß- und Radweg und gefährdet damit die Sicherheit von Radfahrern und Fußgängern."
+  },
+  {
+    "id": "2863",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Einleitung von Poolwasser auf einen Rad- und Fußweg stellt eine potenzielle Rutschgefahr und Verschmutzung der Radinfrastruktur dar."
+  },
+  {
+    "id": "2869",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine beschmierte Infotafel in einer Parkanlage hat keinen direkten Bezug zur Radverkehrsinfrastruktur oder -sicherheit."
+  },
+  {
+    "id": "2911",
+    "is_cycling_related": false,
+    "directness": "nearby_only",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Die Meldung betrifft allgemein überwachsenes Grün im öffentlichen Raum ohne direkten Bezug zu Radwegen oder Sichtbehinderungen für den Radverkehr."
+  },
+  {
+    "id": "3373",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Bei den nicht ausgetragenen Zeitungen in einem Spielplatz-Gebüsch handelt es sich um eine reine Abfallproblematik ohne Bezug zum Radverkehr."
+  },
+  {
+    "id": "3525",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "other_cycling",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ausgefallene Straßenbeleuchtung beeinträchtigt die Sichtbarkeit und Sicherheit von Radfahrenden im Dunkeln."
+  },
+  {
+    "id": "3528",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht ist eine positive Rückmeldung zu einer Infrastrukturmaßnahme für eine Fahrradstraße."
+  },
+  {
+    "id": "3617",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein umgestürzter Baum blockiert direkt den Radweg und stellt eine erhebliche Gefahr für Radfahrer dar."
+  },
+  {
+    "id": "3731",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich auf die Befestigung von Betonpollern auf einem Gehweg, was keine direkte Relevanz für die Radinfrastruktur aufweist."
+  },
+  {
+    "id": "3743",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um eine illegale Müllentsorgung abseits der Radinfrastruktur."
+  },
+  {
+    "id": "3836",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Bei illegal abgestelltem Sperrmüll auf dem Gehweg handelt es sich um eine allgemeine Verschmutzung ohne direkten Radverkehrsbezug."
+  },
+  {
+    "id": "4490",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei den gemeldeten Müllsäcken handelt es sich um eine allgemeine Müllentsorgung im Gebüsch ohne direkten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "4637",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Auf der Fahrbahn liegender Müll stellt eine direkte Gefahr für Radfahrende durch Rutsch- oder Sturzgefahr dar."
+  },
+  {
+    "id": "4791",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei dem gemeldeten Müll handelt es sich um eine allgemeine Verunreinigung im Grünstreifen, die keinen direkten Bezug zur Radverkehrsinfrastruktur aufweist."
+  },
+  {
+    "id": "4836",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Illegale Müllentsorgung an einem Glascontainer hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "4851",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein schrottreifes Fahrrad auf dem Gehweg stellt ein Hindernis dar, das ggf. auch Radverkehrsflächen tangiert und beseitigt werden sollte."
+  },
+  {
+    "id": "4861",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Überquellende Altglascontainer sind ein allgemeines Entsorgungsproblem und haben keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "4890",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei einer wilden Müllkippe handelt es sich um eine allgemeine Verschmutzung ohne spezifischen Bezug zur Radinfrastruktur oder Gefährdung für den Radverkehr."
+  },
+  {
+    "id": "4891",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um eine illegale Müllentsorgung in einem Gebüsch ohne erkennbaren Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "4892",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein verlassener Einkaufswagen an einer Bushaltestelle stellt kein direktes Hindernis für den Radverkehr dar."
+  },
+  {
+    "id": "4895",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung von Müll ist ein allgemeines ordnungspolitisches Problem und betrifft hier nicht spezifisch den Radverkehr."
+  },
+  {
+    "id": "4905",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Entsorgung von Schrottfahrrädern in einem öffentlichen Bereich stellt eine direkte Beeinträchtigung der Radinfrastruktur dar."
+  },
+  {
+    "id": "4915",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Abfall in einer Grünanlage stellt kein direktes Hindernis für den Radverkehr dar."
+  },
+  {
+    "id": "4920",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung von Sperrmüll stellt ohne spezifische Ortsangabe auf dem Radweg keine direkte Beeinträchtigung des Radverkehrs dar."
+  },
+  {
+    "id": "4925",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung auf dem Grünstreifen stellt keine direkte Behinderung oder Gefahr für den Radverkehr dar."
+  },
+  {
+    "id": "4958",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei einer wilden Müllkippe handelt es sich um eine allgemeine Verschmutzung ohne direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "4962",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine allgemeine illegale Müllentsorgung ohne Hinweis auf eine Behinderung von Radwegen ist nicht unmittelbar fahrradbezogen."
+  },
+  {
+    "id": "4967",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung an dieser Stelle stellt keinen direkten Bezug zur Radverkehrsinfrastruktur dar."
+  },
+  {
+    "id": "4996",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft illegale Müllentsorgung auf dem Gehweg, was primär ein Fußgänger- und Sauberkeitsthema darstellt."
+  },
+  {
+    "id": "5135",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung an einem Containerstellplatz betrifft den allgemeinen öffentlichen Raum, aber keine spezifische Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "5146",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Silvestermüll und Glasscherben auf Parkstreifen und an Straßenrändern stellen eine erhebliche Gefahr für den Radverkehr dar."
+  },
+  {
+    "id": "5248",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Wilde Müllkippen in Waldgebieten ohne direkten Bezug zur Radinfrastruktur sind für die Radverkehrsplanung nicht prioritär."
+  },
+  {
+    "id": "5300",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Entsorgung von Schrankteilen auf dem Gehweg betrifft primär den Fußverkehr und stellt keine unmittelbare Gefährdung der Radinfrastruktur dar."
+  },
+  {
+    "id": "5315",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der gemeldete Müll befindet sich direkt auf einem Radweg und stellt eine Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "5393",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe ohne spezifischen Bezug zu Radwegen oder Radverkehrsinfrastruktur ist nicht als fahrradbezogen einzustufen."
+  },
+  {
+    "id": "5547",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung und der Tierfund in einem Regenrückhaltebecken haben keinen direkten Bezug zur Fahrradinfrastruktur oder Radverkehrssicherheit."
+  },
+  {
+    "id": "5559",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Verschmutzung durch Bauschutt und Glas am Radweg stellt eine erhebliche Sturzgefahr für Radfahrende dar."
+  },
+  {
+    "id": "5849",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Müll im Tunnel stellt eine direkte Gefahr für den Radverkehr dar, da Radwege oft durch Tunnelunterführungen geführt werden."
+  },
+  {
+    "id": "5894",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine allgemeine Meldung über Müll ohne Bezug zur Radinfrastruktur ist nicht fahrradspezifisch."
+  },
+  {
+    "id": "5940",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei dem gemeldeten Müll auf Grünflächen abseits der Straße handelt es sich um eine allgemeine Verschmutzung ohne direkte Auswirkung auf den Radverkehr."
+  },
+  {
+    "id": "5966",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Bei illegal entsorgtem Müll im Gebüsch ohne direkten Bezug zur Radinfrastruktur handelt es sich um kein spezifisches Radverkehrsthema."
+  },
+  {
+    "id": "6024",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllablagerung im Gebüsch stellt keine direkte Behinderung oder Gefahr für den Radverkehr dar."
+  },
+  {
+    "id": "6038",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Bei dem gemeldeten Sperrmüll auf einem Parkplatz und in einem Graben handelt es sich um eine allgemeine Verschmutzung ohne direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6213",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der gemeldeten Mikrowelle handelt es sich um wilden Müll, der keinen direkten Bezug zur Radverkehrsinfrastruktur aufweist."
+  },
+  {
+    "id": "6220",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein Loch im Asphalt auf einer Brücke stellt eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "6229",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung eines Sofas vor einer Haustür hat keinen unmittelbaren Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6271",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung ist ein allgemeines städtisches Problem ohne spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6282",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Vermüllung auf einem P+R Parkplatz ohne weiteren Kontext stellt keine unmittelbare Beeinträchtigung der Radinfrastruktur dar."
+  },
+  {
+    "id": "6320",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft allgemeine Müllablagerungen ohne spezifischen Bezug zum Radverkehr."
+  },
+  {
+    "id": "6404",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Bauschutt und Steine auf dem Straßenrand stellen eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "6474",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine allgemeine Müllansammlung ohne direkten Bezug zur Radinfrastruktur oder spezifischer Verkehrsgefährdung für Radfahrende."
+  },
+  {
+    "id": "6479",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung ist ein allgemeines Sauberkeitsproblem und hat keinen spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6480",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Große Schlaglöcher in der Fahrbahn stellen ein erhebliches Sicherheitsrisiko für Radfahrer dar, es muss jedoch geprüft werden, ob es sich um eine für Radfahrer relevante Straße handelt."
+  },
+  {
+    "id": "6491",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch auf einer Fahrbahn betrifft Radfahrende, es muss jedoch geprüft werden, ob es sich um einen für den Radverkehr relevanten Bereich handelt."
+  },
+  {
+    "id": "6495",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die nicht geleerte Biotonne hat keinen Bezug zum Radverkehr oder zur Radinfrastruktur."
+  },
+  {
+    "id": "6498",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht konzentriert sich auf Straßensch&auml;den und Parkprobleme von Kraftfahrzeugen, ohne einen direkten Bezug zum Radverkehr aufzuweisen."
+  },
+  {
+    "id": "6499",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich ausschließlich auf Mängel am Gehweg und die Sicherheit von Fußgängern, nicht auf Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6500",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Autobahnzufahrten sind für den Radverkehr gesperrt, daher besteht kein direkter Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6501",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft das Parken auf Rettungswegen und hat keinen direkten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "6502",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die überstehende Hecke blockiert die Sicht auf den Radweg und gefährdet damit die Verkehrssicherheit für Radfahrende."
+  },
+  {
+    "id": "6503",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein tiefes Schlagloch stellt eine Gefahr für Radfahrende dar, es muss jedoch vor Ort geprüft werden, ob es sich auf dem Radweg oder in der Fahrspur befindet."
+  },
+  {
+    "id": "6504",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein tiefes Schlagloch im Asphalt stellt für Radfahrende ein erhebliches Sicherheitsrisiko dar, es muss jedoch geprüft werden, ob sich die Stelle auf der Fahrbahn oder einem Radweg befindet."
+  },
+  {
+    "id": "6505",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Schäden an der Fahrbahn stellen eine potenzielle Gefahr für Radfahrende dar, wobei unklar bleibt, ob es sich um eine reine Kfz-Fahrbahn handelt."
+  },
+  {
+    "id": "6506",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Tiefe Straßenschäden gefährden Radfahrende bei der Nutzung der Fahrbahn, erfordern aber eine Prüfung des Standorts."
+  },
+  {
+    "id": "6507",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Beschwerde über falsch gelagerte Müllsäcke ist kein spezifisches Problem für die Fahrradinfrastruktur oder die Sicherheit von Radfahrern."
+  },
+  {
+    "id": "6515",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signal_light_timing",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der defekte Ampeltaster beeinträchtigt die sichere Überquerung für alle Verkehrsteilnehmer, einschließlich Radfahrender, an einer Kreuzung."
+  },
+  {
+    "id": "6520",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein Wasserabflussproblem an einem Straßengraben ist kein spezifisches Radverkehrsthema."
+  },
+  {
+    "id": "6521",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein fehlender Leitpfosten an einer Straße hat in der Regel keinen direkten Einfluss auf die Radverkehrsinfrastruktur oder Radfahrsicherheit."
+  },
+  {
+    "id": "6523",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch auf der Fahrbahn stellt für Radfahrende ein erhebliches Sicherheitsrisiko dar, die genaue Lage auf dem Radweg muss jedoch geprüft werden."
+  },
+  {
+    "id": "6524",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein allgemeines Schlagloch auf der Straße ist ohne nähere Angaben zum Standort oder zur Radverkehrsführung nicht eindeutig als radverkehrsrelevant einzustufen."
+  },
+  {
+    "id": "6525",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch stellt eine Gefahr für Radfahrende dar, es muss jedoch geprüft werden, ob es sich auf dem Radweg oder der Fahrbahn befindet."
+  },
+  {
+    "id": "6526",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Müll liegt direkt zwischen dem Fahrradweg und der Straße, was eine unmittelbare Gefährdung für Radfahrende darstellt."
+  },
+  {
+    "id": "6534",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Vorschlag bezieht sich ausschlieÓlich auf die Infrastruktur einer Bushaltestelle und hat keinen direkten Bezug zum Radverkehr."
+  },
+  {
+    "id": "6537",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signage_detours",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein loses Verkehrszeichen an einer Radverkehrsstrecke stellt eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "6538",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Illegale Müllentsorgung auf einem Parkplatz hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6540",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Tiefe Schlaglöcher auf der Fahrbahn stellen ein erhebliches Sicherheitsrisiko für Radfahrende dar, sofern kein separater Radweg vorhanden ist."
+  },
+  {
+    "id": "6546",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung von Reifen stellt keinen spezifischen Bezug zur Radinfrastruktur dar."
+  },
+  {
+    "id": "6551",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung geht es um ein Schädlingsproblem auf Privatgrundstücken und Gehwegen, was keinen direkten Bezug zum Radverkehr hat."
+  },
+  {
+    "id": "6564",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung beschreibt allgemeine Müllprobleme und Verstöße gegen die Leinenpflicht in einem Park ohne direkten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6567",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllablagerung auf einem privaten oder städtischen Brachgelände hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6575",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Ein beschädigter Straßenbelag stellt für Radfahrer ein potenzielles Sicherheitsrisiko dar, es muss jedoch geprüft werden, ob dies auf einem von Radfahrern genutzten Abschnitt liegt."
+  },
+  {
+    "id": "6581",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Forderung nach einem abgesenkten Bordstein an einer Kreuzung verbessert die Befahrbarkeit für Kinder auf Fahrrädern sowie für Familien insgesamt."
+  },
+  {
+    "id": "6588",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein parkendes Auto auf einem regulären Parkplatz ist kein fahrradspezifisches Problem."
+  },
+  {
+    "id": "6591",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe ohne spezifischen Bezug zu Radwegen oder Fahrradinfrastruktur stellt kein direktes Hindernis für den Radverkehr dar."
+  },
+  {
+    "id": "6598",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der gemeldete Wohnwagen blockiert Autoparkplätze und hat keinen direkten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "6602",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Fahrzeug stellt ohne Blockade der Radinfrastruktur keine direkte Relevanz für den Radverkehr dar."
+  },
+  {
+    "id": "6607",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein verstopfter Graben an einem Gartenteich hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6617",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft eine hygienische Beeinträchtigung durch Taubenfütterung und Ratten, was keinen direkten Bezug zur Radverkehrsinfrastruktur aufweist."
+  },
+  {
+    "id": "6622",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein loses Straßenschild stellt eine allgemeine Gefahr dar, hat aber keinen spezifischen Bezug zur Fahrradinfrastruktur oder Radfahrsicherheit."
+  },
+  {
+    "id": "6625",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Schaden betrifft primär den Fußgänger- und Rollstuhlverkehr und hat keinen spezifischen Bezug zum Radverkehr."
+  },
+  {
+    "id": "6632",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein großes Schlagloch auf einer Kreuzung gefährdet den Radverkehr, erfordert jedoch eine Prüfung vor Ort, ob es auf der Fahrbahn oder dem Radweg liegt."
+  },
+  {
+    "id": "6633",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Schlaglecher auf der Fahrbahn stellen eine potenzielle Gefahr für Radfahrende dar, sofern kein baulich getrennter Radweg vorhanden ist."
+  },
+  {
+    "id": "6635",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllablagerung vor einer Schule stellt ein allgemeines Ordnungsproblem dar, ohne spezifischen Bezug zu Radverkehrsinfrastruktur oder Radfahrsicherheit."
+  },
+  {
+    "id": "6638",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestellter Wohnwagen ist ein allgemeines ordnungsrechtliches Problem, das ohne Hinweis auf eine Blockade von Radwegen nicht spezifisch den Radverkehr betrifft."
+  },
+  {
+    "id": "6643",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgemeldetes Fahrzeug auf einem Parkstreifen behindert den Radverkehr nicht direkt."
+  },
+  {
+    "id": "6647",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der Bericht beschreibt ein allgemeines Schlagloch ohne expliziten Bezug zur Radinfrastruktur, daher muss die Lage geprüft werden."
+  },
+  {
+    "id": "6651",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Glasscherben auf der Straße stellen eine direkte Sturzgefahr für Radfahrende dar."
+  },
+  {
+    "id": "6652",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein Defekt an der Ampelanlage beeinträchtigt die Sicherheit aller Verkehrsteilnehmer beim Queren der Straße, einschließlich Radfahrender."
+  },
+  {
+    "id": "6657",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei den gemeldeten abgemeldeten Fahrzeugen auf einem Parkplatz handelt es sich um kein fahrradspezifisches Hindernis oder Sicherheitsproblem."
+  },
+  {
+    "id": "6658",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgemeldeter Wohnwagen am Straßenrand stellt keine direkte Behinderung der Radinfrastruktur dar."
+  },
+  {
+    "id": "6660",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe hinter Glascontainern hat keinen direkten Bezug zur Fahrradinfrastruktur oder Verkehrssicherheit."
+  },
+  {
+    "id": "6663",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein Schlagloch dieser Größe in der Fahrspur stellt eine erhebliche Sturzgefahr für Radfahrende dar, auch wenn der Bericht primär auf Autofahrende abzielt."
+  },
+  {
+    "id": "6665",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein mangelhaft geflickter Aufbruch in der Fahrbahn stellt eine unmittelbare Gefahr für Radfahrende dar, da die Oberfläche instabil ist."
+  },
+  {
+    "id": "6671",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Falschparker und beschädigte Verkehrszeichen blockieren den Verkehrsraum und beeinträchtigen die Durchfahrt für Radfahrende."
+  },
+  {
+    "id": "6676",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Das Verkehrsschild blockiert direkt den Radweg und stellt eine Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "6677",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung auf Fußwegen beeinträchtigt die Radinfrastruktur nicht direkt."
+  },
+  {
+    "id": "6680",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein Schlagloch vor privaten Garagen ist ohne weitere Informationen über den Standort kein direktes Radverkehrsthema."
+  },
+  {
+    "id": "6684",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein abgesackter Gullydeckel stellt eine erhebliche Sturzgefahr für Radfahrende dar, es muss jedoch geprüft werden, ob er sich im befahrenen Bereich befindet."
+  },
+  {
+    "id": "6694",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein verstopfter Gully in der Fahrbahn stellt eine unmittelbare Gefahr für Radfahrende dar, da er zu Überflutungen oder Stürzen führen kann."
+  },
+  {
+    "id": "6698",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die verdeckten Halteverbotsschilder betreffen primär den allgemeinen Kraftfahrzeugverkehr und nicht spezifisch die Radinfrastruktur."
+  },
+  {
+    "id": "6699",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "vegetation_block",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Zwar betrifft das zugewachsene Halteverbotsschild den gesamten Verkehr, ist aber auch für Radfahrende relevant, um die Verkehrssicherheit im Wendehammer zu gewährleisten."
+  },
+  {
+    "id": "6704",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Tiefe Straßenschäden an einer Kreuzung stellen eine erhebliche Gefahrenquelle für Fahrradfahrende dar."
+  },
+  {
+    "id": "6707",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein abgestellter Wohnwagen ist nicht zwangsläufig eine direkte Behinderung für den Radverkehr, sofern keine Informationen über die exakte Blockade des Radwegs vorliegen."
+  },
+  {
+    "id": "6710",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Radweg ist durch scharfe Dachziegelscherben blockiert, was eine direkte Gefahr für Radfahrer und deren Reifen darstellt."
+  },
+  {
+    "id": "6715",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der schlechte Straßenzustand an einer Parkplatzeinfahrt betrifft Radfahrer, erfordert jedoch eine Prüfung, ob die Stelle Teil eines Radwegs oder einer vielbefahrenen Radroute ist."
+  },
+  {
+    "id": "6717",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein verstopfter Straßengraben betrifft in der Regel nicht direkt den Radverkehr oder die Radinfrastruktur."
+  },
+  {
+    "id": "6720",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht beschreibt explizit einen beschädigten Radweg, der eine direkte Gefahr für Radfahrende darstellt."
+  },
+  {
+    "id": "6724",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der illegalen Müllentsorgung auf einer Grünfläche handelt es sich um ein allgemeines städtisches Sauberkeitsproblem ohne direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6727",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der Straßenschaden auf dem Hemmelsbäker Kanalweg betrifft den Radverkehr, da es sich um eine häufig von Radfahrern genutzte Straße handelt, eine Überprüfung des genauen Standorts ist jedoch erforderlich."
+  },
+  {
+    "id": "6731",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Müllansammlungen an Containern stellen kein spezifisches oder unmittelbares Hindernis für den Radverkehr dar."
+  },
+  {
+    "id": "6735",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei dem gemeldeten Müllbeutel auf dem Gehweg handelt es sich um eine allgemeine Verschmutzung ohne direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6736",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich ausschließlich auf eine Gehwegbehinderung durch Außengastronomie für Fußgänger und enthält keinen Hinweis auf Radverkehr."
+  },
+  {
+    "id": "6738",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein nicht zugelassenes Fahrzeug am Straßenrand stellt ohne nähere Angaben zur Behinderung von Radverkehr keine direkte Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "6739",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein tiefes Loch im Gehweg kann für Radfahrer gefährlich sein, insbesondere wenn es sich um einen kombinierten Geh- und Radweg handelt oder bei Dunkelheit schlecht erkennbar ist."
+  },
+  {
+    "id": "6740",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Die Lage einer Bushaltestelle in einer Kurve betrifft die Verkehrssicherheit aller Verkehrsteilnehmer, insbesondere Radfahrer, die beim Überholen oder Vorbeifahren gefährdet werden könnten."
+  },
+  {
+    "id": "6741",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "other_cycling",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein loser Begrenzungspfeiler am Wegesrand stellt eine unmittelbare Gefahr für den Radverkehr dar."
+  },
+  {
+    "id": "6757",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft das Parken eines Wohnwagens auf Pkw-Parkplätzen und hat keinen direkten Bezug zum Radverkehr."
+  },
+  {
+    "id": "6761",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Zugeparkte Gehwege und unübersichtliche Kreuzungen beeinträchtigen die Verkehrssicherheit für Radfahrende an Querungen, erfordert jedoch eine Prüfung vor Ort."
+  },
+  {
+    "id": "6762",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe am Straßenrand ohne Hinweis auf eine spezifische Behinderung des Radverkehrs ist nicht primär radverkehrsrelevant."
+  },
+  {
+    "id": "6763",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Sperrmüll auf dem Geh- oder Radweg stellt eine erhebliche Gefahr für Radfahrende dar und muss auf seine genaue Lage geprüft werden."
+  },
+  {
+    "id": "6764",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Wilde Müllkippen sind allgemeine Ordnungswidrigkeiten und weisen ohne spezifische Ortsangabe keinen direkten Bezug zum Radverkehr auf."
+  },
+  {
+    "id": "6766",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestelltes Fahrzeug ohne Kennzeichen ist ohne weitere Hinweise auf eine Behinderung von Radverkehrswegen nicht fahrradrelevant."
+  },
+  {
+    "id": "6771",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "crossing_safety",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein zu hoher Bordstein an einer provisorischen Ampel erschwert Kindern das sichere Überqueren der Straße mit dem Fahrrad erheblich."
+  },
+  {
+    "id": "6772",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine allgemeine illegale Müllhalde ohne Hinweis auf einen Bezug zur Radinfrastruktur ist für Radfahrende nicht spezifisch relevant."
+  },
+  {
+    "id": "6773",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei dem gemeldeten Wohnwagen handelt es sich um ein unbefugt abgestelltes Fahrzeug auf öffentlichem Grund, das ohne weitere Informationen keine direkte Behinderung des Radverkehrs darstellt."
+  },
+  {
+    "id": "6774",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Es gibt keinen Hinweis darauf, dass die illegal entsorgten Abfälle den Radverkehr behindern oder gefährden."
+  },
+  {
+    "id": "6775",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung von Elektroschrott im Graben stellt keine direkte Gefahr für den Radverkehr dar."
+  },
+  {
+    "id": "6777",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein hoher Bordstein an einer Einmündung beeintr&auml;chtigt die Barrierefreiheit und Sicherheit f&uuml;r Radfahrende beim Befahren der Kreuzung."
+  },
+  {
+    "id": "6784",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Illegale Müllentsorgung ist ein allgemeines ordnungsrechtliches Problem ohne spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6789",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der gemeldeten wilden Müllkippe handelt es sich um eine allgemeine Verschmutzung ohne direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6793",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein fehlender Leitpfosten an einer Straße ist primär für den Kraftverkehr relevant und stellt für Radfahrende meist kein direktes Hindernis dar."
+  },
+  {
+    "id": "6797",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Verschmutzung und der schlechte Zustand auf einem explizit für Radfahrer genannten Verbindungsweg stellen eine direkte Gefährdung dar."
+  },
+  {
+    "id": "6802",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft die Vermüllung und den Leerstand eines Privatgrundstücks ohne erkennbaren Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6805",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Da nicht spezifiziert ist, welches Verkehrszeichen betroffen ist, muss geprüft werden, ob es sich um ein radverkehrsrelevantes Schild handelt."
+  },
+  {
+    "id": "6806",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft einen Einkaufswagen auf dem Gehweg, der keine direkte Behinderung für den Radverkehr darstellt."
+  },
+  {
+    "id": "6807",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der Müll liegt auf dem Gehweg, es ist nicht klar, ob es sich um einen geteilten Geh- und Radweg handelt."
+  },
+  {
+    "id": "6808",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Anfrage betrifft das Aufstellen einer Fundkiste für private Gegenstände im Wald und hat keinen Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "6809",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die beschriebenen Schlaglöcher auf einer stark befahrenen Ausweichroute stellen ein erhebliches Sicherheitsrisiko für Radfahrende dar."
+  },
+  {
+    "id": "6813",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe an einem Schalthaus stellt ohne konkreten Bezug zum Radweg kein direktes Hindernis für den Radverkehr dar."
+  },
+  {
+    "id": "6817",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Das Problem betrifft einen verstopften Gully auf einem Gehweg und hat keinen direkten Bezug zum Radverkehr."
+  },
+  {
+    "id": "6818",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Die Meldung beschreibt illegalen Müll, ohne einen direkten Bezug zu Radverkehrsanlagen oder eine Behinderung des Radverkehrs zu nennen."
+  },
+  {
+    "id": "6820",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um ein logistisches Problem der Müllabfuhr, welches keinen Bezug zur Radinfrastruktur aufweist."
+  },
+  {
+    "id": "6821",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die Scherben auf dem kombinierten Fuß- und Radweg stellen eine unmittelbare Gefahr für Radfahrende dar."
+  },
+  {
+    "id": "6824",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Müll befindet sich in einer Bushaltestelle und stellt keine direkte oder materielle Behinderung für den Radverkehr dar."
+  },
+  {
+    "id": "6827",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Entsorgung von Gartenmüll stellt ohne weitere Informationen keine unmittelbare Behinderung für den Radverkehr dar."
+  },
+  {
+    "id": "6828",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung an Altkleidercontainern stellt kein spezifisches Hindernis oder Sicherheitsrisiko für den Radverkehr dar."
+  },
+  {
+    "id": "6830",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine allgemeine Meldung über Müll ohne Bezug zur Radinfrastruktur ist nicht als radspezifisch einzustufen."
+  },
+  {
+    "id": "6836",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Eine defekte Ampel an einem Schulweg stellt ein Sicherheitsrisiko für alle Verkehrsteilnehmer dar, einschließlich Radfahrender und Kinder auf Fahrrädern."
+  },
+  {
+    "id": "6844",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein dauerhaft geparkter Wohnwagenanhänger stellt ein allgemeines Verkehrshindernis für den Autoverkehr dar, betrifft jedoch nicht spezifisch die Radinfrastruktur."
+  },
+  {
+    "id": "6845",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei dem Bericht handelt es sich um eine allgemeine Beschwerde über Müllentsorgung, die keinen direkten Bezug zur Radverkehrsinfrastruktur hat."
+  },
+  {
+    "id": "6848",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht beschreibt explizit einen beschädigten Radweg mit Unebenheiten und Lücken im Belag."
+  },
+  {
+    "id": "6850",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die beschädigte Pflasterung stellt eine unmittelbare Gefahr für Radfahrende dar, da die Oberfläche durch Autoverkehr instabil geworden ist."
+  },
+  {
+    "id": "6854",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": true,
+    "reason_de": "Ein nicht zugelassenes Kfz auf einem Parkstreifen behindert den Radverkehr in der Regel nicht, sofern es nicht direkt auf dem Radweg abgestellt ist."
+  },
+  {
+    "id": "6856",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei dem gemeldeten Fahrzeug handelt es sich um ein abgestelltes Auto ohne erkennbaren Bezug zu Radwegen oder der Verkehrssicherheit für Radfahrende."
+  },
+  {
+    "id": "6857",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich auf allgemeine Straßenschäden ohne direkten oder expliziten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "6858",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei den gemeldeten Gegenständen handelt es sich um allgemeinen Sperrmüll, der keine spezifische Gefahr für den Radverkehr darstellt."
+  },
+  {
+    "id": "6859",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei einer wilden Müllkippe an Sportplätzen handelt es sich um eine allgemeine Verunreinigung, die keinen direkten Bezug zur Radinfrastruktur hat."
+  },
+  {
+    "id": "6863",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale M¼llentsorgung ist ein allgemeines Sauberkeitsproblem und hat keinen spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6864",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der illegalen Müllentsorgung in einem Wendehammer handelt es sich um ein allgemeines Müllproblem ohne spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6865",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Es handelt sich um ein allgemeines Müllproblem in einem Wendehammer ohne erkennbaren Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6867",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um eine illegale Müllentsorgung, die keinen direkten Bezug zur Radverkehrsinfrastruktur oder Radverkehrssicherheit aufweist."
+  },
+  {
+    "id": "6872",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht betrifft das Parken von Anhängern und Umweltverschmutzung, hat jedoch keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6873",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein in einer Parkbucht abgestellter Einkaufswagen hat keinen direkten Einfluss auf den Radverkehr."
+  },
+  {
+    "id": "6877",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der desolate Zustand des Gehwegs zwingt schwächere Verkehrsteilnehmer und Kinder auf Laufrädern auf die Fahrbahn, was eine allgemeine Gefahr im Straßenraum darstellt."
+  },
+  {
+    "id": "6878",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signal_light_timing",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Geänderte Ampelschaltungen wirken sich auch auf den Radverkehr aus, weshalb eine Überprüfung der Signalzeiten für den Radverkehr sinnvoll ist."
+  },
+  {
+    "id": "6881",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung oder Beschädigung von Pflastersteinen in einer Parknische ist kein unmittelbares Infrastrukturproblem für den Radverkehr."
+  },
+  {
+    "id": "6883",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine auf dem Grünstreifen abgestellte Matratze stellt keine direkte Behinderung oder Gefährdung des Radverkehrs dar."
+  },
+  {
+    "id": "6884",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestellter Wohnwagen vor einem Wohnhaus stellt ohne weitere Informationen keine direkte Behinderung für den Radverkehr dar."
+  },
+  {
+    "id": "6891",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der gemeldeten wilden Müllkippe handelt es sich um eine allgemeine Sauberkeitsstörung ohne direkten oder materiallen Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "6892",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Poller stellen ein potenzielles Hindernis für den Radverkehr dar und sollten entfernt werden."
+  },
+  {
+    "id": "6893",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der Bericht über Straßenschäden ist zu vage, um ohne Ortsbezug oder Fotoanalyse eine direkte Relevanz für den Radverkehr festzustellen."
+  },
+  {
+    "id": "6894",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um eine illegale Müllablagerung, die keinen direkten Bezug zur Fahrradinfrastruktur aufweist."
+  },
+  {
+    "id": "6895",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine auf dem Gehweg liegende Matratze stellt keine spezifische Gefährdung für den Radverkehr dar."
+  },
+  {
+    "id": "6896",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Schlaglöcher auf einer Straße beeinträchtigen die Fahrsicherheit für Radfahrende, da diese den Straßenraum in der Regel mitnutzen."
+  },
+  {
+    "id": "6899",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung von Autoreifen auf einem Autoparkplatz hat keinen direkten Bezug zum Radverkehr."
+  },
+  {
+    "id": "6901",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Schaden betrifft den Seitenstreifen und die Stabilität von Versorgungsleitungen, hat aber keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6902",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Bei der gemeldeten wilden Müllkippe ist kein direkter oder wesentlicher Bezug zur Radverkehrsinfrastruktur erkennbar."
+  },
+  {
+    "id": "6904",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Entsorgung von Müll an einer unbestimmten Stelle ohne Bezug zum Radverkehr ist nicht spezifisch radverkehrsrelevant."
+  },
+  {
+    "id": "6905",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein nicht zugelassenes Fahrzeug stellt ohne weitere Informationen keine direkte Beeinträchtigung für den Radverkehr dar."
+  },
+  {
+    "id": "6906",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein einzelner Autoreifen neben der Fahrbahn stellt ohne weitere Informationen keine spezifische Behinderung für den Radverkehr dar."
+  },
+  {
+    "id": "6908",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Die beschriebenen Bodenschäden in der Innenstadt stellen eine potenzielle Gefahr für Radfahrende dar, wobei die genaue Zuordnung zur Radverkehrsfläche eine Prüfung vor Ort erfordert."
+  },
+  {
+    "id": "6909",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine allgemeine wilde Müllkippe ohne spezifischen Bezug zur Radinfrastruktur oder Gefährdung von Radfahrenden."
+  },
+  {
+    "id": "6911",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Wilder Müll im Graben stellt keine direkte Behinderung für den Radverkehr dar."
+  },
+  {
+    "id": "6912",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe an einer Parkplatzzufahrt hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6913",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe an einem Parkplatzeingang stellt ohne weitere Angaben keinen direkten Bezug zum Radverkehr dar."
+  },
+  {
+    "id": "6915",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Nordtangente ist eine Autobahn/Kraftfahrstraße, auf der das Radfahren untersagt ist, daher betrifft das Verkehrsschild Radfahrende nicht."
+  },
+  {
+    "id": "6916",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht beschreibt allgemeine Straßensch¤den durch Schwerlastverkehr an einem Wohnweg ohne expliziten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6917",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllablagerung hinter einer Litfasule hat keinen direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6918",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein abgesackter Fußweg ist nicht explizit radverkehrsrelevant, sofern es sich nicht um einen gemeinsamen Geh- und Radweg handelt."
+  },
+  {
+    "id": "6919",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein abgesacktes Pflaster stellt eine potenzielle Gefahr für Radfahrende dar, es muss jedoch geprüft werden, ob sich die Stelle im befahrenen Bereich für Fahrräder befindet."
+  },
+  {
+    "id": "6920",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft allgemeine Müllentsorgung ohne spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6922",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Schlaglöcher auf einer für Schulkinder und Radfahrer wichtigen Strecke stellen eine direkte Gefahr dar."
+  },
+  {
+    "id": "6932",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung über illegalen Müll ohne Hinweis auf eine Verkehrsbehinderung betrifft den Radverkehr nicht direkt."
+  },
+  {
+    "id": "6937",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht behandelt parkende Autos und Verkehrsschilder für den motorisierten Verkehr, ohne expliziten Bezug zu Radverkehr oder Radinfrastruktur."
+  },
+  {
+    "id": "6939",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein verstopfter Gulli stellt eine Gefahrenstelle für Radfahrende dar, da er zu Überflutungen oder Rutschgefahr führen kann."
+  },
+  {
+    "id": "6942",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Das gemeldete Motorrad blockiert lediglich einen Pkw-Stellplatz und stellt keine unmittelbare Beeinträchtigung der Radverkehrsinfrastruktur dar."
+  },
+  {
+    "id": "6949",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Sperrmüll ist ein allgemeines Abfallproblem und hat keinen direkten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "6951",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht betrifft einen blockierten PKW-Parkplatz und hat keinen direkten Bezug zur Fahrradinfrastruktur oder Radverkehrssicherheit."
+  },
+  {
+    "id": "6954",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein beschädigtes Verkehrszeichen stellt eine allgemeine Gefahr für alle Verkehrsteilnehmer dar, einschließlich Radfahrender in verkehrsberuhigten Bereichen."
+  },
+  {
+    "id": "6958",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein tiefes Schlagloch in der Fahrbahn stellt ein Sicherheitsrisiko für Radfahrende dar, sofern die Straße nicht baulich getrennt ist."
+  },
+  {
+    "id": "6961",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signal_light_timing",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der defekte Ampeldrücker beeinträchtigt Radfahrende, die an dieser Stelle die Ampel nutzen müssen, um die Kreuzung sicher zu queren."
+  },
+  {
+    "id": "6963",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestellter Wohnwagen in einer Kurve stellt eine unmittelbare Verkehrsgefahr für Radfahrende dar und blockiert potenziell den Verkehrsraum."
+  },
+  {
+    "id": "6964",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht beschreibt explizit gefährliche Höhenunterschiede auf einem kombinierten Rad- und Gehweg."
+  },
+  {
+    "id": "6965",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher auf der Fahrbahn beeinträchtigen Radfahrer, es bedarf einer Prüfung, ob eine separate Radinfrastruktur vorhanden ist."
+  },
+  {
+    "id": "6966",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung beschreibt ein allgemeines Müll- und Schädlingsproblem am Supermarkt ohne direkten Bezug zur Fahrradinfrastruktur oder Verkehrssicherheit."
+  },
+  {
+    "id": "6969",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Falschparker an der Kreuzung schränken die Sichtweite ein, was für Radfahrende beim Abbiegen eine erhebliche Gefährdung darstellt."
+  },
+  {
+    "id": "6970",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Das illegale Parken auf dem Gehweg zwingt schwächere Verkehrsteilnehmer auf die Fahrbahn, was dort zu Konflikten mit dem Radverkehr führen kann."
+  },
+  {
+    "id": "6971",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft allgemeine illegale Müllentsorgung, die keinen spezifischen Bezug zur Radinfrastruktur aufweist."
+  },
+  {
+    "id": "6973",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signal_light_timing",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Fehlerhafte Ampelschaltungen an vielbefahrenen Knotenpunkten beeinträchtigen die Sicherheit und den Verkehrsfluss von Radfahrenden erheblich."
+  },
+  {
+    "id": "6976",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die mangelhafte Wiederherstellung des Radwegbelags nach Bauarbeiten stellt eine direkte Gefahr und Komforteinbuße für Radfahrende dar."
+  },
+  {
+    "id": "6979",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein beschmierter Parkscheinautomat hat keinen direkten Bezug zur Radverkehrsinfrastruktur oder zur Sicherheit von Radfahrenden."
+  },
+  {
+    "id": "6983",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Eine allgemeine Müllablagerung ohne Hinweis auf eine Beeinträchtigung der Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6984",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Entsorgung einer illegal abgestellten Matratze hat keinen direkten Bezug zur Fahrradinfrastruktur oder Verkehrssicherheit für Radfahrende."
+  },
+  {
+    "id": "6985",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe an einer Straße ist ohne weitere Hinweise auf eine Blockade von Radverkehrsflächen kein direktes Anliegen für die Radinfrastruktur."
+  },
+  {
+    "id": "6986",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Eine gefährliche Kante am Gehweg kann auch f¼r Radfahrende ein Sicherheitsrisiko darstellen, erfordert aber zur Prüfung der Nutzungssituation eine manuelle Sichtung."
+  },
+  {
+    "id": "6992",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht ist ein generelles Lob zur Verkehrsberuhigung und ein Wunsch zur Ausweitung der Tempo-30-Zone, ohne direkten Bezug zur Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "6993",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei einer wilden Müllkippe handelt es sich um ein allgemeines Sauberkeitsproblem ohne spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "6995",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein am Straßenrand entsorgtes Spülbecken stellt eine potenzielle Gefahr für den Radverkehr auf der Fahrbahn oder am Seitenrand dar."
+  },
+  {
+    "id": "6996",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Eine illegale Müllentsorgung ist primär ein ordnungspolitisches Problem und steht hier in keinem direkten Zusammenhang zur Radinfrastruktur."
+  },
+  {
+    "id": "6997",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der gemeldete Weg weist erhebliche Schäden durch Wurzeln und Unebenheiten auf, die das Radfahren direkt behindern."
+  },
+  {
+    "id": "7010",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "signal_light_timing",
+    "confidence": 0.98,
+    "needs_human_review": false,
+    "reason_de": "Die Bedienbarkeit der Ampel für Radfahrende und Lastenräder ist durch die Platzverhältnisse direkt eingeschränkt."
+  },
+  {
+    "id": "7011",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der illegalen Entsorgung eines Kanisters handelt es sich um ein allgemeines Umweltproblem ohne spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "7021",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der Müll liegt in Grünanlagen und Beeten, was keine direkte Auswirkung auf den Radverkehr hat."
+  },
+  {
+    "id": "7024",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich auf die Instandhaltung von Sportgeräten in einer Sportbox und hat keinen Bezug zum Radverkehr."
+  },
+  {
+    "id": "7029",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Verschmutzung an einer Bushaltestelle betrifft primär den öffentlichen Nahverkehr und Fußgänger, nicht spezifisch den Radverkehr."
+  },
+  {
+    "id": "7034",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung auf einem Parkplatz hat keinen direkten Bezug zur Fahrradinfrastruktur oder Verkehrssicherheit."
+  },
+  {
+    "id": "7037",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein herabhängender Ast blockiert direkt den kombinierten Geh- und Radweg."
+  },
+  {
+    "id": "7042",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die beschriebene gefährliche Kreuzungssituation betrifft alle schwächeren Verkehrsteilnehmer, einschließlich Radfahrender, die dort die Straße überqueren."
+  },
+  {
+    "id": "7047",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Der Müll liegt auf dem Bürgersteig und behindert laut Bericht weder den Radverkehr noch die Straße."
+  },
+  {
+    "id": "7052",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "signage_detours",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Beschädigte Straßenschilder beeinträchtigen die Orientierung und Sicherheit von Radfahrenden im Straßenverkehr."
+  },
+  {
+    "id": "7053",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die schiefen Halteverbots- oder Parkverbotsschilder haben keinen direkten Einfluss auf den Radverkehr."
+  },
+  {
+    "id": "7054",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der Bericht bezieht sich auf die Wiederherstellung des Bürgersteigs, was primär Fußgänger betrifft und nur bei einer gemeinsamen Nutzung für Radfahrer relevant wäre."
+  },
+  {
+    "id": "7059",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Wilde Müllkippen oder Sperrmüll auf der Fahrbahn stellen zwar ein Hindernis dar, sind aber kein spezifisches Radinfrastruktur- oder Radverkehrsproblem ohne expliziten Bezug zum Radweg."
+  },
+  {
+    "id": "7061",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein auf der Straße abgestellter Sessel stellt ein erhebliches Hindernis und Sicherheitsrisiko für den Radverkehr an der Kreuzung dar."
+  },
+  {
+    "id": "7062",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein Baufahrzeug und ein Bauzaun blockieren bzw. schränken die Nutzung des Radwegs an dieser Stelle direkt ein."
+  },
+  {
+    "id": "7064",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der gemeldete verstopfte Gully befindet sich auf dem Gehweg und betrifft primär Fußgänger, nicht den Radverkehr."
+  },
+  {
+    "id": "7066",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "pothole_damage",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Der Radweg wurde durch schwere Baumaschinen direkt beschädigt und befindet sich in einem schlechten Zustand."
+  },
+  {
+    "id": "7069",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die zu engen Umlaufsperren behindern die Durchfahrt für Lastenräder auf der Radverkehrsverbindung direkt."
+  },
+  {
+    "id": "7070",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Der Bericht bezieht sich auf Straßenschäden durch Bauarbeiten und einen unglücklichen Parkversuch eines Autos, ohne direkten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "7076",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein beschmierter Parkscheinautomat betrifft nicht die Sicherheit oder Infrastruktur für den Radverkehr."
+  },
+  {
+    "id": "7079",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "other_cycling",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Ein loser Absperrpfahl auf dem Weg stellt eine direkte Gefahr für den Radverkehr dar."
+  },
+  {
+    "id": "7080",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein abgestellter Wohnwagen auf der Fahrbahn stellt ein potenzielles Hindernis für den fließenden Radverkehr dar und erfordert eine Überprüfung vor Ort."
+  },
+  {
+    "id": "7081",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.8,
+    "needs_human_review": true,
+    "reason_de": "Stehendes Wasser auf der Straße stellt eine Gefahr für Radfahrende dar, da es die Sicht auf Schlaglöcher behindert und Aquaplaning verursachen kann."
+  },
+  {
+    "id": "7083",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft allgemeine illegale Müllentsorgung ohne spezifischen Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "7085",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Dies ist ein allgemeiner Verbesserungsvorschlag für die Bedienung der Mängelmelder-Plattform und kein konkreter Infrastrukturmangel."
+  },
+  {
+    "id": "7087",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein abgestellter Wohnwagen auf der Straße stellt ohne konkrete Hinweise auf eine Behinderung des Radverkehrs kein direktes fahrradbezogenes Problem dar."
+  },
+  {
+    "id": "7089",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein auf dem Weg liegendes Hindernis wie ein Farbeimer kann den Radverkehr behindern, sofern es sich um einen kombinierten Geh- und Radweg handelt."
+  },
+  {
+    "id": "7090",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Es handelt sich um eine allgemeine Meldung über illegale Müllablagerungen ohne direkten Bezug zur Fahrradinfrastruktur."
+  },
+  {
+    "id": "7091",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung von diversen Gegenständen, darunter Fahrradreifen, auf öffentlichen Wegen stellt ein direktes Hindernis und Sicherheitsrisiko für Radfahrende dar."
+  },
+  {
+    "id": "7092",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Ein beschmierter Parkscheinautomat hat keinen direkten Bezug zur Fahrradinfrastruktur oder Radverkehrssicherheit."
+  },
+  {
+    "id": "7093",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Ein nicht zugelassenes Fahrzeug im Straßenraum stellt ohne expliziten Hinweis auf eine Behinderung von Radverkehrswegen kein direktes fahrradspezifisches Problem dar."
+  },
+  {
+    "id": "7094",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Der Teppich liegt auf dem Gehweg, eine direkte Beeinträchtigung des Radverkehrs ist ohne Kontext nicht ersichtlich."
+  },
+  {
+    "id": "7095",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Ein auf dem Gehweg abgestellter Bildschirm betrifft primär Fußgänger und ist keine explizite Radverkehrsinfrastruktur."
+  },
+  {
+    "id": "7099",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um eine illegale Müllablagerung, die keinen direkten Bezug zur Radverkehrsinfrastruktur aufweist."
+  },
+  {
+    "id": "7102",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "illegal_parking_obstruction",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Ein Einkaufswagen auf dem Gehweg stellt ein Hindernis dar, das je nach Gestaltung des Bereichs auch Radfahrende gefährden oder behindern könnte."
+  },
+  {
+    "id": "7104",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Eine Beschädigung an einem Brückenpfeiler hat in der Regel keinen direkten Einfluss auf die Radverkehrsinfrastruktur, bedarf aber der Prüfung, ob die Statik oder der Radweg auf der Brücke betroffen sind."
+  },
+  {
+    "id": "7107",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung betrifft die Entsorgung von Müll an Glascontainern und weist keinen direkten Bezug zum Radverkehr auf."
+  },
+  {
+    "id": "7113",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei der gemeldeten wilden Müllkippe handelt es sich um eine allgemeine Verunreinigung, die keinen spezifischen Bezug zur Radinfrastruktur aufweist."
+  },
+  {
+    "id": "7114",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Das Schlagloch stellt eine unmittelbare Gefahr für Radfahrende dar, da diese die Straße an dieser Stelle nutzen müssen."
+  },
+  {
+    "id": "7117",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Bei der Meldung handelt es sich um eine illegale Müllablagerung, die keinen direkten Bezug zum Radverkehr oder zur Radinfrastruktur aufweist."
+  },
+  {
+    "id": "7118",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "glass_debris",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Sperrmüll im Graben in unmittelbarer Nähe zum Fahrradweg stellt eine potenzielle Gefährdung für Radfahrende dar."
+  },
+  {
+    "id": "7121",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung bei Altkleidercontainern stellt kein spezifisches Hindernis für den Radverkehr dar."
+  },
+  {
+    "id": "7122",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "other_cycling",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Raser auf Hauptverkehrsstraßen gefährden Radfahrer massiv durch die allgemeine Verkehrssicherheit, erfordern jedoch eine Prüfung der Infrastruktur vor Ort."
+  },
+  {
+    "id": "7126",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Der gemeldete Müll liegt auf dem Gehweg und blockiert keinen Radweg oder eine spezifische Radinfrastruktur."
+  },
+  {
+    "id": "7127",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "crossing_safety",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Fehlende Fahrbahnmarkierungen an einer Kreuzung führen zu unübersichtlichen und gefährlichen Verkehrssituationen für Radfahrende."
+  },
+  {
+    "id": "7128",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung bezieht sich explizit auf eine Müllablagerung auf dem Gehweg, ohne direkten Bezug zur Radinfrastruktur."
+  },
+  {
+    "id": "7131",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung an Containern hat keinen spezifischen Bezug zur Radinfrastruktur oder zur Sicherheit von Radfahrenden."
+  },
+  {
+    "id": "7132",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllablagerung auf einem Buswendeplatz stellt keine direkte oder materielle Beeinträchtigung der Radinfrastruktur dar."
+  },
+  {
+    "id": "7133",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Entsorgung von Grünabfall auf einer Freifläche stellt keine direkte Behinderung für den Radverkehr dar."
+  },
+  {
+    "id": "7134",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Illegale Müllentsorgung ist ein allgemeines Ordnungsproblem und hat ohne spezifischen Bezug zur Radinfrastruktur keinen direkten Einfluss auf den Radverkehr."
+  },
+  {
+    "id": "7135",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Die Reinigung eines Straßengrabens ist primär ein Entwässerungsthema und ohne weitere Angaben kein direkter Bezug zum Radverkehr erkennbar."
+  },
+  {
+    "id": "7136",
+    "is_cycling_related": true,
+    "directness": "direct",
+    "subcategory": "vegetation_block",
+    "confidence": 1.0,
+    "needs_human_review": false,
+    "reason_de": "Die überhängende Hecke beeinträchtigt direkt die Nutzbarkeit des Radwegs."
+  },
+  {
+    "id": "7145",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.9,
+    "needs_human_review": false,
+    "reason_de": "Die Meldung beschreibt eine illegale Müllentsorgung auf einem Gehweg, die keinen direkten Bezug zur Radverkehrsinfrastruktur aufweist."
+  },
+  {
+    "id": "7146",
+    "is_cycling_related": true,
+    "directness": "indirect",
+    "subcategory": "pothole_damage",
+    "confidence": 0.85,
+    "needs_human_review": true,
+    "reason_de": "Schlaglöcher auf der Straße stellen ein signifikantes Sicherheitsrisiko für Radfahrende dar, es ist jedoch unklar, ob sie den Radweg betreffen."
+  },
+  {
+    "id": "7147",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Eine wilde Müllkippe bei Containern stellt keine direkte Beeinträchtigung für die Radinfrastruktur dar."
+  },
+  {
+    "id": "7151",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Die illegale Müllentsorgung an einem Stromkasten stellt keine direkte Beeinträchtigung der Radinfrastruktur dar."
+  },
+  {
+    "id": "7155",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.85,
+    "needs_human_review": false,
+    "reason_de": "Müllablagerung in einem Park stellt ohne weiteren Kontext keine direkte Beeinträchtigung für den Radverkehr dar."
+  },
+  {
+    "id": "7156",
+    "is_cycling_related": false,
+    "directness": "unrelated",
+    "subcategory": "unrelated",
+    "confidence": 0.95,
+    "needs_human_review": false,
+    "reason_de": "Bei einer wilden Müllkippe an einer Straßenecke handelt es sich um ein allgemeines städtisches Sauberkeitsproblem ohne direkten Bezug zur Radverkehrsinfrastruktur."
+  }
+]

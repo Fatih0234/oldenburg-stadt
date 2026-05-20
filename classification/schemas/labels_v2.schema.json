@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://oldenburg-stadt.local/schemas/labels_v2.schema.json",
+  "title": "Oldenburg cycling report labels v2",
+  "description": "Structured silver or gold labels for citizen reports affecting cycling infrastructure in Oldenburg.",
+  "type": "object",
+  "required": [
+    "id",
+    "is_cycling_related",
+    "directness",
+    "subcategory",
+    "confidence",
+    "needs_human_review",
+    "reason_de"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable report ID from the Stadtverbesserer source dataset."
+    },
+    "is_cycling_related": {
+      "type": "boolean",
+      "description": "True when the reported issue directly or materially affects bicycle riders, cycling infrastructure, or bicycle parking."
+    },
+    "directness": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "indirect",
+        "nearby_only",
+        "unrelated"
+      ],
+      "description": "How directly the issue affects cycling. Use direct for explicit cycling infrastructure or bike parking; indirect for general infrastructure that plausibly affects cyclists; nearby_only when proximity to a bike route is the only cycling signal; unrelated when no cycling impact is evident."
+    },
+    "subcategory": {
+      "type": "string",
+      "enum": [
+        "pothole_damage",
+        "glass_debris",
+        "vegetation_block",
+        "illegal_parking_obstruction",
+        "signal_light_timing",
+        "crossing_safety",
+        "signage_detours",
+        "bike_parking",
+        "other_cycling",
+        "unrelated"
+      ],
+      "description": "Specific cycling-relevant issue type. Must be unrelated when is_cycling_related is false."
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Model or reviewer confidence in the label."
+    },
+    "needs_human_review": {
+      "type": "boolean",
+      "description": "True for ambiguous reports, low-confidence labels, disagreements across classifiers, or cases where location/context is required."
+    },
+    "reason_de": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Short German explanation of the classification decision."
+    }
+  }
+}

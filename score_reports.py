@@ -13,9 +13,15 @@ CURRENT_TIME = datetime.now(timezone.utc) # Use actual run time dynamically
 
 # Keywords indicating cycling-related issues
 BIKE_KEYWORDS = [
-    r'\brad\w*', r'\b\w*rad\b', r'\b\w*räder\b', r'\bbike\w*', r'\bveloweg\w*', r'\bschulweg\w*', r'\bschüler\w*',
-    r'\bkinder\b', r'\bkind\w*', r'\beinmündung\w*', r'\bkreuzung\w*', r'\bohne kennzeichen\w*', 
-    r'\babgemeldet\w*', r'\bnicht angemeldet\w*', r'\bfahrrad\w*', r'\bfahrräder\w*'
+    r'radwe[gh]\w*', r'fahrradwe[gh]\w*', r'radspur\w*', r'fahrradstraße\w*', r'radschutzstreifen\w*',
+    r'schutzstreifen\w*', r'radroute\w*', r'fahrradroute\w*', r'radverkehr\w*',
+    r'rad-?\s*und\s*-?gehweg\w*', r'geh-?\s*und\s*-?radweg\w*', r'rad/gehweg\w*',
+    r'rad-?\s*und\s*-?fußweg\w*', r'fuß-?\s*und\s*-?radweg\w*',
+    r'rad-?\s*und\s*-?wanderweg\w*', r'wander-?\s*und\s*-?radweg\w*',
+    r'radüberweg\w*', r'fahrradständer\w*', r'anlehnbügel\w*', r'fahrradbügel\w*', r'stellplatz\w*', r'stellplätze\w*',
+    r'lastenrad\w*', r'radler\w*', r'radfahrer\w*', r'radlerin\w*', r'radfahrende\w*',
+    r'\bfahrrad\b', r'\bfahrrads\b', r'\bfahrräder\b', r'\bbike\b', r'\bbikes\b',
+    r'\bschulweg\w*', r'\bschüler\w*', r'\brad\b', r'\bräder\b'
 ]
 
 # Unrelated keywords that often trigger false positives
@@ -30,23 +36,22 @@ NEG_KEYWORDS = [
     r'\babfluss\w*', r'\bwasserzug\w*', r'\bgraben\b', r'\bgully\w*', r'\bböschung\w*', r'\bwaldstück\w*',
     r'\bwohnwagen\w*', r'\bmercedes\w*', r'\baudi\b', r'\bpkw\b', r'\bauto\b',
     r'abgemeldeter\w*', r'radio\w*', r'parkplatz\w*', r'sticker\w*', r'vollgeklebt\w*', r'beklebt\w*',
-    r'rasen\w*'
+    r'rasen\w*', r'parkstreifen\w*', r'parkbucht\w*', r'anhänger\w*', r'bootstrailer\w*'
 ]
 
 HAZARD_KEYWORDS = [
+    r'scherben\w*', r'glasscherben\w*', r'glas\b',
     r'schlagloch\w*', r'schlaglöcher\w*', r'loch\b', r'löcher\b', r'uneben\w*', r'abgesackt\w*',
-    r'absackung\w*', r'absackungen\w*', r'absenkung\w*', r'kante\w*', r'absatz\w*', r'wurzel\w*',
-    r'baumwurzel\w*', r'bodenwelle\w*', r'pflasterstein\w*', r'pflastersteine\w*', r'kopfsteinpflaster\w*',
+    r'absackung\w*', r'absackungen\w*', r'kante\w*', r'absatz\w*', r'wurzel\w*', r'baumwurzel\w*',
+    r'bodenwelle\w*', r'pflasterstein\w*', r'pflastersteine\w*', r'kopfsteinpflaster\w*',
     r'risse\w*', r'riss\b', r'asphalt\w*', r'fahrbahn\w*',
-    r'scherben\w*', r'glasscherben\w*', r'glas\b', r'hecke\w*', r'sträucher\w*',
-    r'äste\b', r'zweige\b', r'überhang\w*', r'überhängend\w*', r'bewuchs\w*', r'zugewachsen\w*',
-    r'zuparken\w*', r'zugeparkt\w*', r'blockiert\w*', r'versperrt\w*', r'hindernis\w*',
-    r'poller\w*', r'pfosten\w*', r'sperrpfosten\w*', r'kuhle\w*',
+    r'hecke\w*', r'sträucher\w*', r'äste\b', r'zweige\b', r'überhang\w*', r'überhängend\w*',
+    r'bewuchs\w*', r'zugewachsen\w*', r'zuparken\w*', r'zugeparkt\w*', r'blockiert\w*', r'versperrt\w*',
+    r'hindernis\w*', r'poller\w*', r'pfosten\w*', r'sperrpfosten\w*', r'kuhle\w*',
     r'ampel\w*', r'ampelschaltung\w*', r'induktionsschleife\w*', r'sensor\w*',
     r'schild\w*', r'beschilderung\w*', r'wegweiser\w*',
     r'sturzgefahr\w*', r'rutschgefahr\w*', r'unfallgefahr\w*', r'gefahrenstelle\w*',
-    r'marode\w*', r'schade[n]?\b', r'beschädigt\w*', r'begehbar\w*', r'passierbar\w*', r'befahrbar\w*',
-    r'laub\b'
+    r'marode\w*', r'schade[n]?\b', r'beschädigt\w*', r'begehbar\w*', r'passierbar\w*', r'befahrbar\w*'
 ]
 
 pos_regex = re.compile('|'.join(BIKE_KEYWORDS), re.IGNORECASE)
@@ -56,36 +61,38 @@ hazard_regex = re.compile('|'.join(HAZARD_KEYWORDS), re.IGNORECASE)
 def classify_regex(text, category_id):
     text_lower = text.lower()
     
-    has_pos = bool(pos_regex.search(text_lower))
-    has_neg = bool(neg_regex.search(text_lower))
-    has_hazard = bool(hazard_regex.search(text_lower))
-    
-    result = False
-    
+    # Category 7 is Fundräder (abandoned bikes)
     if category_id == 7:
         garbage_keywords = [r'müll', r'möbel', r'abfall', r'sperrmüll', r'schrott', r'entsorgt', r'reifen', r'mülltonne']
         has_garbage = any(re.search(pat, text_lower) for pat in garbage_keywords)
         if has_garbage and not any(x in text_lower for x in ['rad', 'fahrrad', 'bike']):
-            result = False
+            return False
         else:
-            result = True
-    elif has_pos:
+            return True
+            
+    # Find matching items
+    matched_pos = [pat for pat in BIKE_KEYWORDS if re.search(pat, text_lower)]
+    matched_neg = [pat for pat in NEG_KEYWORDS if re.search(pat, text_lower)]
+    
+    has_pos = len(matched_pos) > 0
+    has_neg = len(matched_neg) > 0
+    has_glass = any(re.search(pat, text_lower) for pat in [r'scherben\w*', r'glasscherben\w*'])
+    
+    result = False
+    
+    if has_pos:
         allowed_overrides = [
-            r'rad\w*', r'fahrrad\w*', r'fahrräder\w*', r'schulweg\w*', r'schüler\w*'
+            r'radweg\w*', r'fahrradweg\w*', r'radspur\w*', r'fahrradstraße\w*', r'schulweg\w*', r'schüler\w*',
+            r'radfahrer\w*', r'radfahrende\w*', r'fahrrad\w*', r'\brad\b'
         ]
         has_override = any(re.search(pat, text_lower) for pat in allowed_overrides)
         if has_neg and not has_override:
             result = False
         else:
             result = True
-    elif has_hazard:
-        is_infra_hazard = any(re.search(pat, text_lower) for pat in [r'ampel\w*', r'schild\w*', r'beschilderung\w*'])
-        if category_id in [3, 4, 6, 10, 11] and (not has_neg or is_infra_hazard):
-            avoid_terms = [r'spielplatz', r'wohngebiet']
-            if any(re.search(pat, text_lower) for pat in avoid_terms):
-                result = False
-            else:
-                result = True
+    elif has_glass and category_id in [3, 8]:
+        if not has_neg:
+            result = True
                 
     return result
 
@@ -101,18 +108,24 @@ PRIORITY_CORRIDORS = {
 # EPSG:4326 (WGS84) to EPSG:32632 (UTM zone 32N) projection for Germany (units in meters)
 transformer = Transformer.from_crs("EPSG:4326", "EPSG:32632", always_xy=True)
 
-# Load LLM Classification Cache
-LLM_CACHE_FILE = "llm_classification_cache.json"
-llm_cache = {}
-if os.path.exists(LLM_CACHE_FILE):
+# Load V2 silver labels
+LABELS_V2_FILE = "classification/labels/labels_v2_silver.json"
+labels_v2 = {}
+if os.path.exists(LABELS_V2_FILE):
     try:
-        with open(LLM_CACHE_FILE, "r", encoding="utf-8") as f:
-            llm_cache = json.load(f)
-        print(f"Loaded {len(llm_cache)} LLM classifications from cache.")
+        with open(LABELS_V2_FILE, "r", encoding="utf-8") as f:
+            raw_labels_v2 = json.load(f)
+        if isinstance(raw_labels_v2, list):
+            labels_v2 = {str(item["id"]): item for item in raw_labels_v2}
+        elif isinstance(raw_labels_v2, dict):
+            labels_v2 = {str(key): value for key, value in raw_labels_v2.items()}
+        else:
+            raise ValueError("labels_v2_silver.json must contain a list or object.")
+        print(f"Loaded {len(labels_v2)} v2 silver labels.")
     except Exception as e:
-        print(f"Warning: Failed to load LLM cache: {e}")
+        print(f"Warning: Failed to load v2 silver labels: {e}")
 else:
-    print("Warning: llm_classification_cache.json not found. Running without LLM data.")
+    print("Warning: classification/labels/labels_v2_silver.json not found. Running with regex fallback only.")
 
 # 2. Load and Project OSM Bike Network
 print("Loading OSM bike network...")
@@ -168,19 +181,23 @@ def score_report(row):
     # Run optimized regex classification (heuristic)
     is_cycling_related_regex = classify_regex(text, category_id)
     
-    # Fetch from LLM cache
-    has_llm = report_id in llm_cache
+    # Fetch from v2 silver labels.
+    has_llm = report_id in labels_v2
     if has_llm:
-        llm_data = llm_cache[report_id]
+        llm_data = labels_v2[report_id]
         is_cycling_related = llm_data.get("is_cycling_related", False)
+        directness = llm_data.get("directness", "unrelated")
         subcategory = llm_data.get("subcategory", "unrelated")
         llm_confidence = llm_data.get("confidence", 0.0)
-        explanation_de = llm_data.get("explanation_de", "Klassifiziert via LLM.")
+        needs_human_review = llm_data.get("needs_human_review", False)
+        explanation_de = llm_data.get("reason_de") or llm_data.get("explanation_de", "Klassifiziert via LLM.")
     else:
         # Fallback to regex
         is_cycling_related = is_cycling_related_regex
+        directness = "indirect" if is_cycling_related else "unrelated"
         subcategory = "other_cycling" if is_cycling_related else "unrelated"
         llm_confidence = 0.5  # Heuristic classification
+        needs_human_review = True
         explanation_de = "Automatisch klassifiziert via Heuristik (Regex-Regeln)."
         
     is_cycling_related_llm = llm_data.get("is_cycling_related", False) if has_llm else None
@@ -281,8 +298,10 @@ def score_report(row):
         "is_cycling_related": is_cycling_related,
         "is_cycling_related_regex": is_cycling_related_regex,
         "is_cycling_related_llm": is_cycling_related_llm,
+        "directness": directness,
         "subcategory": subcategory,
         "llm_confidence": llm_confidence,
+        "needs_human_review": needs_human_review,
         "explanation_de": explanation_de,
         "score_keywords": score_llm,
         "score_penalty": penalty_score,

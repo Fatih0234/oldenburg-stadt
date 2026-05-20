@@ -18,6 +18,7 @@ let activeReportId = null;
 let monthlyDigestData = null;
 let themePreference = localStorage.getItem('rad-theme') || 'system';
 let activeTheme = document.documentElement.dataset.theme || 'dark';
+const PROJECT_REPO_URL = 'https://github.com/Fatih0234/oldenburg-stadt';
 
 const THEME_TILE_LAYERS = {
     dark: {
@@ -151,6 +152,7 @@ function updateBaseTileLayer() {
 // Initialize when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initSidebarLinks();
     updateStats();
     updateMonthlyDigest();
     initMap();
@@ -159,6 +161,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initSidebarToggle();
     initOnboarding();
 });
+
+function initSidebarLinks() {
+    const githubLink = document.getElementById('github-repo-link');
+    if (githubLink) {
+        githubLink.href = PROJECT_REPO_URL;
+    }
+}
 
 
 

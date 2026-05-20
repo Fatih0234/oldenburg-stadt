@@ -4,27 +4,35 @@ import re
 import pandas as pd
 
 CSV_FILE = "stadtverbesserer_snapshot.csv"
-CACHE_FILE = "llm_classification_cache.json"
+LABELS_FILE = "classification/labels/labels_v2_silver.json"
 
-if not os.path.exists(CSV_FILE) or not os.path.exists(CACHE_FILE):
-    print("Error: snapshot CSV or LLM cache missing.")
+if not os.path.exists(CSV_FILE) or not os.path.exists(LABELS_FILE):
+    print("Error: snapshot CSV or labels_v2_silver.json missing.")
     exit(1)
 
 df = pd.read_csv(CSV_FILE)
 df['id'] = df['id'].astype(str)
 
-with open(CACHE_FILE, "r", encoding="utf-8") as f:
-    llm_cache = json.load(f)
+with open(LABELS_FILE, "r", encoding="utf-8") as f:
+    raw_labels = json.load(f)
+
+if isinstance(raw_labels, list):
+    labels_v2 = {str(item["id"]): item for item in raw_labels}
+elif isinstance(raw_labels, dict):
+    labels_v2 = {str(key): value for key, value in raw_labels.items()}
+else:
+    raise ValueError("labels_v2_silver.json must contain a list or object.")
 
 records = []
 for _, row in df.iterrows():
     rid = row['id']
-    if rid in llm_cache:
+    if rid in labels_v2:
         records.append({
             "id": rid,
             "text": str(row['replacingText']) if pd.notna(row['replacingText']) else "",
             "categoryId": int(row['categoryId']),
-            "llm_is_cycling": llm_cache[rid]["is_cycling_related"]
+            "llm_is_cycling": labels_v2[rid]["is_cycling_related"],
+            "llm_directness": labels_v2[rid].get("directness", "unrelated")
         })
 
 # Define starting sets
