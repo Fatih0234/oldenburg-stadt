@@ -6081,5 +6081,49 @@
     "longitude": 8.193112,
     "replacingText": "Sehr geehrte Damen und Herren,\r\nhier wurde eine wilde Müllkippe an der Ecke Luzernenstraße zur Quendelstraße gemeldet. Diese existiert bereits seit einigen Wochen. Als Verursacher haben unsere Mieter die Bewohner des Hauses Luzernenstraße 12 angegeben.\r\nFür Rückfragen stehe ich gerne zur Verfügung.\r\nMit freundlichen Grüßen,\r\nBjörn Schrader",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/1a97c8f5-28ec-4318-a8cd-27842b67c03e_1779170524515_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7167,
+    "createdAt": "2026-05-19T10:43:35.135+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.143256140378085,
+    "longitude": 8.191257119178774,
+    "replacingText": "Wilde Müllkippe am Altkleider-/Altglas-Container unter der Autobahnbrücke zwischen OBI und der Tankstelle",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/5f39beaf-48c3-42b6-be56-27311a7f493e_1779187415137_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7179,
+    "createdAt": "2026-05-19T15:42:03.930+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.120658,
+    "longitude": 8.223579,
+    "replacingText": "Mal wieder Müll an Straßenrand.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/550efa69-cd77-49ae-af2d-8d839faf26cb_1779205323931_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7180,
+    "createdAt": "2026-05-19T16:59:37.614+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.17136647284646,
+    "longitude": 8.19258213043213,
+    "replacingText": "Altkkeiderbehälter, Glascontainer genau auf diesem Platz ist wieder alles voll gemüllt. Ratten wurden auch schon gesichtet. Leider vergessen bilder zu machen Stand heute 19.05.2026",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7183,
+    "createdAt": "2026-05-19T19:34:19.635+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.16650305018413,
+    "longitude": 8.27473819255829,
+    "replacingText": "Hallo,\r\nam Arnsteder Weg wurden 5-6 Müllsäcke illegal mit Hausrat abgelegt und gegenüber neben der vorhandenen Sitzbank ein alter Stuhl abgestellt. \r\nIch bitte Sie um Abholung.\r\n\r\nDanke",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/ae249766-def8-4c94-a2f9-5c6c7ceeecda_1779219259636_flaw_reporter_report_picture.png"
   }
 ]

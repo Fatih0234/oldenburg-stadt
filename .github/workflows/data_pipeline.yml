@@ -29,10 +29,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Debug API connections
-        run: |
-          uv run --with requests test_api.py
-
       - name: Fetch latest reports
         run: |
           uv run --with requests --with pandas fetch_reports.py
