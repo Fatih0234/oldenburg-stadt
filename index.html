@@ -163,15 +163,33 @@
             
             <!-- Floating Map Details Overlay -->
             <div class="map-overlay-card card-glass closed" id="map-details-card">
-                <button class="close-overlay-btn" onclick="hideMapDetails()">×</button>
-                <div class="overlay-scroll-content">
+                <div class="details-card-header">
                     <span class="badge" id="overlay-label">Label</span>
-                    <h3 id="overlay-category">Category</h3>
-                    <p class="overlay-date" id="overlay-date">Date</p>
+                    <span class="details-id" id="overlay-id">#ID</span>
+                    <button class="close-overlay-btn" onclick="hideMapDetails()" aria-label="Details schließen">
+                        <svg class="close-icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="overlay-scroll-content">
+                    <div class="details-title-row">
+                        <h3 id="overlay-category">Category</h3>
+                        <p class="overlay-date" id="overlay-date">Date</p>
+                    </div>
                     <p class="overlay-desc" id="overlay-desc">Description</p>
                     <div id="overlay-llm-box"></div>
-                    <div id="overlay-stats-grid" class="overlay-stats">
-                        <!-- Score breakdowns -->
+                    
+                    <div class="details-section-title">Analyse &amp; Bewertung</div>
+                    <div class="details-stats-dashboard">
+                        <div class="relevance-score-widget">
+                            <div class="relevance-value" id="relevance-score-value">--</div>
+                            <div class="relevance-label">Relevance</div>
+                        </div>
+                        <div id="overlay-stats-grid" class="overlay-stats">
+                            <!-- Score breakdowns -->
+                        </div>
                     </div>
                     
                     <!-- Touch Swipeable Image Carousel -->

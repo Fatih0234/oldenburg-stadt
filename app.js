@@ -745,6 +745,12 @@ function setActiveRowInList(reportId) {
 function showMapDetails(report) {
     const overlay = document.getElementById('map-details-card');
     
+    // Set report ID
+    const idEl = document.getElementById('overlay-id');
+    if (idEl) {
+        idEl.textContent = `#${report.id}`;
+    }
+    
     document.getElementById('overlay-label').textContent = report.cyclist_impact_label;
     document.getElementById('overlay-label').className = `badge`;
     document.getElementById('overlay-label').style.backgroundColor = getLabelColor(report.cyclist_impact_label);
@@ -753,7 +759,14 @@ function showMapDetails(report) {
     document.getElementById('overlay-category').textContent = report.categoryName;
     
     const dateObj = new Date(report.createdAt);
-    document.getElementById('overlay-date').textContent = `Gemeldet am: ${dateObj.toLocaleString('de-DE')}`;
+    const formattedDate = dateObj.toLocaleDateString('de-DE', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    document.getElementById('overlay-date').innerHTML = `📅 Gemeldet: ${formattedDate}`;
     document.getElementById('overlay-desc').textContent = report.replacingText || "Keine Textbeschreibung.";
     
     // Render LLM classification details
@@ -766,36 +779,46 @@ function showMapDetails(report) {
         const titleColor = isCycling ? '#10b981' : '#94a3b8';
         
         llmBox.innerHTML = `
-            <div class="llm-info-box card-glass" style="margin-top: 12px; margin-bottom: 12px; padding: 10px; border-left: 3px solid ${borderColor}; background: ${bgColor}; border-radius: 4px;">
-                <div style="font-weight: 600; font-size: 0.85rem; color: ${titleColor}; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+            <div class="llm-info-box card-glass" style="margin-top: 12px; margin-bottom: 12px; padding: 12px; border-left: 3px solid ${borderColor}; background: ${bgColor}; border-radius: 8px;">
+                <div style="font-weight: 600; font-size: 0.85rem; color: ${titleColor}; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
                     <img src="assets/ui/ai_bot_badge.png" class="badge-img-icon" alt="AI Badge"> <span>KI-Klassifizierung: ${subcatPretty}</span>
                 </div>
-                <div style="font-style: italic; font-size: 0.85rem; color: #cbd5e1;">"${report.explanation_de}"</div>
+                <div style="font-style: italic; font-size: 0.85rem; color: #cbd5e1; line-height: 1.45;">"${report.explanation_de}"</div>
             </div>
         `;
     } else {
         llmBox.innerHTML = '';
     }
 
+    // Relevance Score Spotlight
+    const scoreValEl = document.getElementById('relevance-score-value');
+    if (scoreValEl) {
+        scoreValEl.textContent = report.confidence_score;
+        const scoreColor = getLabelColor(report.cyclist_impact_label);
+        scoreValEl.style.color = scoreColor;
+        scoreValEl.style.textShadow = `0 0 10px ${scoreColor}33`;
+    }
+
     // Stats grid
     const statsGrid = document.getElementById('overlay-stats-grid');
     let penaltyHtml = '';
     if (report.score_penalty && report.score_penalty < 0) {
-        penaltyHtml = `<div class="stat-item">LLM Penalty: <span style="color: #ef4444">${report.score_penalty}</span></div>`;
+        penaltyHtml = `<div class="stat-item">LLM Penalty: <span class="stat-val penalty-val">${report.score_penalty}</span></div>`;
     }
     
+    const formatScore = (val) => val >= 0 ? `+${val}` : `${val}`;
+    
     statsGrid.innerHTML = `
-        <div class="stat-item">Relevance Score: <span>${report.confidence_score} pts</span></div>
-        <div class="stat-item">Distance to path: <span>${report.distance_to_bike_path_meters} m</span></div>
-        <div class="stat-item">Category Bonus: <span>+${report.score_category}</span></div>
-        <div class="stat-item">Path Distance: <span>+${report.score_distance}</span></div>
-        <div class="stat-item">LLM Match: <span>+${report.score_keywords}</span></div>
+        <div class="stat-item">Distance to path: <span class="stat-val">${report.distance_to_bike_path_meters} m</span></div>
+        <div class="stat-item">Category Bonus: <span class="stat-val bonus-val">+${report.score_category}</span></div>
+        <div class="stat-item">Path Distance: <span class="stat-val bonus-val">${formatScore(report.score_distance)}</span></div>
+        <div class="stat-item">LLM Match: <span class="stat-val bonus-val">+${report.score_keywords}</span></div>
         ${penaltyHtml}
-        <div class="stat-item">Status / Recency: <span>${report.score_state + report.score_recency}</span></div>
+        <div class="stat-item">Status / Recency: <span class="stat-val">${formatScore(report.score_state + report.score_recency)}</span></div>
     `;
     
     if (report.nearest_segment_name) {
-        statsGrid.innerHTML += `<div class="stat-item" style="grid-column: span 2">Nearest Segment: <span style="word-break: break-all;">${report.nearest_segment_name}</span></div>`;
+        statsGrid.innerHTML += `<div class="stat-item segment-item" style="grid-column: span 2">Nearest Segment: <span class="stat-val" style="word-break: break-all;">${report.nearest_segment_name}</span></div>`;
     }
 
     // Media swipeable gallery carousel logic
