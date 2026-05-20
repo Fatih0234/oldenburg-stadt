@@ -13,6 +13,7 @@ let showHeatmap = false;
 let heatmapLayer = null;
 let carouselImages = [];
 let activeSlideIndex = 0;
+let activeReportId = null;
 
 const SUBCATEGORY_NAMES = {
     'pothole_damage': 'Schlagloch / Fahrbahnschaden',
@@ -372,7 +373,10 @@ function selectReport(report) {
         toggleHeatmap(); // Automatically switch to Pins Mode to locate the marker
     }
 
+    activeReportId = report.id;
     showMapDetails(report);
+    setActiveRowInList(report.id);
+    
     if (!report.latitude || !report.longitude) return;
     
     const marker = reportMarkers[report.id];
@@ -452,6 +456,13 @@ function getFilteredReports() {
             return text.includes(query) || cat.includes(query) || street.includes(query) || idStr.includes(query);
         });
     }
+
+    // Sort by createdAt date descending (most recent first)
+    filtered = [...filtered].sort((a, b) => {
+        const timeA = a.createdAt ? new Date(a.createdAt).getTime() : 0;
+        const timeB = b.createdAt ? new Date(b.createdAt).getTime() : 0;
+        return timeB - timeA;
+    });
 
     return filtered;
 }
@@ -671,19 +682,36 @@ function renderIssueList() {
         const stateEmoji = r.state === 'CLOSED' ? '✅' : (r.state === 'IN_PROCESS' ? '⏳' : '📥');
         
         const card = document.createElement('div');
-        card.className = 'issue-row';
+        
+        let impactClass = 'impact-generic';
+        if (r.cyclist_impact_label === 'Confirmed cycling issue') impactClass = 'impact-confirmed';
+        else if (r.cyclist_impact_label === 'Likely cycling issue') impactClass = 'impact-likely';
+        else if (r.cyclist_impact_label === 'Possibly affects cyclists') impactClass = 'impact-possible';
+        
+        card.className = `issue-row ${impactClass}`;
+        card.setAttribute('data-id', r.id);
+        
+        const categoryEmoji = getCategoryEmoji(r.categoryId);
+        const displayDistance = r.distance_to_bike_path_meters !== undefined && r.distance_to_bike_path_meters !== null
+            ? `${Number(r.distance_to_bike_path_meters).toFixed(1)}m to path`
+            : '--';
+        
         card.innerHTML = `
-            <div class="issue-row-header">
-                <span class="issue-cat">
-                    <span class="dot" style="background-color: ${color}"></span>
-                    ${r.categoryName}
-                </span>
-                <span class="issue-dist-tag">${r.distance_to_bike_path_meters}m to path</span>
+            <div class="issue-row-icon-wrapper" style="border-color: ${color}4d; background: ${color}10;">
+                <span class="row-category-emoji" style="font-size: 1.25rem;">${categoryEmoji}</span>
             </div>
-            <p class="issue-snippet">${r.replacingText || 'Keine Beschreibung vorhanden.'}</p>
-            <div class="issue-meta">
-                <span>ID: #${r.id} | ${stateEmoji} ${r.state}</span>
-                <span>${formattedDate}</span>
+            <div class="issue-row-body">
+                <div class="issue-row-header">
+                    <span class="issue-cat">
+                        ${r.categoryName} <span class="issue-id">#${r.id}</span>
+                    </span>
+                    <span class="issue-dist-tag">${displayDistance}</span>
+                </div>
+                <p class="issue-snippet">${r.replacingText || 'Keine Beschreibung vorhanden.'}</p>
+                <div class="issue-meta">
+                    <span class="issue-state-badge state-${r.state.toLowerCase() === 'closed' ? 'closed' : (r.state.toLowerCase() === 'in_process' ? 'process' : 'open')}">${stateEmoji} ${r.state}</span>
+                    <span class="issue-date">${formattedDate}</span>
+                </div>
             </div>
         `;
 
@@ -693,6 +721,24 @@ function renderIssueList() {
 
         listContainer.appendChild(card);
     });
+
+    if (activeReportId) {
+        setActiveRowInList(activeReportId);
+    }
+}
+
+// Helper to highlight selected list row and scroll it into view
+function setActiveRowInList(reportId) {
+    const rows = document.querySelectorAll('.issue-row');
+    rows.forEach(row => {
+        row.classList.remove('active');
+    });
+    
+    const activeRow = document.querySelector(`.issue-row[data-id="${reportId}"]`);
+    if (activeRow) {
+        activeRow.classList.add('active');
+        activeRow.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
 }
 
 // 7. Floating Details Overlay Control
@@ -848,6 +894,11 @@ function showMapDetails(report) {
 function hideMapDetails() {
     document.getElementById('map-details-card').classList.add('closed');
     setActiveMarker(null);
+    activeReportId = null;
+    const rows = document.querySelectorAll('.issue-row');
+    rows.forEach(row => {
+        row.classList.remove('active');
+    });
 }
 
 // Carousel Slide Actions
