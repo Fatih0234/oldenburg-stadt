@@ -757,6 +757,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    flex-grow: 1;
+    min-height: 0;
 }
 
 .details-title-row {
@@ -1391,6 +1393,55 @@ body {
     height: 100%;
     width: 0%;
     transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+}
+
+/* ==========================================================================
+   Details Card Redesign & Utility Classes
+   ========================================================================== */
+
+/* Utility to hide elements */
+.hidden {
+    display: none !important;
+}
+
+/* Prevent shrinking of flex children inside the details scroll content */
+.details-title-row,
+.overlay-desc,
+.llm-info-box,
+.details-stats-dashboard,
+.details-section-title,
+.overlay-carousel-box,
+.satellite-preview-box,
+.overlay-actions {
+    flex-shrink: 0;
+}
+
+/* Adjustments for Image Carousel */
+.overlay-carousel-box {
+    margin-top: 0;
+    margin-bottom: 4px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-wrapper {
+    height: 240px; /* Increased from 180px */
+}
+
+/* Adjustments for Satellite Preview Box */
+.satellite-preview-box {
+    margin-top: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.satellite-preview-box iframe {
+    height: 200px !important; /* Increased from 160px */
+}
+
+.overlay-actions {
+    margin-top: 4px;
 }
 
 

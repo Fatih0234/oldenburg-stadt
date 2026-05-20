@@ -174,6 +174,18 @@
                     </button>
                 </div>
                 <div class="overlay-scroll-content">
+                    <!-- Touch Swipeable Image Carousel -->
+                    <div id="overlay-carousel-container" class="overlay-carousel-box hidden">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-slides" id="overlay-carousel-slides">
+                                <!-- Slides will be injected dynamically -->
+                            </div>
+                            <button class="carousel-arrow prev" id="overlay-carousel-prev" onclick="prevSlide()">❮</button>
+                            <button class="carousel-arrow next" id="overlay-carousel-next" onclick="nextSlide()">❯</button>
+                            <div class="carousel-dots" id="overlay-carousel-dots"></div>
+                        </div>
+                    </div>
+
                     <div class="details-title-row">
                         <h3 id="overlay-category">Category</h3>
                         <p class="overlay-date" id="overlay-date">Date</p>
@@ -192,17 +204,6 @@
                         </div>
                     </div>
                     
-                    <!-- Touch Swipeable Image Carousel -->
-                    <div id="overlay-carousel-container" class="overlay-carousel-box hidden">
-                        <div class="carousel-wrapper">
-                            <div class="carousel-slides" id="overlay-carousel-slides">
-                                <!-- Slides will be injected dynamically -->
-                            </div>
-                            <button class="carousel-arrow prev" id="overlay-carousel-prev" onclick="prevSlide()">❮</button>
-                            <button class="carousel-arrow next" id="overlay-carousel-next" onclick="nextSlide()">❯</button>
-                            <div class="carousel-dots" id="overlay-carousel-dots"></div>
-                        </div>
-                    </div>
                     
                     <!-- Satellite Map Context Frame -->
                     <div id="overlay-satellite-container" class="satellite-preview-box hidden">
