@@ -1,8 +1,8 @@
 # 🚲 Rad-Verbesserer Oldenburg (Cycling Infrastructure Analyzer)
 
-An interactive dark mode web dashboard and data pipeline that maps, filters, and analyzes citizen infrastructure reports in Oldenburg, Germany against the OpenStreetMap (OSM) cycling network. 
+An interactive dark mode web dashboard and data pipeline that maps, filters, and analyzes citizen infrastructure reports in Oldenburg, Germany against the OpenStreetMap (OSM) cycling network.
 
-The dashboard provides automated tools for cycling advocacy, including generating weekly newsletter issues (Markdown/HTML) and social media content (Telegram broadcasts, Instagram carousel slide cards).
+The dashboard features a foldable sidebar layout for maximum map visibility, and the repository includes dedicated tools for generating stakeholder presentation slide decks for cycling advocacy.
 
 ---
 
@@ -55,6 +55,7 @@ Tickets are scored ($0$ to $100+$ points) based on their spatial metrics and cat
 `generate_data_js.py` compiles the GeoJSON bike network and classified reports into a single unified JavaScript variable file `data.js`. This allows you to run the dashboard locally by opening `index.html` directly in a browser without CORS (Cross-Origin Resource Sharing) local fetch errors.
 
 The dashboard features premium, state-of-the-art interactive upgrades:
+*   **Foldable Sidebar:** A toggle button (with a custom vertical-split panel layout icon) that collapses the sidebar to expand map view. The state is saved in `localStorage`, and an active rendering loop recalculates Leaflet map sizes smoothly on every frame of the transition.
 *   **Marker Clustering & Custom Pins:** Groups 553 reports with density-responsive custom glass-morphic nodes. Individual pins contain category emoji glyphs (e.g., 🚧, 🧹, 🚦) and spring-inflate on hover.
 *   **Smooth Glide & Selection Ripple:** Camera movements are animated using Leaflet's `map.flyTo()`, and the selected marker pulses a glowing ripple halo matching its classification tier.
 *   **Slide-Out Details Panel:** Replaces static boxes with a modern sidebar panel that slides in from off-screen right using custom ease-in-out transitions.
@@ -71,13 +72,15 @@ The dashboard features premium, state-of-the-art interactive upgrades:
 | :--- | :--- |
 | **`index.html`** | Main dashboard structure containing the Leaflet map and Sidebar UI. |
 | **`style.css`** | Premium dark mode styling (`#0b0f19`), glassmorphism overlays, custom glowing pins, and swipable card layouts. |
-| **`app.js`** | Interactive mapping logic, filter actions, newsletter compilation, and Instagram indicator controller. |
+| **`app.js`** | Interactive mapping logic, filter actions, detail overlays, and sidebar toggle event binding. |
 | **`data.js`** | Unified JavaScript file storing the pre-compiled reports and simplified OSM bike network GeoJSON. |
 | **`download_osm_bike.py`** | Script to fetch bicycle network geometries from OpenStreetMap Overpass mirrors. |
 | **`classify_reports_llm.py`** | Standalone script that uses `google-genai` and `gemini-2.5-flash-lite` to classify reports. |
 | **`score_reports.py`** | Core script executing coordinate projections, distance calculations, and scoring using LLM data/regex fallback. |
 | **`evaluate_rules.py`** | Diagnostic script measuring regex heuristic performance (Accuracy, Precision, Recall, F1) against LLM labels. |
 | **`optimize_regex.py`** | Optimizer utility that performs greedy keyword association search to maximize heuristic alignment with the LLM. |
+| **`prepare_slide_data.py`** | Standalone Python script to aggregate dashboard reports, detect hot-spots, and format statistics for stakeholder slides. |
+| **`presentation.html`** | Offline responsive presentation template using the `bold-signal` visual theme to present safety data to stakeholders. |
 | **`llm_classification_cache.json`** | Local JSON database storing all processed LLM classifications to reduce API costs. |
 | **`stadtverbesserer_snapshot.csv`** | Original dataset of 553 citizen reports from the Oldenburg Gemeinsam platform. |
 | **`classified_reports.csv`** | Processed spreadsheet output containing coordinates, distances, scores, and confidence classifications. |

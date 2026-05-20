@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rad-Verbesserer Oldenburg | Stadt-Präsentation</title>
+
+    <!-- Google Fonts: Archivo Black (Display) and Space Grotesk (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (BOLD SIGNAL THEME)
+           =========================================== */
+        :root {
+            /* Colors */
+            --bg-primary: #121212;
+            --bg-gradient: linear-gradient(135deg, #121212 0%, #1c1c1c 50%, #0d0d0d 100%);
+            --card-bg: #f97316; /* Vibrant warning orange */
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --text-on-card: #121212;
+            --accent-cyan: #06b6d4;
+            --accent-emerald: #10b981;
+            --border-color: rgba(255, 255, 255, 0.08);
+
+            /* Typography — MUST use clamp() */
+            --font-display: 'Archivo Black', sans-serif;
+            --font-body: 'Space Grotesk', sans-serif;
+            --title-size: clamp(2rem, 6vw, 4.5rem);
+            --subtitle-size: clamp(1rem, 2.2vw, 1.5rem);
+            --h2-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1.1rem, 2vw, 1.6rem);
+            --body-size: clamp(0.85rem, 1.4vw, 1.1rem);
+            --small-size: clamp(0.7rem, 1vw, 0.875rem);
+
+            /* Spacing — MUST use clamp() */
+            --slide-padding: clamp(2rem, 5vw, 5rem);
+            --content-gap: clamp(1rem, 2.5vw, 2.5rem);
+            --element-gap: clamp(0.5rem, 1.2vw, 1.2rem);
+
+            /* Animation */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-normal: 0.7s;
+        }
+
+        /* ===========================================
+           VIEWPORT FITTING: MANDATORY BASE STYLES
+           =========================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: var(--bg-gradient);
+            padding: var(--slide-padding);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: min(92vw, 1200px);
+            max-height: 100%;
+            margin: 0 auto;
+            width: 100%;
+            overflow: hidden;
+            gap: var(--content-gap);
+        }
+
+        /* ===========================================
+           ANIMATIONS & REVEALS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .reveal:nth-child(3) { transition-delay: 0.3s; }
+        .reveal:nth-child(4) { transition-delay: 0.4s; }
+        .reveal:nth-child(5) { transition-delay: 0.5s; }
+
+        /* ===========================================
+           THEME ELEMENTS & UTILITIES
+           =========================================== */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--element-gap);
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+        }
+
+        .slide-num {
+            font-family: var(--font-display);
+            color: var(--accent-cyan);
+        }
+
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--element-gap);
+            font-size: var(--small-size);
+            color: var(--text-secondary);
+        }
+
+        .title-slide {
+            justify-content: space-between;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M 0,10 L 100,10 M 0,30 L 100,30 M 0,50 L 100,50 M 0,70 L 100,70 M 0,90 L 100,90" stroke="rgba(255,255,255,0.015)" stroke-width="1"/></svg>') var(--bg-primary);
+        }
+
+        .title-slide h1 {
+            font-family: var(--font-display);
+            font-size: var(--title-size);
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: var(--element-gap);
+        }
+
+        .title-slide p.subtitle {
+            font-size: var(--subtitle-size);
+            color: var(--accent-cyan);
+            font-weight: 500;
+        }
+
+        .hero-card {
+            background-color: var(--card-bg);
+            color: var(--text-on-card);
+            padding: var(--slide-padding);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: var(--element-gap);
+        }
+
+        .hero-card h2 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            font-size: var(--h2-size);
+            line-height: 1.1;
+        }
+
+        /* Presentation UI layouts */
+        .grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--content-gap);
+        }
+
+        .metric-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-color);
+            padding: var(--element-gap) calc(var(--element-gap) * 1.5);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .metric-val {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1;
+            color: var(--accent-cyan);
+        }
+
+        .metric-label {
+            font-size: var(--small-size);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--element-gap);
+        }
+
+        .bullet-list li {
+            font-size: var(--body-size);
+            position: relative;
+            padding-left: 28px;
+            line-height: 1.5;
+        }
+
+        .bullet-list li::before {
+            content: "➔";
+            position: absolute;
+            left: 0;
+            color: var(--card-bg);
+        }
+
+        .badge-danger {
+            background-color: #ef4444;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .badge-warning {
+            background-color: #f97316;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Scroll Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--card-bg));
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Nav dots styling */
+        .nav-dots {
+            position: fixed;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .nav-dot.active {
+            background: var(--accent-cyan);
+            transform: scale(1.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .grid-2x2 {
+                grid-template-columns: 1fr;
+                gap: var(--element-gap);
+            }
+            .nav-dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <nav class="nav-dots"></nav>
+
+    <!-- Slide 1: Title -->
+    <section class="slide title-slide">
+        <div class="slide-header">
+            <span>Rad-Verbesserer Oldenburg</span>
+            <span class="slide-num">01 / 06</span>
+        </div>
+        <div class="slide-content">
+            <p class="subtitle reveal">Infrastruktur & Sicherheit</p>
+            <h1 class="reveal">Befahrbarkeit der Radwege</h1>
+            <p class="reveal" style="color: var(--text-secondary); max-width: 600px;">
+                Wöchentlicher Statusbericht für den Stadtrat und die Verkehrsplanung der Stadt Oldenburg. Datenstand vom 20. Mai 2026.
+            </p>
+        </div>
+        <div class="slide-footer">
+            <span>Empfänger: Stadtrat & Ausschuss für Mobilität</span>
+            <span>Scrollen für Details ➔</span>
+        </div>
+    </section>
+
+    <!-- Slide 2: Weekly Overview Hero Card -->
+    <section class="slide">
+        <div class="slide-header">
+            <span>Überblick</span>
+            <span class="slide-num">02 / 06</span>
+        </div>
+        <div class="slide-content">
+            <div class="hero-card reveal">
+                <h2>Stadt-Sicherheitsindex</h2>
+                <div style="font-size: clamp(3rem, 10vw, 6rem); font-family: var(--font-display); line-height: 1; color: var(--text-on-card);">
+                    100<span style="font-size: 0.4em;">/100</span>
+                </div>
+                <p style="font-weight: 500;">
+                    Der temporäre Sicherheitsindex für Radverkehrsachsen hat sich in den letzten 7 Tagen stabilisiert (+90 Delta ggü. historischem Tiefstand von 10). Dies liegt an einer hohen Anzahl gelöster Altfälle, jedoch verzeichnen wir 5 aktive Neumeldungen an kritischen Pendlerrouten.
+                </p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Datenbasis: Stadtverbesserer Oldenburg</span>
+            <span>Mängel im Zeitraum: 34</span>
+        </div>
+    </section>
+
+    <!-- Slide 3: Statistics Dashboard -->
+    <section class="slide">
+        <div class="slide-header">
+            <span>Kennzahlen</span>
+            <span class="slide-num">03 / 06</span>
+        </div>
+        <div class="slide-content">
+            <h2 class="reveal" style="font-family: var(--font-display); text-transform: uppercase; font-size: var(--h3-size);">Wochenkennzahlen (Letzte 7 Tage)</h2>
+            <div class="grid-2x2 reveal">
+                <div class="metric-box">
+                    <div class="metric-val">2</div>
+                    <div class="metric-label">Bestätigte Radwegschäden 🚨</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">3</div>
+                    <div class="metric-label">Wahrscheinliche Störungen 🚧</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">15</div>
+                    <div class="metric-label">Behobene Mängel (Closed) 🎉</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">5</div>
+                    <div class="metric-label">In Bearbeitung (In Progress) ⏳</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Verkehrssicherheit & Infrastruktur-Monitoring</span>
+            <span>Stadt Oldenburg</span>
+        </div>
+    </section>
+
+    <!-- Slide 4: Hotspots -->
+    <section class="slide">
+        <div class="slide-header">
+            <span>Brennpunkte</span>
+            <span class="slide-num">04 / 06</span>
+        </div>
+        <div class="slide-content">
+            <h2 class="reveal" style="font-family: var(--font-display); text-transform: uppercase; font-size: var(--h2-size);">Fahrradachsen im Fokus</h2>
+            <div class="reveal" style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px;">
+                <h3 style="color: var(--accent-cyan); margin-bottom: var(--element-gap);">Gemeldete Hotspots der Woche:</h3>
+                <ul class="bullet-list">
+                    <li><strong>Widukindstraße (2 Meldungen)</strong>: Gefahrenstellen nahe dem Hauptradweg. Dringender Handlungsbedarf zur Sicherung der Schulwege.</li>
+                    <li><strong>Eschstraße (1 Meldung)</strong>: Konflikte durch mangelnde Spurführung.</li>
+                    <li><strong>Prinzessinweg (1 Meldung)</strong>: Zunehmende Behinderungen durch Bewuchs.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Analysiert via Kreuzungs- & Distanzabgleich (OSM)</span>
+            <span>Brennpunkte</span>
+        </div>
+    </section>
+
+    <!-- Slide 5: Top Critical Case -->
+    <section class="slide">
+        <div class="slide-header">
+            <span>Fallbeispiel 1</span>
+            <span class="slide-num">05 / 06</span>
+        </div>
+        <div class="slide-content">
+            <span class="badge-danger reveal">Kritischer Mangel #7127</span>
+            <h2 class="reveal" style="font-family: var(--font-display); text-transform: uppercase; font-size: var(--h3-size); margin-top: 6px;">Brookweg (Alexanderstr. / Bürgerbuschweg)</h2>
+            <div class="reveal" style="display: flex; flex-direction: column; gap: var(--element-gap); background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); padding: 24px; border-radius: 12px;">
+                <p style="font-style: italic; color: var(--text-secondary); line-height: 1.5;">
+                    "An der Kreuzung Alexanderstraße/ Bürgerbuschweg kommt es durch die fehlende Fahrbahnmarkierung zu gefährlichen und unübersichtlichen Situationen."
+                </p>
+                <div style="display: flex; gap: var(--content-gap); border-top: 1px solid var(--border-color); padding-top: 12px; font-size: var(--small-size);">
+                    <div>Relevanz: <strong style="color: var(--accent-cyan);">85 Punkte</strong></div>
+                    <div>Abstand zum Radweg: <strong style="color: var(--accent-cyan);">0.61m</strong></div>
+                    <div>Status: <strong style="color: #ef4444;">Not Responsible / Open</strong></div>
+                </div>
+                <p style="margin-top: 10px; font-size: var(--body-size); border-left: 3px solid var(--card-bg); padding-left: 12px;">
+                    <strong>Empfehlung für die Verwaltung:</strong> Dringende temporäre Markierung zur Radweg-Kanalisierung anbringen, da dies eine wichtige Verbindungsachse für den Schüler- und Pendlerverkehr darstellt.
+                </p>
+            </div>
+        </div>
+        <div class="slide-footer">
+            <span>Kategorie: Straßen & Markierungen</span>
+            <span>ID: #7127</span>
+        </div>
+    </section>
+
+    <!-- Slide 6: Action Plan / CTA -->
+    <section class="slide">
+        <div class="slide-header">
+            <span>Maßnahmenplan</span>
+            <span class="slide-num">06 / 06</span>
+        </div>
+        <div class="slide-content">
+            <h2 class="reveal" style="font-family: var(--font-display); text-transform: uppercase; font-size: var(--h2-size);">Empfohlene Beschlüsse</h2>
+            <ul class="bullet-list reveal">
+                <li><strong>Sofortmaßnahmen Butjadingerstraße (#7136)</strong>: Rückschnitt der Buchenhecke zur Wiederherstellung der Radwegbreite veranlassen.</li>
+                <li><strong>Verkehrsüberwachung Bremer Heerstraße (#7122)</strong>: Einrichtung temporärer Geschwindigkeitskontrollen in den Abendstunden.</li>
+                <li><strong>Prozessoptimierung Mängelmelder</strong>: Schnellere Zuweisung von Tickets, die als "Not Responsible" klassifiziert wurden, an zuständige Landesbehörden.</li>
+            </ul>
+        </div>
+        <div class="slide-footer">
+            <span>Rad-Verbesserer Dashboard: <a href="index.html" style="color: var(--accent-cyan); text-decoration: none;">Live-Karte anzeigen 🌐</a></span>
+            <span>Ende der Präsentation</span>
+        </div>
+    </section>
+
+    <script>
+        /* ===========================================
+           SLIDE PRESENTATION CONTROLLER
+           =========================================== */
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll(".slide");
+                this.currentSlide = 0;
+                this.progressBar = document.querySelector(".progress-bar");
+                this.navDotsContainer = document.querySelector(".nav-dots");
+                
+                this.init();
+            }
+
+            init() {
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.setupNavDots();
+                this.updateUI();
+            }
+
+            setupIntersectionObserver() {
+                const observerOptions = {
+                    root: null,
+                    threshold: 0.5
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            
+                            // Update current slide index
+                            const index = Array.from(this.slides).indexOf(entry.target);
+                            if (index !== -1) {
+                                this.currentSlide = index;
+                                this.updateUI();
+                            }
+                        }
+                    });
+                }, observerOptions);
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            setupKeyboardNav() {
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === " ") {
+                        e.preventDefault();
+                        this.navigate(1);
+                    } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+                        e.preventDefault();
+                        this.navigate(-1);
+                    } else if (e.key === "PageDown") {
+                        e.preventDefault();
+                        this.navigate(1);
+                    } else if (e.key === "PageUp") {
+                        e.preventDefault();
+                        this.navigate(-1);
+                    }
+                });
+            }
+
+            setupTouchNav() {
+                let touchStartY = 0;
+                let touchEndY = 0;
+
+                document.addEventListener("touchstart", (e) => {
+                    touchStartY = e.touches[0].clientY;
+                }, { passive: true });
+
+                document.addEventListener("touchend", (e) => {
+                    touchEndY = e.changedTouches[0].clientY;
+                    const diffY = touchStartY - touchEndY;
+                    
+                    if (Math.abs(diffY) > 60) {
+                        if (diffY > 0) {
+                            this.navigate(1);
+                        } else {
+                            this.navigate(-1);
+                        }
+                    }
+                }, { passive: true });
+            }
+
+            setupNavDots() {
+                this.navDotsContainer.innerHTML = "";
+                this.slides.forEach((_, idx) => {
+                    const dot = document.createElement("div");
+                    dot.className = `nav-dot ${idx === 0 ? "active" : ""}`;
+                    dot.addEventListener("click", () => {
+                        this.slides[idx].scrollIntoView({ behavior: "smooth" });
+                    });
+                    this.navDotsContainer.appendChild(dot);
+                });
+            }
+
+            navigate(direction) {
+                const targetIdx = this.currentSlide + direction;
+                if (targetIdx >= 0 && targetIdx < this.slides.length) {
+                    this.slides[targetIdx].scrollIntoView({ behavior: "smooth" });
+                }
+            }
+
+            updateUI() {
+                // Update progress bar
+                const percent = (this.currentSlide / (this.slides.length - 1)) * 100;
+                if (this.progressBar) {
+                    this.progressBar.style.width = `${percent}%`;
+                }
+
+                // Update nav dots
+                const dots = document.querySelectorAll(".nav-dot");
+                dots.forEach((dot, idx) => {
+                    if (idx === this.currentSlide) {
+                        dot.classList.add("active");
+                    } else {
+                        dot.classList.remove("active");
+                    }
+                });
+            }
+        }
+
+        // Initialize presentation
+        window.addEventListener("DOMContentLoaded", () => {
+            new SlidePresentation();
+        });
+    </script>
+</body>
+</html>

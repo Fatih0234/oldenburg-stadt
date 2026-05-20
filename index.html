@@ -33,18 +33,7 @@
                 </div>
             </header>
 
-            <!-- Navigation Tabs -->
-            <nav class="sidebar-tabs">
-                <button class="tab-btn active" data-tab="dashboard">
-                    <img src="assets/ui/tab_map.png" class="tab-img-icon" alt="Map icon"> Map & Stats
-                </button>
-                <button class="tab-btn" data-tab="newsletter">
-                    <img src="assets/ui/tab_newsletter.png" class="tab-img-icon" alt="Newsletter icon"> Newsletter
-                </button>
-                <button class="tab-btn" data-tab="social">
-                    <img src="assets/ui/tab_social.png" class="tab-img-icon" alt="Social icon"> Social Assets
-                </button>
-            </nav>
+
 
             <!-- Tab Content Panel -->
             <div class="sidebar-content">
@@ -148,72 +137,18 @@
                     </div>
                 </section>
 
-                <!-- Tab 2: Newsletter -->
-                <section class="tab-panel" id="panel-newsletter">
-                    <div class="panel-intro">
-                        <h2>Weekly Bike Route Health Report</h2>
-                        <p>Weekly issue generated from active Stadtverbesserer reports matching the cycling network. Ready to copy for email, Substack, or blogging.</p>
-                    </div>
 
-                    <div class="newsletter-controls">
-                        <button class="btn btn-primary" onclick="generateNewsletter()">🔄 Report regenerieren</button>
-                        <button class="btn btn-secondary" onclick="copyNewsletterMarkup('markdown')">📋 Markdown kopieren</button>
-                    </div>
+            </div> <!-- Close .sidebar-content -->
 
-                    <div class="newsletter-preview-container">
-                        <div class="preview-tabs">
-                            <button class="preview-tab active" data-format="rendered">Vorschau</button>
-                            <button class="preview-tab" data-format="markdown">Markdown Code</button>
-                        </div>
-                        <div class="preview-content">
-                            <div id="newsletter-rendered" class="rendered-html-preview">
-                                <!-- Generated HTML -->
-                            </div>
-                            <pre id="newsletter-markdown" class="code-preview hidden"><code><!-- Generated Markdown --></code></pre>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Tab 3: Social Media -->
-                <section class="tab-panel" id="panel-social">
-                    <div class="panel-intro">
-                        <h2>Social Media Pack</h2>
-                        <p>Generate swipeable Instagram carousels and concise Telegram messages with quick stats and critical cycling reports.</p>
-                    </div>
-
-                    <!-- Telegram Section -->
-                    <div class="social-section card-glass">
-                        <div class="section-header">
-                            <img src="assets/ui/tab_social.png" class="social-img-icon" alt="Telegram">
-                            <h3>Telegram Broadcast Template</h3>
-                        </div>
-                        <textarea class="social-textarea" id="telegram-text" readonly></textarea>
-                        <button class="btn btn-secondary btn-full" onclick="copyText('telegram-text')">📋 Text kopieren</button>
-                    </div>
-
-                    <!-- Instagram Section -->
-                    <div class="social-section card-glass">
-                        <div class="section-header">
-                            <img src="assets/ui/tab_social.png" class="social-img-icon" alt="Instagram">
-                            <h3>Instagram Carousel Preview</h3>
-                        </div>
-                        <p class="section-sub">Visual card layout for sliding posts. Screen capture these slides directly for your post!</p>
-                        
-                        <!-- Carousel Slides Mockup -->
-                        <div class="carousel-preview-wrapper">
-                            <div class="carousel-track" id="insta-carousel-track">
-                                <!-- Slides will be injected here -->
-                            </div>
-                            <div class="carousel-controls">
-                                <button class="carousel-nav-btn prev" onclick="slideCarousel(-1)">❮</button>
-                                <span class="carousel-indicator-text" id="carousel-indicator-text">Slide 1 / 4</span>
-                                <button class="carousel-nav-btn next" onclick="slideCarousel(1)">❯</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
         </aside>
+
+        <!-- Fold Toggle Button -->
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Sidebar einklappen" title="Sidebar einklappen (B)">
+            <svg class="toggle-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+        </button>
 
         <!-- Leaflet Map Container -->
         <main class="map-container">
