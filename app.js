@@ -14,6 +14,7 @@ let heatmapLayer = null;
 let carouselImages = [];
 let activeSlideIndex = 0;
 let activeReportId = null;
+let monthlyDigestData = null;
 
 const SUBCATEGORY_NAMES = {
     'pothole_damage': 'Schlagloch / Fahrbahnschaden',
@@ -31,6 +32,7 @@ const SUBCATEGORY_NAMES = {
 // Initialize when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     updateStats();
+    updateMonthlyDigest();
     initMap();
     renderIssueList();
     initSidebarToggle();
@@ -104,6 +106,166 @@ function updateSafetyIndex() {
             fillEl.style.backgroundColor = "#ef4444";
         }
     }
+}
+
+// 2.2. Monthly Civic Insight Digest
+function isStrongCyclingReport(report) {
+    return report.cyclist_impact_label === 'Confirmed cycling issue' ||
+        report.cyclist_impact_label === 'Likely cycling issue';
+}
+
+function getReportsInRollingWindow(days, offsetDays = 0) {
+    if (typeof CLASSIFIED_REPORTS === 'undefined' || !Array.isArray(CLASSIFIED_REPORTS)) {
+        return [];
+    }
+
+    const ref = getReferenceDate();
+    const end = new Date(ref.getTime() - offsetDays * 24 * 60 * 60 * 1000);
+    const start = new Date(end.getTime() - days * 24 * 60 * 60 * 1000);
+
+    return CLASSIFIED_REPORTS.filter(report => {
+        if (!report.createdAt) return false;
+        const itemDate = new Date(report.createdAt);
+        return itemDate >= start && itemDate <= end;
+    });
+}
+
+function getTopStreetSegment(reports) {
+    const segmentMap = new Map();
+
+    reports.forEach(report => {
+        const segment = (report.nearest_segment_name || '').trim();
+        if (!segment) return;
+
+        if (!segmentMap.has(segment)) {
+            segmentMap.set(segment, {
+                segment,
+                count: 0,
+                reports: []
+            });
+        }
+
+        const entry = segmentMap.get(segment);
+        entry.count += 1;
+        entry.reports.push(report);
+    });
+
+    return Array.from(segmentMap.values()).sort((a, b) => b.count - a.count || a.segment.localeCompare(b.segment, 'de'))[0] || null;
+}
+
+function getTopCyclingReport(reports) {
+    return reports
+        .filter(isStrongCyclingReport)
+        .sort((a, b) => {
+            const scoreDiff = (b.confidence_score || 0) - (a.confidence_score || 0);
+            if (scoreDiff !== 0) return scoreDiff;
+
+            const distA = Number.isFinite(Number(a.distance_to_bike_path_meters)) ? Number(a.distance_to_bike_path_meters) : 9999;
+            const distB = Number.isFinite(Number(b.distance_to_bike_path_meters)) ? Number(b.distance_to_bike_path_meters) : 9999;
+            if (distA !== distB) return distA - distB;
+
+            return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+        })[0] || null;
+}
+
+function getGermanImpactLabel(label) {
+    switch (label) {
+        case 'Confirmed cycling issue':
+            return 'bestätigt radrelevant';
+        case 'Likely cycling issue':
+            return 'wahrscheinlich radrelevant';
+        case 'Possibly affects cyclists':
+            return 'möglicherweise radrelevant';
+        default:
+            return 'allgemeine Meldung';
+    }
+}
+
+function formatPeriodLabel() {
+    const ref = getReferenceDate();
+    const start = new Date(ref.getTime() - 30 * 24 * 60 * 60 * 1000);
+    const options = { day: '2-digit', month: 'short' };
+    return `${start.toLocaleDateString('de-DE', options)} bis ${ref.toLocaleDateString('de-DE', options)}`;
+}
+
+function setBriefingCardDisabled(cardId, disabled) {
+    const card = document.getElementById(cardId);
+    if (card) {
+        card.disabled = disabled;
+        card.classList.toggle('is-disabled', disabled);
+    }
+}
+
+function updateMonthlyDigest() {
+    const briefing = document.getElementById('monthly-briefing');
+    if (!briefing) return;
+
+    const currentReports = getReportsInRollingWindow(30);
+    const previousReports = getReportsInRollingWindow(30, 30);
+    const currentCyclingReports = currentReports.filter(isStrongCyclingReport);
+    const previousCyclingReports = previousReports.filter(isStrongCyclingReport);
+    const topSegment = getTopStreetSegment(currentReports);
+    const topCyclingReport = getTopCyclingReport(currentReports);
+
+    monthlyDigestData = {
+        currentReports,
+        currentCyclingReports,
+        previousCyclingReports,
+        topSegment,
+        topCyclingReport
+    };
+
+    const periodLabel = document.getElementById('briefing-period-label');
+    if (periodLabel) {
+        periodLabel.textContent = formatPeriodLabel();
+    }
+
+    const trendValue = document.getElementById('briefing-trend-value');
+    const trendTitle = document.getElementById('briefing-trend-title');
+    const trendDetail = document.getElementById('briefing-trend-detail');
+    const cyclingDelta = currentCyclingReports.length - previousCyclingReports.length;
+    const deltaText = cyclingDelta === 0
+        ? 'gleich viele radrelevante wie im Zeitraum davor'
+        : `${Math.abs(cyclingDelta)} radrelevante ${cyclingDelta > 0 ? 'mehr' : 'weniger'} als im Zeitraum davor`;
+
+    if (trendValue && trendTitle && trendDetail) {
+        trendValue.textContent = currentCyclingReports.length;
+        trendTitle.textContent = `${currentCyclingReports.length} radrelevante Meldungen im letzten Monat`;
+        trendDetail.textContent = `${currentReports.length} Meldungen insgesamt, ${deltaText}.`;
+    }
+    setBriefingCardDisabled('briefing-trend-card', currentReports.length === 0);
+
+    const hotspotValue = document.getElementById('briefing-hotspot-value');
+    const hotspotTitle = document.getElementById('briefing-hotspot-title');
+    const hotspotDetail = document.getElementById('briefing-hotspot-detail');
+    if (hotspotValue && hotspotTitle && hotspotDetail) {
+        if (topSegment) {
+            hotspotValue.textContent = topSegment.count;
+            hotspotTitle.textContent = `${topSegment.segment} war der häufigste Meldepunkt`;
+            hotspotDetail.textContent = `${topSegment.count} Meldungen im Monatsfenster. Anklicken zeigt den Schwerpunkt auf der Karte.`;
+        } else {
+            hotspotValue.textContent = '0';
+            hotspotTitle.textContent = 'Kein Straßenschwerpunkt erkennbar';
+            hotspotDetail.textContent = 'Für diesen Zeitraum fehlen Straßensegmente.';
+        }
+    }
+    setBriefingCardDisabled('briefing-hotspot-card', !topSegment);
+
+    const focusValue = document.getElementById('briefing-focus-value');
+    const focusTitle = document.getElementById('briefing-focus-title');
+    const focusDetail = document.getElementById('briefing-focus-detail');
+    if (focusValue && focusTitle && focusDetail) {
+        if (topCyclingReport) {
+            focusValue.textContent = topCyclingReport.confidence_score || 0;
+            focusTitle.textContent = `Fokusfall #${topCyclingReport.id}: ${topCyclingReport.categoryName || 'Meldung'}`;
+            focusDetail.textContent = `${topCyclingReport.nearest_segment_name || 'Unbekannter Abschnitt'}, ${getGermanImpactLabel(topCyclingReport.cyclist_impact_label)}.`;
+        } else {
+            focusValue.textContent = '0';
+            focusTitle.textContent = 'Kein radrelevanter Fokusfall';
+            focusDetail.textContent = 'Im Monatsfenster gibt es keine bestätigten oder wahrscheinlichen Radverkehrsmeldungen.';
+        }
+    }
+    setBriefingCardDisabled('briefing-focus-card', !topCyclingReport);
 }
 
 // 2.5. Sidebar Folding Integration (Foldable Sidebar with premium transitions)
@@ -671,6 +833,97 @@ function handleCustomDateChange() {
     updateStats();
     renderIssueList();
     updateMapMarkers();
+}
+
+function setRollingThirtyDayView() {
+    const select = document.getElementById('time-preset-select');
+    if (select) {
+        select.value = '30d';
+    }
+    timeFilter = '30d';
+
+    const customInputs = document.getElementById('custom-date-inputs');
+    if (customInputs) {
+        customInputs.classList.add('hidden');
+    }
+}
+
+function setSearchQuery(query) {
+    const searchInput = document.getElementById('search-input');
+    const clearBtn = document.getElementById('search-clear-btn');
+
+    if (searchInput) {
+        searchInput.value = query;
+    }
+    if (clearBtn) {
+        clearBtn.style.display = query ? 'block' : 'none';
+    }
+}
+
+function refreshDashboardViews() {
+    updateStats();
+    updateFilterUI();
+    renderIssueList();
+    updateMapMarkers();
+}
+
+function focusReportsOnMap(reports) {
+    if (!map || !Array.isArray(reports)) return;
+
+    const points = reports
+        .filter(report => report.latitude && report.longitude)
+        .map(report => [report.latitude, report.longitude]);
+
+    if (points.length === 0) return;
+
+    if (showHeatmap) {
+        toggleHeatmap();
+    }
+
+    if (points.length === 1) {
+        map.flyTo(points[0], 16, {
+            duration: 1.1,
+            easeLinearity: 0.25
+        });
+        return;
+    }
+
+    const bounds = L.latLngBounds(points);
+    map.fitBounds(bounds.pad(0.18), {
+        maxZoom: 16,
+        animate: true,
+        duration: 1
+    });
+}
+
+function handleMonthlyInsightClick(type) {
+    if (!monthlyDigestData) {
+        updateMonthlyDigest();
+    }
+    if (!monthlyDigestData) return;
+
+    setRollingThirtyDayView();
+
+    if (type === 'trend') {
+        setSearchQuery('');
+        activeFilters.clear();
+        activeFilters.add('Confirmed cycling issue');
+        activeFilters.add('Likely cycling issue');
+        refreshDashboardViews();
+        focusReportsOnMap(monthlyDigestData.currentCyclingReports);
+    } else if (type === 'hotspot' && monthlyDigestData.topSegment) {
+        activeFilters.clear();
+        setSearchQuery(monthlyDigestData.topSegment.segment);
+        refreshDashboardViews();
+        focusReportsOnMap(monthlyDigestData.topSegment.reports);
+    } else if (type === 'focus' && monthlyDigestData.topCyclingReport) {
+        setSearchQuery('');
+        activeFilters.clear();
+        activeFilters.add('Confirmed cycling issue');
+        activeFilters.add('Likely cycling issue');
+        refreshDashboardViews();
+        selectReport(monthlyDigestData.topCyclingReport);
+    }
 }
 
 // 6. Issue List Sidebar Rendering

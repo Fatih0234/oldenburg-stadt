@@ -64,6 +64,37 @@
                         </div>
                     </div>
 
+                    <!-- Monthly Civic Insight Digest -->
+                    <section class="monthly-briefing card-glass" id="monthly-briefing" aria-labelledby="monthly-briefing-title">
+                        <div class="briefing-header">
+                            <div>
+                                <span class="hud-label">MONATSBRIEFING</span>
+                                <h2 id="monthly-briefing-title">Was der letzte Monat zeigt</h2>
+                            </div>
+                            <span class="briefing-period" id="briefing-period-label">30 Tage</span>
+                        </div>
+                        <div class="briefing-card-grid">
+                            <button class="briefing-card briefing-card-trend" type="button" id="briefing-trend-card" onclick="handleMonthlyInsightClick('trend')">
+                                <span class="briefing-kicker">Trend</span>
+                                <strong id="briefing-trend-value">--</strong>
+                                <span class="briefing-title" id="briefing-trend-title">Monatslage wird berechnet</span>
+                                <span class="briefing-detail" id="briefing-trend-detail">Daten werden geladen.</span>
+                            </button>
+                            <button class="briefing-card briefing-card-hotspot" type="button" id="briefing-hotspot-card" onclick="handleMonthlyInsightClick('hotspot')">
+                                <span class="briefing-kicker">Hotspot</span>
+                                <strong id="briefing-hotspot-value">--</strong>
+                                <span class="briefing-title" id="briefing-hotspot-title">Schwerpunkt wird berechnet</span>
+                                <span class="briefing-detail" id="briefing-hotspot-detail">Daten werden geladen.</span>
+                            </button>
+                            <button class="briefing-card briefing-card-focus" type="button" id="briefing-focus-card" onclick="handleMonthlyInsightClick('focus')">
+                                <span class="briefing-kicker">Fokusfall</span>
+                                <strong id="briefing-focus-value">--</strong>
+                                <span class="briefing-title" id="briefing-focus-title">Relevanter Fall wird berechnet</span>
+                                <span class="briefing-detail" id="briefing-focus-detail">Daten werden geladen.</span>
+                            </button>
+                        </div>
+                    </section>
+
                     <!-- Metric Cards Grid -->
                     <div class="metrics-grid">
                         <div class="metric-card gradient-confirmed" onclick="toggleConfidenceFilter('Confirmed cycling issue')">
