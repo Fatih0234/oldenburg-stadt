@@ -23,9 +23,9 @@
     <div class="app-container">
         <!-- Sidebar Navigation & Controls -->
         <aside class="sidebar">
-            <header class="sidebar-header">
+            <header class="sidebar-header" id="sidebar-hero-header">
                 <div class="logo-area">
-                    <span class="logo-icon">🚴‍♂️</span>
+                    <img src="assets/branding/logo.png" class="logo-img" alt="Rad-Verbesserer Logo">
                     <div>
                         <h1>Rad-Verbesserer</h1>
                         <p class="subtitle">Oldenburg Cycling Analyzer</p>
@@ -36,13 +36,13 @@
             <!-- Navigation Tabs -->
             <nav class="sidebar-tabs">
                 <button class="tab-btn active" data-tab="dashboard">
-                    <span class="tab-icon">📊</span> Map & Stats
+                    <img src="assets/ui/tab_map.png" class="tab-img-icon" alt="Map icon"> Map & Stats
                 </button>
                 <button class="tab-btn" data-tab="newsletter">
-                    <span class="tab-icon">📰</span> Newsletter Draft
+                    <img src="assets/ui/tab_newsletter.png" class="tab-img-icon" alt="Newsletter icon"> Newsletter
                 </button>
                 <button class="tab-btn" data-tab="social">
-                    <span class="tab-icon">📱</span> Social Assets
+                    <img src="assets/ui/tab_social.png" class="tab-img-icon" alt="Social icon"> Social Assets
                 </button>
             </nav>
 
@@ -50,6 +50,24 @@
             <div class="sidebar-content">
                 <!-- Tab 1: Dashboard -->
                 <section class="tab-panel active" id="panel-dashboard">
+                    <!-- City Safety Index HUD Widget -->
+                    <div class="safety-index-widget card-glass" id="city-safety-widget">
+                        <div class="safety-status-img-container">
+                            <img id="safety-status-img" src="assets/branding/city_safety_clear.png" alt="City Safety Status Image">
+                        </div>
+                        <div class="safety-stats-info">
+                            <span class="hud-label">CITY SAFETY STATUS</span>
+                            <div class="safety-score-row">
+                                <span class="safety-score-value" id="safety-score-val">--</span>
+                                <span class="safety-score-label">/100 Index</span>
+                            </div>
+                            <p class="safety-status-text" id="safety-status-desc">Berechne Status...</p>
+                            <div class="safety-progress-bar-container">
+                                <div class="safety-progress-bar" id="safety-progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Metric Cards Grid -->
                     <div class="metrics-grid">
                         <div class="metric-card gradient-confirmed" onclick="filterByConfidence('Confirmed cycling issue')">
@@ -166,7 +184,7 @@
                     <!-- Telegram Section -->
                     <div class="social-section card-glass">
                         <div class="section-header">
-                            <span class="social-icon">✈️</span>
+                            <img src="assets/ui/tab_social.png" class="social-img-icon" alt="Telegram">
                             <h3>Telegram Broadcast Template</h3>
                         </div>
                         <textarea class="social-textarea" id="telegram-text" readonly></textarea>
@@ -176,7 +194,7 @@
                     <!-- Instagram Section -->
                     <div class="social-section card-glass">
                         <div class="section-header">
-                            <span class="social-icon">📸</span>
+                            <img src="assets/ui/tab_social.png" class="social-img-icon" alt="Instagram">
                             <h3>Instagram Carousel Preview</h3>
                         </div>
                         <p class="section-sub">Visual card layout for sliding posts. Screen capture these slides directly for your post!</p>
@@ -202,7 +220,7 @@
             <!-- Heatmap floating toggle button -->
             <div class="map-floating-controls">
                 <button class="btn btn-secondary btn-sm heatmap-toggle-btn" id="btn-toggle-heatmap" onclick="toggleHeatmap()">
-                    <span class="btn-icon">🔥</span> Heatmap anzeigen
+                    <span class="btn-icon">🗺️</span> Heatmap anzeigen
                 </button>
             </div>
             
@@ -235,14 +253,20 @@
                     
                     <!-- Satellite Map Context Frame -->
                     <div id="overlay-satellite-container" class="satellite-preview-box hidden">
-                        <div class="preview-title">📡 Satelliten-Ansicht (Fahrbahn-Kontext)</div>
+                        <div class="preview-title">
+                            <img src="assets/ui/satellite_badge.png" class="badge-img-icon" alt="Satellite"> Satelliten-Ansicht (Fahrbahn-Kontext)
+                        </div>
                         <iframe id="overlay-satellite-iframe" width="100%" height="160" frameborder="0" style="border:0; border-radius: 10px;" allowfullscreen></iframe>
                     </div>
                     
                     <!-- Multi-Action Buttons -->
                     <div class="overlay-actions margin-top-sm">
-                        <a id="overlay-direction-link" href="#" target="_blank" class="btn btn-primary btn-sm btn-half">🗺️ Google Maps</a>
-                        <a id="overlay-streetview-link" href="#" target="_blank" class="btn btn-secondary btn-sm btn-half">🏙️ Street View</a>
+                        <a id="overlay-direction-link" href="#" target="_blank" class="btn btn-primary btn-sm btn-half">
+                            <img src="assets/ui/gmaps_badge.png" class="btn-img-icon" alt="Gmaps"> Google Maps
+                        </a>
+                        <a id="overlay-streetview-link" href="#" target="_blank" class="btn btn-secondary btn-sm btn-half">
+                            <img src="assets/ui/streetview_badge.png" class="btn-img-icon" alt="Streetview"> Street View
+                        </a>
                     </div>
                 </div>
             </div>

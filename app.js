@@ -15,16 +15,16 @@ let carouselImages = [];
 let activeSlideIndex = 0;
 
 const SUBCATEGORY_NAMES = {
-    'pothole_damage': 'Schlagloch / Fahrbahnschaden 🕳️',
-    'glass_debris': 'Scherben / Verschmutzung 🧹',
-    'vegetation_block': 'Überhängendes Grün / Äste 🌿',
-    'illegal_parking_obstruction': 'Falschparker / Hindernis 🚗',
-    'signal_light_timing': 'Ampelschaltung / Sensor 🚦',
-    'crossing_safety': 'Gefährliche Kreuzung ⚠️',
-    'signage_detours': 'Wegweisung / Umleitung 🪧',
-    'bike_parking': 'Fahrradständer 🚲',
-    'other_cycling': 'Sonstiges Radthema 🚴',
-    'unrelated': 'Nicht radspezifisch ⚪'
+    'pothole_damage': 'Schlagloch / Fahrbahnschaden',
+    'glass_debris': 'Scherben / Verschmutzung',
+    'vegetation_block': 'Überhängendes Grün / Äste',
+    'illegal_parking_obstruction': 'Falschparker / Hindernis',
+    'signal_light_timing': 'Ampelschaltung / Sensor',
+    'crossing_safety': 'Gefährliche Kreuzung',
+    'signage_detours': 'Wegweisung / Umleitung',
+    'bike_parking': 'Fahrradständer',
+    'other_cycling': 'Sonstiges Radthema',
+    'unrelated': 'Nicht radspezifisch'
 };
 
 // Initialize when DOM content is loaded
@@ -97,6 +97,50 @@ function updateStats() {
     document.getElementById('count-likely').textContent = counts['Likely cycling issue'];
     document.getElementById('count-possible').textContent = counts['Possibly affects cyclists'];
     document.getElementById('count-generic').textContent = counts['Not cycling-specific'];
+
+    updateSafetyIndex();
+}
+
+function updateSafetyIndex() {
+    const timeFiltered = getTimeFilteredReports(true);
+    let confirmedCount = 0;
+    let likelyCount = 0;
+    let possibleCount = 0;
+    
+    timeFiltered.forEach(r => {
+        if (r.state === 'OPEN' || r.state === 'IN_PROCESS') {
+            if (r.cyclist_impact_label === 'Confirmed cycling issue') confirmedCount++;
+            else if (r.cyclist_impact_label === 'Likely cycling issue') likelyCount++;
+            else if (r.cyclist_impact_label === 'Possibly affects cyclists') possibleCount++;
+        }
+    });
+    
+    let penalty = (confirmedCount * 8) + (likelyCount * 4) + (possibleCount * 1.5);
+    let score = Math.max(10, Math.min(100, Math.round(100 - penalty)));
+    
+    const scoreValEl = document.getElementById('safety-score-val');
+    const scoreDescEl = document.getElementById('safety-status-desc');
+    const fillEl = document.getElementById('safety-progress-fill');
+    const imgEl = document.getElementById('safety-status-img');
+    
+    if (scoreValEl && scoreDescEl && fillEl && imgEl) {
+        scoreValEl.textContent = score;
+        fillEl.style.width = `${score}%`;
+        
+        if (score >= 75) {
+            scoreDescEl.textContent = "Hervorragend – Sichere Radwege";
+            imgEl.src = "assets/branding/city_safety_clear.png";
+            fillEl.style.backgroundColor = "#10b981";
+        } else if (score >= 45) {
+            scoreDescEl.textContent = "Erhöhte Aufmerksamkeit erforderlich";
+            imgEl.src = "assets/branding/city_safety_clear.png";
+            fillEl.style.backgroundColor = "#f59e0b";
+        } else {
+            scoreDescEl.textContent = "Kritischer Zustand – Hohes Risiko";
+            imgEl.src = "assets/branding/city_safety_hazardous.png";
+            fillEl.style.backgroundColor = "#ef4444";
+        }
+    }
 }
 
 // 3. Map Initialization & Layer Rendering
@@ -253,7 +297,7 @@ function toggleHeatmap() {
         renderHeatmap();
     } else {
         if (btn) {
-            btn.innerHTML = '<span class="btn-icon">🔥</span> Heatmap anzeigen';
+            btn.innerHTML = '<span class="btn-icon">🗺️</span> Heatmap anzeigen';
             btn.classList.remove('active-heatmap');
         }
         if (heatmapLayer && map.hasLayer(heatmapLayer)) {
@@ -655,7 +699,7 @@ function showMapDetails(report) {
         llmBox.innerHTML = `
             <div class="llm-info-box card-glass" style="margin-top: 12px; margin-bottom: 12px; padding: 10px; border-left: 3px solid ${borderColor}; background: ${bgColor}; border-radius: 4px;">
                 <div style="font-weight: 600; font-size: 0.85rem; color: ${titleColor}; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
-                    🤖 <span>KI-Klassifizierung: ${subcatPretty}</span>
+                    <img src="assets/ui/ai_bot_badge.png" class="badge-img-icon" alt="AI Badge"> <span>KI-Klassifizierung: ${subcatPretty}</span>
                 </div>
                 <div style="font-style: italic; font-size: 0.85rem; color: #cbd5e1;">"${report.explanation_de}"</div>
             </div>
@@ -1014,14 +1058,14 @@ function generateSocialAssets() {
         {
             bg: 'slide-bg-grad1',
             title: 'OLDENBURG BIKE WATCH',
-            bigStat: `🚨 ${confirmedCount}`,
+            bigStat: `${confirmedCount} Hinder`,
             desc: 'Aktive kritische Radwegschäden in Oldenburg diese Woche gemeldet. Wie sicher fährst du?',
             footer: 'Wöchentlicher Report // @OldenburgRadeln'
         },
         {
             bg: 'slide-bg-grad2',
             title: 'BRENnPUNKT RADWEG',
-            bigStat: topConfirmed ? `📍 #${topConfirmed.id}` : 'ALL CLEAR',
+            bigStat: topConfirmed ? `#${topConfirmed.id}` : 'ALL CLEAR',
             desc: topConfirmed 
                 ? `Schlagloch/Hindernis auf der ${topConfirmed.nearest_segment_name || "Hauptachse"}: "${topConfirmed.replacingText.substring(0, 90)}..."`
                 : 'Diese Woche wurden keine akuten Schäden auf Fahrradwegen bestätigt.',
@@ -1030,14 +1074,14 @@ function generateSocialAssets() {
         {
             bg: 'slide-bg-grad3',
             title: 'WATCHLIST RADACHSEN',
-            bigStat: `🚧 ${likelyCount}`,
+            bigStat: `${likelyCount} Check`,
             desc: 'Mängel wie blockiertes Grün, Ampelausfälle oder verstopfte Gullys an Haupt-Fahrradstraßen.',
             footer: 'Infrastruktur-Check // Bleib aufmerksam'
         },
         {
             bg: 'slide-bg-grad4',
             title: 'MELDE MIT & SORGE FÜR MEHR SICHERHEIT',
-            bigStat: '🚴‍♀️✨',
+            bigStat: 'RAD-HERO',
             desc: 'Nutze das Oldenburger Stadtverbesserer-Portal! Jede Meldung füttert unseren Algorithmus für sicherere Straßen.',
             footer: 'Link in Bio // Rad-Watchdog Oldenburg'
         }

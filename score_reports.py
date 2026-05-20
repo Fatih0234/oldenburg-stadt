@@ -9,7 +9,7 @@ from shapely.geometry import Point, LineString
 from shapely.ops import nearest_points
 
 # 1. Configuration & Constants
-CURRENT_TIME = datetime(2026, 5, 20, 0, 0, 0, tzinfo=timezone.utc) # Project current time
+CURRENT_TIME = datetime.now(timezone.utc) # Use actual run time dynamically
 
 # Keywords indicating cycling-related issues
 BIKE_KEYWORDS = [

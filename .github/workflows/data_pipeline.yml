@@ -1,0 +1,58 @@
+name: Data Pipeline
+
+on:
+  schedule:
+    # Runs at 02:00 UTC every day
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    # Allows manual trigger of the pipeline
+
+# Allow the action to write/commit back to the repository
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch latest reports
+        run: |
+          uv run --with requests --with pandas fetch_reports.py
+
+      - name: Score reports and map spatial geometries
+        run: |
+          uv run --with pandas --with numpy --with pyproj --with shapely score_reports.py
+
+      - name: Package data into JS static store
+        run: |
+          uv run generate_data_js.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage updated database and build files
+          git add stadtverbesserer_snapshot.json stadtverbesserer_snapshot.csv classified_reports.json classified_reports.csv data.js
+          
+          # Only commit and push if there are actual diffs staged
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto-update reports data: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+            git push
+          else
+            echo "No changes in data files. Skipping commit."
+          fi
