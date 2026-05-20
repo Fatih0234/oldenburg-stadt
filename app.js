@@ -62,50 +62,6 @@ function updateStats() {
     document.getElementById('count-likely').textContent = counts['Likely cycling issue'];
     document.getElementById('count-possible').textContent = counts['Possibly affects cyclists'];
     document.getElementById('count-generic').textContent = counts['Not cycling-specific'];
-
-    updateSafetyIndex();
-}
-
-function updateSafetyIndex() {
-    const timeFiltered = getTimeFilteredReports(true);
-    let confirmedCount = 0;
-    let likelyCount = 0;
-    let possibleCount = 0;
-    
-    timeFiltered.forEach(r => {
-        if (r.state === 'OPEN' || r.state === 'IN_PROCESS') {
-            if (r.cyclist_impact_label === 'Confirmed cycling issue') confirmedCount++;
-            else if (r.cyclist_impact_label === 'Likely cycling issue') likelyCount++;
-            else if (r.cyclist_impact_label === 'Possibly affects cyclists') possibleCount++;
-        }
-    });
-    
-    let penalty = (confirmedCount * 8) + (likelyCount * 4) + (possibleCount * 1.5);
-    let score = Math.max(10, Math.min(100, Math.round(100 - penalty)));
-    
-    const scoreValEl = document.getElementById('safety-score-val');
-    const scoreDescEl = document.getElementById('safety-status-desc');
-    const fillEl = document.getElementById('safety-progress-fill');
-    const imgEl = document.getElementById('safety-status-img');
-    
-    if (scoreValEl && scoreDescEl && fillEl && imgEl) {
-        scoreValEl.textContent = score;
-        fillEl.style.width = `${score}%`;
-        
-        if (score >= 75) {
-            scoreDescEl.textContent = "Hervorragend – Sichere Radwege";
-            imgEl.src = "assets/branding/city_safety_clear.png";
-            fillEl.style.backgroundColor = "#10b981";
-        } else if (score >= 45) {
-            scoreDescEl.textContent = "Erhöhte Aufmerksamkeit erforderlich";
-            imgEl.src = "assets/branding/city_safety_clear.png";
-            fillEl.style.backgroundColor = "#f59e0b";
-        } else {
-            scoreDescEl.textContent = "Kritischer Zustand – Hohes Risiko";
-            imgEl.src = "assets/branding/city_safety_hazardous.png";
-            fillEl.style.backgroundColor = "#ef4444";
-        }
-    }
 }
 
 // 2.2. Monthly Civic Insight Digest
@@ -1243,9 +1199,9 @@ const TOUR_STEPS = [
         onLeave: null,
     },
     {
-        title: '🛡️ City Safety Index',
-        text: 'Dieses HUD zeigt den aktuellen Sicherheitsindex für Oldenburg – berechnet aus der Anzahl und Schwere offener Radwege-Mängel. Ein niedrigerer Wert bedeutet mehr dringende Probleme.',
-        target: '#city-safety-widget',
+        title: '📈 Monatsbriefing',
+        text: 'Das Monatsbriefing zeigt belastbare Signale aus den letzten 30 Tagen: Trend, häufigster Schwerpunkt und ein konkreter Fokusfall für die Detailprüfung.',
+        target: '#monthly-briefing',
         position: 'right',
         onEnter: null,
         onLeave: null,

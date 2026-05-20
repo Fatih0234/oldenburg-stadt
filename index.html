@@ -46,24 +46,6 @@
             <div class="sidebar-content">
                 <!-- Tab 1: Dashboard -->
                 <section class="tab-panel active" id="panel-dashboard">
-                    <!-- City Safety Index HUD Widget -->
-                    <div class="safety-index-widget card-glass" id="city-safety-widget">
-                        <div class="safety-status-img-container">
-                            <img id="safety-status-img" src="assets/branding/city_safety_clear.png" alt="City Safety Status Image">
-                        </div>
-                        <div class="safety-stats-info">
-                            <span class="hud-label">CITY SAFETY STATUS</span>
-                            <div class="safety-score-row">
-                                <span class="safety-score-value" id="safety-score-val">--</span>
-                                <span class="safety-score-label">/100 Index</span>
-                            </div>
-                            <p class="safety-status-text" id="safety-status-desc">Berechne Status...</p>
-                            <div class="safety-progress-bar-container">
-                                <div class="safety-progress-bar" id="safety-progress-fill" style="width: 0%"></div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Monthly Civic Insight Digest -->
                     <section class="monthly-briefing card-glass" id="monthly-briefing" aria-labelledby="monthly-briefing-title">
                         <div class="briefing-header">
@@ -95,72 +77,89 @@
                         </div>
                     </section>
 
-                    <!-- Metric Cards Grid -->
-                    <div class="metrics-grid">
-                        <div class="metric-card gradient-confirmed" onclick="toggleConfidenceFilter('Confirmed cycling issue')">
-                            <span class="card-indicator"></span>
-                            <h3>Clearly cycling-related</h3>
-                            <div class="value" id="count-confirmed">-</div>
-                            <p class="metric-label">Confirmed</p>
+                    <!-- Search and Time Filters -->
+                    <section class="command-filter-panel" aria-labelledby="filter-panel-title">
+                        <div class="section-heading">
+                            <span class="hud-label">ARBEITSFILTER</span>
+                            <h2 id="filter-panel-title">Meldungen eingrenzen</h2>
                         </div>
-                        <div class="metric-card gradient-likely" onclick="toggleConfidenceFilter('Likely cycling issue')">
-                            <span class="card-indicator"></span>
-                            <h3>Likely cycling-related</h3>
-                            <div class="value" id="count-likely">-</div>
-                            <p class="metric-label">Strong signal</p>
-                        </div>
-                        <div class="metric-card gradient-possible" onclick="toggleConfidenceFilter('Possibly affects cyclists')">
-                            <span class="card-indicator"></span>
-                            <h3>Possibly relevant</h3>
-                            <div class="value" id="count-possible">-</div>
-                            <p class="metric-label">Review bucket</p>
-                        </div>
-                        <div class="metric-card gradient-generic" onclick="toggleConfidenceFilter('Not cycling-specific')">
-                            <span class="card-indicator"></span>
-                            <h3>General report</h3>
-                            <div class="value" id="count-generic">-</div>
-                            <p class="metric-label">Not cycling-specific</p>
-                        </div>
-                    </div>
 
-                    <!-- Search bar -->
-                    <div class="control-group">
-                        <label class="group-title" for="search-input">Mängel suchen</label>
-                        <div class="search-wrapper">
-                            <input type="text" id="search-input" placeholder="Beschreibung, Str., ID filtern..." oninput="handleSearch(this.value)">
-                            <button class="search-clear-btn" id="search-clear-btn" onclick="clearSearch()" style="display: none;">&times;</button>
-                        </div>
-                    </div>
-
-                    <!-- Time Filters -->
-                    <div class="control-group margin-top-md">
-                        <label class="group-title">Time Filter</label>
-                        <div class="time-filters-container">
-                            <select id="time-preset-select" class="custom-select" onchange="handleTimePresetChange()">
-                                <option value="all" selected>All Time</option>
-                                <option value="7d">Last 7 Days</option>
-                                <option value="30d">Last 30 Days</option>
-                                <option value="90d">Last 90 Days</option>
-                                <option value="custom">Custom Range...</option>
-                            </select>
-                            
-                            <div id="custom-date-inputs" class="custom-date-inputs hidden">
-                                <div class="date-input-wrapper">
-                                    <label for="start-date">Von</label>
-                                    <input type="date" id="start-date" class="date-picker" onchange="handleCustomDateChange()">
+                        <div class="control-row">
+                            <div class="control-group search-control">
+                                <label class="group-title" for="search-input">Mängel suchen</label>
+                                <div class="search-wrapper">
+                                    <input type="text" id="search-input" placeholder="Beschreibung, Straße, ID..." oninput="handleSearch(this.value)">
+                                    <button class="search-clear-btn" id="search-clear-btn" onclick="clearSearch()" style="display: none;">&times;</button>
                                 </div>
-                                <div class="date-input-wrapper">
-                                    <label for="end-date">Bis</label>
-                                    <input type="date" id="end-date" class="date-picker" onchange="handleCustomDateChange()">
+                            </div>
+
+                            <div class="control-group time-control">
+                                <label class="group-title">Zeitraum</label>
+                                <div class="time-filters-container">
+                                    <select id="time-preset-select" class="custom-select" onchange="handleTimePresetChange()">
+                                        <option value="all" selected>Alle Meldungen</option>
+                                        <option value="7d">Letzte 7 Tage</option>
+                                        <option value="30d">Letzte 30 Tage</option>
+                                        <option value="90d">Letzte 90 Tage</option>
+                                        <option value="custom">Eigener Zeitraum...</option>
+                                    </select>
+
+                                    <div id="custom-date-inputs" class="custom-date-inputs hidden">
+                                        <div class="date-input-wrapper">
+                                            <label for="start-date">Von</label>
+                                            <input type="date" id="start-date" class="date-picker" onchange="handleCustomDateChange()">
+                                        </div>
+                                        <div class="date-input-wrapper">
+                                            <label for="end-date">Bis</label>
+                                            <input type="date" id="end-date" class="date-picker" onchange="handleCustomDateChange()">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+
+                    <!-- Metric Cards Grid -->
+                    <section class="filter-matrix-section" aria-labelledby="filter-matrix-title">
+                        <div class="section-heading compact-heading">
+                            <span class="hud-label">FILTERMATRIX</span>
+                            <h2 id="filter-matrix-title">KI-Relevanz</h2>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card gradient-confirmed" onclick="toggleConfidenceFilter('Confirmed cycling issue')">
+                                <span class="card-indicator"></span>
+                                <h3>Clearly cycling-related</h3>
+                                <div class="value" id="count-confirmed">-</div>
+                                <p class="metric-label">Confirmed</p>
+                            </div>
+                            <div class="metric-card gradient-likely" onclick="toggleConfidenceFilter('Likely cycling issue')">
+                                <span class="card-indicator"></span>
+                                <h3>Likely cycling-related</h3>
+                                <div class="value" id="count-likely">-</div>
+                                <p class="metric-label">Strong signal</p>
+                            </div>
+                            <div class="metric-card gradient-possible" onclick="toggleConfidenceFilter('Possibly affects cyclists')">
+                                <span class="card-indicator"></span>
+                                <h3>Possibly relevant</h3>
+                                <div class="value" id="count-possible">-</div>
+                                <p class="metric-label">Review bucket</p>
+                            </div>
+                            <div class="metric-card gradient-generic" onclick="toggleConfidenceFilter('Not cycling-specific')">
+                                <span class="card-indicator"></span>
+                                <h3>General report</h3>
+                                <div class="value" id="count-generic">-</div>
+                                <p class="metric-label">Not cycling-specific</p>
+                            </div>
+                        </div>
+                    </section>
 
                     <!-- Scrollable Issue List -->
                     <div class="issue-list-container">
                         <div class="list-header">
-                            <h2>Recent Issues</h2>
+                            <div>
+                                <span class="hud-label">MELDUNGSSTROM</span>
+                                <h2>Aktuelle Treffer</h2>
+                            </div>
                             <span id="filtered-count" class="badge">0</span>
                         </div>
                         <div class="issue-list" id="issue-list-elements">
