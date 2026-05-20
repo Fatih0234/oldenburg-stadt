@@ -1,5 +1,6 @@
 // Global State variables
 let map;
+let baseTileLayer;
 let geojsonLayer;
 let markerLayerGroup;
 let activeFilters = new Set(); // Empty Set means all issues
@@ -15,6 +16,23 @@ let carouselImages = [];
 let activeSlideIndex = 0;
 let activeReportId = null;
 let monthlyDigestData = null;
+let themePreference = localStorage.getItem('rad-theme') || 'system';
+let activeTheme = document.documentElement.dataset.theme || 'dark';
+
+const THEME_TILE_LAYERS = {
+    dark: {
+        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    },
+    light: {
+        url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 20
+    }
+};
 
 const SUBCATEGORY_NAMES = {
     'pothole_damage': 'Schlagloch / Fahrbahnschaden',
@@ -29,8 +47,72 @@ const SUBCATEGORY_NAMES = {
     'unrelated': 'Nicht radspezifisch'
 };
 
+function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function resolveTheme(preference = themePreference) {
+    return preference === 'system' ? getSystemTheme() : preference;
+}
+
+function initTheme() {
+    applyTheme(themePreference);
+
+    document.querySelectorAll('[data-theme-choice]').forEach(button => {
+        button.addEventListener('click', () => {
+            applyTheme(button.dataset.themeChoice);
+        });
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (themePreference === 'system') {
+            applyTheme('system', { persist: false });
+        }
+    });
+}
+
+function applyTheme(preference, options = {}) {
+    const { persist = true } = options;
+    themePreference = preference || 'system';
+    activeTheme = resolveTheme(themePreference);
+
+    document.documentElement.dataset.themePreference = themePreference;
+    document.documentElement.dataset.theme = activeTheme;
+
+    if (persist) {
+        localStorage.setItem('rad-theme', themePreference);
+    }
+
+    document.querySelectorAll('[data-theme-choice]').forEach(button => {
+        const isActive = button.dataset.themeChoice === themePreference;
+        button.setAttribute('aria-pressed', String(isActive));
+    });
+
+    updateBaseTileLayer();
+}
+
+function updateBaseTileLayer() {
+    if (!map) return;
+
+    const config = THEME_TILE_LAYERS[activeTheme] || THEME_TILE_LAYERS.dark;
+    if (baseTileLayer) {
+        map.removeLayer(baseTileLayer);
+    }
+
+    baseTileLayer = L.tileLayer(config.url, {
+        attribution: config.attribution,
+        subdomains: config.subdomains,
+        maxZoom: config.maxZoom
+    }).addTo(map);
+
+    if (geojsonLayer && typeof geojsonLayer.bringToFront === 'function') geojsonLayer.bringToFront();
+    if (markerLayerGroup && map.hasLayer(markerLayerGroup) && typeof markerLayerGroup.bringToFront === 'function') markerLayerGroup.bringToFront();
+    if (heatmapLayer && map.hasLayer(heatmapLayer) && typeof heatmapLayer.bringToFront === 'function') heatmapLayer.bringToFront();
+}
+
 // Initialize when DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
     updateStats();
     updateMonthlyDigest();
     initMap();
@@ -300,12 +382,7 @@ function initMap() {
     // Add custom zoom control at top right
     L.control.zoom({ position: 'topright' }).addTo(map);
 
-    // Dark Matter Map Tiles (CartoDB) - Looks extremely premium and techy!
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 20
-    }).addTo(map);
+    updateBaseTileLayer();
 
     // Style and Render OSM Bike Network Layer
     if (typeof BIKE_NETWORK_GEOJSON !== 'undefined') {
@@ -985,7 +1062,7 @@ function showMapDetails(report) {
                 <div style="font-weight: 600; font-size: 0.85rem; color: ${titleColor}; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
                     <img src="assets/ui/ai_bot_badge.png" class="badge-img-icon" alt="AI Badge"> <span>KI-Klassifizierung: ${subcatPretty}</span>
                 </div>
-                <div style="font-style: italic; font-size: 0.85rem; color: #cbd5e1; line-height: 1.45;">"${report.explanation_de}"</div>
+                <div style="font-style: italic; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">"${report.explanation_de}"</div>
             </div>
         `;
     } else {

@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
     <title>Rad-Verbesserer Oldenburg | Bike Infrastructure Analyzer</title>
+    <script>
+        (function () {
+            const storedTheme = localStorage.getItem('rad-theme') || 'system';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const resolvedTheme = storedTheme === 'system' ? (prefersDark ? 'dark' : 'light') : storedTheme;
+            document.documentElement.dataset.themePreference = storedTheme;
+            document.documentElement.dataset.theme = resolvedTheme;
+        })();
+    </script>
     <!-- Google Fonts: Outfit for headings, Inter for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +46,20 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
+                    <div class="theme-switcher" role="group" aria-label="Darstellung wählen">
+                        <button class="theme-option" type="button" data-theme-choice="system" aria-pressed="true" title="Systemdesign verwenden">
+                            <span class="theme-option-icon">◐</span>
+                            <span>System</span>
+                        </button>
+                        <button class="theme-option" type="button" data-theme-choice="light" aria-pressed="false" title="Helles Design verwenden">
+                            <span class="theme-option-icon">☼</span>
+                            <span>Light</span>
+                        </button>
+                        <button class="theme-option" type="button" data-theme-choice="dark" aria-pressed="false" title="Dunkles Design verwenden">
+                            <span class="theme-option-icon">●</span>
+                            <span>Dark</span>
+                        </button>
                     </div>
                 </div>
             </header>
