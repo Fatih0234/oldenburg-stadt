@@ -59,22 +59,26 @@
 
                     <!-- Metric Cards Grid -->
                     <div class="metrics-grid">
-                        <div class="metric-card gradient-confirmed" onclick="filterByConfidence('Confirmed cycling issue')">
+                        <div class="metric-card gradient-confirmed" onclick="toggleConfidenceFilter('Confirmed cycling issue')">
+                            <span class="card-indicator"></span>
                             <h3>Confirmed</h3>
                             <div class="value" id="count-confirmed">-</div>
                             <p class="metric-label">High Confidence</p>
                         </div>
-                        <div class="metric-card gradient-likely" onclick="filterByConfidence('Likely cycling issue')">
+                        <div class="metric-card gradient-likely" onclick="toggleConfidenceFilter('Likely cycling issue')">
+                            <span class="card-indicator"></span>
                             <h3>Likely</h3>
                             <div class="value" id="count-likely">-</div>
                             <p class="metric-label">Medium-High</p>
                         </div>
-                        <div class="metric-card gradient-possible" onclick="filterByConfidence('Possibly affects cyclists')">
+                        <div class="metric-card gradient-possible" onclick="toggleConfidenceFilter('Possibly affects cyclists')">
+                            <span class="card-indicator"></span>
                             <h3>Possible</h3>
                             <div class="value" id="count-possible">-</div>
                             <p class="metric-label">Medium-Low</p>
                         </div>
-                        <div class="metric-card gradient-generic" onclick="filterByConfidence('Not cycling-specific')">
+                        <div class="metric-card gradient-generic" onclick="toggleConfidenceFilter('Not cycling-specific')">
+                            <span class="card-indicator"></span>
                             <h3>Other</h3>
                             <div class="value" id="count-generic">-</div>
                             <p class="metric-label">General Streets</p>

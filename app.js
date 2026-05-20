@@ -2,7 +2,7 @@
 let map;
 let geojsonLayer;
 let markerLayerGroup;
-let activeFilter = 'all'; // 'all', 'cycling-only', or specific label
+let activeFilters = new Set(); // Empty Set means all issues
 let timeFilter = 'all'; // 'all', '7d', '30d', '90d', 'custom'
 let customStartDate = null;
 let customEndDate = null;
@@ -551,13 +551,8 @@ function getTimeFilteredReports(excludeConfidence = false) {
     }
     
     if (!excludeConfidence) {
-        if (activeFilter === 'cycling-only') {
-            reports = reports.filter(r => 
-                r.cyclist_impact_label === 'Confirmed cycling issue' || 
-                r.cyclist_impact_label === 'Likely cycling issue'
-            );
-        } else if (activeFilter !== 'all') {
-            reports = reports.filter(r => r.cyclist_impact_label === activeFilter);
+        if (activeFilters.size > 0) {
+            reports = reports.filter(r => activeFilters.has(r.cyclist_impact_label));
         }
     }
     
@@ -565,45 +560,70 @@ function getTimeFilteredReports(excludeConfidence = false) {
 }
 
 
-function filterByConfidence(label) {
-    activeFilter = label;
-    
-    // Update active filter pills styling
-    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.metric-card').forEach(c => c.classList.remove('active'));
-    
-    // Add active state to clicked metric card
-    let cardClass = '';
-    if (label === 'Confirmed cycling issue') cardClass = '.gradient-confirmed';
-    else if (label === 'Likely cycling issue') cardClass = '.gradient-likely';
-    else if (label === 'Possibly affects cyclists') cardClass = '.gradient-possible';
-    else if (label === 'Not cycling-specific') cardClass = '.gradient-generic';
-    
-    if (cardClass) {
-        const card = document.querySelector(cardClass);
-        if (card) card.classList.add('active');
+function toggleConfidenceFilter(label) {
+    if (activeFilters.has(label)) {
+        activeFilters.delete(label);
+    } else {
+        activeFilters.add(label);
     }
     
+    updateFilterUI();
     renderIssueList();
     updateMapMarkers();
 }
 
-function clearFilters() {
-    activeFilter = 'all';
-    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.metric-card').forEach(c => c.classList.remove('active'));
-    document.getElementById('pill-all').classList.add('active');
+function updateFilterUI() {
+    // Synchronize metric cards active state
+    const cardMap = {
+        'Confirmed cycling issue': '.gradient-confirmed',
+        'Likely cycling issue': '.gradient-likely',
+        'Possibly affects cyclists': '.gradient-possible',
+        'Not cycling-specific': '.gradient-generic'
+    };
     
+    for (const [label, selector] of Object.entries(cardMap)) {
+        const card = document.querySelector(selector);
+        if (card) {
+            if (activeFilters.has(label)) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
+            }
+        }
+    }
+    
+    // Synchronize preset pills
+    const pillAll = document.getElementById('pill-all');
+    const pillCyclingOnly = document.getElementById('pill-cycling-only');
+    
+    if (pillAll && pillCyclingOnly) {
+        pillAll.classList.remove('active');
+        pillCyclingOnly.classList.remove('active');
+        
+        if (activeFilters.size === 0) {
+            pillAll.classList.add('active');
+        } else if (
+            activeFilters.size === 2 &&
+            activeFilters.has('Confirmed cycling issue') &&
+            activeFilters.has('Likely cycling issue')
+        ) {
+            pillCyclingOnly.classList.add('active');
+        }
+    }
+}
+
+function clearFilters() {
+    activeFilters.clear();
+    updateFilterUI();
     renderIssueList();
     updateMapMarkers();
 }
 
 function filterCyclingOnly() {
-    activeFilter = 'cycling-only';
-    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.metric-card').forEach(c => c.classList.remove('active'));
-    document.getElementById('pill-cycling-only').classList.add('active');
-    
+    activeFilters.clear();
+    activeFilters.add('Confirmed cycling issue');
+    activeFilters.add('Likely cycling issue');
+    updateFilterUI();
     renderIssueList();
     updateMapMarkers();
 }
