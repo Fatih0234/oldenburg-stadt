@@ -25,10 +25,17 @@
         <aside class="sidebar">
             <header class="sidebar-header" id="sidebar-hero-header">
                 <div class="logo-area">
-                    <img src="assets/branding/logo.png" class="logo-img" alt="Rad-Verbesserer Logo">
-                    <div>
-                        <h1>Rad-Verbesserer</h1>
-                        <p class="subtitle">Oldenburg Cycling Analyzer</p>
+                    <div class="logo-main-info">
+                        <img src="assets/branding/logo.png" class="logo-img" alt="Rad-Verbesserer Logo">
+                        <div class="logo-text-col">
+                            <h1>Rad-Verbesserer</h1>
+                            <div class="subtitle-row">
+                                <p class="subtitle">Oldenburg Cycling Analyzer</p>
+                                <button class="btn-tour-trigger-badge" id="btn-tour-trigger" title="Interaktive Tour starten">
+                                    <span class="btn-tour-icon">🧭</span> Tour
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -242,6 +249,43 @@
     
     <!-- Leaflet.heat JS for Density Map -->
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    
+    <!-- Onboarding Tour Elements -->
+    <div id="onboarding-backdrop" class="onboarding-backdrop hidden"></div>
+    <div id="onboarding-highlight" class="onboarding-highlight hidden"></div>
+    
+    <div id="onboarding-card" class="onboarding-card card-glass tour-hidden" role="dialog" aria-labelledby="tour-step-title">
+        <button class="tour-close-btn" id="tour-close-btn" aria-label="Tour beenden">&times;</button>
+        <div class="tour-card-body">
+            <h4 class="tour-step-title" id="tour-step-title">Schritt-Titel</h4>
+            <p class="tour-step-text" id="tour-step-text">Schritt-Beschreibung...</p>
+        </div>
+        <div class="tour-card-footer">
+            <div class="tour-progress">
+                <span class="tour-progress-text" id="tour-progress-text">1 von 6</span>
+                <div class="tour-dots" id="tour-dots">
+                    <!-- Injected dynamically -->
+                </div>
+            </div>
+            <div class="tour-actions">
+                <button class="btn btn-secondary btn-sm" id="tour-prev-btn">Zurück</button>
+                <button class="btn btn-primary btn-sm" id="tour-next-btn">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Welcome Onboarding Toast -->
+    <div id="welcome-onboarding-toast" class="welcome-onboarding-toast card-glass hidden">
+        <div class="welcome-toast-header">
+            <span class="welcome-toast-title">👋 Willkommen beim Rad-Verbesserer!</span>
+            <button class="welcome-toast-close" id="welcome-toast-close-btn" aria-label="Schließen">&times;</button>
+        </div>
+        <p class="welcome-toast-text">Möchten Sie eine kurze interaktive Tour durch das Dashboard machen?</p>
+        <div class="welcome-toast-actions">
+            <button class="btn btn-secondary btn-sm" id="welcome-toast-skip-btn">Später</button>
+            <button class="btn btn-primary btn-sm" id="welcome-toast-start-btn">Tour starten 🧭</button>
+        </div>
+    </div>
     
     <!-- Application Logic -->
     <script src="app.js"></script>

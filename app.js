@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initMap();
     renderIssueList();
     initSidebarToggle();
+    initOnboarding();
 });
 
 
@@ -1001,4 +1002,360 @@ function setupCarouselSwipe(element) {
             }
         }
     }
+}
+
+// =============================================================================
+// Onboarding Tour Controller
+// =============================================================================
+
+const TOUR_STEPS = [
+    {
+        title: '🚲 Willkommen beim Rad-Verbesserer!',
+        text: 'Dieses Dashboard analysiert öffentliche Bürgerberichte und identifiziert Mängel, die die Fahrradinfrastruktur in Oldenburg betreffen. Bereit für eine kurze Tour?',
+        target: null,  // Step 1 is centered – no target element highlight
+        position: 'center',
+        onEnter: null,
+        onLeave: null,
+    },
+    {
+        title: '🛡️ City Safety Index',
+        text: 'Dieses HUD zeigt den aktuellen Sicherheitsindex für Oldenburg – berechnet aus der Anzahl und Schwere offener Radwege-Mängel. Ein niedrigerer Wert bedeutet mehr dringende Probleme.',
+        target: '#city-safety-widget',
+        position: 'right',
+        onEnter: null,
+        onLeave: null,
+    },
+    {
+        title: '📊 KI-Konfidenz-Metriken',
+        text: 'Die KI klassifiziert jeden Bericht in vier Kategorien: Bestätigt, Wahrscheinlich, Möglich und Allgemein. Klicken Sie auf eine Karte, um nur Berichte dieser Kategorie zu filtern.',
+        target: '.metrics-grid',
+        position: 'right',
+        onEnter: null,
+        onLeave: null,
+    },
+    {
+        title: '🔍 Suche & Zeitfilter',
+        text: 'Durchsuchen Sie Berichte nach Beschreibung, Straße oder ID. Der Zeitfilter schränkt Ergebnisse auf einen bestimmten Zeitraum ein – ideal um aktuelle Probleme im Blick zu behalten.',
+        target: '.control-group',
+        position: 'right',
+        onEnter: null,
+        onLeave: null,
+    },
+    {
+        title: '📋 Mängel-Detailansicht',
+        text: 'Klicken Sie auf einen Eintrag in der Liste oder einen Pin auf der Karte, um die vollständige Analyse zu sehen: Satellitenansicht, KI-Begründung, Relevanzscore und direkten Street-View-Link.',
+        target: '#map-details-card',
+        position: 'left',
+        onEnter: function() {
+            // Programmatically select the first cycling report so the card slides out
+            const filtered = getFilteredReports();
+            const firstCycling = filtered.find(r =>
+                r.cyclist_impact_label === 'Confirmed cycling issue' ||
+                r.cyclist_impact_label === 'Likely cycling issue'
+            ) || filtered[0];
+            if (firstCycling) {
+                selectReport(firstCycling);
+            }
+        },
+        onLeave: function(direction) {
+            // If user goes back, close the detail card so it doesn't linger
+            if (direction === 'back') {
+                hideMapDetails();
+            }
+        },
+    },
+    {
+        title: '🗺️ Interaktive Karte',
+        text: 'Die Leaflet-Karte zeigt Pins für alle Berichte – farbkodiert nach KI-Konfidenz. Zoomen, clustern, oder schalten Sie auf Heatmap-Modus um, um Problembereiche auf einen Blick zu erkennen.',
+        target: '#map',
+        position: 'top-left',
+        onEnter: null,
+        onLeave: null,
+    },
+];
+
+let tourActive = false;
+let tourCurrentStep = 0;
+
+function initOnboarding() {
+    // Wire up the "Tour" button in the sidebar header
+    const tourBtn = document.getElementById('btn-tour-trigger');
+    if (tourBtn) {
+        tourBtn.addEventListener('click', startTour);
+    }
+
+    // Wire up tour card controls
+    const nextBtn = document.getElementById('tour-next-btn');
+    const prevBtn = document.getElementById('tour-prev-btn');
+    const closeBtn = document.getElementById('tour-close-btn');
+    if (nextBtn) nextBtn.addEventListener('click', tourNext);
+    if (prevBtn) prevBtn.addEventListener('click', tourPrev);
+    if (closeBtn) closeBtn.addEventListener('click', closeTour);
+
+    // Wire up welcome toast
+    const toastStartBtn = document.getElementById('welcome-toast-start-btn');
+    const toastSkipBtn = document.getElementById('welcome-toast-skip-btn');
+    const toastCloseBtn = document.getElementById('welcome-toast-close-btn');
+    if (toastStartBtn) toastStartBtn.addEventListener('click', () => {
+        dismissToast();
+        startTour();
+    });
+    if (toastSkipBtn) toastSkipBtn.addEventListener('click', dismissToast);
+    if (toastCloseBtn) toastCloseBtn.addEventListener('click', dismissToast);
+
+    // Backdrop click closes the tour
+    const backdrop = document.getElementById('onboarding-backdrop');
+    if (backdrop) backdrop.addEventListener('click', closeTour);
+
+    // Keyboard: Escape to close, ArrowRight to advance, ArrowLeft to go back
+    document.addEventListener('keydown', handleTourKeydown);
+
+    // Show welcome toast after a short delay if not seen before
+    const hasSeen = localStorage.getItem('rad-onboarding-seen');
+    if (!hasSeen) {
+        setTimeout(showWelcomeToast, 1200);
+    }
+}
+
+function showWelcomeToast() {
+    const toast = document.getElementById('welcome-onboarding-toast');
+    if (!toast) return;
+    toast.classList.remove('hidden');
+}
+
+function dismissToast(markSeen = true) {
+    const toast = document.getElementById('welcome-onboarding-toast');
+    if (!toast) return;
+    toast.classList.add('dismissing');
+    setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('dismissing');
+    }, 350);
+    if (markSeen) {
+        localStorage.setItem('rad-onboarding-seen', 'true');
+    }
+}
+
+function startTour() {
+    // Dismiss toast if still visible
+    const toast = document.getElementById('welcome-onboarding-toast');
+    if (toast && !toast.classList.contains('hidden')) {
+        dismissToast(false);
+    }
+
+    tourActive = true;
+    tourCurrentStep = 0;
+
+    // Build step progress dots
+    buildTourDots();
+
+    // Show backdrop + card
+    const backdrop = document.getElementById('onboarding-backdrop');
+    const card = document.getElementById('onboarding-card');
+    if (backdrop) {
+        backdrop.classList.remove('hidden');
+        // Trigger visible transition after next frame
+        requestAnimationFrame(() => backdrop.classList.add('visible'));
+    }
+    if (card) {
+        card.classList.remove('tour-hidden');
+        card.classList.add('visible');
+    }
+
+    renderTourStep(tourCurrentStep);
+}
+
+function buildTourDots() {
+    const dotsEl = document.getElementById('tour-dots');
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    TOUR_STEPS.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = `tour-dot${i === 0 ? ' active' : ''}`;
+        dot.addEventListener('click', () => jumpToTourStep(i));
+        dotsEl.appendChild(dot);
+    });
+}
+
+function updateTourDots(stepIndex) {
+    document.querySelectorAll('.tour-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === stepIndex);
+    });
+}
+
+function renderTourStep(stepIndex) {
+    const step = TOUR_STEPS[stepIndex];
+    if (!step) return;
+
+    // Update text content
+    const titleEl = document.getElementById('tour-step-title');
+    const textEl = document.getElementById('tour-step-text');
+    const progressEl = document.getElementById('tour-progress-text');
+    const nextBtn = document.getElementById('tour-next-btn');
+    const prevBtn = document.getElementById('tour-prev-btn');
+    const highlight = document.getElementById('onboarding-highlight');
+
+    if (titleEl) titleEl.textContent = step.title;
+    if (textEl) textEl.textContent = step.text;
+    if (progressEl) progressEl.textContent = `${stepIndex + 1} von ${TOUR_STEPS.length}`;
+
+    // Update buttons
+    if (prevBtn) prevBtn.style.visibility = stepIndex === 0 ? 'hidden' : 'visible';
+    if (nextBtn) nextBtn.textContent = stepIndex === TOUR_STEPS.length - 1 ? '✓ Fertig' : 'Weiter →';
+
+    updateTourDots(stepIndex);
+
+    // Position highlight and card
+    if (step.target) {
+        const targetEl = document.querySelector(step.target);
+        if (targetEl && highlight) {
+            highlight.classList.remove('hidden');
+            positionHighlight(targetEl, highlight);
+            positionCard(targetEl, step.position);
+        }
+    } else {
+        // Center card on screen, no highlight
+        if (highlight) highlight.classList.add('hidden');
+        centerCard();
+    }
+
+    // Run step enter hook if present
+    if (step.onEnter) {
+        // Delay slightly so the card is positioned first
+        setTimeout(() => step.onEnter(), step.target ? 300 : 0);
+    }
+}
+
+function positionHighlight(targetEl, highlightEl) {
+    const PAD = 10;
+    const rect = targetEl.getBoundingClientRect();
+    highlightEl.style.top = `${rect.top - PAD}px`;
+    highlightEl.style.left = `${rect.left - PAD}px`;
+    highlightEl.style.width = `${rect.width + PAD * 2}px`;
+    highlightEl.style.height = `${rect.height + PAD * 2}px`;
+}
+
+function positionCard(targetEl, position) {
+    const card = document.getElementById('onboarding-card');
+    if (!card) return;
+
+    const CARD_W = 320;
+    const CARD_GAP = 20;
+    const PAD = 10;
+    const rect = targetEl.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    // Measure card height roughly (will be set after render)
+    const cardH = card.offsetHeight || 220;
+
+    let top, left;
+
+    switch (position) {
+        case 'right':
+            left = rect.right + PAD + CARD_GAP;
+            top = rect.top + (rect.height / 2) - (cardH / 2);
+            // If would overflow right, flip to left
+            if (left + CARD_W > vw - 12) {
+                left = rect.left - CARD_W - CARD_GAP;
+            }
+            break;
+        case 'left':
+            left = rect.left - CARD_W - CARD_GAP;
+            top = rect.top + (rect.height / 2) - (cardH / 2);
+            if (left < 12) {
+                left = rect.right + PAD + CARD_GAP;
+            }
+            break;
+        case 'top-left':
+            left = rect.left + PAD;
+            top = rect.top - cardH - CARD_GAP;
+            if (top < 12) top = rect.bottom + CARD_GAP;
+            break;
+        case 'bottom':
+            left = rect.left + (rect.width / 2) - (CARD_W / 2);
+            top = rect.bottom + CARD_GAP;
+            break;
+        default:
+            // center
+            left = vw / 2 - CARD_W / 2;
+            top = vh / 2 - (cardH / 2);
+    }
+
+    // Clamp to viewport
+    left = Math.max(12, Math.min(left, vw - CARD_W - 12));
+    top = Math.max(12, Math.min(top, vh - cardH - 12));
+
+    card.style.left = `${left}px`;
+    card.style.top = `${top}px`;
+}
+
+function centerCard() {
+    const card = document.getElementById('onboarding-card');
+    if (!card) return;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const CARD_W = 320;
+    const cardH = card.offsetHeight || 220;
+    card.style.left = `${vw / 2 - CARD_W / 2}px`;
+    card.style.top = `${vh / 2 - cardH / 2}px`;
+}
+
+function tourNext() {
+    if (!tourActive) return;
+    const step = TOUR_STEPS[tourCurrentStep];
+    if (step && step.onLeave) step.onLeave('next');
+
+    if (tourCurrentStep >= TOUR_STEPS.length - 1) {
+        closeTour(true);
+        return;
+    }
+    tourCurrentStep++;
+    renderTourStep(tourCurrentStep);
+}
+
+function tourPrev() {
+    if (!tourActive || tourCurrentStep <= 0) return;
+    const step = TOUR_STEPS[tourCurrentStep];
+    if (step && step.onLeave) step.onLeave('back');
+    tourCurrentStep--;
+    renderTourStep(tourCurrentStep);
+}
+
+function jumpToTourStep(index) {
+    if (!tourActive) return;
+    const step = TOUR_STEPS[tourCurrentStep];
+    if (step && step.onLeave) step.onLeave('jump');
+    tourCurrentStep = index;
+    renderTourStep(tourCurrentStep);
+}
+
+function closeTour(markComplete = false) {
+    tourActive = false;
+
+    const backdrop = document.getElementById('onboarding-backdrop');
+    const card = document.getElementById('onboarding-card');
+    const highlight = document.getElementById('onboarding-highlight');
+
+    if (backdrop) {
+        backdrop.classList.remove('visible');
+        setTimeout(() => backdrop.classList.add('hidden'), 400);
+    }
+    if (card) {
+        card.classList.remove('visible');
+        card.classList.add('tour-hidden');
+    }
+    if (highlight) {
+        highlight.classList.add('hidden');
+    }
+
+    if (markComplete) {
+        localStorage.setItem('rad-onboarding-seen', 'true');
+    }
+}
+
+function handleTourKeydown(e) {
+    if (!tourActive) return;
+    if (e.key === 'Escape') closeTour();
+    if (e.key === 'ArrowRight') tourNext();
+    if (e.key === 'ArrowLeft') tourPrev();
 }
