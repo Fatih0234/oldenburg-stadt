@@ -1409,7 +1409,9 @@ const TOUR_STEPS = [
         text: 'Das Monatsbriefing zeigt belastbare Signale aus den letzten 30 Tagen: Trend, häufigster Schwerpunkt und ein konkreter Fokusfall für die Detailprüfung.',
         target: '#monthly-briefing',
         position: 'right',
-        onEnter: null,
+        onEnter: function() {
+            scrollTargetIntoViewCentered('#monthly-briefing');
+        },
         onLeave: null,
     },
     {
@@ -1417,7 +1419,9 @@ const TOUR_STEPS = [
         text: 'Die KI klassifiziert jeden Bericht in vier Kategorien: Bestätigt, Wahrscheinlich, Möglich und Allgemein. Klicken Sie auf eine Karte, um nur Berichte dieser Kategorie zu filtern.',
         target: '.metrics-grid',
         position: 'right',
-        onEnter: null,
+        onEnter: function() {
+            scrollTargetIntoViewCentered('.metrics-grid');
+        },
         onLeave: null,
     },
     {
@@ -1425,7 +1429,9 @@ const TOUR_STEPS = [
         text: 'Durchsuchen Sie Berichte nach Beschreibung, Straße oder ID. Der Zeitfilter schränkt Ergebnisse auf einen bestimmten Zeitraum ein – ideal um aktuelle Probleme im Blick zu behalten.',
         target: '.control-group',
         position: 'right',
-        onEnter: null,
+        onEnter: function() {
+            scrollTargetIntoViewCentered('.control-group');
+        },
         onLeave: null,
     },
     {
@@ -1452,12 +1458,67 @@ const TOUR_STEPS = [
         },
     },
     {
+        title: '🧮 Relevanz-Scoring',
+        text: 'Jeder Bericht erhält einen automatisierten Score (0 bis 100+). Dieser setzt sich aus Faktoren wie der Distanz zum Radnetz, Kategoriesignalen (z. B. Fundräder) und Text-Schlüsselwörtern zusammen.',
+        target: '.details-stats-dashboard',
+        position: 'left',
+        onEnter: function() {
+            scrollTargetIntoViewCentered('.details-stats-dashboard');
+        },
+        onLeave: null,
+    },
+    {
+        title: '🤖 KI & Regelbasierte Klassifizierung',
+        text: 'Neben der Gemini-KI begründet eine optimierte Regel-Engine die Einstufung. Die Regeln wurden anhand von KI-Silver-Truth-Daten und Optimierungs-Läufen (/goal) auf über 84% Genauigkeit trainiert.',
+        target: '#overlay-llm-box',
+        position: 'left',
+        onEnter: function() {
+            scrollTargetIntoViewCentered('#overlay-llm-box');
+        },
+        onLeave: null,
+    },
+    {
         title: '🗺️ Interaktive Karte',
         text: 'Die Leaflet-Karte zeigt Pins für alle Berichte – farbkodiert nach KI-Konfidenz. Zoomen, clustern, oder schalten Sie auf Heatmap-Modus um, um Problembereiche auf einen Blick zu erkennen.',
         target: '#map',
         position: 'top-left',
-        onEnter: null,
-        onLeave: null,
+        onEnter: function() {
+            hideMapDetails();
+        },
+        onLeave: function(direction) {
+            if (direction === 'back') {
+                const filtered = getFilteredReports();
+                const firstCycling = filtered.find(r =>
+                    r.cyclist_impact_label === 'Confirmed cycling issue' ||
+                    r.cyclist_impact_label === 'Likely cycling issue'
+                ) || filtered[0];
+                if (firstCycling) {
+                    selectReport(firstCycling);
+                }
+            }
+        },
+    },
+    {
+        title: '🐙 GitHub Deep Dive',
+        text: 'Interessiert an der genauen Klassifizierungs-Engine und den Optimierungsskripten? Das gesamte Projekt ist quelloffen auf GitHub verfügbar. Hier finden Sie alle Skripte und Formeln.',
+        target: '#github-repo-link',
+        position: 'bottom',
+        onEnter: function() {
+            hideMapDetails();
+        },
+        onLeave: function(direction) {
+            if (direction === 'back') {
+                // Reopen detail card when moving back from Github step
+                const filtered = getFilteredReports();
+                const firstCycling = filtered.find(r =>
+                    r.cyclist_impact_label === 'Confirmed cycling issue' ||
+                    r.cyclist_impact_label === 'Likely cycling issue'
+                ) || filtered[0];
+                if (firstCycling) {
+                    selectReport(firstCycling);
+                }
+            }
+        },
     },
 ];
 
@@ -1502,6 +1563,10 @@ function initOnboarding() {
     if (!hasSeen) {
         setTimeout(showWelcomeToast, 1200);
     }
+
+    // Responsive update on scroll and resize
+    window.addEventListener('scroll', repositionTourElements, { capture: true, passive: true });
+    window.addEventListener('resize', repositionTourElements, { passive: true });
 }
 
 function showWelcomeToast() {
@@ -1581,6 +1646,7 @@ function renderTourStep(stepIndex) {
     const nextBtn = document.getElementById('tour-next-btn');
     const prevBtn = document.getElementById('tour-prev-btn');
     const highlight = document.getElementById('onboarding-highlight');
+    const card = document.getElementById('onboarding-card');
 
     if (titleEl) titleEl.textContent = step.title;
     if (textEl) textEl.textContent = step.text;
@@ -1591,6 +1657,20 @@ function renderTourStep(stepIndex) {
     if (nextBtn) nextBtn.textContent = stepIndex === TOUR_STEPS.length - 1 ? '✓ Fertig' : 'Weiter →';
 
     updateTourDots(stepIndex);
+
+    // Add transitioning class for smooth transition animations when switching steps
+    if (highlight) highlight.classList.add('transitioning');
+    if (card) card.classList.add('transitioning');
+
+    if (window.tourTransitionTimeout) {
+        clearTimeout(window.tourTransitionTimeout);
+    }
+    window.tourTransitionTimeout = setTimeout(() => {
+        const h = document.getElementById('onboarding-highlight');
+        const c = document.getElementById('onboarding-card');
+        if (h) h.classList.remove('transitioning');
+        if (c) c.classList.remove('transitioning');
+    }, 400);
 
     // Position highlight and card
     if (step.target) {
@@ -1685,6 +1765,65 @@ function centerCard() {
     const cardH = card.offsetHeight || 220;
     card.style.left = `${vw / 2 - CARD_W / 2}px`;
     card.style.top = `${vh / 2 - cardH / 2}px`;
+}
+
+function repositionTourElements() {
+    if (!tourActive) return;
+    const step = TOUR_STEPS[tourCurrentStep];
+    if (step && step.target) {
+        const targetEl = document.querySelector(step.target);
+        const highlight = document.getElementById('onboarding-highlight');
+        if (targetEl && highlight && !highlight.classList.contains('hidden')) {
+            positionHighlight(targetEl, highlight);
+            positionCard(targetEl, step.position);
+        }
+    }
+}
+
+function scrollContainerToCenter(containerEl, targetEl) {
+    if (!containerEl || !targetEl) return;
+    const containerRect = containerEl.getBoundingClientRect();
+    const targetRect = targetEl.getBoundingClientRect();
+    const relativeTop = targetRect.top - containerRect.top + containerEl.scrollTop;
+    const targetHeight = targetRect.height;
+    const containerHeight = containerRect.height;
+    
+    let targetScrollTop = relativeTop - (containerHeight / 2) + (targetHeight / 2);
+    
+    // Clamp to min/max scroll limits
+    const maxScroll = containerEl.scrollHeight - containerHeight;
+    targetScrollTop = Math.max(0, Math.min(targetScrollTop, maxScroll));
+    
+    containerEl.scrollTo({
+        top: targetScrollTop,
+        behavior: 'smooth'
+    });
+}
+
+function scrollTargetIntoViewCentered(targetSelector) {
+    const targetEl = document.querySelector(targetSelector);
+    if (!targetEl) return;
+    
+    // Find nearest scrollable parent container
+    let parent = targetEl.parentElement;
+    const scrollContainerClass = 'overlay-scroll-content';
+    let containerEl = null;
+    
+    while (parent) {
+        if (parent.classList.contains(scrollContainerClass) || 
+            window.getComputedStyle(parent).overflowY === 'auto' || 
+            window.getComputedStyle(parent).overflowY === 'scroll') {
+            containerEl = parent;
+            break;
+        }
+        parent = parent.parentElement;
+    }
+    
+    if (containerEl) {
+        scrollContainerToCenter(containerEl, targetEl);
+    } else {
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 }
 
 function tourNext() {

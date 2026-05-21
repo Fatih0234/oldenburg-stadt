@@ -2019,13 +2019,16 @@ body {
         0 0 0 4px rgba(6, 182, 212, 0.15),
         0 0 30px rgba(6, 182, 212, 0.3),
         0 0 60px rgba(16, 185, 129, 0.1);
+    transition: opacity 0.3s ease;
+    animation: highlight-pulse 2.4s ease-in-out infinite;
+}
+.onboarding-highlight.transitioning {
     transition:
         top 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         left 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         height 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         opacity 0.3s ease;
-    animation: highlight-pulse 2.4s ease-in-out infinite;
 }
 
 @keyframes highlight-pulse {
@@ -2060,6 +2063,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+.onboarding-card.transitioning {
     transition:
         top 0.4s cubic-bezier(0.16, 1, 0.3, 1),
         left 0.4s cubic-bezier(0.16, 1, 0.3, 1),
