@@ -115,7 +115,7 @@ We have implemented key upgrades that transform the dashboard into a state-of-th
 *   **Smart Fallback**: Clicking an issue from the sidebar list auto-disables Heatmap Mode (`showHeatmap = false`) and loads the pins layer so that `selectReport` can target the specific pin element and trigger the selection ripple.
 
 ### 5. Multi-Image Media Carousel
-*   **Data Injection**: Renders inside `#overlay-carousel-slides` dynamically using the global `carouselImages` array. Mocks secondary slides for testing category actions if only one photo is present.
+*   **Data Injection**: Renders inside `#overlay-carousel-slides` dynamically using the global `carouselImages` array containing the report's actual primary image.
 *   **Slide Transitions**: Sliding is controlled via `showSlide(index)` which applies a horizontal translation (`translateX(-index * 100%)`) on the slides track.
 *   **Touch Gesture Support**: Configured inside `setupCarouselSwipe(element)` using passive listeners for `touchstart` and `touchend`. Calculates horizontal drag delta (`startX - endX`) and triggers `nextSlide()` or `prevSlide()` on swipe thresholds of >50px.
 

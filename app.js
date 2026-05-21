@@ -1237,17 +1237,8 @@ function showMapDetails(report) {
     if (report.firstPictureUrl && typeof report.firstPictureUrl === 'string' && report.firstPictureUrl !== 'NaN') {
         carouselContainer.classList.remove('hidden');
         
-        // Construct an array of images: use primary and add 1-2 stock context images for demo
+        // Construct an array of images: use only the primary real image
         const images = [report.firstPictureUrl];
-        if (report.categoryId === 8) { // Wilde Müllkippe
-            images.push('https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=400&q=80');
-            images.push('https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=400&q=80');
-        } else if (report.categoryId === 3 || report.categoryId === 4) { // Straßen / Verkehrszeichen
-            images.push('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=400&q=80');
-            images.push('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=400&q=80');
-        } else {
-            images.push('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=400&q=80');
-        }
         
         carouselImages = images;
         activeSlideIndex = 0;
