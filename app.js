@@ -1382,6 +1382,33 @@ function setupCarouselSwipe(element) {
     }
 }
 
+// Helper to get a report with an image for onboarding tour
+function getFeaturedReportWithImage() {
+    if (typeof CLASSIFIED_REPORTS === 'undefined' || !Array.isArray(CLASSIFIED_REPORTS)) {
+        return null;
+    }
+    // Prefer confirmed/likely cycling issue with valid picture and coords
+    let report = CLASSIFIED_REPORTS.find(r => 
+        (r.cyclist_impact_label === 'Confirmed cycling issue' || r.cyclist_impact_label === 'Likely cycling issue') &&
+        r.firstPictureUrl && typeof r.firstPictureUrl === 'string' && r.firstPictureUrl !== 'NaN' && 
+        r.latitude && r.longitude
+    );
+    // Fallback 1: Any report with picture and coords
+    if (!report) {
+        report = CLASSIFIED_REPORTS.find(r => 
+            r.firstPictureUrl && typeof r.firstPictureUrl === 'string' && r.firstPictureUrl !== 'NaN' && 
+            r.latitude && r.longitude
+        );
+    }
+    // Fallback 2: Any cycling report
+    if (!report) {
+        report = CLASSIFIED_REPORTS.find(r => 
+            r.cyclist_impact_label === 'Confirmed cycling issue' || r.cyclist_impact_label === 'Likely cycling issue'
+        );
+    }
+    return report || CLASSIFIED_REPORTS[0] || null;
+}
+
 // =============================================================================
 // Onboarding Tour Controller
 // =============================================================================
@@ -1427,18 +1454,19 @@ const TOUR_STEPS = [
     },
     {
         title: '📋 Mängel-Detailansicht',
-        text: 'Klicken Sie auf einen Eintrag in der Liste oder einen Pin auf der Karte, um die vollständige Analyse zu sehen: Satellitenansicht, KI-Begründung, Relevanzscore und direkten Street-View-Link.',
+        text: 'Klicken Sie auf einen Eintrag in der Liste oder einen Pin auf der Karte, um die vollständige Analyse zu sehen: Bilder-Karussell, Satellitenansicht, KI-Begründung, Relevanzscore und externe Links.',
         target: '#map-details-card',
         position: 'left',
         onEnter: function() {
-            // Programmatically select the first cycling report so the card slides out
-            const filtered = getFilteredReports();
-            const firstCycling = filtered.find(r =>
-                r.cyclist_impact_label === 'Confirmed cycling issue' ||
-                r.cyclist_impact_label === 'Likely cycling issue'
-            ) || filtered[0];
-            if (firstCycling) {
-                selectReport(firstCycling);
+            // Programmatically select a cycling report with a valid image so the carousel is populated
+            const featured = getFeaturedReportWithImage();
+            if (featured) {
+                selectReport(featured);
+                // Ensure detail container is scrolled to the top
+                setTimeout(() => {
+                    const scrollContainer = document.querySelector('.overlay-scroll-content');
+                    if (scrollContainer) scrollContainer.scrollTop = 0;
+                }, 100);
             }
         },
         onLeave: function(direction) {
@@ -1449,11 +1477,43 @@ const TOUR_STEPS = [
         },
     },
     {
+        title: '🖼️ Bürger-Foto & Galerie',
+        text: 'Hier sehen Sie das vom Bürger eingereichte Foto der Mängelmeldung. Auf Smartphones können Sie durch Wischen durch die Galerie blättern, auf Desktop-Geräten über die Navigationspfeile.',
+        target: '#overlay-carousel-container',
+        position: 'left',
+        onEnter: function() {
+            const featured = getFeaturedReportWithImage();
+            if (featured) {
+                selectReport(featured);
+            }
+            scrollTargetIntoViewCentered('#overlay-carousel-container');
+        },
+        onLeave: null,
+    },
+    {
+        title: '🛰️ Satellitenbild & Navigation',
+        text: 'Für besseren Straßenkontext ist hier eine Google Maps Satellitenkarte eingebettet. Mit den Buttons darunter gelangen Sie direkt zur Routenplanung oder starten 3D-Bilder in Google Street View.',
+        target: '#overlay-satellite-container',
+        position: 'left',
+        onEnter: function() {
+            const featured = getFeaturedReportWithImage();
+            if (featured) {
+                selectReport(featured);
+            }
+            scrollTargetIntoViewCentered('#overlay-satellite-container');
+        },
+        onLeave: null,
+    },
+    {
         title: '🧮 Relevanz-Scoring',
         text: 'Jeder Bericht erhält einen automatisierten Score (0 bis 100+). Dieser setzt sich aus Faktoren wie der Distanz zum Radnetz, Kategoriesignalen (z. B. Fundräder) und Text-Schlüsselwörtern zusammen.',
         target: '.details-stats-dashboard',
         position: 'left',
         onEnter: function() {
+            const featured = getFeaturedReportWithImage();
+            if (featured) {
+                selectReport(featured);
+            }
             scrollTargetIntoViewCentered('.details-stats-dashboard');
         },
         onLeave: null,
@@ -1464,6 +1524,10 @@ const TOUR_STEPS = [
         target: '#overlay-llm-box',
         position: 'left',
         onEnter: function() {
+            const featured = getFeaturedReportWithImage();
+            if (featured) {
+                selectReport(featured);
+            }
             scrollTargetIntoViewCentered('#overlay-llm-box');
         },
         onLeave: null,
@@ -1478,13 +1542,9 @@ const TOUR_STEPS = [
         },
         onLeave: function(direction) {
             if (direction === 'back') {
-                const filtered = getFilteredReports();
-                const firstCycling = filtered.find(r =>
-                    r.cyclist_impact_label === 'Confirmed cycling issue' ||
-                    r.cyclist_impact_label === 'Likely cycling issue'
-                ) || filtered[0];
-                if (firstCycling) {
-                    selectReport(firstCycling);
+                const featured = getFeaturedReportWithImage();
+                if (featured) {
+                    selectReport(featured);
                 }
             }
         },
@@ -1500,13 +1560,9 @@ const TOUR_STEPS = [
         onLeave: function(direction) {
             if (direction === 'back') {
                 // Reopen detail card when moving back from Github step
-                const filtered = getFilteredReports();
-                const firstCycling = filtered.find(r =>
-                    r.cyclist_impact_label === 'Confirmed cycling issue' ||
-                    r.cyclist_impact_label === 'Likely cycling issue'
-                ) || filtered[0];
-                if (firstCycling) {
-                    selectReport(firstCycling);
+                const featured = getFeaturedReportWithImage();
+                if (featured) {
+                    selectReport(featured);
                 }
             }
         },

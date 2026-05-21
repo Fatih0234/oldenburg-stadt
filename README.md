@@ -13,7 +13,7 @@ The project follows a 5-step pipeline to extract, project, classify, and visuali
 ```mermaid
 graph TD
     A[OpenStreetMap API] -->|download_osm_bike.py| B(oldenburg_osm_bike.json)
-    C[gemeinsam.oldenburg.de CSV] -->|classify_reports_llm.py| D(llm_classification_cache.json)
+    C[gemeinsam.oldenburg.de CSV] -->|classify_reports_llm.py| D(labels_v2_silver.json)
     B --> E(score_reports.py)
     C --> E
     D --> E
@@ -96,10 +96,9 @@ The dashboard features premium, state-of-the-art interactive upgrades:
 | **`optimize_regex.py`** | Optimizer utility that performs greedy keyword association search to maximize heuristic alignment with the LLM. |
 | **`prepare_slide_data.py`** | Standalone Python script to aggregate dashboard reports, detect hot-spots, and format statistics for stakeholder slides. |
 | **`presentation.html`** | Offline responsive presentation template using the `bold-signal` visual theme to present safety data to stakeholders. |
-| **`llm_classification_cache.json`** | Local JSON database storing all processed LLM classifications to reduce API costs. |
+| **`classification/labels/labels_v2_silver.json`** | Local JSON database storing all processed LLM classifications to reduce API costs. |
 | **`stadtverbesserer_snapshot.csv`** | Original dataset of 553 citizen reports from the Oldenburg Gemeinsam platform. |
 | **`classified_reports.csv`** | Processed spreadsheet output containing coordinates, distances, scores, and confidence classifications. |
-| **`agent_handoff.md`** | Handoff documentation designed for future AI agents to continue development of this project. |
 
 ---
 
