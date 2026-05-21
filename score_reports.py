@@ -1,100 +1,18 @@
 import os
 import json
-import re
 import pandas as pd
 import numpy as np
 from datetime import datetime, timezone
 from pyproj import Transformer
 from shapely.geometry import Point, LineString
 from shapely.ops import nearest_points
+from classification.rules import classify_report_rules
 
 # 1. Configuration & Constants
 CURRENT_TIME = datetime.now(timezone.utc) # Use actual run time dynamically
 
-# Keywords indicating cycling-related issues
-BIKE_KEYWORDS = [
-    r'radwe[gh]\w*', r'fahrradwe[gh]\w*', r'radspur\w*', r'fahrradstraße\w*', r'radschutzstreifen\w*',
-    r'schutzstreifen\w*', r'radroute\w*', r'fahrradroute\w*', r'radverkehr\w*',
-    r'rad-?\s*und\s*-?gehweg\w*', r'geh-?\s*und\s*-?radweg\w*', r'rad/gehweg\w*',
-    r'rad-?\s*und\s*-?fußweg\w*', r'fuß-?\s*und\s*-?radweg\w*',
-    r'rad-?\s*und\s*-?wanderweg\w*', r'wander-?\s*und\s*-?radweg\w*',
-    r'radüberweg\w*', r'fahrradständer\w*', r'anlehnbügel\w*', r'fahrradbügel\w*', r'stellplatz\w*', r'stellplätze\w*',
-    r'lastenrad\w*', r'radler\w*', r'radfahrer\w*', r'radlerin\w*', r'radfahrende\w*',
-    r'\bfahrrad\b', r'\bfahrrads\b', r'\bfahrräder\b', r'\bbike\b', r'\bbikes\b',
-    r'\bschulweg\w*', r'\bschüler\w*', r'\brad\b', r'\bräder\b'
-]
-
-# Unrelated keywords that often trigger false positives
-NEG_KEYWORDS = [
-    r'\bspielplatz\w*', r'\bspielgerät\w*', r'\bschaukel\w*', r'\brutsche\w*', r'\bsandkiste\w*',
-    r'\bkleidercontainer\w*', r'\btextilcontainer\w*', r'\baltkleider\w*', r'\bsperrmüll\w*',
-    r'\bhausmüll\w*', r'\bkatze\w*', r'\bkatzen\w*', r'\bhundekot\w*', r'\bhundehaufen\w*',
-    r'\bhund\b', r'\bhunde\b',
-    r'\bwilder müll\w*', r'\bmülltonne\w*', r'\bgelber sack\w*', r'\bgelbe säcke\w*',
-    r'\bplakat\w*', r'\bgraffiti\w*', r'\baufkleber\w*', r'\bschulhof\w*', r'\bparkanlage\w*',
-    r'\bglascontainer\w*', r'\baltglascontainer\w*', r'\bautofahrer\w*', r'\bvandalismus\w*',
-    r'\babfluss\w*', r'\bwasserzug\w*', r'\bgraben\b', r'\bgully\w*', r'\bböschung\w*', r'\bwaldstück\w*',
-    r'\bwohnwagen\w*', r'\bmercedes\w*', r'\baudi\b', r'\bpkw\b', r'\bauto\b',
-    r'abgemeldeter\w*', r'radio\w*', r'parkplatz\w*', r'sticker\w*', r'vollgeklebt\w*', r'beklebt\w*',
-    r'rasen\w*', r'parkstreifen\w*', r'parkbucht\w*', r'anhänger\w*', r'bootstrailer\w*'
-]
-
-HAZARD_KEYWORDS = [
-    r'scherben\w*', r'glasscherben\w*', r'glas\b',
-    r'schlagloch\w*', r'schlaglöcher\w*', r'loch\b', r'löcher\b', r'uneben\w*', r'abgesackt\w*',
-    r'absackung\w*', r'absackungen\w*', r'kante\w*', r'absatz\w*', r'wurzel\w*', r'baumwurzel\w*',
-    r'bodenwelle\w*', r'pflasterstein\w*', r'pflastersteine\w*', r'kopfsteinpflaster\w*',
-    r'risse\w*', r'riss\b', r'asphalt\w*', r'fahrbahn\w*',
-    r'hecke\w*', r'sträucher\w*', r'äste\b', r'zweige\b', r'überhang\w*', r'überhängend\w*',
-    r'bewuchs\w*', r'zugewachsen\w*', r'zuparken\w*', r'zugeparkt\w*', r'blockiert\w*', r'versperrt\w*',
-    r'hindernis\w*', r'poller\w*', r'pfosten\w*', r'sperrpfosten\w*', r'kuhle\w*',
-    r'ampel\w*', r'ampelschaltung\w*', r'induktionsschleife\w*', r'sensor\w*',
-    r'schild\w*', r'beschilderung\w*', r'wegweiser\w*',
-    r'sturzgefahr\w*', r'rutschgefahr\w*', r'unfallgefahr\w*', r'gefahrenstelle\w*',
-    r'marode\w*', r'schade[n]?\b', r'beschädigt\w*', r'begehbar\w*', r'passierbar\w*', r'befahrbar\w*'
-]
-
-pos_regex = re.compile('|'.join(BIKE_KEYWORDS), re.IGNORECASE)
-neg_regex = re.compile('|'.join(NEG_KEYWORDS), re.IGNORECASE)
-hazard_regex = re.compile('|'.join(HAZARD_KEYWORDS), re.IGNORECASE)
-
 def classify_regex(text, category_id):
-    text_lower = text.lower()
-    
-    # Category 7 is Fundräder (abandoned bikes)
-    if category_id == 7:
-        garbage_keywords = [r'müll', r'möbel', r'abfall', r'sperrmüll', r'schrott', r'entsorgt', r'reifen', r'mülltonne']
-        has_garbage = any(re.search(pat, text_lower) for pat in garbage_keywords)
-        if has_garbage and not any(x in text_lower for x in ['rad', 'fahrrad', 'bike']):
-            return False
-        else:
-            return True
-            
-    # Find matching items
-    matched_pos = [pat for pat in BIKE_KEYWORDS if re.search(pat, text_lower)]
-    matched_neg = [pat for pat in NEG_KEYWORDS if re.search(pat, text_lower)]
-    
-    has_pos = len(matched_pos) > 0
-    has_neg = len(matched_neg) > 0
-    has_glass = any(re.search(pat, text_lower) for pat in [r'scherben\w*', r'glasscherben\w*'])
-    
-    result = False
-    
-    if has_pos:
-        allowed_overrides = [
-            r'radweg\w*', r'fahrradweg\w*', r'radspur\w*', r'fahrradstraße\w*', r'schulweg\w*', r'schüler\w*',
-            r'radfahrer\w*', r'radfahrende\w*', r'fahrrad\w*', r'\brad\b'
-        ]
-        has_override = any(re.search(pat, text_lower) for pat in allowed_overrides)
-        if has_neg and not has_override:
-            result = False
-        else:
-            result = True
-    elif has_glass and category_id in [3, 8]:
-        if not has_neg:
-            result = True
-                
-    return result
+    return classify_report_rules(text, category_id).is_regex_candidate
 
 # Priority corridors defined by city and ADFC (Fahrradstraßen, Premiumrouten, Green Waves)
 PRIORITY_CORRIDORS = {
@@ -178,8 +96,10 @@ def score_report(row):
     created_at_str = str(row['createdAt'])
     text = str(row['replacingText']) if pd.notna(row['replacingText']) else ""
     
-    # Run optimized regex classification (heuristic)
-    is_cycling_related_regex = classify_regex(text, category_id)
+    # Run hybrid rule router. Clear cases are classified locally; ambiguous
+    # generic hazards are routed to cached/future LLM review.
+    rule_decision = classify_report_rules(text, category_id)
+    is_cycling_related_regex = rule_decision.is_regex_candidate
     
     # Fetch from v2 silver labels.
     has_llm = report_id in labels_v2
@@ -192,13 +112,12 @@ def score_report(row):
         needs_human_review = llm_data.get("needs_human_review", False)
         explanation_de = llm_data.get("reason_de") or llm_data.get("explanation_de", "Klassifiziert via LLM.")
     else:
-        # Fallback to regex
-        is_cycling_related = is_cycling_related_regex
-        directness = "indirect" if is_cycling_related else "unrelated"
-        subcategory = "other_cycling" if is_cycling_related else "unrelated"
-        llm_confidence = 0.5  # Heuristic classification
-        needs_human_review = True
-        explanation_de = "Automatisch klassifiziert via Heuristik (Regex-Regeln)."
+        is_cycling_related = rule_decision.is_cycling_related
+        directness = rule_decision.directness
+        subcategory = rule_decision.subcategory
+        llm_confidence = rule_decision.confidence
+        needs_human_review = rule_decision.needs_llm_review
+        explanation_de = rule_decision.reason_de
         
     is_cycling_related_llm = llm_data.get("is_cycling_related", False) if has_llm else None
     

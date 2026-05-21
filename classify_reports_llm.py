@@ -7,6 +7,7 @@ import pandas as pd
 from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field, model_validator
+from classification.rules import should_route_to_llm
 
 
 class CyclingClassificationV2(BaseModel):
@@ -81,6 +82,7 @@ load_dotenv()
 
 MODEL_ID = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 BATCH_SIZE = int(os.environ.get("CLASSIFICATION_BATCH_SIZE", "15"))
+CLASSIFICATION_SCOPE = os.environ.get("CLASSIFICATION_SCOPE", "hybrid_review")
 
 
 def load_existing_labels() -> dict[str, dict]:
@@ -140,14 +142,34 @@ def main() -> int:
     df["id"] = df["id"].astype(str)
 
     uncached_df = df[~df["id"].isin(labels_by_id.keys())].copy()
+    if CLASSIFICATION_SCOPE == "hybrid_review":
+        uncached_df = uncached_df[
+            uncached_df.apply(
+                lambda row: should_route_to_llm(
+                    str(row.get("replacingText", "")) if pd.notna(row.get("replacingText", "")) else "",
+                    int(row.get("categoryId", 0)),
+                ),
+                axis=1,
+            )
+        ].copy()
+    elif CLASSIFICATION_SCOPE != "all":
+        print(
+            "ERROR: CLASSIFICATION_SCOPE must be 'hybrid_review' or 'all'.",
+            file=sys.stderr,
+        )
+        return 1
+
     total_uncached = len(uncached_df)
 
     if total_uncached == 0:
-        print("All reports are already classified in labels_v2_silver.json.")
+        if CLASSIFICATION_SCOPE == "hybrid_review":
+            print("No uncached hybrid review candidates require LLM classification.")
+        else:
+            print("All reports are already classified in labels_v2_silver.json.")
         return 0
 
     print(
-        f"Found {total_uncached} unclassified reports. "
+        f"Found {total_uncached} unclassified reports in scope '{CLASSIFICATION_SCOPE}'. "
         f"Processing in batches of {BATCH_SIZE} using model '{MODEL_ID}'."
     )
 

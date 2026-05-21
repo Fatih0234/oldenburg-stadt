@@ -1,7 +1,7 @@
 import os
 import json
-import re
 import pandas as pd
+from classification.rules import classify_report_rules
 
 # Load files
 CSV_FILE = "stadtverbesserer_snapshot.csv"
@@ -43,92 +43,15 @@ for _, row in df.iterrows():
 
 print(f"Loaded {len(records)} reports aligned with labels_v2_silver.")
 
-# Keywords indicating cycling-related issues
-BIKE_KEYWORDS = [
-    r'radwe[gh]\w*', r'fahrradwe[gh]\w*', r'radspur\w*', r'fahrradstraße\w*', r'radschutzstreifen\w*',
-    r'schutzstreifen\w*', r'radroute\w*', r'fahrradroute\w*', r'radverkehr\w*',
-    r'rad-?\s*und\s*-?gehweg\w*', r'geh-?\s*und\s*-?radweg\w*', r'rad/gehweg\w*',
-    r'rad-?\s*und\s*-?fußweg\w*', r'fuß-?\s*und\s*-?radweg\w*',
-    r'rad-?\s*und\s*-?wanderweg\w*', r'wander-?\s*und\s*-?radweg\w*',
-    r'radüberweg\w*', r'fahrradständer\w*', r'anlehnbügel\w*', r'fahrradbügel\w*', r'stellplatz\w*', r'stellplätze\w*',
-    r'lastenrad\w*', r'radler\w*', r'radfahrer\w*', r'radlerin\w*', r'radfahrende\w*',
-    r'\bfahrrad\b', r'\bfahrrads\b', r'\bfahrräder\b', r'\bbike\b', r'\bbikes\b',
-    r'\bschulweg\w*', r'\bschüler\w*', r'\brad\b', r'\bräder\b'
-]
-
-# Unrelated keywords that often trigger false positives
-NEG_KEYWORDS = [
-    r'\bspielplatz\w*', r'\bspielgerät\w*', r'\bschaukel\w*', r'\brutsche\w*', r'\bsandkiste\w*',
-    r'\bkleidercontainer\w*', r'\btextilcontainer\w*', r'\baltkleider\w*', r'\bsperrmüll\w*',
-    r'\bhausmüll\w*', r'\bkatze\w*', r'\bkatzen\w*', r'\bhundekot\w*', r'\bhundehaufen\w*',
-    r'\bhund\b', r'\bhunde\b',
-    r'\bwilder müll\w*', r'\bmülltonne\w*', r'\bgelber sack\w*', r'\bgelbe säcke\w*',
-    r'\bplakat\w*', r'\bgraffiti\w*', r'\baufkleber\w*', r'\bschulhof\w*', r'\bparkanlage\w*',
-    r'\bglascontainer\w*', r'\baltglascontainer\w*', r'\bautofahrer\w*', r'\bvandalismus\w*',
-    r'\babfluss\w*', r'\bwasserzug\w*', r'\bgraben\b', r'\bgully\w*', r'\bböschung\w*', r'\bwaldstück\w*',
-    r'\bwohnwagen\w*', r'\bmercedes\w*', r'\baudi\b', r'\bpkw\b', r'\bauto\b',
-    r'abgemeldeter\w*', r'radio\w*', r'parkplatz\w*', r'sticker\w*', r'vollgeklebt\w*', r'beklebt\w*',
-    r'rasen\w*', r'parkstreifen\w*', r'parkbucht\w*', r'anhänger\w*', r'bootstrailer\w*'
-]
-
-HAZARD_KEYWORDS = [
-    r'scherben\w*', r'glasscherben\w*', r'glas\b',
-    r'schlagloch\w*', r'schlaglöcher\w*', r'loch\b', r'löcher\b', r'uneben\w*', r'abgesackt\w*',
-    r'absackung\w*', r'absackungen\w*', r'kante\w*', r'absatz\w*', r'wurzel\w*', r'baumwurzel\w*',
-    r'bodenwelle\w*', r'pflasterstein\w*', r'pflastersteine\w*', r'kopfsteinpflaster\w*',
-    r'risse\w*', r'riss\b', r'asphalt\w*', r'fahrbahn\w*',
-    r'hecke\w*', r'sträucher\w*', r'äste\b', r'zweige\b', r'überhang\w*', r'überhängend\w*',
-    r'bewuchs\w*', r'zugewachsen\w*', r'zuparken\w*', r'zugeparkt\w*', r'blockiert\w*', r'versperrt\w*',
-    r'hindernis\w*', r'poller\w*', r'pfosten\w*', r'sperrpfosten\w*', r'kuhle\w*',
-    r'ampel\w*', r'ampelschaltung\w*', r'induktionsschleife\w*', r'sensor\w*',
-    r'schild\w*', r'beschilderung\w*', r'wegweiser\w*',
-    r'sturzgefahr\w*', r'rutschgefahr\w*', r'unfallgefahr\w*', r'gefahrenstelle\w*',
-    r'marode\w*', r'schade[n]?\b', r'beschädigt\w*', r'begehbar\w*', r'passierbar\w*', r'befahrbar\w*'
-]
-
-pos_regex = re.compile('|'.join(BIKE_KEYWORDS), re.IGNORECASE)
-neg_regex = re.compile('|'.join(NEG_KEYWORDS), re.IGNORECASE)
-hazard_regex = re.compile('|'.join(HAZARD_KEYWORDS), re.IGNORECASE)
-
 def classify_regex(text, category_id):
-    text_lower = text.lower()
-    
-    # Category 7 is Fundräder (abandoned bikes)
-    if category_id == 7:
-        garbage_keywords = [r'müll', r'möbel', r'abfall', r'sperrmüll', r'schrott', r'entsorgt', r'reifen', r'mülltonne']
-        has_garbage = any(re.search(pat, text_lower) for pat in garbage_keywords)
-        if has_garbage and not any(x in text_lower for x in ['rad', 'fahrrad', 'bike']):
-            return False, [], [], []
-        else:
-            return True, ['category_7_bike'], [], []
-            
-    # Find matching items for debugging
-    matched_pos = [pat for pat in BIKE_KEYWORDS if re.search(pat, text_lower)]
-    matched_neg = [pat for pat in NEG_KEYWORDS if re.search(pat, text_lower)]
-    matched_hazard = [pat for pat in HAZARD_KEYWORDS if re.search(pat, text_lower)]
-    
-    has_pos = len(matched_pos) > 0
-    has_neg = len(matched_neg) > 0
-    has_hazard = len(matched_hazard) > 0
-    has_glass = any(re.search(pat, text_lower) for pat in [r'scherben\w*', r'glasscherben\w*'])
-    
-    result = False
-    
-    if has_pos:
-        allowed_overrides = [
-            r'radweg\w*', r'fahrradweg\w*', r'radspur\w*', r'fahrradstraße\w*', r'schulweg\w*', r'schüler\w*',
-            r'radfahrer\w*', r'radfahrende\w*', r'fahrrad\w*', r'\brad\b'
-        ]
-        has_override = any(re.search(pat, text_lower) for pat in allowed_overrides)
-        if has_neg and not has_override:
-            result = False
-        else:
-            result = True
-    elif has_glass and category_id in [3, 8]:
-        if not has_neg:
-            result = True
-                
-    return result, matched_pos, matched_neg, matched_hazard
+    decision = classify_report_rules(text, category_id)
+    return (
+        decision.is_regex_candidate,
+        decision.matches["bike"],
+        decision.matches["neg"],
+        decision.matches["surface"] + decision.matches["hazard"],
+        decision.route,
+    )
 
 # Evaluate
 tp, fp, tn, fn = 0, 0, 0, 0
@@ -136,12 +59,14 @@ fp_cases = []
 fn_cases = []
 fn_subcats = {}
 fn_directness = {}
+routes = {}
 
 for r in records:
-    pred, m_pos, m_neg, m_haz = classify_regex(r["text"], r["categoryId"])
+    pred, m_pos, m_neg, m_haz, route = classify_regex(r["text"], r["categoryId"])
     actual = r["llm_is_cycling"]
+    routes[route] = routes.get(route, 0) + 1
     
-    info = {**r, "m_pos": m_pos, "m_neg": m_neg, "m_haz": m_haz}
+    info = {**r, "m_pos": m_pos, "m_neg": m_neg, "m_haz": m_haz, "route": route}
     
     if pred and actual:
         tp += 1
@@ -174,6 +99,10 @@ print(f"  True Negatives  : {tn}")
 print(f"  False Positives : {fp}")
 print(f"  False Negatives : {fn}")
 
+print("\n--- HYBRID ROUTE COUNTS ---")
+for route, count in sorted(routes.items(), key=lambda x: x[1], reverse=True):
+    print(f"  {route:<30}: {count:>3} ({count / total:.1%})")
+
 print("\n--- FALSE NEGATIVES BY LLM SUBCATEGORY ---")
 for subcat, count in sorted(fn_subcats.items(), key=lambda x: x[1], reverse=True):
     print(f"  {subcat:<30}: {count}")
@@ -188,7 +117,7 @@ for r in fp_cases[:8]:
     print(f"Directness: {r['llm_directness']} | Subcategory: {r['llm_subcategory']}")
     print(f"Text: {r['text'][:120]}")
     print(f"LLM Explanation: {r['llm_explanation']}")
-    print(f"Matches: Pos={r['m_pos']} | Neg={r['m_neg']} | Haz={r['m_haz']}")
+    print(f"Route: {r['route']} | Matches: Pos={r['m_pos']} | Neg={r['m_neg']} | Haz={r['m_haz']}")
     print("-" * 50)
 
 print("\n--- SAMPLE FALSE NEGATIVES (Regex said NO, LLM said YES) ---")
@@ -197,5 +126,5 @@ for r in fn_cases[:8]:
     print(f"Directness: {r['llm_directness']} | Subcategory: {r['llm_subcategory']}")
     print(f"Text: {r['text'][:120]}")
     print(f"LLM Explanation: {r['llm_explanation']}")
-    print(f"Matches: Pos={r['m_pos']} | Neg={r['m_neg']} | Haz={r['m_haz']}")
+    print(f"Route: {r['route']} | Matches: Pos={r['m_pos']} | Neg={r['m_neg']} | Haz={r['m_haz']}")
     print("-" * 50)

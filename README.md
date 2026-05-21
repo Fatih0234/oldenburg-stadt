@@ -30,16 +30,30 @@ The raw coordinates in OpenStreetMap and citizen tickets are in degrees (WGS84).
 * We use `pyproj` to project all coordinates into **UTM Zone 32N (EPSG:32632)**, which provides Cartesian coordinates in **meters**.
 * We construct `shapely` `LineString` elements for the cycleways and measure the exact distance in meters from each citizen ticket to the nearest bike segment.
 
-### 3. LLM-Based & Heuristic Classification
-Reports are classified using a hybrid model:
-*   **LLM Classification (Ground Truth):** Programmatically queries the Google GenAI SDK (using model `gemini-2.5-flash-lite` and strict Pydantic JSON schemas) to determine if a report is cycling-related. It classifies issues into 10 subcategories (e.g. `pothole_damage`, `glass_debris`, `vegetation_block`, `illegal_parking_obstruction`) and provides a short German explanation.
-*   **Local Cache:** Classification results are cached locally in `llm_classification_cache.json` to prevent re-querying the API.
-*   **Heuristic Fallback (Regex):** For reports that are not cached, a highly optimized regex heuristic runs as a fallback. By using boundary-aware patterns, negation keywords, and allowed overrides, the regex heuristic matches the LLM predictions with **84.45% accuracy** and an **83.96% F1 score**.
+### 3. Hybrid Rule/LLM Classification
+Reports are classified with an explainable hybrid router. The rule layer is the fast first pass, and the LLM is reserved for cases where regex evidence says "possibly cycling-related" but the text is too generic to decide safely.
+
+*   **Silver labels:** `classification/labels/labels_v2_silver.json` stores the current LLM-reviewed labels. These are treated as silver labels for evaluation and dashboard scoring, not permanent ground truth.
+*   **Shared rule engine:** `classification/rules.py` contains the maintainable regex and category-aware decision logic used by both `score_reports.py` and `evaluate_rules.py`.
+*   **Auto-pass:** reports with explicit bicycle infrastructure or object terms are classified locally as cycling-related. Examples include `radweg`, `fahrradweg`, `radspur`, `fahrradstraße`, `radverkehr`, `radfahrer`, `fahrradständer`, `anlehnbügel`, `radständer`, `lastenrad`, `fahrrad`, and `bike`.
+*   **Auto-fail:** reports with strong unrelated context and no hazard or bicycle context are classified locally as not cycling-related. Examples include playground terms (`spielplatz`, `schaukel`, `rutsche`), animal waste (`hundekot`, `hund`), private/property terms (`grundstück`, `garage`), generic vehicle/storage terms (`auto`, `pkw`, `wohnwagen`, `parkplatz`), and unrelated container/poster issues (`kleidercontainer`, `glascontainer`, `plakat`, `graffiti`, `aufkleber`).
+*   **LLM review:** generic hazards are routed to the LLM when they occur in relevant categories but lack explicit bicycle context. This catches ambiguous reports such as `loch`, `riss`, `uneben`, `schlagloch`, `kante`, `gully`, `pfütze`, `sturzgefahr`, or blocked/sightline/signage terms in street, sign, lighting, waste, green-space, and traffic-idea categories.
+*   **Local cache and schema:** `classify_reports_llm.py` writes labels with the strict v2 schema and a short German explanation. The dashboard schema is preserved: `cyclist_impact_label`, `confidence_score`, `is_cycling_related`, `is_cycling_related_regex`, `is_cycling_related_llm`, `directness`, `subcategory`, `llm_confidence`, `needs_human_review`, and `explanation_de`.
+
+The rule route is exposed as three internal decisions:
+
+| Route | Meaning | Typical output |
+| :--- | :--- | :--- |
+| `auto_pass` | Explicit bicycle term or clear found-bike object. | `is_cycling_related=true`, no human review. |
+| `auto_fail` | Strong unrelated context or no cycling/hazard evidence. | `is_cycling_related=false`, no human review. |
+| `llm_review` | Generic hazard or weak infrastructure evidence that needs semantic judgment. | Regex candidate is true, fallback remains cautious, `needs_human_review=true` until an LLM label exists. |
+
+Current diagnostic performance against the silver labels is optimized for screening recall: **99.12% recall** and **75.97% F1** overall, with deterministic holdout recall at **100.00%**. The tradeoff is intentional: ambiguous generic hazards are routed to LLM review instead of being silently auto-accepted or auto-rejected.
 
 ### 4. Relevance Scoring System
 Tickets are scored ($0$ to $100+$ points) based on their spatial metrics and category matches:
 *   **LLM Match (+50 pts):** Confirmed as cycling-related by the LLM (or regex fallback).
-*   **LLM Confidence Penalty (-45 pts):** Confined penalty if the LLM confidently marks the report as unrelated, suppressing false positives located close to cycle paths (e.g. general car lanes).
+*   **LLM Confidence Penalty (-45 pts):** Confidence penalty if the LLM marks the report as unrelated, suppressing false positives located close to cycle paths (e.g. general car lanes).
 *   **Proximity (+10 to +35 pts):** Within 10m (+35), 25m (+20), or 50m (+10).
 *   **Category Relevance (+10 to +50 pts):** *Fundräder/Abandoned bikes* (+50), *Road/Signs/Lighting/Hedges* (+15), *Fallen trees/branches* (+10).
 *   **Priority Corridor Bonus (+20 pts):** Located within 50m of an official ADFC priority bicycle corridor.
@@ -75,9 +89,10 @@ The dashboard features premium, state-of-the-art interactive upgrades:
 | **`app.js`** | Interactive mapping logic, filter actions, detail overlays, and sidebar toggle event binding. |
 | **`data.js`** | Unified JavaScript file storing the pre-compiled reports and simplified OSM bike network GeoJSON. |
 | **`download_osm_bike.py`** | Script to fetch bicycle network geometries from OpenStreetMap Overpass mirrors. |
-| **`classify_reports_llm.py`** | Standalone script that uses `google-genai` and `gemini-2.5-flash-lite` to classify reports. |
-| **`score_reports.py`** | Core script executing coordinate projections, distance calculations, and scoring using LLM data/regex fallback. |
-| **`evaluate_rules.py`** | Diagnostic script measuring regex heuristic performance (Accuracy, Precision, Recall, F1) against LLM labels. |
+| **`classification/rules.py`** | Shared regex and rule-based router for `auto_pass`, `auto_fail`, and `llm_review` decisions. |
+| **`classify_reports_llm.py`** | Standalone script that uses `google-genai`, the v2 prompt, and strict schema validation to classify only uncached hybrid review candidates by default. |
+| **`score_reports.py`** | Core script executing coordinate projections, distance calculations, scoring, and rule/LLM classification fallback. |
+| **`evaluate_rules.py`** | Diagnostic script measuring rule-router performance, confusion-matrix changes, route counts, and false-positive/false-negative samples against silver labels. |
 | **`optimize_regex.py`** | Optimizer utility that performs greedy keyword association search to maximize heuristic alignment with the LLM. |
 | **`prepare_slide_data.py`** | Standalone Python script to aggregate dashboard reports, detect hot-spots, and format statistics for stakeholder slides. |
 | **`presentation.html`** | Offline responsive presentation template using the `bold-signal` visual theme to present safety data to stakeholders. |
@@ -109,10 +124,14 @@ If you update the dataset or want to update the OSM bike network, run:
    ```bash
    uv run --with requests download_osm_bike.py
    ```
-2. **Perform LLM Classification:**
+2. **Perform LLM Classification for Hybrid Review Candidates:**
    ```bash
    export GEMINI_API_KEY="your_api_key_here"
    uv run --with google-genai --with pydantic --with pandas classify_reports_llm.py
+   ```
+   By default this processes only uncached reports where the local router returns `llm_review`. To force the old all-uncached behavior, run:
+   ```bash
+   CLASSIFICATION_SCOPE=all uv run --with google-genai --with pydantic --with pandas classify_reports_llm.py
    ```
 3. **Re-calculate Scores & Classifications:**
    ```bash
@@ -127,4 +146,3 @@ If you update the dataset or want to update the OSM bike network, run:
 To test heuristic rule matches or run keyword optimization, use:
 * **Evaluate current rules:** `uv run --with pandas evaluate_rules.py`
 * **Optimize regex patterns:** `uv run --with pandas optimize_regex.py`
-
