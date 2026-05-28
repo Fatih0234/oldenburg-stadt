@@ -2,10 +2,56 @@ import requests
 import json
 import time
 import sys
+from urllib.parse import quote, urlencode
 import pandas as pd
 
 # API Endpoint URL
 API_URL = "https://gemeinsam.oldenburg.de/backend/v1/flaw-reporter/findPageableReportsWithFilter"
+
+# Fallback proxies for environments where direct API access is blocked (e.g., GitHub Actions)
+# {url} is replaced with the fully URL-encoded API URL including query params.
+PROXY_TEMPLATES = [
+    "https://api.codetabs.com/v1/proxy?quest={url}",
+]
+
+REQUEST_TIMEOUT = 30
+
+
+def _build_url_with_params(base_url, params):
+    """Build a full URL with query parameters, URL-encoded for proxy use."""
+    return quote(f"{base_url}?{urlencode(params)}")
+
+
+def fetch_with_fallback(params):
+    """Try direct API access first, fall back to proxies on 403."""
+    headers = {
+        "User-Agent": "OldenburgRadDashboardDataPipeline/1.0 (contact: fatih.karahan@example.com)"
+    }
+
+    # Attempt 1: Direct access
+    try:
+        response = requests.get(API_URL, params=params, headers=headers, timeout=REQUEST_TIMEOUT)
+        if response.status_code != 403:
+            response.raise_for_status()
+            return response.json()
+        print("⚠️  Direct API access returned 403, trying proxies...")
+    except requests.RequestException:
+        print("⚠️  Direct API access failed, trying proxies...")
+
+    # Attempt 2+: Try each proxy
+    full_url = _build_url_with_params(API_URL, params)
+    for proxy_template in PROXY_TEMPLATES:
+        proxy_url = proxy_template.format(url=full_url)
+        try:
+            response = requests.get(proxy_url, headers=headers, timeout=REQUEST_TIMEOUT)
+            if response.status_code == 200:
+                return response.json()
+        except requests.RequestException:
+            continue
+
+    print("❌ All access methods failed.", file=sys.stderr)
+    sys.exit(1)
+
 
 def fetch_all_reports():
     print("Starting data fetch from Stadtverbesserer API...")
@@ -25,17 +71,7 @@ def fetch_all_reports():
         }
         
         print(f"Fetching reports with offset={offset} (limit={limit})...")
-        try:
-            # Add reasonable timeout and headers
-            headers = {
-                "User-Agent": "OldenburgRadDashboardDataPipeline/1.0 (contact: fatih.karahan@example.com)"
-            }
-            response = requests.get(API_URL, params=params, headers=headers, timeout=30)
-            response.raise_for_status()
-            data = response.json()
-        except Exception as e:
-            print(f"❌ Error querying API: {e}", file=sys.stderr)
-            sys.exit(1)
+        data = fetch_with_fallback(params)
             
         reports = data.get("reports", [])
         total_cnt = data.get("totalCnt", 0)
