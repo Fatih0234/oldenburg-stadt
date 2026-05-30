@@ -4587,17 +4587,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 6858,
-    "createdAt": "2026-04-27T13:26:51.567+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.151946,
-    "longitude": 8.196921,
-    "replacingText": "Standorte: 1. Adolf-Grimme-Straße-Ecke Jägerstraße: Seit 2 Wochen  liegt dort eine entsorgte Deckenlampe. 2. Jägerstraße 58: Seit einer Woche steht dort ein vergammelter kleiner Tisch. ",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 6859,
     "createdAt": "2026-04-27T13:53:32.004+00:00",
     "state": "CLOSED",
@@ -6433,5 +6422,16 @@
     "longitude": 8.189848125832313,
     "replacingText": "Am Stromkasten zur Ecke Masurenstraße/Ermlandstraße wird immer wieder Müll abgeladen. (Siehe Fotos)",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/8352dace-303e-4441-8701-b95194950ea7_1779990122595_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7339,
+    "createdAt": "2026-05-29T07:18:56.431+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.112030080577384,
+    "longitude": 8.180007934570314,
+    "replacingText": "Ds5w30 Kanister am Straßenrand",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/6ed7549d-f073-4560-86c6-07564819aee5_1780039136431_flaw_reporter_report_picture.png"
   }
 ]
