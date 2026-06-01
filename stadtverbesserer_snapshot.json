@@ -6404,13 +6404,24 @@
   {
     "id": 7328,
     "createdAt": "2026-05-28T17:42:02.594+00:00",
-    "state": "IN_PROCESS",
+    "state": "CLOSED",
     "categoryId": 8,
     "categoryName": "Wilde Müllkippe 🧹",
     "latitude": 53.161612570159505,
     "longitude": 8.189848125832313,
     "replacingText": "Am Stromkasten zur Ecke Masurenstraße/Ermlandstraße wird immer wieder Müll abgeladen. (Siehe Fotos)",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/8352dace-303e-4441-8701-b95194950ea7_1779990122595_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7335,
+    "createdAt": "2026-05-29T06:46:55.596+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.08737724723974,
+    "longitude": 8.218787312507631,
+    "replacingText": "Auf dem Grünstreifen zwischen Sandkruger Str. und Radweg liegen mehrere Altreifen.",
+    "firstPictureUrl": ""
   },
   {
     "id": 7339,
@@ -6422,5 +6433,27 @@
     "longitude": 8.180007934570314,
     "replacingText": "Ds5w30 Kanister am Straßenrand",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/6ed7549d-f073-4560-86c6-07564819aee5_1780039136431_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7354,
+    "createdAt": "2026-05-30T13:37:03.907+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.13723704860946,
+    "longitude": 8.18747411848503,
+    "replacingText": "Die Altkleidertonne ist voll. Alles liegt drum herum verteilt. Sogar hinter den Glascontainern ist alles voll.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/fb8d074f-82a2-4020-b9c3-07ba4e976ec4_1780148223907_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7359,
+    "createdAt": "2026-05-31T13:36:22.407+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.13570606943476,
+    "longitude": 8.191820383071901,
+    "replacingText": "Moin,\r\n\r\nunter der Autobahn bzw. am P&R-Platz Eversten/Prinzessinweg befinden sich zahlreiche Müllablagerungen, darunter Sperrmüll, Glasscherben von zerbrochenen Spiegeln und Hausmüll. Betroffen ist die ganze Länge des Parkplatzes zwischen Hauptstraße und Prinzessinweg. Die Bilder sind nur drei von vielen Beispielen.\r\n\r\nViele Grüße und vielen Dank\r\nHenning Kulbarsch",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/9004b0a0-42ad-49ef-a0bf-2ecbaea51544_1780234582409_flaw_reporter_report_picture.png"
   }
 ]
