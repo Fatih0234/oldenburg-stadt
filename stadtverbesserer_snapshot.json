@@ -6415,7 +6415,7 @@
   {
     "id": 7335,
     "createdAt": "2026-05-29T06:46:55.596+00:00",
-    "state": "IN_PROCESS",
+    "state": "CLOSED",
     "categoryId": 8,
     "categoryName": "Wilde Müllkippe 🧹",
     "latitude": 53.08737724723974,
@@ -6448,12 +6448,78 @@
   {
     "id": 7359,
     "createdAt": "2026-05-31T13:36:22.407+00:00",
-    "state": "IN_PROCESS",
+    "state": "CLOSED",
     "categoryId": 8,
     "categoryName": "Wilde Müllkippe 🧹",
     "latitude": 53.13570606943476,
     "longitude": 8.191820383071901,
     "replacingText": "Moin,\r\n\r\nunter der Autobahn bzw. am P&R-Platz Eversten/Prinzessinweg befinden sich zahlreiche Müllablagerungen, darunter Sperrmüll, Glasscherben von zerbrochenen Spiegeln und Hausmüll. Betroffen ist die ganze Länge des Parkplatzes zwischen Hauptstraße und Prinzessinweg. Die Bilder sind nur drei von vielen Beispielen.\r\n\r\nViele Grüße und vielen Dank\r\nHenning Kulbarsch",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/9004b0a0-42ad-49ef-a0bf-2ecbaea51544_1780234582409_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7365,
+    "createdAt": "2026-06-01T07:17:07.495+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.106801,
+    "longitude": 8.231175,
+    "replacingText": "Müll/Gartenabfall abgestellt \r\nSteht rechts neben dem Spielplatz Max Beckmann Str",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/f261b856-adfc-45d7-81b4-74fd6c429da0_1780298227496_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7367,
+    "createdAt": "2026-06-01T07:37:30.448+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.182085450843324,
+    "longitude": 8.26274442679278,
+    "replacingText": "Nach einer Panne am 27.04.2026 abgestellter PKW (Seat Toledo, slowakisches Kennz.: TV-430DX) auf dem Parkplatz Bornhorster Wiesen (A 29 Richtungsfahrbahn Wilhelmshaven). \r\nZettel durch die Autobahnpolizei Oldenburg am PKW hinterlassen. Bis heute hat sich niemand um die Entfernung des PKW gekümmert.\r\nPKW bitte mit rotem Punkt kennzeichnen, damit anschließend die Entsorgung erfolgen kann.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/72e3c00f-197b-4e67-a07a-e2282faf6695_1780299450450_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7369,
+    "createdAt": "2026-06-01T08:31:27.718+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.1320329050708,
+    "longitude": 8.151574717006508,
+    "replacingText": "Kaffeemaschine am Mülleimer des Spielplatzes Ziegelweg/Schramperweg",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/2a3e0b04-d1ff-43ba-8b8b-d2dcc0b45cf9_1780302687721_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7376,
+    "createdAt": "2026-06-01T10:00:23.427+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.099021,
+    "longitude": 8.233936,
+    "replacingText": "Dwaschweg Schotterweg beim Teich, bei Hausnummer 161 werden seit Wochen Ratten im Wasser und direkter Umgebung gesehen. Tagsüber sind  oftmals mehr als 10 Ratten im Wasser zu sehen. \r\nEs riecht unangenehm, und im Teich liegen Abfälle.\r\nEigentlich ist das doch ein schönes Plätzchen. Aber so leider nicht! \r\n\r\n\r\n\r\n",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/e76c51d9-fa97-4035-9aa0-593975601635_1780308023428_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7386,
+    "createdAt": "2026-06-01T10:54:34.330+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.135216,
+    "longitude": 8.229394,
+    "replacingText": "1.Müll und Altkleider um den Flaschencontainer verteilt.\r\n2.Wilde Müllkippe hinter den Containern im Gebüsch\r\n3. Müll entlang des Fußgängerweges StedingerStr. ( Gebüsch/ Weg)",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7394,
+    "createdAt": "2026-06-02T06:17:06.698+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.14522501896825,
+    "longitude": 8.149879391615556,
+    "replacingText": "Da steht seit Wochen ein Karton mit Krams, den offensichtlich niemand mit ehmen will.",
+    "firstPictureUrl": ""
   }
 ]
