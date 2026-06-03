@@ -6336,6 +6336,17 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/cb20eeeb-3b71-4437-abed-c8f88cea76ec_1779798836272_flaw_reporter_report_picture.png"
   },
   {
+    "id": 7291,
+    "createdAt": "2026-05-27T09:00:49.551+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 13,
+    "categoryName": "Idee einreichen 💭",
+    "latitude": 53.14293501615135,
+    "longitude": 8.222343921661379,
+    "replacingText": "Zur Verbesserung der Verkehrssituation südlich des Hbf:\r\n\r\nDie Kaiserstraße muss dringend als gleichwertige Straße in die Bahnhofstraße einmünden, und nicht mehr nur als untergeordnete Straße über einen abgesenkten Bordstein. Hierdurch ergeben sich nämlich vielerlei kritische Vorfahrtssituationen: Fahrradfahrer entlang der Bahnhofstraße werden von den Abbiegenden übersehen, es ist aus Unwissenheit der anderen Verkehrsteilnehmer oft nicht klar, wer zuerst fahren darf. Erst vorgestern wurde ich auf dem Radweg von einem mir entgegen kommenden, links in die Kaiserstraße abbiegenden Kfz übersehen, sodass es beinahe zu einem Unfall gekommen wäre.\r\nViel zu häufig laufen Fußgänger quer über die Straße(n), um zum Bus zu kommen, oder sie stehen auf dem Fahrradweg herum. Es wäre dringend eine farbliche Kennzeichnung dieses Radwegs und überhaupt aller Radwege in OL erforderlich. In anderen Städten wie Münster ist dies bereits geschehen; dort passieren solche Situationen wie in OL fast nie. Eine einfache Abgrenzung mittels Steinen reicht eben nicht.\r\nVorschlag also: die Einmündung Bahnhofstraße/Kaiserstraße von allen Seiten mit Ampeln ausstatten. Fußgängerüberwege im Rahmen der Ampel je rechts und links der Kaiserstraße, nicht einer in der Mitte, wo eigentlich die Fahrzeuge aus der Kaiserstraße herauskommen.\r\nGanz liebe Grüße von einem frisch Zugezogenen :)",
+    "firstPictureUrl": ""
+  },
+  {
     "id": 7292,
     "createdAt": "2026-05-27T09:04:04.427+00:00",
     "state": "CLOSED",
@@ -6356,6 +6367,28 @@
     "longitude": 8.281202316284181,
     "replacingText": "Leider sind um dem Tweelbäker See überall da wo Mülltonnen sind, Müllinseln entstanden. Die Tonnen sind überfüllt und der Müll fliegt leider überall rum – und in die Natur.",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/8ea66342-1b26-458b-8265-ce59474cfcc0_1779882397763_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7303,
+    "createdAt": "2026-05-27T11:51:28.690+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 13,
+    "categoryName": "Idee einreichen 💭",
+    "latitude": 53.107025985496776,
+    "longitude": 8.279635906219484,
+    "replacingText": "Der \"Deckers Padd\" entlang der Tweelbäke ist super, um schnell an den Tweelbäker See zu kommen. Die Unterführung unter der Autobahn ist allerdings sehr lang und auch bei Tageslicht recht dunkel. Hier wäre es super, wenn es dauerhaft eine Beleuchtung geben würde.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7306,
+    "createdAt": "2026-05-27T12:01:07.458+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 13,
+    "categoryName": "Idee einreichen 💭",
+    "latitude": 53.13043820622852,
+    "longitude": 8.224232196807863,
+    "replacingText": "Der Platz am alten Friedhof Osternburg an Ekkardstraße und Bremerstraße ist eigentlich ideal als Treffpunkt des Viertels: Die Ruhe des Friedhofs, Eisdiele, Kneipe, Pizzaladen, Café Supermarkt – alles in der Nähe. Hier könnte man perfekt sitzen, sich mit Nachbarn treffen und was picknicken.\r\n\r\nLeider ist der Platz komplett versiegelt und eine Art Straße und Parkplatz. Dadurch ist immer etwas Unruhe durch Autos und Fahrräder. Außerdem wirkt der Platz etwas oll und dreckig.\r\n\r\nVorschlag: Diesen Platz umzugestalten und als Erholungsort für das Viertel zu definieren. Kein Parkplatz, keine Durchfahrt, die Straße wird durch Grünfläche und einen Spielplatz ersetzt. Dazu kommen Bänke, vielleicht Tische. Ein Wasserspender wäre denkbar. So können die Menschen in den umliegenden Geschäften/Gastro-Betrieben sich versorgen und hier gemeinsam Essen und Trinken, Kinder können Spiele und alle können von Morgens bis Abends eine gute Zeit haben.",
+    "firstPictureUrl": ""
   },
   {
     "id": 7307,
@@ -6459,7 +6492,7 @@
   {
     "id": 7365,
     "createdAt": "2026-06-01T07:17:07.495+00:00",
-    "state": "IN_PROCESS",
+    "state": "CLOSED",
     "categoryId": 8,
     "categoryName": "Wilde Müllkippe 🧹",
     "latitude": 53.106801,
@@ -6481,7 +6514,7 @@
   {
     "id": 7369,
     "createdAt": "2026-06-01T08:31:27.718+00:00",
-    "state": "IN_PROCESS",
+    "state": "CLOSED",
     "categoryId": 8,
     "categoryName": "Wilde Müllkippe 🧹",
     "latitude": 53.1320329050708,
@@ -6512,6 +6545,17 @@
     "firstPictureUrl": ""
   },
   {
+    "id": 7390,
+    "createdAt": "2026-06-01T15:22:36.332+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 6,
+    "categoryName": "Ampel 🚦 ",
+    "latitude": 53.147058,
+    "longitude": 8.225531,
+    "replacingText": "Gegenüber der Jugendherberge hängt an der Ampel das Warnlicht der Fahrradfahren nur noch am Kabel herunter. ",
+    "firstPictureUrl": ""
+  },
+  {
     "id": 7394,
     "createdAt": "2026-06-02T06:17:06.698+00:00",
     "state": "IN_PROCESS",
@@ -6520,6 +6564,17 @@
     "latitude": 53.14522501896825,
     "longitude": 8.149879391615556,
     "replacingText": "Da steht seit Wochen ein Karton mit Krams, den offensichtlich niemand mit ehmen will.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7399,
+    "createdAt": "2026-06-02T08:30:36.227+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.118022,
+    "longitude": 8.21474,
+    "replacingText": "Auf dem Grünstreifen vor ihrer Filiale - HUK Coburg, sind 7 Müllsäcke abgeladen worden, auch wohl Fleisch...",
     "firstPictureUrl": ""
   }
 ]
