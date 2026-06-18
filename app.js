@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderIssueList();
     updateResetFiltersButton();
     initSidebarToggle();
+    initBriefingCollapse();
     initOnboarding();
 });
 
@@ -422,6 +423,29 @@ function toggleSidebar() {
         }
     }
     requestAnimationFrame(updateMapSize);
+}
+
+// 2.6. Collapsible Monthly Briefing — demoted below the work surface; collapsed
+// by default so the issue stream leads. Persists state to localStorage, mirroring
+// the sidebar-fold pattern above.
+function initBriefingCollapse() {
+    const btn = document.getElementById('briefing-disclosure');
+    const body = document.getElementById('briefing-body');
+    if (!btn || !body) return;
+
+    // Default: collapsed (briefing-collapsed !== 'false' → stay collapsed).
+    // Only an explicit 'false' opens it on load.
+    const saved = localStorage.getItem('briefing-collapsed');
+    const startOpen = saved === 'false';
+    btn.setAttribute('aria-expanded', String(startOpen));
+    body.hidden = !startOpen;
+
+    btn.addEventListener('click', () => {
+        const willOpen = body.hidden;
+        btn.setAttribute('aria-expanded', String(willOpen));
+        body.hidden = !willOpen;
+        localStorage.setItem('briefing-collapsed', String(!willOpen));
+    });
 }
 
 // 3. Map Initialization & Layer Rendering
@@ -1036,6 +1060,14 @@ function updateFilterUI() {
             }
         }
     }
+
+    // Synchronize confidence chips (compact pill replacements for the metric cards)
+    document.querySelectorAll('.confidence-chip').forEach(chip => {
+        const label = chip.getAttribute('data-label');
+        const isActive = activeFilters.has(label);
+        chip.classList.toggle('active', isActive);
+        chip.setAttribute('aria-pressed', String(isActive));
+    });
 
     updateResetFiltersButton();
 }
@@ -2116,3 +2148,4 @@ function handleTourKeydown(e) {
     if (e.key === 'ArrowRight') tourNext();
     if (e.key === 'ArrowLeft') tourPrev();
 }
+

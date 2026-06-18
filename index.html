@@ -454,38 +454,7 @@
             <div class="sidebar-content">
                 <!-- Tab 1: Dashboard -->
                 <section class="tab-panel active" id="panel-dashboard">
-                    <!-- Monthly Civic Insight Digest -->
-                    <section class="monthly-briefing" id="monthly-briefing" aria-labelledby="monthly-briefing-title">
-                        <div class="briefing-header">
-                            <div>
-                                <span class="hud-label">MONATSBRIEFING</span>
-                                <h2 id="monthly-briefing-title">Was der letzte Monat zeigt</h2>
-                            </div>
-                            <span class="briefing-period" id="briefing-period-label">30 Tage</span>
-                        </div>
-                        <div class="briefing-card-grid">
-                            <button class="briefing-card briefing-card-trend" type="button" id="briefing-trend-card" onclick="handleMonthlyInsightClick('trend')">
-                                <span class="briefing-kicker">Trend</span>
-                                <strong id="briefing-trend-value">--</strong>
-                                <span class="briefing-title" id="briefing-trend-title">Monatslage wird berechnet</span>
-                                <span class="briefing-detail" id="briefing-trend-detail">Daten werden geladen.</span>
-                            </button>
-                            <button class="briefing-card briefing-card-hotspot" type="button" id="briefing-hotspot-card" onclick="handleMonthlyInsightClick('hotspot')">
-                                <span class="briefing-kicker">Hotspot</span>
-                                <strong id="briefing-hotspot-value">--</strong>
-                                <span class="briefing-title" id="briefing-hotspot-title">Schwerpunkt wird berechnet</span>
-                                <span class="briefing-detail" id="briefing-hotspot-detail">Daten werden geladen.</span>
-                            </button>
-                            <button class="briefing-card briefing-card-focus" type="button" id="briefing-focus-card" onclick="handleMonthlyInsightClick('focus')">
-                                <span class="briefing-kicker">Fokusfall</span>
-                                <strong id="briefing-focus-value">--</strong>
-                                <span class="briefing-title" id="briefing-focus-title">Relevanter Fall wird berechnet</span>
-                                <span class="briefing-detail" id="briefing-focus-detail">Daten werden geladen.</span>
-                            </button>
-                        </div>
-                    </section>
-
-                    <!-- Search and Time Filters -->
+                    <!-- Unified Filter Panel (search + time + relevance chips) -->
                     <section class="command-filter-panel" aria-labelledby="filter-panel-title">
                         <div class="section-heading filter-panel-heading">
                             <div class="section-heading-copy">
@@ -535,39 +504,29 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
 
-                    <!-- Metric Cards Grid -->
-                    <section class="filter-matrix-section" aria-labelledby="filter-matrix-title">
-                        <div class="section-heading compact-heading">
-                            <span class="hud-label">FILTERMATRIX</span>
-                            <h2 id="filter-matrix-title">KI-Relevanz</h2>
-                        </div>
-                        <div class="metrics-grid">
-                            <div class="metric-card gradient-confirmed" onclick="toggleConfidenceFilter('Confirmed cycling issue')">
-                                <span class="card-indicator"></span>
-                                <h3>Eindeutig radspezifisch</h3>
-                                <div class="value" id="count-confirmed">-</div>
-                                <p class="metric-label">Bestätigt</p>
-                            </div>
-                            <div class="metric-card gradient-likely" onclick="toggleConfidenceFilter('Likely cycling issue')">
-                                <span class="card-indicator"></span>
-                                <h3>Wahrscheinlich radspezifisch</h3>
-                                <div class="value" id="count-likely">-</div>
-                                <p class="metric-label">Starker Hinweis</p>
-                            </div>
-                            <div class="metric-card gradient-possible" onclick="toggleConfidenceFilter('Possibly affects cyclists')">
-                                <span class="card-indicator"></span>
-                                <h3>Möglicherweise relevant</h3>
-                                <div class="value" id="count-possible">-</div>
-                                <p class="metric-label">Prüffall</p>
-                            </div>
-                            <div class="metric-card gradient-generic" onclick="toggleConfidenceFilter('Not cycling-specific')">
-                                <span class="card-indicator"></span>
-                                <h3>Allgemeine Meldung</h3>
-                                <div class="value" id="count-generic">-</div>
-                                <p class="metric-label">Nicht radspezifisch</p>
-                            </div>
+                        <!-- Relevance chips (replaces the 4 large metric cards) -->
+                        <div class="confidence-chips" role="group" aria-label="KI-Relevanz filtern">
+                            <button class="confidence-chip" type="button" data-label="Confirmed cycling issue" onclick="toggleConfidenceFilter('Confirmed cycling issue')" aria-pressed="false">
+                                <span class="chip-dot chip-dot-confirmed" aria-hidden="true"></span>
+                                <span class="chip-label">Bestätigt</span>
+                                <span class="chip-count" id="count-confirmed">-</span>
+                            </button>
+                            <button class="confidence-chip" type="button" data-label="Likely cycling issue" onclick="toggleConfidenceFilter('Likely cycling issue')" aria-pressed="false">
+                                <span class="chip-dot chip-dot-likely" aria-hidden="true"></span>
+                                <span class="chip-label">Wahrscheinlich</span>
+                                <span class="chip-count" id="count-likely">-</span>
+                            </button>
+                            <button class="confidence-chip" type="button" data-label="Possibly affects cyclists" onclick="toggleConfidenceFilter('Possibly affects cyclists')" aria-pressed="false">
+                                <span class="chip-dot chip-dot-possible" aria-hidden="true"></span>
+                                <span class="chip-label">Möglich</span>
+                                <span class="chip-count" id="count-possible">-</span>
+                            </button>
+                            <button class="confidence-chip" type="button" data-label="Not cycling-specific" onclick="toggleConfidenceFilter('Not cycling-specific')" aria-pressed="false">
+                                <span class="chip-dot chip-dot-generic" aria-hidden="true"></span>
+                                <span class="chip-label">Allgemein</span>
+                                <span class="chip-count" id="count-generic">-</span>
+                            </button>
                         </div>
                     </section>
 
@@ -585,6 +544,44 @@
                             <div class="loading-state">Lade Berichte...</div>
                         </div>
                     </div>
+
+                    <!-- Monthly Civic Insight Digest (collapsible, closed by default) -->
+                    <section class="monthly-briefing is-collapsible" id="monthly-briefing" aria-labelledby="monthly-briefing-title">
+                        <button class="briefing-disclosure" id="briefing-disclosure" type="button" aria-expanded="false" aria-controls="briefing-body" title="Monatsbriefing ein-/ausklappen">
+                            <span class="briefing-disclosure-copy">
+                                <span class="hud-label">MONATSBRIEFING</span>
+                                <span class="briefing-disclosure-title" id="monthly-briefing-title">Was der letzte Monat zeigt</span>
+                            </span>
+                            <span class="briefing-disclosure-meta">
+                                <span class="briefing-period" id="briefing-period-label">30 Tage</span>
+                                <span class="briefing-chevron" aria-hidden="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </span>
+                            </span>
+                        </button>
+                        <div class="briefing-body" id="briefing-body" hidden>
+                            <div class="briefing-card-grid">
+                                <button class="briefing-card briefing-card-trend" type="button" id="briefing-trend-card" onclick="handleMonthlyInsightClick('trend')">
+                                    <span class="briefing-kicker">Trend</span>
+                                    <strong id="briefing-trend-value">--</strong>
+                                    <span class="briefing-title" id="briefing-trend-title">Monatslage wird berechnet</span>
+                                    <span class="briefing-detail" id="briefing-trend-detail">Daten werden geladen.</span>
+                                </button>
+                                <button class="briefing-card briefing-card-hotspot" type="button" id="briefing-hotspot-card" onclick="handleMonthlyInsightClick('hotspot')">
+                                    <span class="briefing-kicker">Hotspot</span>
+                                    <strong id="briefing-hotspot-value">--</strong>
+                                    <span class="briefing-title" id="briefing-hotspot-title">Schwerpunkt wird berechnet</span>
+                                    <span class="briefing-detail" id="briefing-hotspot-detail">Daten werden geladen.</span>
+                                </button>
+                                <button class="briefing-card briefing-card-focus" type="button" id="briefing-focus-card" onclick="handleMonthlyInsightClick('focus')">
+                                    <span class="briefing-kicker">Fokusfall</span>
+                                    <strong id="briefing-focus-value">--</strong>
+                                    <span class="briefing-title" id="briefing-focus-title">Relevanter Fall wird berechnet</span>
+                                    <span class="briefing-detail" id="briefing-focus-detail">Daten werden geladen.</span>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
                 </section>
 
 

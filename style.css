@@ -683,21 +683,69 @@ button { font-family: inherit; }
         radial-gradient(120% 90% at 0% 100%, rgba(47, 140, 255, 0.10), transparent 60%);
     pointer-events: none;
 }
-.briefing-header {
+/* Collapsible briefing disclosure — replaces the old static .briefing-header */
+.briefing-disclosure {
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
-    margin-bottom: 14px;
+    width: 100%;
+    padding: 4px 2px 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--on-surface);
+    font-family: var(--font-body);
+    text-align: left;
+    transition: color var(--t-hover);
 }
-.briefing-header h2 {
+.briefing-disclosure:hover { color: var(--secondary); }
+.briefing-disclosure:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 3px;
+    border-radius: var(--r-sm);
+}
+.briefing-disclosure-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+.briefing-disclosure-title {
     font-family: var(--font-display);
     font-size: 18px;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin-top: 3px;
     color: var(--on-surface);
+}
+.briefing-disclosure:hover .briefing-disclosure-title { color: var(--secondary); }
+.briefing-disclosure-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.briefing-chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--on-surface-muted);
+    transition: transform var(--t-card) var(--ease-default), color var(--t-hover);
+}
+.briefing-disclosure[aria-expanded="true"] .briefing-chevron {
+    transform: rotate(180deg);
+    color: var(--secondary);
+}
+.briefing-body {
+    position: relative;
+}
+.briefing-body:not([hidden]) {
+    animation: briefing-expand 0.22s var(--ease-default) both;
+}
+@keyframes briefing-expand {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 .briefing-period {
     flex-shrink: 0;
@@ -975,6 +1023,89 @@ button { font-family: inherit; }
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
+
+/* Confidence chips — compact pill replacements for the 4 large metric cards.
+   Same color identity (via --c-* tokens) and same .active toggle contract
+   driven by updateFilterUI() in app.js. */
+.confidence-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+.confidence-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border: 1px solid var(--outline);
+    border-radius: var(--r-full);
+    background: var(--surface-raised);
+    color: var(--on-surface-subtle);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background-color var(--t-hover), border-color var(--t-hover),
+                color var(--t-hover), transform var(--t-hover) var(--ease-playful),
+                box-shadow var(--t-hover);
+}
+.confidence-chip:hover {
+    transform: translateY(-1px);
+    border-color: var(--outline-strong);
+    color: var(--on-surface);
+    box-shadow: 0 4px 12px var(--shadow-soft);
+}
+.confidence-chip:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+.confidence-chip:active { transform: scale(0.96); }
+.chip-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: var(--r-full);
+    flex-shrink: 0;
+    transition: box-shadow var(--t-hover);
+}
+.chip-dot-confirmed { background: var(--c-confirmed); }
+.chip-dot-likely    { background: var(--c-likely); }
+.chip-dot-possible  { background: var(--c-possible); }
+.chip-dot-generic   { background: var(--c-generic); }
+.chip-count {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    opacity: 0.65;
+    padding-left: 2px;
+}
+
+/* Active chip states — mirror the old metric-card .active glow per category */
+.confidence-chip.active { color: var(--on-surface); }
+.confidence-chip.active .chip-count { opacity: 1; }
+.confidence-chip[data-label="Confirmed cycling issue"].active {
+    border-color: var(--c-confirmed);
+    background: var(--c-confirmed-soft);
+    box-shadow: inset 0 0 0 1px var(--c-confirmed-glow), 0 0 14px var(--c-confirmed-glow);
+}
+.confidence-chip[data-label="Confirmed cycling issue"].active .chip-dot { box-shadow: 0 0 8px var(--c-confirmed-glow); }
+.confidence-chip[data-label="Likely cycling issue"].active {
+    border-color: var(--c-likely);
+    background: var(--c-likely-soft);
+    box-shadow: inset 0 0 0 1px var(--c-likely-glow), 0 0 14px var(--c-likely-glow);
+}
+.confidence-chip[data-label="Likely cycling issue"].active .chip-dot { box-shadow: 0 0 8px var(--c-likely-glow); }
+.confidence-chip[data-label="Possibly affects cyclists"].active {
+    border-color: var(--c-possible);
+    background: var(--c-possible-soft);
+    box-shadow: inset 0 0 0 1px var(--c-possible-glow), 0 0 14px var(--c-possible-glow);
+}
+.confidence-chip[data-label="Possibly affects cyclists"].active .chip-dot { box-shadow: 0 0 8px var(--c-possible-glow); }
+.confidence-chip[data-label="Not cycling-specific"].active {
+    border-color: var(--c-generic);
+    background: var(--c-generic-soft);
+    box-shadow: inset 0 0 0 1px var(--c-generic-glow), 0 0 12px var(--c-generic-glow);
+}
+.confidence-chip[data-label="Not cycling-specific"].active .chip-dot { box-shadow: 0 0 8px var(--c-generic-glow); }
 .metric-card {
     min-height: 96px;
     border-radius: var(--r-md);
@@ -2048,7 +2179,8 @@ button { font-family: inherit; }
     .logo-area .subtitle {
         max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
-    .briefing-header { flex-direction: column; align-items: flex-start; }
+    .briefing-disclosure { flex-direction: column; align-items: flex-start; }
+    .briefing-disclosure-meta { width: 100%; justify-content: space-between; }
     .briefing-card { grid-template-columns: 48px 1fr; }
     .briefing-card strong { width: 48px; min-height: 48px; font-size: 21px; }
     .command-filter-panel { position: relative; top: auto; }
