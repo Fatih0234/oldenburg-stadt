@@ -16,6 +16,9 @@ let carouselImages = [];
 let activeSlideIndex = 0;
 let activeReportId = null;
 let monthlyDigestData = null;
+let proximityLine = null;
+let highlightedSegmentLayer = null;
+let scoreCountUpRAF = null;
 let themePreference = localStorage.getItem('rad-theme') || 'system';
 let activeTheme = document.documentElement.dataset.theme || 'dark';
 const PROJECT_REPO_URL = 'https://github.com/Fatih0234/oldenburg-stadt';
@@ -28,7 +31,8 @@ const THEME_TILE_LAYERS = {
         maxZoom: 20
     },
     light: {
-        url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        // CARTO Voyager — quiet, civic, park/water-aware base map
+        url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
@@ -435,15 +439,7 @@ function initMap() {
     // Style and Render OSM Bike Network Layer
     if (typeof BIKE_NETWORK_GEOJSON !== 'undefined') {
         geojsonLayer = L.geoJSON(BIKE_NETWORK_GEOJSON, {
-            style: (feature) => {
-                const isBicycleRoad = feature.properties.bicycle_road === 'yes';
-                return {
-                    color: isBicycleRoad ? '#06b6d4' : '#10b981', // Cyan for bicycle streets, emerald for cycleways
-                    weight: isBicycleRoad ? 3 : 1.8,
-                    opacity: 0.35,
-                    dashArray: isBicycleRoad ? '5, 5' : null
-                };
-            },
+            style: (feature) => styleBikeSegment(feature, false),
             onEachFeature: (feature, layer) => {
                 const name = feature.properties.name || "Radweg / Fahrradstraße";
                 const type = feature.properties.highway || "Infrastruktur";
@@ -454,17 +450,12 @@ function initMap() {
 
                 // Hover highlighting
                 layer.on('mouseover', function () {
-                    this.setStyle({
-                        opacity: 0.85,
-                        weight: 3.5
-                    });
+                    if (layer === highlightedSegmentLayer) return;
+                    this.setStyle(styleBikeSegment(feature, true, true));
                 });
                 layer.on('mouseout', function () {
-                    const isBicycleRoad = feature.properties.bicycle_road === 'yes';
-                    this.setStyle({
-                        opacity: 0.35,
-                        weight: isBicycleRoad ? 3 : 1.8
-                    });
+                    if (layer === highlightedSegmentLayer) return;
+                    this.setStyle(styleBikeSegment(feature, false));
                 });
             }
         }).addTo(map);
@@ -507,6 +498,28 @@ function getCategoryEmoji(categoryId) {
     }
 }
 
+// Style a cycling-network segment. "active" = hovered, "selected" = nearest to selected issue.
+function styleBikeSegment(feature, active, hovered) {
+    const isBicycleRoad = feature.properties.bicycle_road === 'yes';
+    if (active === 'selected') {
+        return {
+            color: '#FFDD66', // route-selected (sun)
+            weight: 5,
+            opacity: 0.95,
+            dashArray: null,
+            lineCap: 'round'
+        };
+    }
+    const baseColor = isBicycleRoad ? '#2F8CFF' : '#00C48C'; // secondary / primary
+    return {
+        color: baseColor,
+        weight: isBicycleRoad ? 3 : 2,
+        opacity: hovered ? 0.85 : 0.45,
+        dashArray: isBicycleRoad ? '5, 5' : null,
+        lineCap: 'round'
+    };
+}
+
 // 4. Update Markers on Map Based on Current Filters
 function updateMapMarkers() {
     // Clear pins
@@ -524,18 +537,25 @@ function updateMapMarkers() {
             map.removeLayer(heatmapLayer);
         }
 
-        const filtered = getFilteredReports();
-        
-        filtered.forEach(report => {
+        // When confidence filters are active, keep all time-filtered markers on the
+        // map but gently fade the ones that don't match (DESIGN: inactive categories
+        // recede instead of disappearing).
+        const allReports = getTimeFilteredReports(true);
+        const filterActive = activeFilters.size > 0;
+        const visibleSet = filterActive ? getFilteredReports() : null;
+        const visibleIds = visibleSet ? new Set(visibleSet.map(r => r.id)) : null;
+
+        allReports.forEach(report => {
             if (!report.latitude || !report.longitude) return;
 
             const markerClass = getMarkerPinClass(report.cyclist_impact_label);
+            const faded = visibleIds ? !visibleIds.has(report.id) : false;
             const emoji = getCategoryEmoji(report.categoryId);
             const markerIcon = L.divIcon({
                 className: 'custom-div-icon',
-                html: `<div class="marker-pin ${markerClass}">${emoji}</div>`,
-                iconSize: [24, 24],
-                iconAnchor: [12, 12]
+                html: `<div class="marker-pin ${markerClass}${faded ? ' marker-faded' : ''}"><span class="pin-emoji">${emoji}</span></div>`,
+                iconSize: [34, 34],
+                iconAnchor: [17, 17]
             });
 
             const marker = L.marker([report.latitude, report.longitude], {
@@ -620,26 +640,22 @@ function selectReport(report) {
     activeReportId = report.id;
     showMapDetails(report);
     setActiveRowInList(report.id);
+    highlightReportContext(report);
     
     if (!report.latitude || !report.longitude) return;
     
     const marker = reportMarkers[report.id];
+    const flyOpts = { duration: 0.9, easeLinearity: 0.25 };
     if (marker) {
         // Zoom and resolve clusters if target is currently hidden inside one
         markerLayerGroup.zoomToShowLayer(marker, () => {
-            map.flyTo([report.latitude, report.longitude], 16, {
-                duration: 1.2,
-                easeLinearity: 0.25
-            });
+            map.flyTo([report.latitude, report.longitude], 16, flyOpts);
             setTimeout(() => {
                 setActiveMarker(marker);
-            }, 100);
+            }, 80);
         });
     } else {
-        map.flyTo([report.latitude, report.longitude], 16, {
-            duration: 1.2,
-            easeLinearity: 0.25
-        });
+        map.flyTo([report.latitude, report.longitude], 16, flyOpts);
     }
 }
 
@@ -673,14 +689,165 @@ function getMarkerPinClass(label) {
     }
 }
 
+// Highlight the selected report's cycling-network context: draw an animated
+// dashed "route proximity" connector from the issue to the nearest point on
+// its nearest cycle segment, and emphasize that segment in route-selected yellow.
+function highlightReportContext(report) {
+    clearReportContext();
+    if (!map || !report || !report.latitude || !report.longitude) return;
+    const reportLatLng = [report.latitude, report.longitude];
+
+    let nearestLayer = null;
+    let nearestPoint = null;
+    let bestDist = Infinity;
+
+    if (geojsonLayer && typeof BIKE_NETWORK_GEOJSON !== 'undefined') {
+        geojsonLayer.eachLayer(layer => {
+            const feature = layer.feature;
+            if (!feature || !feature.geometry) return;
+            const coords = feature.geometry.coordinates;
+            if (!Array.isArray(coords) || coords.length === 0) return;
+            // Prefer matching nearest_segment_id when available; otherwise use distance.
+            const idMatch = report.nearest_segment_id != null &&
+                Number(feature.properties.id) === Number(report.nearest_segment_id);
+            const cand = nearestPointOnLayer(coords, reportLatLng);
+            if (!cand) return;
+            if (idMatch) {
+                nearestLayer = layer;
+                nearestPoint = cand.point;
+                bestDist = 0;
+                return;
+            }
+            if (cand.dist < bestDist) {
+                bestDist = cand.dist;
+                nearestLayer = layer;
+                nearestPoint = cand.point;
+            }
+        });
+    }
+
+    if (nearestLayer && nearestPoint) {
+        // Emphasize the segment
+        highlightedSegmentLayer = nearestLayer;
+        nearestLayer.setStyle(styleBikeSegment(nearestLayer.feature, 'selected'));
+        if (typeof nearestLayer.bringToFront === 'function') nearestLayer.bringToFront();
+
+        // Draw the proximity connector line (animated dashes)
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        proximityLine = L.polyline([reportLatLng, nearestPoint], {
+            color: '#FFDD66',
+            weight: 3,
+            opacity: 0.9,
+            dashArray: '6 8',
+            lineCap: 'round',
+            className: 'proximity-line'
+        }).addTo(map);
+        if (!reduceMotion) {
+            // Marching-ants animation via dash offset on the SVG path
+            const pathEl = proximityLine.getElement && proximityLine.getElement();
+            if (pathEl) {
+                let offset = 0;
+                const step = () => {
+                    offset -= 1;
+                    pathEl.style.strokeDashoffset = String(offset);
+                    if (proximityLine && map.hasLayer(proximityLine)) {
+                        proximityLine._animFrame = requestAnimationFrame(step);
+                    }
+                };
+                step();
+            }
+        }
+    }
+}
+
+function clearReportContext() {
+    if (proximityLine) {
+        if (proximityLine._animFrame) cancelAnimationFrame(proximityLine._animFrame);
+        if (map && map.hasLayer(proximityLine)) map.removeLayer(proximityLine);
+        proximityLine = null;
+    }
+    if (highlightedSegmentLayer && geojsonLayer) {
+        try {
+            highlightedSegmentLayer.setStyle(styleBikeSegment(highlightedSegmentLayer.feature, false));
+        } catch (e) { /* layer may have been cleared */ }
+        highlightedSegmentLayer = null;
+    }
+}
+
+// Find the closest point on a GeoJSON LineString (or MultiLineString) geometry
+// to a given [lat, lng]. Returns { point: [lat,lng], dist } in rough degree units.
+function nearestPointOnLayer(coords, latlng) {
+    const flat = Array.isArray(coords) && Array.isArray(coords[0]) && typeof coords[0][0] === 'number'
+        ? [coords]
+        : coords;
+    let best = null;
+    for (const line of flat) {
+        if (!Array.isArray(line)) continue;
+        for (let i = 0; i < line.length - 1; i++) {
+            const a = line[i];
+            const b = line[i + 1];
+            if (!a || !b) continue;
+            const np = closestOnSegment(latlng[0], latlng[1], a[1], a[0], b[1], b[0]);
+            const d = (np[0] - latlng[0]) ** 2 + (np[1] - latlng[1]) ** 2;
+            if (!best || d < best.dist) best = { point: np, dist: d };
+        }
+    }
+    return best;
+}
+
+// Closest point on a segment (lat1,lng1)-(lat2,lng2) to (lat0,lng0).
+function closestOnSegment(lat0, lng0, lat1, lng1, lat2, lng2) {
+    const dx = lat2 - lat1, dy = lng2 - lng1;
+    const len2 = dx * dx + dy * dy;
+    if (len2 === 0) return [lat1, lng1];
+    let t = ((lat0 - lat1) * dx + (lng0 - lng1) * dy) / len2;
+    t = Math.max(0, Math.min(1, t));
+    return [lat1 + t * dx, lng1 + t * dy];
+}
+
 // Helper to get color code
 function getLabelColor(label) {
     switch (label) {
-        case 'Confirmed cycling issue': return '#ef4444'; // Red
-        case 'Likely cycling issue': return '#f97316'; // Orange
-        case 'Possibly affects cyclists': return '#facc15'; // Yellow
-        default: return '#64748b'; // Generic Grey
+        case 'Confirmed cycling issue': return '#F05252'; // red/coral
+        case 'Likely cycling issue': return '#FF8A3D'; // orange
+        case 'Possibly affects cyclists': return '#F7C948'; // yellow
+        default: return '#7A8A99'; // generic slate
     }
+}
+
+// Animated count-up for the relevance score + radial ring fill.
+// Respects reduced-motion: jumps to final value instantly.
+function animateScoreCountUp(valueEl, ringEl, target, color) {
+    if (scoreCountUpRAF) cancelAnimationFrame(scoreCountUpRAF);
+    if (!valueEl) return;
+    const RING_CIRC = 326.7;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Score is evidence confidence; clamp the ring fill to a 0–100 visual range.
+    const ringFraction = Math.max(0, Math.min(1, target / 100));
+
+    if (reduceMotion) {
+        valueEl.textContent = Math.round(target);
+        valueEl.style.color = color;
+        if (ringEl) ringEl.style.strokeDashoffset = String(RING_CIRC * (1 - ringFraction));
+        return;
+    }
+
+    const duration = 750;
+    const start = performance.now();
+    valueEl.style.color = color;
+
+    function frame(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+        valueEl.textContent = Math.round(target * eased);
+        if (ringEl) ringEl.style.strokeDashoffset = String(RING_CIRC * (1 - ringFraction * eased));
+        if (t < 1) {
+            scoreCountUpRAF = requestAnimationFrame(frame);
+        } else {
+            scoreCountUpRAF = null;
+        }
+    }
+    scoreCountUpRAF = requestAnimationFrame(frame);
 }
 
 // 5. Filtering Functions
@@ -1016,7 +1183,7 @@ function focusReportsOnMap(reports) {
 
     if (points.length === 1) {
         map.flyTo(points[0], 16, {
-            duration: 1.1,
+            duration: 0.95,
             easeLinearity: 0.25
         });
         return;
@@ -1026,7 +1193,7 @@ function focusReportsOnMap(reports) {
     map.fitBounds(bounds.pad(0.18), {
         maxZoom: 16,
         animate: true,
-        duration: 1
+        duration: 0.9
     });
 }
 
@@ -1101,11 +1268,11 @@ function renderIssueList() {
         
         const categoryEmoji = getCategoryEmoji(r.categoryId);
         const displayDistance = r.distance_to_bike_path_meters !== undefined && r.distance_to_bike_path_meters !== null
-            ? `${Number(r.distance_to_bike_path_meters).toFixed(1)}m to path`
+            ? `${Number(r.distance_to_bike_path_meters).toFixed(1)}m`
             : '--';
         
         card.innerHTML = `
-            <div class="issue-row-icon-wrapper" style="border-color: ${color}4d; background: ${color}10;">
+            <div class="issue-row-icon-wrapper" style="border-color: ${color}4d; background: ${color}14;">
                 <span class="row-category-emoji" style="font-size: 1.25rem;">${categoryEmoji}</span>
             </div>
             <div class="issue-row-body">
@@ -1113,7 +1280,7 @@ function renderIssueList() {
                     <span class="issue-cat">
                         ${r.categoryName} <span class="issue-id">#${r.id}</span>
                     </span>
-                    <span class="issue-dist-tag">${displayDistance}</span>
+                    <span class="issue-dist-tag" title="Entfernung zum Radweg">${displayDistance}</span>
                 </div>
                 <p class="issue-snippet">${r.replacingText || 'Keine Beschreibung vorhanden.'}</p>
                 <div class="issue-meta">
@@ -1177,57 +1344,73 @@ function showMapDetails(report) {
     document.getElementById('overlay-date').innerHTML = `📅 Gemeldet: ${formattedDate}`;
     document.getElementById('overlay-desc').textContent = report.replacingText || "Keine Textbeschreibung.";
     
-    // Render LLM classification details
+    // Render LLM classification details (evidence dossier: AI explanation)
     const llmBox = document.getElementById('overlay-llm-box');
     if (report.subcategory) {
         const subcatPretty = SUBCATEGORY_NAMES[report.subcategory] || report.subcategory;
         const isCycling = report.is_cycling_related;
-        const borderColor = isCycling ? '#10b981' : '#64748b';
-        const bgColor = isCycling ? 'rgba(16, 185, 129, 0.05)' : 'rgba(100, 116, 139, 0.05)';
-        const titleColor = isCycling ? '#10b981' : '#94a3b8';
+        const boxClass = isCycling ? 'llm-info-box' : 'llm-info-box is-unrelated';
+        const tagLabel = isCycling ? 'KI-Einordnung' : 'KI-Einordnung (nicht radrelevant)';
         
         llmBox.innerHTML = `
-            <div class="llm-info-box card-glass" style="margin-top: 12px; margin-bottom: 12px; padding: 12px; border-left: 3px solid ${borderColor}; background: ${bgColor}; border-radius: 8px;">
-                <div style="font-weight: 600; font-size: 0.85rem; color: ${titleColor}; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-                    <img src="assets/ui/ai_bot_badge.png" class="badge-img-icon" alt="AI Badge"> <span>KI-Klassifizierung: ${subcatPretty}</span>
+            <div class="${boxClass}">
+                <div class="llm-title">
+                    <svg class="badge-svg llm-badge-svg" viewBox="0 0 24 24" aria-hidden="true">
+<defs>
+<style>.cls-1{fill:#4285f4;}.cls-1,.cls-2{fill-rule:evenodd;}.cls-2{fill:#669df6;}</style>
+</defs>
+<title>Icon_24px_MLEngine_Color</title>
+<g data-name="Product Icons">
+<g >
+<polygon class="cls-1" points="16.64 15.13 17.38 13.88 20.91 13.88 22 12 19.82 8.25 16.75 8.25 15.69 6.39 14.5 6.39 14.5 5.13 16.44 5.13 17.5 7 19.09 7 16.9 3.25 12.63 3.25 12.63 8.25 14.36 8.25 15.09 9.5 12.63 9.5 12.63 12 14.89 12 15.94 10.13 18.75 10.13 19.47 11.38 16.67 11.38 15.62 13.25 12.63 13.25 12.63 17.63 16.03 17.63 15.31 18.88 12.63 18.88 12.63 20.75 16.9 20.75 20.18 15.13 18.09 15.13 17.36 16.38 14.5 16.38 14.5 15.13 16.64 15.13"/>
+<polygon class="cls-2" points="7.36 15.13 6.62 13.88 3.09 13.88 2 12 4.18 8.25 7.25 8.25 8.31 6.39 9.5 6.39 9.5 5.13 7.56 5.13 6.5 7 4.91 7 7.1 3.25 11.38 3.25 11.38 8.25 9.64 8.25 8.91 9.5 11.38 9.5 11.38 12 9.11 12 8.06 10.13 5.25 10.13 4.53 11.38 7.33 11.38 8.38 13.25 11.38 13.25 11.38 17.63 7.97 17.63 8.69 18.88 11.38 18.88 11.38 20.75 7.1 20.75 3.82 15.13 5.91 15.13 6.64 16.38 9.5 16.38 9.5 15.13 7.36 15.13"/>
+</g>
+</g>
+</svg>
+                    <span class="llm-tag">${tagLabel}: ${subcatPretty}</span>
                 </div>
-                <div style="font-style: italic; font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">"${report.explanation_de}"</div>
+                <div class="llm-expl">„${report.explanation_de}"</div>
             </div>
         `;
     } else {
         llmBox.innerHTML = '';
     }
 
-    // Relevance Score Spotlight
+    // Relevance Score — animated count-up + radial ring (evidence confidence, not a game score)
     const scoreValEl = document.getElementById('relevance-score-value');
-    if (scoreValEl) {
-        scoreValEl.textContent = report.confidence_score;
-        const scoreColor = getLabelColor(report.cyclist_impact_label);
-        scoreValEl.style.color = scoreColor;
-        scoreValEl.style.textShadow = `0 0 10px ${scoreColor}33`;
+    const ringFg = document.getElementById('score-ring-fg');
+    const finalScore = Number.isFinite(Number(report.confidence_score)) ? Number(report.confidence_score) : 0;
+    const scoreColor = getLabelColor(report.cyclist_impact_label);
+    if (ringFg) {
+        ringFg.style.stroke = scoreColor;
     }
+    animateScoreCountUp(scoreValEl, ringFg, finalScore, scoreColor);
 
-    // Stats grid
+    // Stats grid — itemized signal breakdown (German)
     const statsGrid = document.getElementById('overlay-stats-grid');
     let penaltyHtml = '';
     if (report.score_penalty && report.score_penalty < 0) {
-        penaltyHtml = `<div class="stat-item">AI downrank: <span class="stat-val penalty-val">${report.score_penalty}</span></div>`;
+        penaltyHtml = `<div class="stat-item"><span class="stat-label">KI-Abwertung</span><span class="stat-val penalty-val">${report.score_penalty}</span></div>`;
     }
     
     const formatScore = (val) => val >= 0 ? `+${val}` : `${val}`;
+    const distanceLabel = (report.distance_to_bike_path_meters !== undefined && report.distance_to_bike_path_meters !== null)
+        ? `${Number(report.distance_to_bike_path_meters).toFixed(1)} m`
+        : '–';
     
-    statsGrid.innerHTML = `
-        <div class="stat-item">Distance to path: <span class="stat-val">${report.distance_to_bike_path_meters} m</span></div>
-        <div class="stat-item">Category signal: <span class="stat-val bonus-val">+${report.score_category}</span></div>
-        <div class="stat-item">Route proximity: <span class="stat-val bonus-val">${formatScore(report.score_distance)}</span></div>
-        <div class="stat-item">Text signal: <span class="stat-val bonus-val">+${report.score_keywords}</span></div>
+    let statsHtml = `
+        <div class="stat-item"><span class="stat-label">Distanz zum Radweg</span><span class="stat-val">${distanceLabel}</span></div>
+        <div class="stat-item"><span class="stat-label">Kategorie-Signal</span><span class="stat-val bonus-val">+${report.score_category}</span></div>
+        <div class="stat-item"><span class="stat-label">Routennähe</span><span class="stat-val bonus-val">${formatScore(report.score_distance)}</span></div>
+        <div class="stat-item"><span class="stat-label">Text-Signal</span><span class="stat-val bonus-val">+${report.score_keywords}</span></div>
         ${penaltyHtml}
-        <div class="stat-item">Status / Recency: <span class="stat-val">${formatScore(report.score_state + report.score_recency)}</span></div>
+        <div class="stat-item"><span class="stat-label">Status / Alter</span><span class="stat-val">${formatScore(report.score_state + report.score_recency)}</span></div>
     `;
     
     if (report.nearest_segment_name) {
-        statsGrid.innerHTML += `<div class="stat-item segment-item" style="grid-column: span 2">Nearest Segment: <span class="stat-val" style="word-break: break-all;">${report.nearest_segment_name}</span></div>`;
+        statsHtml += `<div class="stat-item segment-item"><span class="stat-label">Nächstgelegener Radweg</span><span class="stat-val">${report.nearest_segment_name}</span></div>`;
     }
+    statsGrid.innerHTML = statsHtml;
 
     // Media swipeable gallery carousel logic
     const carouselContainer = document.getElementById('overlay-carousel-container');
@@ -1316,6 +1499,7 @@ function showMapDetails(report) {
 function hideMapDetails() {
     document.getElementById('map-details-card').classList.add('closed');
     setActiveMarker(null);
+    clearReportContext();
     activeReportId = null;
     const rows = document.querySelectorAll('.issue-row');
     rows.forEach(row => {
