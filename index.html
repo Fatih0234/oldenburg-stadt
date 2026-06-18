@@ -14,10 +14,10 @@
             document.documentElement.dataset.theme = resolvedTheme;
         })();
     </script>
-    <!-- Google Fonts: Outfit for headings, Inter for body -->
+    <!-- Google Fonts: Space Grotesk (display), Inter (body), IBM Plex Mono (data) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
     
     <!-- Leaflet.js CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -36,7 +36,366 @@
             <header class="sidebar-header" id="sidebar-hero-header">
                 <div class="logo-area">
                     <div class="logo-main-info">
-                        <img src="assets/branding/logo.png" class="logo-img" alt="Rad-Verbesserer Logo">
+                        <span class="logo-badge-wrap" aria-hidden="true">
+                            <svg class="logo-radar" viewBox="0 0 58 58" aria-hidden="true">
+    <defs>
+        <!-- Warm sodium light cone shining onto the road (lit-road layer, below cyclists).
+             Hot core near the head, long warm fade onto the road. Head is top-left,
+             beam shines down-right onto the road behind the riders. -->
+        <linearGradient id="rr-lamp-cone" x1="11" y1="8" x2="20" y2="35" gradientUnits="userSpaceOnUse">
+            <stop offset="0"    stop-color="#FFE7A0" stop-opacity="0.85"/>
+            <stop offset="0.35" stop-color="#FFC24D" stop-opacity="0.45"/>
+            <stop offset="1"    stop-color="#FFB21A" stop-opacity="0"/>
+        </linearGradient>
+        <!-- Brightening layer: screen-blended over the cyclists so they glow in the beam -->
+        <linearGradient id="rr-lamp-bright" x1="11" y1="8" x2="20" y2="35" gradientUnits="userSpaceOnUse">
+            <stop offset="0"   stop-color="#FFF2C8" stop-opacity="0.8"/>
+            <stop offset="0.6" stop-color="#FFCE6B" stop-opacity="0.34"/>
+            <stop offset="1"   stop-color="#FFCE6B" stop-opacity="0"/>
+        </linearGradient>
+        <!-- Hot core: plus-lighter punch right under the head, for a real bulb hotspot -->
+        <linearGradient id="rr-lamp-core" x1="11" y1="8" x2="16" y2="24" gradientUnits="userSpaceOnUse">
+            <stop offset="0"   stop-color="#FFF7D6" stop-opacity="0.9"/>
+            <stop offset="1"   stop-color="#FFE08A" stop-opacity="0"/>
+        </linearGradient>
+        <!-- Warm light pool on the road surface where the cone lands -->
+        <radialGradient id="rr-lamp-pool" cx="18" cy="33" r="14" gradientUnits="userSpaceOnUse">
+            <stop offset="0"   stop-color="#FFD27A" stop-opacity="0.6"/>
+            <stop offset="1"   stop-color="#FFB21A" stop-opacity="0"/>
+        </radialGradient>
+        <!-- Soft halo around the lamp head -->
+        <radialGradient id="rr-lamp-halo" cx="12" cy="6" r="6.5" gradientUnits="userSpaceOnUse">
+            <stop offset="0"   stop-color="#FFF2C8" stop-opacity="0.85"/>
+            <stop offset="0.5" stop-color="#FFC24D" stop-opacity="0.35"/>
+            <stop offset="1"   stop-color="#FFC24D" stop-opacity="0"/>
+        </radialGradient>
+        <!-- Clip path retained for future use (currently unused) -->
+    </defs>
+    <!-- Street lamp (dark theme only): SVG Repo street-light HEAD only (dome, housing
+         bars, warm shade + rays), anchored top-left. Drawn before the radar so the
+         radar overlays it (lamp behind the radar). Warm cone + light pool shine
+         down-right onto the road behind the riders. -->
+    <g class="rr-lamp">
+        <polygon class="rr-lamp-cone" points="12,7 36,35 2,35"/>
+        <ellipse class="rr-lamp-pool" cx="18" cy="33" rx="17" ry="6"/>
+        <circle class="rr-lamp-halo" cx="12" cy="6" r="6.5"/>
+        <g class="rr-lamp-fixture" transform="translate(-3.4 -0.4) scale(0.03)">
+            <g class="rr-lamp-body">
+                <path d="M620.9 171.7c0-59.8-48.5-108.3-108.3-108.3s-108.3 48.5-108.3 108.3h216.6z" fill="#A4A9AD"/>
+                <path d="M603.8 280.9H421.5c-8 0-14.5-6.5-14.5-14.5s6.5-14.5 14.5-14.5h182.3c8 0 14.5 6.5 14.5 14.5s-6.5 14.5-14.5 14.5zM620.9 189H404.4c-17 0-30.8-13.8-30.8-30.8s13.8-30.8 30.8-30.8H621c17 0 30.8 13.8 30.8 30.8 0 16.9-13.8 30.8-30.9 30.8zM586.7 405.6h-148c-17 0-30.8-13.8-30.8-30.8s13.8-30.8 30.8-30.8h148c17 0 30.8 13.8 30.8 30.8s-13.8 30.8-30.8 30.8z" fill="#333E48"/>
+            </g>
+            <g class="rr-lamp-glow">
+                <path d="M620.9 158.1H404.4l34.2 216.6h148.1z" fill="#F2D383"/>
+                <path d="M284.7 349.4c-6 0-11.5-3.7-13.6-9.7-2.7-7.5 1.3-15.8 8.8-18.4l69.6-24.5c7.5-2.7 15.8 1.3 18.4 8.8 2.7 7.5-1.3 15.8-8.8 18.4l-69.6 24.5c-1.5 0.7-3.2 0.9-4.8 0.9zM354.4 245.7c-0.6 0-1.2 0-1.9-0.1L262.3 234c-7.9-1-13.5-8.3-12.5-16.2 1-7.9 8.3-13.5 16.2-12.5l90.2 11.6c7.9 1 13.5 8.3 12.5 16.2-0.9 7.3-7.2 12.6-14.3 12.6zM740.6 349.4c-1.6 0-3.2-0.3-4.8-0.8l-69.6-24.5c-7.5-2.7-11.5-10.9-8.8-18.4 2.7-7.5 10.9-11.5 18.4-8.8l69.6 24.5c7.5 2.7 11.5 10.9 8.8 18.4-2.1 5.9-7.7 9.6-13.6 9.6zM670.9 245.7c-7.2 0-13.4-5.3-14.3-12.6-1-7.9 4.6-15.2 12.5-16.2l90.2-11.6c7.9-1 15.2 4.6 16.2 12.5S770.9 233 763 234l-90.2 11.6c-0.6 0.1-1.2 0.1-1.9 0.1z" fill="#FFB819"/>
+            </g>
+        </g>
+    </g>
+    <!-- Radar pulse -->
+    <circle class="rr-pulse" cx="29" cy="30" r="20"/>
+    <!-- Cycling route: open wavy road, right→left, extends past both edges for seamless infinite ride -->
+    <path class="rr-route" id="rr-route" d="M -8 31 Q 16 28 29 30 T 66 29"/>
+    <!-- Trailing route dots (left portion = behind the riders as they head right) -->
+    <circle class="rr-dot rr-dot-1" cx="6" cy="30.5" r="1.3"/>
+    <circle class="rr-dot rr-dot-2" cx="13" cy="28" r="1.1"/>
+    <circle class="rr-dot rr-dot-3" cx="20" cy="29" r="0.9"/>
+    <g class="rr-cyclist rr-cyclist-a">
+    <g transform="translate(11.7 -23.4) scale(-0.65 0.65)">
+        <path fill="#D4AB88" d="M10 5c-1 1 0 2 0 3s2 0 2 0s1-1 2 1s4 1 3-1s-4-1-4-3s-3 0-3 0z"/>
+        <path fill="#CC9B7A" d="M19 16s-3 2-3 3s4 4 5 5s3 1 2-1s-4-7-4-7z"/>
+        <path fill="#963B22" d="M14.347 2.901c-.745-.684-2.861-1.006-3.922.248c-.899.018-1.073.91-.906 1.372c.133.369 1.086.286 1.46.963c.128-.213.099-.592.026-.783c.353.229.369 1.007 1.634 1.272c1.223.256 1.217 1.294 1.217 1.294s.541-.397.863-.957c.614-1.071.448-2.654-.372-3.409z"/>
+        <path fill="#C63900" d="M20.634 23.021s1.173.789 1.962-.385c.789-1.174 1.365 1.771 1.365 1.771s-2.559 2.539-4.521 2.924c-1.962.385-1.173-.789-.385-1.962l1.579-2.348z"/>
+        <path fill="#292F33" d="M7 22a7 7 0 1 0 0 14a7 7 0 0 0 0-14zm0 12a5 5 0 1 1 0-10a5 5 0 0 1 0 10zm22-12a7 7 0 1 0 .001 14.001A7 7 0 0 0 29 22zm0 12a5 5 0 1 1 0-10a5 5 0 0 1 0 10z"/>
+        <g fill="#AAB8C2"><path d="M22 20c0-.553-.484-1-1.083-1H10.083C9.485 19 9 19.447 9 20c0 .553.485 1 1.083 1h10.833c.6 0 1.084-.447 1.084-1zm8 9a1 1 0 0 0-1-1H18a1 1 0 1 0 0 2h11a1 1 0 0 0 1-1z"/><path d="M21.224 17l-4.166 11.664a1 1 0 0 0 1.884.672L23.348 17h-2.124z"/><path d="M29.001 30c-.33 0-.654-.164-.845-.463l-7-11a1 1 0 1 1 1.688-1.074l7 11A1 1 0 0 1 29.001 30zM19 25.734l-8.387-6.524a1 1 0 1 0-1.227 1.579l9 7a.987.987 0 0 0 .613.211H19v-2.266z"/><path d="M7 30a1 1 0 0 1-.948-1.317l2.772-8.316l-3.423-2.568a1 1 0 0 1 1.2-1.6l4.577 3.433l-3.228 9.684A1.004 1.004 0 0 1 7 30z"/></g>
+        <path fill="#292F33" d="M26.383 19a.665.665 0 0 1-.089-.006l-5.672-.708a.708.708 0 0 1 .087-1.413c.041 0 4.067-.018 5.989-1.299a.713.713 0 0 1 .824.026a.712.712 0 0 1 .241.788l-.709 2.127a.705.705 0 0 1-.671.485zM11 18H6a1 1 0 0 1 0-2h5a1 1 0 0 1 0 2z"/>
+        <path fill="#C63900" d="M21.999 13L18 16l3 3z"/>
+        <path fill="#D4AB88" d="M19.999 17s-2 3-2 4s1 4 1 7s2 3 2 2s1.581-5.419 0-7c-1-1 2-4 2-4l-3-2zm-4.314-3.703l-2.75-.784c-.447 1.956-3.023 4.486-3.935 4.486c-1 0-2 0-2 1s0 1 2 1s4-2 5-3c.65-.65 1.309-1.757 1.685-2.702z"/>
+        <path fill="#DD551F" d="M21.999 13l-3 4l4 3s5-5 5-7s-3-3-3-3l-3 3z"/>
+        <path fill="#FA743E" d="M20.999 6.999c-3-1-5.585-.414-7 1c-1 1-1 2-1 4c0 .176-.03.362-.073.55l2.744.784c.202-.509.33-.984.33-1.334c0-1 1-1 2 0s2 2 3 2s6-4 6-4c-3.001-1-4.103-2.368-6.001-3z"/>
+        <path fill="#DD551F" d="M19 29s1 1 2 0s1 2 1 2s-3 2-5 2s-1-1 0-2l2-2zM11 2c2-1 6 0 4 2c-1 1-7 2-7 2c0-1 1-3 3-4z"/>
+    </g>
+</g>
+    <g class="rr-cyclist rr-cyclist-b">
+    <g transform="translate(13.44 -20.95) scale(-0.21 0.21)">
+        <path d="M80.28 80.98l-1.63-2.34c-1.1-1.59-3.98-2.28-3.98-2.28l-5.85 4.06l-4.06 5.4c-.93 1.39-.92 3.2.03 4.57l.73 1.06c.2.29.52.44.84.44c.2 0 .4-.06.58-.18l13.05-9.1c.53-.37.66-1.1.29-1.63z" fill="#4568ad">
+
+</path>
+
+<path d="M51.68 10.35c-3.24-3.37-9.33-5.24-13.7-3.56c-4.89 1.88-6.85 6.07-6.6 10.81c.09 1.72.49 3.37 1.03 4.49c.06.13.56 1.1.65 1.42c.45 1.2-1.7 2.93-1.7 4.36c0 1.07 2.31 1.28 2.51 1.43c1.04.75.63 5.39 6.66 4.62c2.03-.26 2.13-.47 2.86-.51c1.9-.12 7.26 1.63 7.26 1.63l2.12-4.44s-1.74-.8-.04-6.17c1.31-4.12 1.03-11.92-1.05-14.08z" fill="#ffca28">
+
+</path>
+
+<path d="M35.01 31.63c.83-.12 1.61-.48 2.19-1.14c.64-.72-.01-1.23-.8-.69c-.48.33-1.2.6-1.9.61l.51 1.22z" fill="#795548">
+
+</path>
+
+<ellipse transform="rotate(-13.952 36.88 23.432)" cx="36.88" cy="23.43" rx="1.11" ry="1.69" fill="#404040">
+
+</ellipse>
+
+<path d="M35.65 21.34c-.93.64-1.39.05-1.23-.61c.12-.48.63-1.02 1.91-1.19c1.2-.15 1.89.34 2.32.63c.44.29.53.7.28.82c-.34.17-2.13-.44-3.28.35z" fill="#6d4c41">
+
+</path>
+
+<path d="M53.13 12.16c-.43-.58-.9-1.12-1.44-1.6c-.76-.68-1.64-1.21-2.56-1.64c-2.44-1.13-5.24-1.5-7.88-.96s-5.08 2.02-6.73 4.15c-1.27 1.65-2.05 3.91-1.25 5.83c.99-.29 1.72-1.15 2.8-1.37c1.4-.3 2.93-.32 4.12-1.11c.46-.3.85-.71 1.28-1.05c.11-.03.18-.04.18-.04c1.91.55.5 5.03 2.91 6.98c.48.39 1.04.71 1.04.71s-.41-3.16 1.61-3.19c2.1-.03 2.27 2.12 1.67 3.95c-.62 1.9-1.69 1.23-1.31 1.86c.62 1.03 3.81 1.33 4.81 1.12c1.34-.27 2.2-1.73 3-2.84c.93-1.28.85-2.8.71-4.38c-.16-1.74-.99-3.35-1.91-4.84c-.33-.55-.68-1.08-1.05-1.58z" fill="#543930">
+
+</path>
+
+<path d="M48.57 25.35l.76-.78c-.09-.03-.19-.05-.27-.08c.27-.3.54-.74.75-1.39c.26-.79.75-2.77-.25-4.15c-.36-.49-1.05-1.09-2.3-1.09h-.06c-.72.01-1.35.29-1.8.82c-.35.4-.55.9-.67 1.4c-.44-.63-.63-1.47-.76-2.34l-.92.42c.2 1.18.55 2.38 1.51 3.16c.48.39 1.04.71 1.04.71s-.41-3.16 1.61-3.19h.05c2.05 0 2.22 2.13 1.63 3.95c-.62 1.9-1.69 1.23-1.31 1.86c.15.3.53.52.99.7z" fill="#543930">
+
+</path>
+
+<path d="M83.56 49.62l-6.21-11.67L53.3 51.86v.01c-2.74 1.45-3.77 4.85-2.32 7.59c.15.29.33.55.53.8l.04.05c.05.06.1.12.15.19l16.86 20.27l7.08-5.21l-11.38-16.55l19.3-9.39z" fill="#eda600">
+
+</path>
+
+<path d="M87.51 40.02c-1.4-2.64-4.13-4.16-6.94-4.16c-1.25 0-2.51.3-3.69.92v-.01l-16.97 9.86l7.04 13.24l17.31-9.21c3.84-2.04 5.29-6.8 3.25-10.64z" fill="#646464">
+
+</path>
+
+<path fill="#e0e0e0" d="M71.3 69.26l-7.64 5.62l4.9 5.89l7.08-5.21z">
+
+</path>
+
+<radialGradient id="IconifyId17ecdb2904d178eab15781" cx="97.515" cy="28.26" r="23.332" gradientTransform="matrix(1 0 0 -1 0 128)" gradientUnits="userSpaceOnUse">
+
+<stop offset="0" stop-color="#78909c">
+
+</stop>
+
+<stop offset=".562" stop-color="#617a86">
+
+</stop>
+
+<stop offset="1" stop-color="#546e7a">
+
+</stop>
+
+</radialGradient>
+
+<path d="M97.52 76.41c-12.87 0-23.34 10.47-23.34 23.33c0 12.87 10.47 23.33 23.34 23.33c12.86 0 23.33-10.47 23.33-23.33c0-12.87-10.46-23.33-23.33-23.33zm0 38.33c-8.26 0-15.01-6.73-15.01-15s6.74-15 15.01-15s15 6.73 15 15s-6.73 15-15 15z" fill="url(#IconifyId17ecdb2904d178eab15781)">
+
+</path>
+
+<radialGradient id="IconifyId17ecdb2904d178eab15782" cx="30.475" cy="28.26" r="23.332" gradientTransform="matrix(1 0 0 -1 0 128)" gradientUnits="userSpaceOnUse">
+
+<stop offset="0" stop-color="#78909c">
+
+</stop>
+
+<stop offset=".562" stop-color="#617a86">
+
+</stop>
+
+<stop offset="1" stop-color="#546e7a">
+
+</stop>
+
+</radialGradient>
+
+<path d="M30.48 76.41c-12.87 0-23.34 10.47-23.34 23.33c0 12.87 10.47 23.33 23.34 23.33c12.86 0 23.33-10.47 23.33-23.33c0-12.87-10.46-23.33-23.33-23.33zm0 38.33c-8.26 0-15.01-6.73-15.01-15s6.74-15 15.01-15s15 6.73 15 15s-6.73 15-15 15z" fill="url(#IconifyId17ecdb2904d178eab15782)">
+
+</path>
+
+<linearGradient id="IconifyId17ecdb2904d178eab15783" gradientUnits="userSpaceOnUse" x1="34.681" y1="48.231" x2="99.091" y2="48.231" gradientTransform="matrix(1 0 0 -1 0 128)">
+
+<stop offset="0" stop-color="#d8eb21">
+
+</stop>
+
+<stop offset=".441" stop-color="#d6e921">
+
+</stop>
+
+<stop offset=".606" stop-color="#b8c721">
+
+</stop>
+
+<stop offset=".804" stop-color="#adba21">
+
+</stop>
+
+</linearGradient>
+
+<path d="M99.92 98.07a2.59 2.59 0 0 0-.37-.67l-9.17-12.34l-10.19-13.74l3.74-8.13c.08-.17.14-.35.18-.53c.04-.18.07-.36.07-.54c.01-.18-.01-.36-.04-.53c-.06-.35-.18-.68-.37-.98a2.7 2.7 0 0 0-1.75-1.24l-.2-.03c-.12-.02-.24-.04-.36-.04h-.04c-.03 0-.06.01-.08.01c-.2.01-.4.03-.59.08c-.05.01-.1.02-.15.04c-.22.07-.43.16-.63.28c-.01.01-.03.02-.04.03c-.18.12-.34.26-.49.41c-.04.04-.08.09-.12.13c-.15.18-.29.38-.39.6l-.02.04l-3.61 7.85l-31.97-4.62l1.07-4.05c.39-1.46-.49-2.96-1.96-3.35c-.01 0-.03 0-.04-.01c-.22-.06-.44-.09-.66-.09c-1.21 0-2.32.81-2.65 2.04l-2.26 8.55l-8.5 32.17c-.38 1.46.49 2.96 1.95 3.35c.24.06.47.09.71.09H31c1.21 0 2.32-.81 2.65-2.04l7.62-28.86l20.94 28.69c.05.07.12.13.18.19s.11.12.17.18c.06.06.12.11.19.16l.02.02c.01.01.03.02.04.03c.06.05.12.09.19.13c.03.02.05.04.08.05c.03.01.06.03.09.05c.01 0 .02.01.03.02l.06.03c.03.01.05.02.08.03c.03.01.07.03.1.04c.07.03.15.06.22.08c.05.02.1.04.16.05c.19.04.4.07.6.07h32.92c1.04 0 1.99-.58 2.45-1.51c.36-.67.4-1.48.13-2.19zM46.79 70.21l16.47 2.38l9.66 1.4l-9.02 19.65l-17.11-23.43zm21.93 26.08l8.86-19.27L91.9 96.29H68.72z" fill="url(#IconifyId17ecdb2904d178eab15783)">
+
+</path>
+
+<path d="M71.04 99.48c-.47-1.02-1.33-1.74-2.25-1.89c-1.18-.2-6.06 1.39-6.78 1.72c-1.75.78-3.88 3-2.91 5.31c.61 1.42 1.48 1.85 2.41 1.85c.78 0 1.59-.3 2.33-.57l.56-.2c.37-.13.8-.26 1.25-.39c1.96-.58 4.4-1.31 5.4-2.99c.45-.78.46-1.84-.01-2.84z" fill="#504f4f">
+
+</path>
+
+<path d="M43.16 56.25l-8.54-2.05a2.34 2.34 0 0 0-.64-.08c-1.24 0-2.37.84-2.67 2.1a2.74 2.74 0 0 0 2.03 3.31l8.54 2.05c.21.05.42.08.64.08c1.24 0 2.36-.84 2.67-2.1c.35-1.47-.56-2.95-2.03-3.31z" fill="#405966">
+
+</path>
+
+<path d="M88.44 56.77c-.13-.1-.27-.2-.41-.28c-1.15-.65-2.44-.5-3.76-.56c-1.6-.08-3.22-.15-4.82-.25c-.88-.06-1.76-.07-2.64-.07c-1.03 0-2.07.02-3.09.02c-.78 0-1.55-.01-2.32-.05c-.04-.01-.1-.01-.16-.01c-1.47 0-2.86 1.11-3.37 2.43c-.72 1.87.55 3.05 2.14 3.91c1.95 1.06 4.14 1.56 6.27 2.08c2.32.56 4.64 1.3 7.02 1.62c.3.04.6.06.91.06c2.06 0 4.19-.91 5.36-2.62c1.4-2.04.82-4.76-1.13-6.28z" fill="#504f4f">
+
+</path>
+
+<linearGradient id="IconifyId17ecdb2904d178eab15784" gradientUnits="userSpaceOnUse" x1="102.028" y1="1.22" x2="36.2" y2="138.874" gradientTransform="translate(0 2)">
+
+<stop offset=".195" stop-color="#ffb300">
+
+</stop>
+
+<stop offset=".691" stop-color="#ffca28">
+
+</stop>
+
+</linearGradient>
+
+<path d="M86.54 46.67L75.3 39.71L61.53 63.85h.01a5.572 5.572 0 0 0-.74 3.95l2.77 25.84l6.79-.09l1.48-24.9l14.7-21.98z" fill="url(#IconifyId17ecdb2904d178eab15784)">
+
+</path>
+
+<path fill="#e0e0e0" d="M62.59 85.99l.98 7.64l6.79-.09l.59-7.64z">
+
+</path>
+
+<path d="M85.13 36.38A7.894 7.894 0 0 0 81 35.21c-2.63 0-5.21 1.32-6.7 3.73L64.17 56.35l12.75 7.89s9.56-14.8 10.76-17.03c1.93-3.6 1.15-8.54-2.55-10.83z" fill="#7c7c7c">
+
+</path>
+
+<path d="M74.11 97.52l-.77-2.75c-.51-1.88-3-3.49-3-3.49l-6.86 1.9l-5.61 3.75c-1.33 1-1.92 2.71-1.49 4.33l.34 1.25c.12.45.54.75.98.75c.09 0 .18-.01.27-.04l15.33-4.26c.62-.17.99-.82.81-1.44z" fill="#4568ad">
+
+</path>
+
+<radialGradient id="IconifyId17ecdb2904d178eab15785" cx="67.451" cy="92.12" r="15.72" gradientTransform="matrix(1 0 0 -1 0 128)" gradientUnits="userSpaceOnUse">
+
+<stop offset=".367" stop-color="#f78c1f">
+
+</stop>
+
+<stop offset=".68" stop-color="#f37f21">
+
+</stop>
+
+<stop offset="1" stop-color="#ed6d23">
+
+</stop>
+
+</radialGradient>
+
+<path d="M61.1 23.54c-1.18-.25-2.36-.4-3.47-.4c-2.52 0-4.63.78-5.53 2.82c-.73 1.62-1.49 3.27-2.28 4.92c-1.41 2.99-.26 7.58 3.24 8.68c9.09 2.89 8.84 5.59 14.12 8.04c1.53.71 2.98 1.02 4.34 1.02c6.66 0 11.37-7.4 14.15-12.12c-6.11-6.23-14.25-10.69-24.57-12.96z" fill="url(#IconifyId17ecdb2904d178eab15785)">
+
+</path>
+
+<linearGradient id="IconifyId17ecdb2904d178eab15786" gradientUnits="userSpaceOnUse" x1="27.891" y1="83.175" x2="57.483" y2="83.175" gradientTransform="matrix(1 0 0 -1 0 128)">
+
+<stop offset=".5" stop-color="#ffca28">
+
+</stop>
+
+<stop offset="1" stop-color="#ffb300">
+
+</stop>
+
+</linearGradient>
+
+<path d="M57.46 31.31l-7.78-2.3l-4.63 17.22l-8.32 7.01c-1.44-.49-3.34-.75-4.69-.75h-.03c-.14 0-.27 0-.39.01c-.06 0-.11.01-.16.01c-.07.01-.14.01-.2.02c-.07.01-.15.02-.21.03c-.02 0-.04.01-.07.01c-.18.03-.34.08-.44.14c-.37.22-.94.72-1.48 1.21c-.83.77-1.26 1.88-1.17 3.01l.06.82c-.07.25.31.83.88 1.17c.03.02.07.04.1.06c.03.02.07.03.11.05c.44.21.97.26 1.49-.1c.68-.45-.05-1.7.27-2.23c.37-.63 1.01-1.27 1.01-1.27s1.98-.15 2.41.16c.76.63.98 1.19.55 2.39c-.31.86-1.02 1.75-.66 2.04c.13.11.26.2.38.28c.01.01.02.01.03.02c.09.06.18.12.27.16c.05.03.11.04.16.07c.04.02.08.03.13.04c.08.02.16.03.24.03h.04c.46.01.96-.28 1.69-1.01c1.03-1.04 2.01-.69 2.8-1.48l9.9-6.65l.12-.08c.19-.1.38-.22.55-.35l.04-.02c.57-.45.99-1.07 1.2-1.78h.01l5.82-17.95l-.03.01z" fill="url(#IconifyId17ecdb2904d178eab15786)">
+
+</path>
+
+<radialGradient id="IconifyId17ecdb2904d178eab15787" cx="32.94" cy="71.45" r="2.84" gradientTransform="matrix(1 0 0 -1 0 128)" gradientUnits="userSpaceOnUse">
+
+<stop offset="0" stop-color="#78909c">
+
+</stop>
+
+<stop offset=".562" stop-color="#617a86">
+
+</stop>
+
+<stop offset="1" stop-color="#546e7a">
+
+</stop>
+
+</radialGradient>
+
+<path d="M32.94 53.71c-1.57 0-2.84 1.27-2.84 2.84s1.27 2.84 2.84 2.84s2.84-1.27 2.84-2.84s-1.28-2.84-2.84-2.84z" fill="url(#IconifyId17ecdb2904d178eab15787)">
+
+</path>
+
+<path d="M55.11 26.23a5.318 5.318 0 0 0-6.62 3.59l-2.55 9.49l9.73 2.88l3.03-9.35c.83-2.82-.77-5.78-3.59-6.61z" fill="#ed6d23">
+
+</path>
+
+<g>
+
+<path d="M62.89 18.14a.403.403 0 0 0-.25-.3c-.06-.02-.11-.04-.18-.04s-.15.02-.22.06c-.46.26-.84.34-1.12.34c-.12 0-.23-.02-.32-.04c.68-.93.67-2.5-.1-3.7c-.04-.12-.17-.19-.32-.19c-.03 0-.05 0-.08.01c-.17.03-.31.17-.35.34c0 0-.77.74-1.73.74c-.26 0-.54-.06-.83-.2c-1.51-1.45-5.34-6.49-6.82-6.54c-.66-.02.46 9.56.55 10.37c.19 1.8.1 3.95.21 5.83c-.11-.03-.2-.05-.24-.06l-.42 1.02c.15.05.94.4 2.07.4c.68 0 1.48-.13 2.34-.52c.85-.38 1.23-1.08 1.42-1.54c.35.12.85.24 1.38.24c.38 0 .77-.06 1.13-.24c1.02-.5 1.34-1.36 1.43-1.83c1.22-.4 2.99-1.66 2.45-4.15z" fill="#543930">
+
+</path>
+
+</g>
+
+<radialGradient id="IconifyId17ecdb2904d178eab15788" cx="43.587" cy="107.868" r="17.187" gradientTransform="matrix(1 0 0 -1 0 128)" gradientUnits="userSpaceOnUse">
+
+<stop offset=".784" stop-color="#6d4c41" stop-opacity="0">
+
+</stop>
+
+<stop offset="1" stop-color="#6d4c41">
+
+</stop>
+
+</radialGradient>
+
+<path d="M62.89 18.14a.403.403 0 0 0-.25-.3c-.06-.02-.11-.04-.18-.04s-.15.02-.22.06c-.46.26-.84.34-1.12.34c-.12 0-.23-.02-.32-.04c.68-.93.67-2.5-.1-3.7c-.04-.12-.17-.19-.32-.19c-.03 0-.05 0-.08.01c-.17.03-.31.17-.35.34c0 0-.77.74-1.73.74c-.26 0-.54-.06-.83-.2c-1.51-1.45-5.34-6.49-6.82-6.54c-.66-.02.46 9.56.55 10.37c.19 1.8.1 3.95.21 5.83c-.11-.03-.2-.05-.24-.06l-.42 1.02c.15.05.94.4 2.07.4c.68 0 1.48-.13 2.34-.52c.85-.38 1.23-1.08 1.42-1.54c.35.12.85.24 1.38.24c.38 0 .77-.06 1.13-.24c1.02-.5 1.34-1.36 1.43-1.83c1.22-.4 2.99-1.66 2.45-4.15z" fill="url(#IconifyId17ecdb2904d178eab15788)">
+
+</path>
+
+<g>
+
+<linearGradient id="IconifyId17ecdb2904d178eab15789" gradientUnits="userSpaceOnUse" x1="72.02" y1="19.443" x2="72.02" y2="27.291" gradientTransform="rotate(4.98 21.918 -266.967)">
+
+<stop offset="0" stop-color="#646464">
+
+</stop>
+
+<stop offset=".995" stop-color="#262626">
+
+</stop>
+
+</linearGradient>
+
+<path d="M45.93 27.8c.11 1.66-2.8 5.42-2.88 5.65c-.16.38 1.43.44 1.78.08s3.57-3.53 5.64-7.49c.93-1.78 3.03-6.51 3.03-6.51l-2.93-1.43s-.86 8.22-2.93 8.19c-2.08-.03-2.04-7.99-2.04-7.99l-4.67 1.94s4.94 6.53 5 7.56z" fill="url(#IconifyId17ecdb2904d178eab15789)">
+
+</path>
+
+<radialGradient id="IconifyId17ecdb2904d178eab15790" cx="38.944" cy="115.913" r="11.814" gradientTransform="matrix(1 0 0 -1 0 128)" gradientUnits="userSpaceOnUse">
+
+<stop offset="0" stop-color="#81d4fa">
+
+</stop>
+
+<stop offset=".36" stop-color="#5eb3e7">
+
+</stop>
+
+<stop offset=".775" stop-color="#3c92d3">
+
+</stop>
+
+<stop offset="1" stop-color="#2f85cc">
+
+</stop>
+
+</radialGradient>
+
+<path d="M53.64 7.63c-2.6-2.44-6.08-3.64-9.58-3.64c-1.64 0-3.3.26-4.87.79c-1.44.48-5.97 2.71-7.91 6.57c-.81 1.62-1.45 3.39-1.61 5.19c-.09.98-.1 2.73.69 3.59c.35.38.77.5 1.17.5c.21 0 .42-.03.62-.07c1.05-.23 3.7-1.35 4.49-1.43c.11-.01.21-.01.32-.01c1.66 0 2.89 1.19 3.22 1.43c.67.48 1.34.86 2.12.86c.67 0 1.43-.27 2.36-.99c1.21-.93 1.48-1.65 2.56-1.84c.12-.02.26-.04.4-.04c.73 0 1.73.38 2.9 2.2c.99 1.54 2.14 2.19 3.12 2.19c.57 0 1.08-.21 1.47-.59c1.49-1.42 4.39-9.27-1.47-14.71z" fill="url(#IconifyId17ecdb2904d178eab15790)">
+
+</path>
+
+</g>
+    </g>
+</g>
+    <!-- Top-layer brightening: a hot core (plus-lighter) over the screen cone so the
+         cyclists visibly brighten as they ride through the lamp beam (dark theme).
+         Beam originates top-left and falls down-right onto the road behind the riders. -->
+    <polygon class="rr-lamp-bright" points="12,7 36,35 2,35"/>
+    <polygon class="rr-lamp-core"  points="12,7 25,28 2,28"/>
+</svg>
+                        </span>
                         <div class="logo-text-col">
                             <h1>Rad-Verbesserer</h1>
                             <div class="subtitle-row">
@@ -96,7 +455,7 @@
                 <!-- Tab 1: Dashboard -->
                 <section class="tab-panel active" id="panel-dashboard">
                     <!-- Monthly Civic Insight Digest -->
-                    <section class="monthly-briefing card-glass" id="monthly-briefing" aria-labelledby="monthly-briefing-title">
+                    <section class="monthly-briefing" id="monthly-briefing" aria-labelledby="monthly-briefing-title">
                         <div class="briefing-header">
                             <div>
                                 <span class="hud-label">MONATSBRIEFING</span>
@@ -144,6 +503,9 @@
                             <div class="control-group search-control">
                                 <label class="group-title" for="search-input">Mängel suchen</label>
                                 <div class="search-wrapper">
+                                    <span class="search-icon" aria-hidden="true">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                                    </span>
                                     <input type="text" id="search-input" placeholder="Beschreibung, Straße, ID..." oninput="handleSearch(this.value)">
                                     <button class="search-clear-btn" id="search-clear-btn" onclick="clearSearch()" style="display: none;">&times;</button>
                                 </div>
@@ -250,7 +612,7 @@
             <div id="map"></div>
             
             <!-- Floating Map Details Overlay -->
-            <div class="map-overlay-card card-glass closed" id="map-details-card">
+            <div class="map-overlay-card closed" id="map-details-card">
                 <div class="details-card-header">
                     <span class="badge" id="overlay-label">Label</span>
                     <span class="details-id" id="overlay-id">#ID</span>
@@ -284,8 +646,12 @@
                     <div class="details-section-title">Analyse &amp; Bewertung</div>
                     <div class="details-stats-dashboard">
                         <div class="relevance-score-widget">
+                            <svg class="score-ring-svg" viewBox="0 0 116 116" aria-hidden="true">
+                                <circle class="score-ring-bg" cx="58" cy="58" r="52"></circle>
+                                <circle class="score-ring-fg" id="score-ring-fg" cx="58" cy="58" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"></circle>
+                            </svg>
                             <div class="relevance-value" id="relevance-score-value">--</div>
-                            <div class="relevance-label">Relevance score</div>
+                            <div class="relevance-label">Relevanzscore</div>
                         </div>
                         <div id="overlay-stats-grid" class="overlay-stats">
                             <!-- Score breakdowns -->
@@ -296,7 +662,33 @@
                     <!-- Satellite Map Context Frame -->
                     <div id="overlay-satellite-container" class="satellite-preview-box hidden">
                         <div class="preview-title">
-                            <img src="assets/ui/satellite_badge.png" class="badge-img-icon" alt="Satellite"> Satelliten-Ansicht (Fahrbahn-Kontext)
+                            <svg class="badge-svg badge-svg-detailed" viewBox="0 0 512 512" aria-hidden="true">
+<g>
+	<path style="fill:#556080;" d="M217.157,217.609c-2.222,0-4.443-0.85-6.135-2.543l-24.541-24.541c-3.393-3.393-3.393-8.886,0-12.271c3.384-3.393,8.878-3.393,12.271,0l24.541,24.541c3.393,3.393,3.393,8.878,0,12.271C221.601,216.758,219.379,217.609,217.157,217.609"/>
+	<path style="fill:#556080;" d="M336.21,336.662c-2.222,0-4.443-0.85-6.135-2.543l-33.141-33.141c-3.393-3.393-3.393-8.886,0-12.271c3.384-3.393,8.878-3.393,12.271,0l33.141,33.141c3.393,3.393,3.393,8.878,0,12.271C340.654,335.811,338.432,336.662,336.21,336.662"/>
+</g>
+<g>
+	<polygon style="fill:#F3D55B;" points="168.066,208.931 0,130.169 100.612,55.478 247.886,129.111 	"/>
+	<polygon style="fill:#F3D55B;" points="382.881,264.114 456.565,411.336 382.837,512 315.331,356.204 	"/>
+</g>
+<g>
+	<polygon style="fill:#E6E7E8;" points="247.886,350.017 161.974,264.114 266.249,159.848 352.204,245.699 	"/>
+	<path style="fill:#E6E7E8;" d="M333.746,186.932c-2.222,0-4.443-0.85-6.135-2.543c-3.393-3.393-3.393-8.878,0-12.271l30.729-30.729c3.393-3.393,8.878-3.393,12.271,0c3.393,3.393,3.393,8.878,0,12.271l-30.729,30.729C338.189,186.082,335.967,186.932,333.746,186.932"/>
+</g>
+<path style="fill:#556080;" d="M376.745,159.796c-6.777,6.777-17.764,6.777-24.541,0s-6.777-17.764,0-24.541s17.764-6.777,24.541,0C383.523,142.032,383.523,153.019,376.745,159.796"/>
+<g>
+	<path style="fill:#E6E7E8;" d="M503.322,156.203c-4.799,0-8.678-3.879-8.678-8.678c0-71.775-58.394-130.169-130.169-130.169c-4.79,0-8.678-3.879-8.678-8.678S359.684,0,364.475,0C445.822,0,512,66.178,512,147.525C512,152.324,508.121,156.203,503.322,156.203"/>
+	<path style="fill:#E6E7E8;" d="M459.932,156.203c-4.799,0-8.678-3.879-8.678-8.678c0-47.85-38.929-86.78-86.78-86.78c-4.79,0-8.678-3.879-8.678-8.678s3.888-8.678,8.678-8.678c57.422,0,104.136,46.713,104.136,104.136C468.61,152.324,464.731,156.203,459.932,156.203"/>
+	<path style="fill:#E6E7E8;" d="M416.542,156.203c-4.799,0-8.678-3.879-8.678-8.678c0-23.925-19.465-43.39-43.39-43.39c-4.79,0-8.678-3.879-8.678-8.678s3.888-8.678,8.678-8.678c33.497,0,60.746,27.257,60.746,60.746C425.22,152.324,421.341,156.203,416.542,156.203"/>
+</g>
+<g>
+	<path style="fill:#556080;" d="M217.157,270.293c-3.393,3.393-8.886,3.393-12.271,0c-3.393-3.393-3.393-8.886,0-12.271c3.384-3.393,8.878-3.393,12.271,0C220.551,261.415,220.551,266.908,217.157,270.293"/>
+	<path style="fill:#556080;" d="M241.699,245.751c-3.393,3.393-8.886,3.393-12.271,0c-3.393-3.393-3.393-8.886,0-12.271c3.384-3.393,8.878-3.393,12.271,0C245.092,236.865,245.092,242.358,241.699,245.751"/>
+	<path style="fill:#556080;" d="M266.249,221.21c-3.393,3.393-8.886,3.393-12.271,0c-3.393-3.393-3.393-8.886,0-12.271c3.384-3.393,8.878-3.393,12.271,0C269.642,212.324,269.642,217.817,266.249,221.21"/>
+	<polygon style="fill:#556080;" points="211.022,362.34 149.66,300.978 174.201,276.437 235.563,337.798 	"/>
+	<polygon style="fill:#556080;" points="339.881,233.481 278.519,172.119 303.061,147.577 364.423,208.939 	"/>
+</g>
+</svg> Satelliten-Ansicht (Fahrbahn-Kontext)
                         </div>
                         <iframe id="overlay-satellite-iframe" width="100%" height="160" frameborder="0" style="border:0; border-radius: 10px;" allowfullscreen></iframe>
                     </div>
@@ -304,10 +696,18 @@
                     <!-- Multi-Action Buttons -->
                     <div class="overlay-actions margin-top-sm">
                         <a id="overlay-direction-link" href="#" target="_blank" class="btn btn-primary btn-sm btn-half">
-                            <img src="assets/ui/gmaps_badge.png" class="btn-img-icon" alt="Gmaps"> Google Maps
+                            <svg class="btn-svg btn-svg-detailed" viewBox="-55.5 0 367 367" aria-hidden="true">
+<g>
+<path d="M70.5853976,271.865254 C81.1995596,285.391378 90.8598594,299.639537 99.4963338,314.50654 C106.870174,328.489419 109.94381,337.97007 115.333495,354.817346 C118.638014,364.124835 121.625069,366.902652 128.046515,366.902652 C135.045169,366.902652 138.219816,362.176756 140.672953,354.867852 C145.766819,338.95854 149.763988,326.815514 156.069992,315.343493 C168.443902,293.193112 183.819296,273.510299 198.927732,254.592287 C203.018698,249.238677 229.462067,218.047767 241.366994,193.437035 C241.366994,193.437035 255.999233,166.402027 255.999233,128.645368 C255.999233,93.3274168 241.569017,68.8321265 241.569017,68.8321265 L200.024428,79.9578224 L174.793197,146.408963 L168.552129,155.57215 L167.303915,157.231625 L165.64444,159.309576 L162.729537,162.628525 L158.56642,166.791642 L136.098575,185.09637 L79.928962,217.528279 L70.5853976,271.865254 Z" fill="#34A853"/>
+<path d="M12.6120081,188.891517 C26.3207125,220.205084 52.7568668,247.730719 70.6431185,271.8869 L165.64444,159.352866 C165.64444,159.352866 152.260416,176.856717 127.981579,176.856717 C100.939355,176.856717 79.0920095,155.2619 79.0920095,128.032084 C79.0920095,109.359386 90.325932,96.5309245 90.325932,96.5309245 L25.8373003,113.811107 L12.6120081,188.891517 Z" fill="#FBBC04"/>
+<path d="M166.705061,5.78651629 C198.256727,15.959818 225.262874,37.3165365 241.597878,68.8104812 L165.673301,159.28793 C165.673301,159.28793 176.907223,146.228586 176.907223,127.671329 C176.907223,99.8065834 153.443693,78.990998 128.09702,78.990998 C104.128433,78.990998 90.3620076,96.4659886 90.3620076,96.4659886 L90.3620076,39.4666386 L166.705061,5.78651629 Z" fill="#4285F4"/>
+<path d="M30.0148476,45.7654275 C48.8607087,23.2182162 82.0213432,0 127.736265,0 C149.915506,0 166.625695,5.82259183 166.625695,5.82259183 L90.2898565,96.5164943 L36.2054099,96.5164943 L30.0148476,45.7654275 Z" fill="#1A73E8"/>
+<path d="M12.6120081,188.891517 C12.6120081,188.891517 0,164.194204 0,128.414485 C0,94.5972757 13.145926,65.0369799 30.0148476,45.7654275 L90.3331471,96.5237094 L12.6120081,188.891517 Z" fill="#EA4335"/>
+</g>
+</svg> Google Maps
                         </a>
                         <a id="overlay-streetview-link" href="#" target="_blank" class="btn btn-secondary btn-sm btn-half">
-                            <img src="assets/ui/streetview_badge.png" class="btn-img-icon" alt="Streetview"> Street View
+                            <svg class="btn-svg btn-svg-detailed" viewBox="0 0 1024 1024" aria-hidden="true"><path d="M128 800a384 138.666667 0 1 0 768 0 384 138.666667 0 1 0-768 0Z" fill="#90CAF9" /><path d="M512 256c-47.061333 0-85.333333-38.272-85.333333-85.333333s38.272-85.333333 85.333333-85.333334 85.333333 38.272 85.333333 85.333334-38.272 85.333333-85.333333 85.333333" fill="#FFB74D" /><path d="M362.666667 448v106.666667l56 37.333333L437.333333 832h149.333334l18.666666-240L661.333333 554.666667v-106.666667a149.333333 149.333333 0 0 0-298.666666 0" fill="#455A64" /></svg> Street View
                         </a>
                     </div>
                 </div>
@@ -331,7 +731,7 @@
     <div id="onboarding-backdrop" class="onboarding-backdrop hidden"></div>
     <div id="onboarding-highlight" class="onboarding-highlight hidden"></div>
     
-    <div id="onboarding-card" class="onboarding-card card-glass tour-hidden" role="dialog" aria-labelledby="tour-step-title">
+    <div id="onboarding-card" class="onboarding-card tour-hidden" role="dialog" aria-labelledby="tour-step-title">
         <button class="tour-close-btn" id="tour-close-btn" aria-label="Tour beenden">&times;</button>
         <div class="tour-card-body">
             <h4 class="tour-step-title" id="tour-step-title">Schritt-Titel</h4>
@@ -352,7 +752,7 @@
     </div>
 
     <!-- Welcome Onboarding Toast -->
-    <div id="welcome-onboarding-toast" class="welcome-onboarding-toast card-glass hidden">
+    <div id="welcome-onboarding-toast" class="welcome-onboarding-toast hidden">
         <div class="welcome-toast-header">
             <span class="welcome-toast-title">👋 Willkommen beim Rad-Verbesserer!</span>
             <button class="welcome-toast-close" id="welcome-toast-close-btn" aria-label="Schließen">&times;</button>
