@@ -319,17 +319,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/2127571b-1e3b-4a06-96aa-32404d44b2f8_1747127859227_flaw_reporter_report_picture.png"
   },
   {
-    "id": 144,
-    "createdAt": "2025-01-12T20:59:46.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1057,
-    "longitude": 8.2069,
-    "replacingText": "Die nächtliche Beleuchtung des Sperrbalkens, stadteinwärts, leuchtet im linken Bereich überhaupt nicht oder so schwach, dass er nicht zu erkennen ist.",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 145,
     "createdAt": "2025-01-13T11:37:39.000+00:00",
     "state": "IN_PROCESS",
@@ -528,17 +517,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 256,
-    "createdAt": "2025-01-23T13:06:43.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1285,
-    "longitude": 8.2252,
-    "replacingText": "Vor dem Haus Schützenhofstr. 19 ist ein Verkehrsschild \"Baustelle\" umgefallen und liegt auf dem Fußweg.",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 258,
     "createdAt": "2025-01-23T13:39:04.000+00:00",
     "state": "IN_PROCESS",
@@ -592,17 +570,6 @@
     "longitude": 8.2098,
     "replacingText": "An dieser Stelle befindet sich ein größeres Schlagloch, oder ein abgesackter Gullideckel.",
     "firstPictureUrl": ""
-  },
-  {
-    "id": 321,
-    "createdAt": "2025-01-25T20:06:50.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 6,
-    "categoryName": "Ampel 🚦 ",
-    "latitude": 53.1461,
-    "longitude": 8.2137,
-    "replacingText": "Aufkleber verdeckt Ampel. Bitte entfernen. Dankeschön 🙏",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/d9980bdc-109a-4cb3-a67e-7501bb9cc91e_1747127901974_flaw_reporter_report_picture.png"
   },
   {
     "id": 335,
@@ -1342,39 +1309,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 650,
-    "createdAt": "2025-02-28T17:45:03.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1625,
-    "longitude": 8.1914,
-    "replacingText": "Ampelmast vollgeklebt mit Fußball / VfB Sticker",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/1b665920-c4f9-4b07-8d1c-cacc12c77e42_1747127975446_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 651,
-    "createdAt": "2025-02-28T17:46:01.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1577,
-    "longitude": 8.1969,
-    "replacingText": "Graffiti vom VfB",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/05a563a6-1bff-42fb-b6c9-e9d859af859d_1747127975704_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 653,
-    "createdAt": "2025-02-28T17:49:03.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1332,
-    "longitude": 8.2194,
-    "replacingText": "Fußball Kleber bei der blauen Behilfsbrücke",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/037188fd-3482-4972-86ca-2053dbecb959_1747127976224_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 665,
     "createdAt": "2025-03-03T10:34:05.000+00:00",
     "state": "IN_PROCESS",
@@ -1485,17 +1419,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 718,
-    "createdAt": "2025-03-10T13:06:35.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1375,
-    "longitude": 8.2237,
-    "replacingText": "siehe Foto, nicht mehr lesbares Hinweisschild",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/c4e78d39-7dd0-4da6-9bf9-78ffa29c525e_1747127990315_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 723,
     "createdAt": "2025-03-11T08:26:22.000+00:00",
     "state": "IN_PROCESS",
@@ -1582,17 +1505,6 @@
     "longitude": 8.2122,
     "replacingText": "Der Fußweg ist mittlerweile so beschädigt,  dass Sturz- und Verletzungsgefahr besteht.",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/29fa0426-4afb-422e-8060-9aa2c6562b39_1747127996844_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 758,
-    "createdAt": "2025-03-15T14:47:12.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.181,
-    "longitude": 8.2679,
-    "replacingText": "Siehe Foto, umgefahrenes Schild",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/0d8390ac-4578-47ce-8de3-b28080d48666_1747127997989_flaw_reporter_report_picture.png"
   },
   {
     "id": 760,
@@ -1782,39 +1694,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 846,
-    "createdAt": "2025-03-25T04:26:12.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1265,
-    "longitude": 8.2134,
-    "replacingText": "Niedersachsendamm zwischen Achterdiek und Cloppenburger Straße in beiden Fahrtrichtungen mehrere verschmutze Straßenschilder",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 847,
-    "createdAt": "2025-03-25T04:31:24.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 3,
-    "categoryName": "Straßen  🚧 ",
-    "latitude": 53.1412,
-    "longitude": 8.1653,
-    "replacingText": "Zwischen Thomas-Dehler-Straße und Theodor-Heuss-Straße im Bereich der Verkehrsberuhigung wurde ein Zebrastreifen auf die Fahrbahn gemalt.",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 848,
-    "createdAt": "2025-03-25T06:28:03.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 3,
-    "categoryName": "Straßen  🚧 ",
-    "latitude": 53.1412,
-    "longitude": 8.1653,
-    "replacingText": "Ein selbst gemalte Fußgängerüberquerung im Bereich des Kindergarten, Höhe Verkehrsinsel",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 851,
     "createdAt": "2025-03-25T10:30:17.000+00:00",
     "state": "IN_PROCESS",
@@ -1823,17 +1702,6 @@
     "latitude": 53.1974,
     "longitude": 8.2401,
     "replacingText": "Bürgersteig Hopfenweg Ecke Hoppenriekels\r\nAuf dem Steig stehen einige Pflastersteine hoch.\r\nIch bin bei Dunkelheit dort gestolpert und gefallen. \r\nKörperlicher Schaden: kleinere Hautabschürfungen.",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 859,
-    "createdAt": "2025-03-25T21:50:57.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1613,
-    "longitude": 8.2492,
-    "replacingText": "Wenn man übern Pferdemarkt fährt und dann auf die L 865 und Richtung Donnerschweer Str. wechselt, da ist links auf der Rasenfläche das Schild verbogen!\r\nMuß erneuert werden!",
     "firstPictureUrl": ""
   },
   {
@@ -1991,17 +1859,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 924,
-    "createdAt": "2025-04-02T12:23:27.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1145,
-    "longitude": 8.261,
-    "replacingText": "Der Wendehammer am Ende der Schütte-Lanz-Straße ist häufiger zugeparkt so dass Lkw und Busse nicht mehr wenden können, ein Halteverbotsschild ist auch nicht mehr vorhanden...",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 926,
     "createdAt": "2025-04-02T13:30:42.000+00:00",
     "state": "IN_PROCESS",
@@ -2077,28 +1934,6 @@
     "longitude": 8.147,
     "replacingText": "Ergänzung bzw. Nachfrge zu ID: 15267 22.01.2025\r\nDie Eichen sehen mit dem gekappten Efeu erbärmlich aus! Die Straße ist voll mit vertrocknetem Efeulaub! Im Efeu wird derzeit von keiner Vogelart mehr genistet! Soll das so bleiben? Eine klimafreundliche Stadt, die sich für Straßengrün öffentlich stark macht, geht so brutal nutzbringendes Efeu vor! Warum muß das sein, frage nicht nur ich mich!\r\nWer hat diesen Frevel zu verantworten?",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/b8812607-b593-47b7-bcad-974f8297989b_1747128044051_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 964,
-    "createdAt": "2025-04-09T10:58:23.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1724,
-    "longitude": 8.1978,
-    "replacingText": "Siehe Foto, umgefahrenes Schild, Banater Weg Ecke Königsberger Str.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/93ddbd07-2e91-4a42-80e5-450e25b74e7a_1747128046705_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 968,
-    "createdAt": "2025-04-09T19:16:09.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 3,
-    "categoryName": "Straßen  🚧 ",
-    "latitude": 53.1288,
-    "longitude": 8.2255,
-    "replacingText": "Auf dem Gehweg gegenüber der Feuerwehr Schürzhofstrasse liegen die beiden Blöcke",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/c848681c-535c-4006-8f89-a919a3b3bab5_1747128047824_flaw_reporter_report_picture.png"
   },
   {
     "id": 971,
@@ -2288,28 +2123,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/f5532365-cc89-4e1c-ac27-7e64c54daa17_1747128059162_flaw_reporter_report_picture.png"
   },
   {
-    "id": 1035,
-    "createdAt": "2025-04-18T11:45:26.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 3,
-    "categoryName": "Straßen  🚧 ",
-    "latitude": 53.1784,
-    "longitude": 8.2256,
-    "replacingText": "VZ beklebt und Sperrpoller entfernt. Absperrung nicht mehr reflektierend.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/3f4a5b66-e5ce-4cab-aa0e-f7e01314292d_1747128060961_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 1037,
-    "createdAt": "2025-04-18T15:27:11.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.0924,
-    "longitude": 8.2398,
-    "replacingText": "Das Spielstraßen-Schild wurde beschmiert.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/2ed7ceee-1f84-4ca8-867e-1d9c9710206f_1747128061229_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 1040,
     "createdAt": "2025-04-18T16:21:40.000+00:00",
     "state": "IN_PROCESS",
@@ -2376,17 +2189,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 1086,
-    "createdAt": "2025-04-24T18:00:06.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1859,
-    "longitude": 8.2017,
-    "replacingText": "Wenn man aus dem Kreisel her einfährt, sind rechts die Vorfahrt Schilder  verdreckt, Teil verbogen und 1 steht verdeckt hinterm Bushaltestellen Häuschen!\r\nMuss gereinigt, erneuert und versetzt werden!",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 1089,
     "createdAt": "2025-04-25T06:18:16.000+00:00",
     "state": "OPEN",
@@ -2409,17 +2211,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 1093,
-    "createdAt": "2025-04-25T14:42:01.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 10,
-    "categoryName": "Privates Grün an Straßen 🌲",
-    "latitude": 53.1379,
-    "longitude": 8.2368,
-    "replacingText": "Straßenabsperrung und dazugehörige \"Füße\" liegen stadteinwärts direkt hinter den Gleisen nach Bremen.  Nicht erst seit gestern. WRe schön, wenn sie die dort rausholen und gleich ein wenig den Ort von Müll befreien.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/75119953-baa3-41cc-8474-b8a54da6748b_1747128074684_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 1094,
     "createdAt": "2025-04-25T15:33:50.000+00:00",
     "state": "IN_PROCESS",
@@ -2431,17 +2222,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 1099,
-    "createdAt": "2025-04-27T09:41:43.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1275,
-    "longitude": 8.2175,
-    "replacingText": "STRAßENNAMENSSCHILD  ist durch massiven Grünspan nicht mehr lesbar.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/73dfa3e3-01bb-4101-b06a-973f3533f1d3_1747128075977_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 1102,
     "createdAt": "2025-04-27T17:35:22.000+00:00",
     "state": "IN_PROCESS",
@@ -2451,17 +2231,6 @@
     "longitude": 8.1799,
     "replacingText": "Das Straßenschild an der Einmündung zum Kuckucksnest ist völlig von einem Busch zugewuchert und nicht lesbar..",
     "firstPictureUrl": ""
-  },
-  {
-    "id": 1109,
-    "createdAt": "2025-04-28T16:58:14.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 3,
-    "categoryName": "Straßen  🚧 ",
-    "latitude": 53.1544,
-    "longitude": 8.1922,
-    "replacingText": "Der Betonpoller an der Straße wurde umgefallen.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/5c6d7ce0-cd4b-49d6-8124-612ecf3c8a9f_1747128077996_flaw_reporter_report_picture.png"
   },
   {
     "id": 1110,
@@ -2560,17 +2329,6 @@
     "latitude": 53.1654,
     "longitude": 8.1811,
     "replacingText": "Der gesamte Brookweg ist nur mit Schlaglöchern übersät! Die bisschen Ausbesserungen sind nitzli",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 1142,
-    "createdAt": "2025-05-04T17:07:29.000+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 4,
-    "categoryName": "Verkehrszeichen ⚠️  ",
-    "latitude": 53.1693,
-    "longitude": 8.275,
-    "replacingText": "Wenn man aus Oldenburg  raus nach Moorriem fährt, ist links das Dreiecke Schild verbogen und Schief!\r\nMuss erneuert werden und der Pfal gerichtet werden!",
     "firstPictureUrl": ""
   },
   {
@@ -2981,17 +2739,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 3528,
-    "createdAt": "2025-10-02T09:26:15.725+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 3,
-    "categoryName": "Straßen  🚧 ",
-    "latitude": 53.143344,
-    "longitude": 8.2069042,
-    "replacingText": "Klasse, dass die Katharinenstraße eine richtige Fahrradstraße wird!\r\nVielen, vielen Dank!",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 3617,
     "createdAt": "2025-10-09T00:01:28.935+00:00",
     "state": "IN_PROCESS",
@@ -3000,17 +2747,6 @@
     "latitude": 53.1360534,
     "longitude": 8.164782,
     "replacingText": "Ein Umgestürzter Baum liegt auf dem Radweg beim Spielplatz am Kennedyteich in richtung der Unterführung",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 3731,
-    "createdAt": "2025-10-16T18:56:20.443+00:00",
-    "state": "IN_PROCESS",
-    "categoryId": 3,
-    "categoryName": "Straßen  🚧 ",
-    "latitude": 53.1592389,
-    "longitude": 8.21421678984126,
-    "replacingText": "\"Gehweg\" wurde neu gemacht, die Betonpöller aber leider nicht korrekt im Boden befestigt (nicht verdichtet). Pöller sind instabil und kippen teilweise schon um. Können für Tiere und Kinder auf Grund des Gewichts gefährliche Situationen verursachen.",
     "firstPictureUrl": ""
   },
   {
@@ -4378,17 +4114,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 6807,
-    "createdAt": "2026-04-23T17:12:11.186+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.15860209151557,
-    "longitude": 8.220874071121218,
-    "replacingText": "Auf dem Gehweg neben der Arabischen Schule ist mal wieder eine wilde Müllkippe mit Sperrmüll. Vielen Dank fürs Kümmern. LG",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/cb40db92-26a6-41bc-b739-7867a9f55a0c_1776964331187_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 6808,
     "createdAt": "2026-04-23T20:17:17.417+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -4686,17 +4411,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/b73d9469-9318-4f3c-af31-e637a2445b2b_1777536998741_flaw_reporter_report_picture.png"
   },
   {
-    "id": 6895,
-    "createdAt": "2026-04-30T09:03:30.466+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.141594,
-    "longitude": 8.217504,
-    "replacingText": "In der Gottopstraße vor der Hausnummer 6 liegt eine Matratze seit Tagen",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 6896,
     "createdAt": "2026-04-30T09:18:03.727+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -4717,17 +4431,6 @@
     "longitude": 8.231992363921565,
     "replacingText": "Der Seitenstreifen neben der Fahrbahn sackt im Bereich der Flötenstraße 50 ab. Parkende Fahrzeuge sorgen dafür, dass die Grabenwand stark absackt und dass Versorgungsleitungen freigelegt werden, siehe Fotos. \r\nEs besteht das Risiko, dass die Anschlüsse z.B. für Frisch-/Löschwasser nicht mehr genutzt werden können.\r\nSinnvoll wäre es, Findlinge wie auf der gegenüberliegenden Straßenseite zu verlegen. Alternativ könnte die Fläche auch wie früher begrünt werden. Nach den Baumaßnahmen der letzten Jahre liegt die Fläche zu einem großen Teil brach und wurde bislang nicht erneut bepflanzt.",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/228266e5-fd6f-48fa-8341-fcf80541dfc4_1777586333154_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 6902,
-    "createdAt": "2026-05-01T06:22:36.661+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.15859580145405,
-    "longitude": 8.220906257629396,
-    "replacingText": "Hier an der Ecke Nadorster/Friesenstraße liegt immer noch Sperrmüll. Ich habe es letzte Woch schon einmal gemeldet, bislang hat sich nichts getan. LG",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/e4373788-9cc3-4350-a301-fb8a12b614c9_1777616556663_flaw_reporter_report_picture.png"
   },
   {
     "id": 6904,
@@ -4752,17 +4455,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 6906,
-    "createdAt": "2026-05-02T04:57:46.807+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.169593441585434,
-    "longitude": 8.269363045692446,
-    "replacingText": "Hallo, unter der A29- Brücke liegt seit mehreren Tagen ein Altreifen von einem PKW, den jemand dort abgelegt hat. \r\nIch würde mich freuen wenn Sie den abholen könnten.\r\n\r\nVG ",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 6908,
     "createdAt": "2026-05-02T17:55:38.285+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -4772,39 +4464,6 @@
     "longitude": 8.213952,
     "replacingText": "Wenn man am Vapiano dran lang ist, ust ein Stein der Fehlt und in der Sradt vorm Restaurant fehlen 2 und Rest ist zu hoch!\r\n\r\nDas sind beides starke  Gefahren. \r\n\r\nDas muß  umgehend gemacht werden!",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/4e1f9cb2-9b12-4b69-b713-958485657950_1777744538286_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 6909,
-    "createdAt": "2026-05-03T11:36:40.047+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.10673835971942,
-    "longitude": 8.230833435357916,
-    "replacingText": "Wilde Müllkippe",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/77c91d43-3783-4bdd-bcd3-2a1a712e8a4e_1777808200048_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 6911,
-    "createdAt": "2026-05-03T14:29:01.224+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.17505484656461,
-    "longitude": 8.230107307417713,
-    "replacingText": "Müll im Graben an der Wilhelmshavener Heerstraße höhe Bushaltestelle Triftweg. ",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/eccfc3fb-4e28-4652-a2e7-5f7aaf0525b2_1777818541226_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 6912,
-    "createdAt": "2026-05-03T14:32:03.554+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.171178,
-    "longitude": 8.241906,
-    "replacingText": "Wilde Müllkippe an der Einfahrt zum Parkplatz zur Kleingartensiedlung.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/55822608-3fa6-42e2-a6b3-1dfddbeace07_1777818723554_flaw_reporter_report_picture.png"
   },
   {
     "id": 6915,
@@ -4829,17 +4488,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 6917,
-    "createdAt": "2026-05-04T07:13:13.732+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.111022,
-    "longitude": 8.21152,
-    "replacingText": "Müll hinter der Litfaßsäule",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/92d4a248-56d9-4a96-a810-a141a909f3fc_1777878793733_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 6918,
     "createdAt": "2026-05-04T07:15:12.954+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -4862,17 +4510,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/e072b7e3-4f33-4930-9b28-4246b597a754_1777879743744_flaw_reporter_report_picture.png"
   },
   {
-    "id": 6920,
-    "createdAt": "2026-05-04T07:30:18.161+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.11404,
-    "longitude": 8.213714,
-    "replacingText": "Müll abgeladen",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/f51330f0-cdda-451d-94d2-8bb8e30cfed4_1777879818162_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 6922,
     "createdAt": "2026-05-04T09:31:53.630+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -4882,17 +4519,6 @@
     "longitude": 8.223671,
     "replacingText": "Gesamter Bakenhusweg mit tiefen Schlaglöcher überseht.\r\nBesonders gefährend für Radfahrer,\r\nDa diese Strasse auch von sehr vielen Schulkindern auf dem Weg zur Bümmersteder Grundschule benutzt wird",
     "firstPictureUrl": ""
-  },
-  {
-    "id": 6932,
-    "createdAt": "2026-05-04T13:30:15.352+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.12251714260379,
-    "longitude": 8.252191543579103,
-    "replacingText": "Schandfleck ",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/72a96a72-74de-4e61-a12e-fb56848bd6e2_1777901415353_flaw_reporter_report_picture.png"
   },
   {
     "id": 6937,
@@ -4928,17 +4554,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/4f719b25-b619-4122-9378-2078df21d3da_1777911938163_flaw_reporter_report_picture.png"
   },
   {
-    "id": 6949,
-    "createdAt": "2026-05-04T18:09:57.863+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.121082,
-    "longitude": 8.216785,
-    "replacingText": "Sperrmüll",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/df15a62f-e22f-40df-a4e7-e586ac85e6bd_1777918197863_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 6951,
     "createdAt": "2026-05-05T05:33:33.817+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -4948,6 +4563,17 @@
     "longitude": 8.250238895416262,
     "replacingText": "Ein Privater Anhänger Blockiert seit längeren Öffentliche Parkplätze \r\nDie Parkplätze sind in der Straße schon sehr begrenzt ",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/f6ab8e9f-868e-48f4-8cfc-7e84886031a7_1777959213817_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 6953,
+    "createdAt": "2026-05-05T06:09:21.988+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 11,
+    "categoryName": "Öffentliches Grün, Parkanlagen 🌲",
+    "latitude": 53.145914493330956,
+    "longitude": 8.14832844771445,
+    "replacingText": "Zwischen Straße und Gehweg wurde offenbar ein Maschendrahtzaun errichtet, vermutlich durch eine Privatperson, obwohl es sich um öffentlichen Raum handelt.\r\nEs wurde bereits beobachtet, dass sich Tiere in dem Zaun verfangen haben. Dadurch besteht eine konkrete Gefährdung für Tiere, möglicherweise auch für Fußgänger.\r\nEs wird um Überprüfung der Situation und ggf. um Entfernung bzw. Sicherung des Zauns gebeten.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/9d5fb5d5-aefa-4119-aafb-a18d91701033_1777961361989_flaw_reporter_report_picture.png"
   },
   {
     "id": 6954,
@@ -5093,39 +4719,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/b57fd1e9-957a-49cb-b12f-3b47ec210ee7_1778064043369_flaw_reporter_report_picture.png"
   },
   {
-    "id": 6983,
-    "createdAt": "2026-05-06T14:34:38.174+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.123486753695126,
-    "longitude": 8.22953760623932,
-    "replacingText": "Wilde Müllkippe unter der Autobahnbrücke ",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/bc45e94b-40ab-4a9e-b872-6422f7133d63_1778078078174_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 6984,
-    "createdAt": "2026-05-06T14:37:33.683+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.186562,
-    "longitude": 8.205152,
-    "replacingText": "Hallo,\r\neure nette Kollegin von der Tefonzentrale hat mich auf diesen Dienst aufmerksam gemacht. An der angegebenen Adresse liegt eine alte Matratze. \r\nKönnt ihr die bitte abholen?\r\n\r\nDanke und Gruß \r\nMarcus Pohl ",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/764a1dff-7086-4c95-abb2-c9da6593ccf9_1778078253684_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 6985,
-    "createdAt": "2026-05-06T14:45:00.587+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.11947443709855,
-    "longitude": 8.223529458045961,
-    "replacingText": "Wilde Müllkippe im Wendekreis, Straße zum Utkiek, Höhe Yesidenzentrum",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/c4f69f76-c3e9-4787-8d27-2339d2ad7b8b_1778078700588_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 6986,
     "createdAt": "2026-05-06T14:56:53.385+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -5145,17 +4738,6 @@
     "latitude": 53.13349390962655,
     "longitude": 8.199211844931435,
     "replacingText": "Ich liebe die Tempo 30! Es ist so viel ruhiger, man kann sich sogar mal draußen hinsetzen bei der Eismanufaktur ohne durchzudrehen 🍨\r\nWenn man Wünsche für weitere Abschnitte äußern darf und 'ganzes Stadtgebiet' zu unpräzise ist: Bloherfelder Str. von der Kennedy bis Übergang Eichenstraße (oder direkt durch bis zur Hauptstraße?)",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 6993,
-    "createdAt": "2026-05-06T20:16:34.006+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.139308526941264,
-    "longitude": 8.1883442401886,
-    "replacingText": "Hallo,\r\n\r\nbei der Gneisenaustrasse 20 ist mal wieder eine wilde Müllhalde. Es wäre schön, wenn diese entfernt werden könnte und dort mehr kontrolliert und aufgeklärt wird.\r\n\r\nDanke übrigens für die heutige Entfernung der wilden Müllhalde Ecke Gardelerweg/Huntemannstrasse!\r\n\r\nFreundliche Grüße\r\nAlexander Linnemann",
     "firstPictureUrl": ""
   },
   {
@@ -5203,17 +4785,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 7011,
-    "createdAt": "2026-05-07T17:51:51.008+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.1434204488346,
-    "longitude": 8.23131322860718,
-    "replacingText": "Illegale Schadstoffentsorgung\r\n\r\nMaastrichter Str./ Einfahrt Betriebsgelände der Bahn\r\n\r\nDort steht ein durchsichtiger 5L Kanister mit schwarzem Inhalt. Vermutlich Altöl oder so.\r\n",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/a385e997-0bed-4eff-9f7f-9cac84748f08_1778176311009_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 7021,
     "createdAt": "2026-05-08T12:09:13.536+00:00",
     "state": "IN_PROCESS",
@@ -5233,28 +4804,6 @@
     "latitude": 53.145161,
     "longitude": 8.212668,
     "replacingText": "Moin,\r\ndie Sportbox an der 91er Straße wird wirklich gut angenommen und es macht viel Spaß die Sachen zu nutzen. \r\nLeider sind einige der Dinge inzwischen nicht mehr nutzbar. Vielleicht könnten diese ausgewechselt werden?\r\nDanke!\r\nViele Grüße \r\nLaura Hillen ",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 7029,
-    "createdAt": "2026-05-09T15:34:26.567+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.158719,
-    "longitude": 8.226168,
-    "replacingText": "In der Bushaltestelle  Niendorfer Weg  Richtung Mühlenhofsweg liegt ein Schrott Holzregal\r\nBitte aufräumen. \r\nZudem diverse Kippen und Eisstiele\r\nEinmal durchfegen..\r\n\r\n",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/2287e1e4-3f3a-414b-a944-2f8543e8ab28_1778340866569_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 7034,
-    "createdAt": "2026-05-10T17:14:28.479+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.170732717151715,
-    "longitude": 8.247148990631105,
-    "replacingText": "Wilder Müll auf dem Parkplatz abgeladen",
     "firstPictureUrl": ""
   },
   {
@@ -5278,17 +4827,6 @@
     "longitude": 8.205767869949343,
     "replacingText": "Ich hatte diesen Mangel bereits gemeldet, scheinbar ist er verloren gegangen:\r\n\r\nDie Ampelschaltung ist in der aktuellen Form gefährlich. Die Autos, die von der Autobahn kommen und rechts abbiegen übersehen oft die zweite Ampel. Insbesondere betrifft das die Autos, die \"noch eben schnell\" bei gelb die erste Ampel (Rechtsabbieger-Ampel) passieren und dann bei rot die Fußgängerampel mit hoher Geschwindigkeit überfahren. Insbesondere da sich die Ampel am BTB und der Freizeitstätte befindet ist die Gefahrenlage (aufgrund vieler Kinder) besonders hoch. Ich überquere diese Ampel täglich 2x und sehe ständig fast-Unfälle.\r\nLösungsidee: die Rechtsabbiegerampel 2-3 Sekunden früher rot werden lassen, sodass die Autos, die bei gelb abbiegen auch maximal bei gelb und nicht bei rot die Fußgängerampel überfahren.\r\n",
     "firstPictureUrl": ""
-  },
-  {
-    "id": 7047,
-    "createdAt": "2026-05-11T09:28:18.536+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.152665,
-    "longitude": 8.219086,
-    "replacingText": "Es wurde Müll über den gesamten Bürgersteig verteilt abgestellt. Die verstreuten Teile wurden bereits auf die Seite geschoben, sodass der Bürgersteig begehbar bleibt und man nicht auf die Straße ausweichen muss.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/9a9c41cf-ffd3-4d17-9f66-177db1c93350_1778491698537_flaw_reporter_report_picture.png"
   },
   {
     "id": 7052,
@@ -5321,28 +4859,6 @@
     "latitude": 53.13349327744849,
     "longitude": 8.186901255730758,
     "replacingText": "Vor dem Neubau (Hauptstraße 121) ist die ursprüngliche Bürgersteigpflasterung noch nicht wieder hergestellt.",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 7059,
-    "createdAt": "2026-05-12T07:50:54.226+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.15250384141608,
-    "longitude": 8.219149373711188,
-    "replacingText": "Sperrmüll liegt zum wiederholten Male auf der Straße ",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/94c72647-fdcf-4d1a-a750-be2996d42e84_1778572254228_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 7061,
-    "createdAt": "2026-05-12T10:44:51.343+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.161749229565714,
-    "longitude": 8.217660784721376,
-    "replacingText": "An der Kreuzung Sachsenstraße / Rüstringerstraße steht ein großer Sessel seit Wochen.",
     "firstPictureUrl": ""
   },
   {
@@ -5456,17 +4972,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/b1f021b3-1693-4901-95bc-e61cc9fbac4a_1778673558967_flaw_reporter_report_picture.png"
   },
   {
-    "id": 7085,
-    "createdAt": "2026-05-13T13:30:27.724+00:00",
-    "state": "CLOSED",
-    "categoryId": 12,
-    "categoryName": "Danke sagen 🙏",
-    "latitude": 53.148086228200945,
-    "longitude": 8.21382522583008,
-    "replacingText": "Moin, \r\nichfinde diese Möglichkeit, Mängel in Oldenburg zu melden sehr gut.\r\nNoch besser wäre es, wenn Sie die behobenen Mängel auch entsprechend hier aktualisieren, damit man weiß, ob dies schon erledigt wurde. Außerdem würde die Karte übersichtlicher werden, wenn die erledigten Punkte wieder von de rKarte verschwinden.\r\nDerzeit stehen an manchen Ecken, an denen es immer wieder zu Meldungen kommt, schon sehr viele Pins. Dies macht die Karte recht unüberscihtlich.\r\nLeider sind auch medlen, die schon längst erledigt sind, nciht als erledigt markiert und stehen noch als \"offen\" seit teilweise mehreren Jahren.\r\nVielen Dank, macht weiter so,\r\nbeste Grüße,\r\nLena Albers",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 7087,
     "createdAt": "2026-05-13T16:25:47.319+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -5476,28 +4981,6 @@
     "longitude": 8.224140058142565,
     "replacingText": "Wohnwagen ist seit Ostern durchgehend hier abgestellt. Wird vom Besitzer vor und zurück geschoben, damit es nicht auffällt.",
     "firstPictureUrl": ""
-  },
-  {
-    "id": 7089,
-    "createdAt": "2026-05-14T12:45:46.879+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.12336534095164,
-    "longitude": 8.256551480212629,
-    "replacingText": "Umgeschmissener, stehengelassener Farbeimer. Fußweg ist an der Stelle nicht zu benutzen.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/b7488d56-fac0-4926-8bb8-52fd5f262b46_1778762746881_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 7090,
-    "createdAt": "2026-05-14T13:48:42.516+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.138908793961036,
-    "longitude": 8.192576766014101,
-    "replacingText": "Moin,\r\n\r\nan der Ecke Vogelstange/Brakmannsweg finden sich seit mehr als einem Jahr regelmäßig illegale Müllablagerungen. Dies ist für uns in der Nachbarschaft ärgerlich, weil es nicht nur optisch stört und (Park-)Platz einnimmt, sondern auch Ungeziefer anlocken kann. Ich habe kein Patentrezept dagegen, kenne auch den Verursacher nicht, möchte aber darauf hinweisen, dass es hier ein Problem gibt.\r\n\r\nMit freundlichen Grüßen\r\nHenning K.",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/39d5f639-00dc-44e3-a2f5-04e5510460e7_1778766522517_flaw_reporter_report_picture.png"
   },
   {
     "id": 7091,
@@ -5533,28 +5016,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/579421f9-f248-4377-a244-55124ec8a907_1778772290292_flaw_reporter_report_picture.png"
   },
   {
-    "id": 7094,
-    "createdAt": "2026-05-14T19:00:01.415+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.157954273651264,
-    "longitude": 8.211969137191774,
-    "replacingText": "Dort liegt seit ca 3 Wochen ein heller, mittlerweile verdeckter grosser Teppich auf dem Bürgersteig.\r\n",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 7095,
-    "createdAt": "2026-05-14T19:03:43.715+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.15735340860112,
-    "longitude": 8.210638761520388,
-    "replacingText": "Steht seit Wochen ein gr. Bildschirm auf dem Bürgersteig ",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 7099,
     "createdAt": "2026-05-15T03:28:48.841+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -5564,17 +5025,6 @@
     "longitude": 8.252127170562746,
     "replacingText": "Illegale Abfallentsorgung an den Altkleider- und Altglascontainern unter der Autobahnbrücke Bremer Heerstraße. \r\n\r\nAm Mittwoch gegen 12:45 Uhr beobachtete ich die Fahrerin des auf dem Foto zu sehenden Fahrzeugs, wie sie einige Teller/Platten neben dem Altglascontainer abstellte. Auf meine Bitte, die im weiteren Verlauf zur Aufforderung wurde, sie möge ihren Müll wieder mitnehmen, entgegnete sie dass es \"ja vielleicht jemand anderes gebrauchen könne\" und weshalb ich daraus solch ein Problem machen würde. Mein Hinweis, dass es hier immer wieder wie auf einer Müllkippe aussieht durch Personen wie sie, ignorierte sie, woraufhin ich die beiden anhängenden Fotos machte. Nachdem ich das Foto des Fahrzeugs gemacht hatte, griff sie selber zum Handy um mich zu filmen und betonte dabei, dass sie mit der Polizei zusammenarbeiten würde.\r\nWie erwartet lag Abends gegen 22:30 Uhr wieder einmal eine beträchtliche Menge an Abfallsäcken und weiterer Müll an dieser Stelle. Das Problem an dieser Stelle ist mittlerweile bekannt, da der Abfalldienst teilweise mehrfach im Monat den dort abgelegten Unrat, auch entsorgte Lebensmittelreste die zu einem vernehrten Rattenproblem führen, dort entfernt hat/entfernen musste.\r\n\r\nMit freundlichen Grüßen \r\nHeiko Janßen ",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/472adbc0-b507-45e1-814d-62296fdf1b25_1778815728842_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 7102,
-    "createdAt": "2026-05-15T08:50:20.759+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.146804,
-    "longitude": 8.221605,
-    "replacingText": "Auf Höhe \"Neue Donnerschweer Str. 36\" Creditreform, steht ein herrenloser Einkaufswagen auf dem Fußweg. Herzlichen Dank für Ihre Bemühungen.",
-    "firstPictureUrl": ""
   },
   {
     "id": 7104,
@@ -5588,28 +5038,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/53420861-a50d-4b12-ad70-de32bca06a4f_1778856966111_flaw_reporter_report_picture.png"
   },
   {
-    "id": 7107,
-    "createdAt": "2026-05-15T19:09:50.897+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.1372328918101,
-    "longitude": 8.187485933303835,
-    "replacingText": "Hallo, \r\n\r\nbei den Glascontainern Gardeler Weg sind wieder sehr viele Müllsacke als wilde Müllhalde abgestellt worden, die nicht zum normalen Hausmüll etc. gehören. Diese müssten entfernt werden.\r\n\r\nVielen Dank.\r\nFreundliche Grüße\r\nAlexander Linnemann",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/1a78645a-93f4-4118-8273-57b5bc66ea9e_1778872190898_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 7113,
-    "createdAt": "2026-05-16T10:47:41.575+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.14992,
-    "longitude": 8.190859,
-    "replacingText": "Unrat (Wäsche und Abfall) vor dem Gebäude Grenadierweg 2, \r\nan der Seite zum Schützenweg liegen vor dem Gebäude Holzreste u. ä. ",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/a07d40ef-fde6-432b-8be0-677b84be7602_1778928461577_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 7114,
     "createdAt": "2026-05-16T18:37:13.240+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -5619,17 +5047,6 @@
     "longitude": 8.237653,
     "replacingText": "Wenn man von der Rennplatzstr. Einfährt ist ein großes  Schlagloch! Was  umgehend  repariert werden muss!\r\n\r\n\r\nDa das sehr gefährlich ist.\r\nDenn es ist auch dort immer dunkel wegen den Bäumen und als Fahrradfahrer muss man die Str. nutzen . Und auch für motorisierte geht das gar nicht!",
     "firstPictureUrl": ""
-  },
-  {
-    "id": 7117,
-    "createdAt": "2026-05-17T11:12:32.595+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.158663,
-    "longitude": 8.220374,
-    "replacingText": "Über viele Monate wird in der Friesenstraße immer wieder illegaler Sperrmüll von einer Familie aus dem Mietshaus Nadorsterstr 171 entsorgt. Auch vor dem Mietshaus sammelt sich teilweise der Müll, der Ratten anzieht. \r\nIm Moment befindet sich vor der Hecke des Hauses Friesenstraße 6 Sperrmüll in Form eines Sofas und einer Matratze. Ich füge Fotos bei, die außerdem den Müll der letzten Monate zeigt. Dieser wurde jedoch schon entsorgt. ",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/e53222de-b76c-4e85-bca4-e41a4e34a205_1779016352596_flaw_reporter_report_picture.png"
   },
   {
     "id": 7118,
@@ -5654,17 +5071,6 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/ffc4ca34-0d19-4ce0-ba8c-52ce11d95f09_1779034656628_flaw_reporter_report_picture.png"
   },
   {
-    "id": 7121,
-    "createdAt": "2026-05-17T18:59:47.080+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.12262981511878,
-    "longitude": 8.253248333930971,
-    "replacingText": "Wilde Müllkippe, ständig wird dort Sperrmüll abgeladen an den Altkleiderkontainern. Wir als Anwohner möchten, dass dies unterbunden wird und die Altkleiderkontainer und der Müll dort weg kommt. Dadurch haben wir hier auch ein Rattenproblem!\r\n\r\n",
-    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/7f1e058b-d792-4fd8-92e7-2cd42bc7aa71_1779044387081_flaw_reporter_report_picture.png"
-  },
-  {
     "id": 7122,
     "createdAt": "2026-05-17T19:05:12.566+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -5676,17 +5082,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 7126,
-    "createdAt": "2026-05-18T06:23:32.523+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.147259,
-    "longitude": 8.208324,
-    "replacingText": "Auf dem Gehweg vor der Würzburger Str. 10 steht u.a. ein Kratzbaum, eine Lampe und ein Schrank.",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 7127,
     "createdAt": "2026-05-18T06:25:13.708+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -5695,28 +5090,6 @@
     "latitude": 53.172169997985236,
     "longitude": 8.194309473037722,
     "replacingText": "An der Kreuzung Alexanderstraße/ Bürgerbuschweg kommt es durch die fehlende Fahrbahnmarkierung zu gefährlichen und unübersichtlichen Situationen. ",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 7128,
-    "createdAt": "2026-05-18T06:59:12.264+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.1585429790654,
-    "longitude": 8.22032690048218,
-    "replacingText": "Müll auf dem Bürgersteig versperrt den Gehweg",
-    "firstPictureUrl": ""
-  },
-  {
-    "id": 7131,
-    "createdAt": "2026-05-18T08:08:43.425+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.13818544379448,
-    "longitude": 8.185007572174074,
-    "replacingText": "Wilde Müllkippe an den Altglascontainern und Kleidercontainern",
     "firstPictureUrl": ""
   },
   {
@@ -5775,17 +5148,6 @@
     "firstPictureUrl": ""
   },
   {
-    "id": 7145,
-    "createdAt": "2026-05-18T15:05:46.521+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.133323,
-    "longitude": 8.237351,
-    "replacingText": "Wieder mal eine wilde Müllkippe vorm Altkleidercontainer! Seit Donnerstag, 13.05. liegt eine Matratze mitten auf dem Gehweg. Inzwischen liegen auf der Matratze zwei riesengroße Bilder mit Rahmen. Daneben stehen blaue Müllsäcke. Die Benutzung des Gehweges ist durch die quer gelegte Matratze nicht mehr benutzbar. \r\n\r\nIch bitte um schnellstmögliche Beseitigung, denn erfahrungsgemäß wird mit jedem Tag mehr Müll dazu gestellt. \r\n\r\nVielen Dank. ",
-    "firstPictureUrl": ""
-  },
-  {
     "id": 7146,
     "createdAt": "2026-05-18T15:34:06.909+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -5795,17 +5157,6 @@
     "longitude": 8.237149715423586,
     "replacingText": "Straßen Schäden bitte Reparieren mit Großen Schlaglöcher.",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/a1e997cc-2f85-4def-ad83-737c9396f21b_1779118446910_flaw_reporter_report_picture.png"
-  },
-  {
-    "id": 7147,
-    "createdAt": "2026-05-18T15:39:12.272+00:00",
-    "state": "CLOSED",
-    "categoryId": 8,
-    "categoryName": "Wilde Müllkippe 🧹",
-    "latitude": 53.12289057037786,
-    "longitude": 8.25251877307892,
-    "replacingText": "Wilde Müllkippe neben den Altkleider und Glascontainern. ",
-    "firstPictureUrl": ""
   },
   {
     "id": 7151,
@@ -5883,6 +5234,17 @@
     "longitude": 8.191257119178774,
     "replacingText": "Wilde Müllkippe am Altkleider-/Altglas-Container unter der Autobahnbrücke zwischen OBI und der Tankstelle",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/5f39beaf-48c3-42b6-be56-27311a7f493e_1779187415137_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7169,
+    "createdAt": "2026-05-19T11:10:57.746+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.15185158192321,
+    "longitude": 8.199629188451896,
+    "replacingText": "Hier wird ein neues Gebäude gerade in den letzten Zügen fertiggestellt. Der Geh- und Radweg ist dort total \"eingefahren\" durch die Baustellenbelastung!!!! Ich hoffe Sie als zuständige Behörde verpflichten den Bauherren darauf den Geh- und Radweg wieder in den richtigen / ordnungsgemäßen Zustand zu bringen. Sprich \"neu\" pflastern!!",
+    "firstPictureUrl": ""
   },
   {
     "id": 7170,
@@ -6193,6 +5555,17 @@
     "firstPictureUrl": ""
   },
   {
+    "id": 7257,
+    "createdAt": "2026-05-25T12:31:28.717+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.164339,
+    "longitude": 8.209971,
+    "replacingText": "Moin, in Höhe des Hauses Hackenweg 18 wurden vor einiger Zeit arbeiten an einem Straßenabfluss am Fahrbahnrand durchgeführt. Am Ende der Arbeiten wurde auf den Gully eine Warnbarke gestellt. Diese wurde bisher nicht abgeholt und steht inzwischen auf dem Gehweg. Freundliche Grüße",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/021aa202-78f6-4382-984c-c650db7f98ab_1779712288718_flaw_reporter_report_picture.png"
+  },
+  {
     "id": 7258,
     "createdAt": "2026-05-25T12:41:32.994+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -6202,6 +5575,17 @@
     "longitude": 8.254404902450007,
     "replacingText": "An dem Weg von dem Scheibenweg zur Gerhard-Stalling-Str. ist in der Nähe Scheibenweg ein Fußballgroßes Loch mit Unterhöhlung womit mit weiterer Absackung zu rechnen ist.",
     "firstPictureUrl": ""
+  },
+  {
+    "id": 7261,
+    "createdAt": "2026-05-25T18:08:39.530+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.1056037,
+    "longitude": 8.2337439,
+    "replacingText": "Sehr geehrte Damen und Herren,\r\nim Wendekreis am  ist das Gras auf der Mittelinsel mittlerweile sehr hoch gewachsen. Zudem steht in den Rinnen und auf den Gehwegen an den Seiten viel Unkraut.\r\nIch bitte darum, die Mittelinsel zu mähen und das Unkraut auf den öffentlichen Flächen/Gehwegen zu entfernen. Ein Foto zur Verdeutlichung ist beigefügt.\r\nVielen Dank und freundliche Grüße",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/0c3ce3d4-9c48-4c59-aa18-cf1597f364bb_1779732519531_flaw_reporter_report_picture.png"
   },
   {
     "id": 7263,
@@ -6224,6 +5608,17 @@
     "longitude": 8.188800215721132,
     "replacingText": "Wilde Müllhalde s. Foto",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/aebcf845-2649-4ab6-9637-0029e22add1b_1779746995055_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7270,
+    "createdAt": "2026-05-26T07:28:45.173+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.126217,
+    "longitude": 8.256897,
+    "replacingText": "Die Tonnen vom Sandweg müssen am Grünstreifen ecke Ostweg für die Abfuhr abgestellt werden. Nun ist der Grünstreifen so uneben, dass die Tonnen in den Graben rollen. ",
+    "firstPictureUrl": ""
   },
   {
     "id": 7272,
@@ -6281,6 +5676,17 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/cb20eeeb-3b71-4437-abed-c8f88cea76ec_1779798836272_flaw_reporter_report_picture.png"
   },
   {
+    "id": 7286,
+    "createdAt": "2026-05-26T18:00:27.352+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.174148127227085,
+    "longitude": 8.239746093750002,
+    "replacingText": "Raser in den Abendstunden - Das Tempo 30 wird von einigen Auto- und Motorradfahrern überhaupt nicht eingehalten. Wir wünschen uns in regelmäßigen Abständen mobile Blitzer. ",
+    "firstPictureUrl": ""
+  },
+  {
     "id": 7287,
     "createdAt": "2026-05-27T05:43:47.728+00:00",
     "state": "NOT_RESPONSIBLE",
@@ -6289,6 +5695,17 @@
     "latitude": 53.130506,
     "longitude": 8.204898,
     "replacingText": "Die Druckampel für Fußgänger und Radfahrer vor der Helene Lange Schule reagiert nicht mehr. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7288,
+    "createdAt": "2026-05-27T06:44:39.140+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.142062369840815,
+    "longitude": 8.191895484924318,
+    "replacingText": "Man kann den Radweg Prinzessinweg/Bloherfelder Straße stadtauswärts von der Ofener Straße bis zur Autobahnbrücke beidseitig (linke Seite, zweispurig) benutzen. Wir fahren dort sehr oft entlang: Wir queren die Ofener Straße und fahren dann auf der linken Seite stadtauswärts, bis wir unter der Autobahn links abbiegen in einen kleinen Fuß-/Radweg, der parallel zur Autobahn verläuft. Dass man den Radweg genau auf diese Weise benutzen kann (zweispurig), ist nur durch ein kleines Schild gekennzeichnet und nur für die, die stadtauswärts kommen. Wer hingegen aus Bloherfelde stadteinwärts auf der rechten Straßenseite fährt, wundert sich über \"Geisterfahrer\". Immer wieder kommt es dort zu brenzligen Situationen, weil viele Radfahrende das nicht wissen. Sie nutzen die gesamte Breite des Radwegs und lassen uns keinen Platz, sie beschimpfen uns (\"Falsche Seiteeee!\"). Könnte man diese Stelle nicht besser und für alle ersichtlich kennzeichnen?",
     "firstPictureUrl": ""
   },
   {
@@ -6312,6 +5729,28 @@
     "longitude": 8.187507390975954,
     "replacingText": "Es wurde leider erneut, einen Tag nachdem der vorherige Müll abgeholt wurde, eine neue wilde Müllhalde eröffnet. Es kommen täglich neue Gegenstände dazu.",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/b8cc25b8-1a1d-4b81-abcf-fc581279dd3d_1779872644427_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7294,
+    "createdAt": "2026-05-27T09:27:30.339+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.164357,
+    "longitude": 8.2240441,
+    "replacingText": "Es fehlt ein Spielstraßenschild dierekt wenn man in dem Schagenweg fährt auf der Rechten Seite war sonst meiner Meinung nach immer eins. Es ist weg. Zu den sollte ein Tempolimit angepasst werden mindestens 20KmH- hier leben viele Kinder in der Straße !! Einige rasen so respektlos hier lang. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7296,
+    "createdAt": "2026-05-27T09:35:33.000+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 10,
+    "categoryName": "Privates Grün an Straßen 🌲",
+    "latitude": 53.09358917027878,
+    "longitude": 8.237428665161135,
+    "replacingText": "Straßenlaterne zugewachsen ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/286af120-5215-45af-bee6-515f97f0ab23_1779874533001_flaw_reporter_report_picture.png"
   },
   {
     "id": 7301,
@@ -6413,6 +5852,28 @@
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/b80a3a3f-44e1-401a-bc65-292b2174cccb_1779908570262_flaw_reporter_report_picture.png"
   },
   {
+    "id": 7313,
+    "createdAt": "2026-05-27T19:34:10.209+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.13736225326795,
+    "longitude": 8.158689737319948,
+    "replacingText": "Sackgassenschild ist überflüssig / verwirrend, da entweder dies zu ersetzen wäre mit dem Schild \"Rad - und Fußgängerdurchlässige Sackgasse\".\r\nAber das Schild ist ganz zu entfernen, da das Schild \"Raddurchlässige Sackgasse\" bereits am Anfang der Freiherr-vom-Stein-Str. / Ecke Bloherfelder Str. vorhanden ist.\r\nWiederholte Meldung vom 3.12.25, ID: 4586.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7315,
+    "createdAt": "2026-05-27T20:36:46.127+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.142457287148844,
+    "longitude": 8.149736523628237,
+    "replacingText": "An der markierten Stelle befindet sich (versteckt) ein Sackgassenschild. Dieses sollte zur besseren und schnelleren Erfassung weiter vorne an die Gabelung zum Hörneweg aufgestellt werden.\r\nDamit wird ein versehentliches Einfahren in die Sackgasse durch Kraftfahrzeuge ohne Ortskenntnis vermieden.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/76e55249-ddd6-44ca-921c-238d40f7bdd9_1779914206128_flaw_reporter_report_picture.png"
+  },
+  {
     "id": 7319,
     "createdAt": "2026-05-27T22:07:43.079+00:00",
     "state": "CLOSED",
@@ -6501,6 +5962,28 @@
     "firstPictureUrl": ""
   },
   {
+    "id": 7345,
+    "createdAt": "2026-05-29T10:07:07.726+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.13742,
+    "longitude": 8.163899,
+    "replacingText": "Halteverbot-Schild fehlt an der Feuerwehrzufahrt hinter Kennedystr. 36 (Zufahrt vom Parkplatz aus)",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7351,
+    "createdAt": "2026-05-29T15:04:52.151+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.187946193351436,
+    "longitude": 8.194454312324526,
+    "replacingText": "Mittig auf der Straße große Beschädigung an der Asphaltdecke (ca 50 cm Durchmesser, ca 4-5 cm tief). ",
+    "firstPictureUrl": ""
+  },
+  {
     "id": 7354,
     "createdAt": "2026-05-30T13:37:03.907+00:00",
     "state": "CLOSED",
@@ -6510,6 +5993,28 @@
     "longitude": 8.18747411848503,
     "replacingText": "Die Altkleidertonne ist voll. Alles liegt drum herum verteilt. Sogar hinter den Glascontainern ist alles voll.",
     "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/fb8d074f-82a2-4020-b9c3-07ba4e976ec4_1780148223907_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7355,
+    "createdAt": "2026-05-30T13:55:45.565+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.097735,
+    "longitude": 8.236455,
+    "replacingText": "Immer wieder viel zu schnelle Autos in Spielstraße unterwegs. Heute wurden wir sogar im Auto (wir sind Schrittgeschwindigkeit gefahren) von einem anderen Auto überholt!!! Das ist sau gefährlich. Hier spielen wirklich viele Kinder und es wäre toll, wenn sich an den Zuständen etwas verändern würde. Zum Beispiel Busschleuse aufmachen für Durchgangsverkehr oder zumindest regelmäßige Kontrollen oder oder oder.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7358,
+    "createdAt": "2026-05-31T13:16:15.863+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.14483984612719,
+    "longitude": 8.215042948722841,
+    "replacingText": "Wasser steigt aus dem Gulli hoch",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/5492b782-9f8f-49bf-908b-a573aa9ce988_1780233375864_flaw_reporter_report_picture.png"
   },
   {
     "id": 7359,
@@ -6751,6 +6256,1040 @@
     "latitude": 53.14843,
     "longitude": 8.209178,
     "replacingText": "An der Nebenstraße es handelt sich um ein Eckgebäude,  steht ein Baum, der den Fußweg anhebt. Rollstuhlfahrer und Rollatoren Fahrer sind nicht in der Lage dort langzulaufen. Es sind des Öfteren Personen im Zaun gelandet, da der Weg so uneben ist.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7440,
+    "createdAt": "2026-06-04T07:09:00.121+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 13,
+    "categoryName": "Idee einreichen 💭",
+    "latitude": 53.166765,
+    "longitude": 8.182378,
+    "replacingText": "Seit einer Weile sind auf dem Brookweg und dem Rauhehorst Markierungen auf den Straßen, dass Radfahrer diese auch befahren dürfen. Ich fahre die Straßen täglich mit dem Rad und erfahre regelmäßig Nicht-Akzeptanz von Autofahrern. Entweder, ich werde mit dem Auto von der Straße abgedrängt und/oder beledigt/angeschrien. Mit Kindern fahre ich niemals auf der Straße, da das Verhalten der Autofahrer meiner Meinung nach zu gefährlich ist. Ich wünsche mir mehr Akzeptanz für Radfahrer auf den Straßen auf dem Brookweg und dem Rauhehorst. Vielleicht hilft hier eine weitere Beschilderung?",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7441,
+    "createdAt": "2026-06-04T07:11:41.798+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.117045,
+    "longitude": 8.255584,
+    "replacingText": "Gegenüber der Sportplätze befindet sich eine wilde Müllkippe.  (Ceranfeld, Kindersitz, Tupperware etc.)",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7445,
+    "createdAt": "2026-06-04T10:40:39.174+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.135047,
+    "longitude": 8.217608,
+    "replacingText": "Guten Tag, an dem Haus Koppelstr 8 und auf der anderen Straßenseite entstehen wilde Müllkippen. Einige Papiertonnen sind falsch befüllt und werden deshalb nicht geleert. Daneben stapeln sich Müll und alte Haushaltsgegenstände . In dem Haus wohnen Menschen mit Migrationshintergrund in sehr prekären Verhältnissen. Der Vermieter scheint sich nicht zu kümmern. Vielleicht gibt es bei der Stadt einen Abfallberater, der da tätig werden könnte? Ratten freuen sich über diesen Platz. Vielen Dank im Voraus. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/27520ac5-8787-40f5-970a-28d8ae40f9f7_1780569639175_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7447,
+    "createdAt": "2026-06-04T12:47:17.449+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.12263947274918,
+    "longitude": 8.252116441726686,
+    "replacingText": "Müllkippe, wie jeden Tag ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7448,
+    "createdAt": "2026-06-04T12:49:34.095+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.126071013378926,
+    "longitude": 8.25626850128174,
+    "replacingText": "Die Sicht vom Sandweg in den Ostweg ist zugewachsen. Man kann nicht auf Sichtlinie fahren da dort wiederum die Baustellenschilder stehen. Ingesamt eine sehr unübersichtliche  Kreutzung",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7450,
+    "createdAt": "2026-06-04T13:36:04.098+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.14045625117629,
+    "longitude": 8.146040439605715,
+    "replacingText": "Ich hatte die Übergänge Radweg am Kreisel bereits als zu steil gemeldet. Das wurde von einem Verantwortlichen Mitarbeiter aber als richtige Ausführung abgetan\r\nHeute bei Regenwetter ist das noch mal deutlich zu sehen. Die Fahrbahn/Regenmantel ist zu tief, es bildet sich direkt an dem Übergang Radweg und Fußweg eine tiefe Pfütze. Das war auch vor der Sanierung der Fall. Was hat sich also verbessert? Aus meiner Sicht eher verschlechtert. Viel Geld ausgegeben und fast nichts erreicht...",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/5eec166d-b9a6-49d1-9f4c-96cc001a5e01_1780580166781_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7453,
+    "createdAt": "2026-06-04T14:56:20.936+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.164677230970554,
+    "longitude": 8.271269202205078,
+    "replacingText": "Auf dem Seitenstreifen der Nordtangente unter der A29 Brücke AS Ohmstede Fahrtrichtung Nadorst direkt unter der Brücke liegen Reifen mit Stahlfelgen als Wilde Müllkippe",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7454,
+    "createdAt": "2026-06-04T15:38:18.408+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.1218921,
+    "longitude": 8.27519,
+    "replacingText": "5 große blaue Müllsäcke wurden am Straßenrand entsorgt.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/d97da65f-08d9-4d27-ab47-b0a0e1072b31_1780587498409_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7455,
+    "createdAt": "2026-06-04T15:54:57.897+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.1140811,
+    "longitude": 8.2510678,
+    "replacingText": "Auf dem Scheibenwege zwischen Tennis- und Fußballplatz wurde Sperrmüll entsorgt.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/1fdf7b14-4402-4bb7-83df-20d9a29ff7f5_1780588497898_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7458,
+    "createdAt": "2026-06-05T05:30:16.405+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.166436,
+    "longitude": 8.226411,
+    "replacingText": "Guten Morgen, \r\n\r\nAbflussöffnung (Gully) gegenüber der Tankstelle auf der Kreyenstr. ist abgesackt und stellt m.E. für abbiegen Radfahrer eine Gefahr dar.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/7d12f13a-4bab-40e5-9423-152e0061b45d_1780637416406_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7459,
+    "createdAt": "2026-06-05T07:18:20.691+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.15631530234165,
+    "longitude": 8.184959292411806,
+    "replacingText": "Babyschale und anderer Müll ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/0757cc60-86b3-4644-87bf-391e4c3d84dd_1780643900692_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7467,
+    "createdAt": "2026-06-05T09:38:56.023+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.134423,
+    "longitude": 8.153384,
+    "replacingText": "Der Gully am Straßenrad, recht von der Auffahrt, ist stark verstopf und bei Regen kommt es regelmäßig zu Überschwemmungen.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7470,
+    "createdAt": "2026-06-05T12:18:58.919+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.15006096373192,
+    "longitude": 8.224618434906008,
+    "replacingText": "Auf der Ecke Bürgereschstraße / Lindenstraße ist der Bürgersteigbelag (Klinker) aufgewühlt. Wahrscheinlich durch Befahren mit einem schweren Fahrzeug. Es besteht Unfallgefahr für Fußgänger!\r\n\r\nHinweis:\r\n In der folgenden Kategorieauswahl fehlt BÜRGERSTEIG ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/e7b801cd-f201-4c44-be7d-c9f20cc96c46_1780661938919_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7477,
+    "createdAt": "2026-06-05T18:37:18.601+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.1025343717672,
+    "longitude": 8.268506981767096,
+    "replacingText": "Teppich und PVC illegal entsorgt",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7479,
+    "createdAt": "2026-06-05T22:01:34.680+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.132915,
+    "longitude": 8.19639,
+    "replacingText": "Illegal entsorgte Müllsäcke, Herkunft von dem Salon \"Le Salon\" in der Hauptstr. 53-55. Kann fotografisch belegt werden, siehe anhängende Fotos. Die Müllsäcke lagen zuerst im Zwischengang hinter dem Salon und wurden aufgrund einer Beschwerde von Anwohnenden entfernt und angeblich entsorgt. Es handelt sich definitiv um dieselben Müllsäcke.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/6379e784-fcaa-485a-b56c-a30677732398_1780696894681_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7481,
+    "createdAt": "2026-06-06T09:04:19.440+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.121121,
+    "longitude": 8.221779,
+    "replacingText": "Sperrmüll  an den Baum gestellt.  Krögerskamp zweite Kurve rechts neben der Einfahrt. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7482,
+    "createdAt": "2026-06-06T10:29:56.926+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.121828,
+    "longitude": 8.239871,
+    "replacingText": "Unter Autobahnunterführung ist gegenüber den Glas und Kleidungscontainer , auf der anderen Strassenseite auf dem Bürgersteig  wild Müller aufgetürmt worden!",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/08f48fd2-d926-4d1f-b813-0a48657aa4dc_1780741796927_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7483,
+    "createdAt": "2026-06-06T11:37:40.161+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 13,
+    "categoryName": "Idee einreichen 💭",
+    "latitude": 53.1485646,
+    "longitude": 8.2325724,
+    "replacingText": "An dem Parkplatz insbesondere bei den Glascontainern findet sich immer wieder viel Müll, vor allem nach dem Flohmarkt am Samstag. Ein paar Meter weiter stehen oft Wohnmobile, vor allem zu Messezeiten. \r\nHier wäre ein öffentlicher größerer Mülleimer oder größerer Müllcontainer sicherlich sinnvoll. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/abc93ae7-a7e5-400c-b8f8-8b529e62b61e_1780745860162_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7484,
+    "createdAt": "2026-06-06T12:50:12.070+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.09425599181777,
+    "longitude": 8.251397609710695,
+    "replacingText": "Hallo liebes Stadt-Team, die Strasse bei Windröschenweg 2 ist an der Auffahrt bis zu 6cm abgesackt, so dass unsere Tochter mit dem Rollstuhl nicht mehr von der Strasse auf die Auffahrt rollen kann, da die Kante zu hoch ist. Die anliegenden fotos zeigen das Problem. Vielen Dank für eine schnelle Behebung.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/3ae3159f-507e-4928-ad8d-5aea81b2b8e4_1780750212071_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7485,
+    "createdAt": "2026-06-06T13:12:00.997+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.136771491849714,
+    "longitude": 8.165855448547333,
+    "replacingText": "Abfluss in der Unterführung scheint verstopft. Regenwasser staut sich.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7486,
+    "createdAt": "2026-06-06T14:20:28.459+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.1378668561234,
+    "longitude": 8.243860602378847,
+    "replacingText": "Der Fußgängerweg an der gesamtenElbestraße ist dicht bewachsen und Hecken von Firmen wachsen auch schon über den Fußgängerüberweg. An manchen Stellen ist die Hälfte des Weges nicht benutzbar.\r\n\r\nWäre schön, wenn dies bearbeitet werden kann\r\n\r\nVielen Dank",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7487,
+    "createdAt": "2026-06-06T16:07:21.644+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.139598,
+    "longitude": 8.210336,
+    "replacingText": "Teilweise sind an der Bushaltestelle  Julius-Mosen-Platz die Fugen aus dem Pflaster raus. Das kann für Hackentrollyreifen oder kleine Hundehütte oder manche Schuhe gefährlich sein! Zudem  liegt Dreck rum. Überwiegend Zigarettenkippen.  Auch gefährlich,  da giftig. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7492,
+    "createdAt": "2026-06-07T10:15:14.878+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.167231,
+    "longitude": 8.218385,
+    "replacingText": "Gegenüber Kreyenstr. 74 steht ein schwarzer BMW ohne Kennzeichen auf der Straße",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7493,
+    "createdAt": "2026-06-07T10:22:12.968+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.168836,
+    "longitude": 8.224477,
+    "replacingText": "Hoffkamp 28-32 Auf dem Parkstreifen steht ein silberner Mercedes ohne Kennzeichen",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/fe9a0c5b-0c59-40b9-b11e-9b2d2192ef21_1780827732969_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7494,
+    "createdAt": "2026-06-07T11:46:51.806+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.14377804254089,
+    "longitude": 8.221212029457094,
+    "replacingText": "Eine Männliche Personengruppe Ende 30 hat gut 10 Flaschen und Dosen auf dem Parkplatz wild entsorgt. Eine männliche Person aus der Gruppe hat weiterhin wild gepinkelt.\r\n\r\nKennzeichen: ST S 550\r\nMarke: Skoda (Combi)",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/5a22d07c-0acf-4f42-bb4b-45f4b9877784_1780832811807_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7495,
+    "createdAt": "2026-06-07T13:02:42.154+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.124739,
+    "longitude": 8.252779,
+    "replacingText": "Wegen der Baustelle am Sandweg wurden am Ostweg Halteverbotsschilder aufgestellt. Es sieht jetzt so  aus, als wenn die aufgestellten Schilder von Unbekannten verstellt wurden. Die jetzige Aufstellungen geben wieder Parkmöglichkeiten, die auch sehr viel genutzt werden. Auch die Halteverbote bleiben unbeachtet. \r\nKönnen Sie bitte prüfen, ob die Halteverbotsschilder noch so aufgestellt sind, wie es geplant war.\r\nDas Durchfahren des Ostwegs ist zurzeit nur möglich, wenn man als PKW Fahrer auch den Fußweg nutzt.\r\nWeiterhin stehen auch Sonnabends viele PKWs in den Halteverboten.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7497,
+    "createdAt": "2026-06-07T13:37:58.434+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.12265878800344,
+    "longitude": 8.252384662628176,
+    "replacingText": "Wilde Müllkippe, wie jeden Tag! ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/5d14b7dd-badc-4beb-b4f4-46bd10d373d0_1780839478434_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7498,
+    "createdAt": "2026-06-07T14:16:01.533+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.168966,
+    "longitude": 8.239872,
+    "replacingText": "Eligale Müllentsorgung \r\nWeitere Bilder vorhanden Tatzeit ist 07.06.2026 um 12:47 Uhr ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/2c2a12ce-c0e7-4a49-abd0-e63864ccb311_1780841761534_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7501,
+    "createdAt": "2026-06-07T17:36:27.551+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 10,
+    "categoryName": "Privates Grün an Straßen 🌲",
+    "latitude": 53.125629,
+    "longitude": 8.2366,
+    "replacingText": "Es wäre zu wünschen, wenn der/die Eigentümer ihre Hecke beschneiden würden, damit man nicht auf den Grünstreifen zur Straße hin ausweichen müsste. Vielen Dank 🙏 ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/a0e9f991-4570-4cd5-854c-05e12c328331_1780853788536_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7502,
+    "createdAt": "2026-06-07T18:34:02.001+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.1563934,
+    "longitude": 8.2173312,
+    "replacingText": "An der Ecke Ackerstraße 33/Brommystraße hat jemand seinen Müll abgestellt.\r\nVielen Dank fürs Kümmern. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/822f60a6-d1e3-4683-9db4-0c61a11ef278_1780857242002_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7504,
+    "createdAt": "2026-06-07T18:43:00.297+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.1585192,
+    "longitude": 8.2209517,
+    "replacingText": "Hier liegt ein Teppich auf dem Bürgersteig. Vielen Dank fürs Kümmern. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/80c4ee7b-9961-4373-9fe6-018aab3ecf04_1780857780297_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7505,
+    "createdAt": "2026-06-07T18:46:39.715+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.158535,
+    "longitude": 8.2203774,
+    "replacingText": "Hier liegt ein Fahrradreifen und Müll.\r\nVielen Dank fürs Kümmern. 0\r\n",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7506,
+    "createdAt": "2026-06-07T20:00:41.511+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.16034,
+    "longitude": 8.229696,
+    "replacingText": "Hochheider weg 78 ( Am Ende des Friedhofes / Ecke Kiesgrubenstr.) liegt ein Schrottfahrrad auf dem Gehweg",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7510,
+    "createdAt": "2026-06-08T06:06:08.368+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.150725,
+    "longitude": 8.178183,
+    "replacingText": "Hamelmann Straße unter der Autobahn \r\nKühlschrank Stühle 2 Matrazen und eine Microwelle. Zudem ist die Parksituation unter der Brücke bedenklich führt alle Verkehrsteilnehmerinnen und stellt eine deutliche Gefahrensituation da.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7513,
+    "createdAt": "2026-06-08T06:48:36.995+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.195382,
+    "longitude": 8.219959,
+    "replacingText": "Schlaglöcher die immer größer werden. Es gibt mehrere Stellen an dieser Straße. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7517,
+    "createdAt": "2026-06-08T08:17:49.097+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 10,
+    "categoryName": "Privates Grün an Straßen 🌲",
+    "latitude": 53.158423,
+    "longitude": 8.194494,
+    "replacingText": "Im Rauehorst auf Höhe Hausnummer 51 wachsen die Rosenbüsche in den Gehweg hinein und schränken diesen immer weiter ein. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7519,
+    "createdAt": "2026-06-08T08:56:43.435+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.12503490046934,
+    "longitude": 8.227729797363283,
+    "replacingText": "Im Regenrückhaltebecken liegt seit längerer Zeit eine Baustellenabsperrung.\r\n\r\nZudem vermehrt Müll (Glasflaschen, Lachgasflaschen) im Uferbereich.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7520,
+    "createdAt": "2026-06-08T09:05:11.239+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.190804,
+    "longitude": 8.194506,
+    "replacingText": "In Höhe des Karuschenweges 73 steht ein weisser BMW ohne KFZ-Kennzeichen. Durch die Heckscheibe sind Autoreifen zu sehen.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7521,
+    "createdAt": "2026-06-08T10:27:04.986+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.13431711403522,
+    "longitude": 8.18532116938859,
+    "replacingText": "Seit Wochen (!!!) Tiefes Loch in Fahrbahn Richtung Stadt",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7522,
+    "createdAt": "2026-06-08T10:29:02.139+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.1418538588548,
+    "longitude": 8.193440437316896,
+    "replacingText": "Seitdem die fahrbahndecke erneuert/aufgefüllt wurde, ist an den Seiten ein starker Absatz, der für Radfahrer gefährlich ist, vor allem am Übergang zu Gullys am Fahrbahnrand sind tiefe Löcher  ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7525,
+    "createdAt": "2026-06-08T12:33:34.787+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.143083,
+    "longitude": 8.213335,
+    "replacingText": "schwarze Tonne mit weißem Deckel (ohne Müllmarken o.ä.)deponiert  in der Fußgängerzone, direkt vor der Targobank Filiale, Lange Str. 2, 26122 Oldenburg",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/fa260d35-8a4d-49c8-be83-e6dd0d3eb3b0_1780922014788_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7532,
+    "createdAt": "2026-06-08T16:40:36.062+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.138718488154495,
+    "longitude": 8.189582735729271,
+    "replacingText": "Moin zusammen!\r\nLeider hst ein Bürger einen Kühlschrank an die Strasse, Nähe Scharnhorststrasse 15 gestellt!Leider steht kein Name daran!\r\nBevor hier giftige Chemikalien austreten, bitte ich um Abholung/Entsorgung!\r\nGruss\r\nDieter Dittmann 015787601054",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/35ff60c8-5eb7-490b-a9b7-741d81635ae4_1780936836063_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7534,
+    "createdAt": "2026-06-08T23:13:40.956+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.135047,
+    "longitude": 8.217608,
+    "replacingText": "Guten Tag, \r\n\r\nin der Koppelstraße stehen in einem Durchgang von der Straße Damm zur Koppelstraße diverse Gegenstände, welche von Dritten augenscheinlich dort illegal abgelegt worden sind. \r\nZudem befinden sich vor der Anschrift Koppelstraße 18 Papiertonnen, welche seit Wochen, auf Grund falscher Befüllung, nicht mehr geleert werden (was verständlich ist). Allerdings wird immer mehr Müll dazugelegt. Es sieht mittlerweile sehr schlimm aus und in den Morgenstunden sind Ratten an den Tonnen zu beobachten. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/292a7d44-8df1-4d76-b270-05149770c00a_1780960420957_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7535,
+    "createdAt": "2026-06-09T06:07:50.572+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.114072,
+    "longitude": 8.212659,
+    "replacingText": "Guten Morgen, gern möchte ich einmal Frostschäden melden. Zum einen an der Cloppenburgerstraße zwischen Sandkrugerstraße und Klingenbergstraße, dazu am Sprungweg zwischen Sandkrugerstraße und Dwaschweg und zudem an der Bahnhofsallee zwischen Klingenbergstraße und Franz - Radziwillstraße.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7541,
+    "createdAt": "2026-06-09T08:32:21.658+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.149794,
+    "longitude": 8.224001,
+    "replacingText": "Matratze die auf dem Gehweg abgestellt wurde und dort seit längerer Zeit steht. An dieser Ecke wird immer wieder Sperrmüllartiges, Einkaufswagen und ähnliches abgestellt. Vielleicht könnte/sollte dort mal ein Schild angebracht werden, dass es verboten ist dort Müll abzuladen. Bisher habe ich kleinere Dinge die dort abgestellt wurden selbst entsorgt. Diese Ecke dort scheint zum Müll abladen einzuladen.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/78306823-ae26-44e9-b8ea-78267c15c601_1780993941659_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7542,
+    "createdAt": "2026-06-09T08:53:44.205+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 13,
+    "categoryName": "Idee einreichen 💭",
+    "latitude": 53.128012,
+    "longitude": 8.222005,
+    "replacingText": "Ein schwarzer Nissan Primera steht seit gestern ohne Nummerschilder auf öffentlichem Parkplatz. Vorher waren noch Nummernschilder mit dem Kennzeichen DH-????? angebracht.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/fb054ab4-1c32-44af-87b9-73d7ade370e4_1780995224208_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7550,
+    "createdAt": "2026-06-09T12:48:38.174+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.177097758484706,
+    "longitude": 8.18571299314499,
+    "replacingText": "Auf dem ehemaligen Fliegerhorstgelände auf der Ecke des Nelson-Mandela-Rings zur zukünftigen Entlastungsstraße (nahe der AWO Kita) wurde Sperrmüll abgeladen.\r\n",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/0a56d53b-f231-4d2b-a95d-e738c6fea688_1781009318175_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7551,
+    "createdAt": "2026-06-09T12:52:52.979+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.16247261599966,
+    "longitude": 8.232025858022489,
+    "replacingText": "Wilde Müllkippe bei den Glas- und Altkleidercontainern an der BAB-Brücke beim Sportplatz.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/62e836cd-42c1-4232-842b-7be365390355_1781009572979_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7552,
+    "createdAt": "2026-06-09T13:14:01.361+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.16523766604878,
+    "longitude": 8.276782035827638,
+    "replacingText": "Hallo,\r\nam Wellenweg wurde illegal Sperrmüll im Graben entsorgt. Ein Kindersitz und ein Schrank.\r\nIch bitte um Abholung.\r\nDanke",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/bb306a91-0cfe-4a86-a1a4-a64bbc1f245a_1781010841362_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7556,
+    "createdAt": "2026-06-09T21:58:32.662+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.133942,
+    "longitude": 8.246767,
+    "replacingText": "Müll am Fahrbahnrand",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/949932f3-c94d-4e61-97c4-724fecd15244_1781042312663_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7580,
+    "createdAt": "2026-06-10T14:50:10.837+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.16444310111588,
+    "longitude": 8.221507072448732,
+    "replacingText": "K347 Abfahrt Nadorst von der A293 kommend läuft nach Regen das Wasser nicht ab. Sehr große Wasseransammlung. Aquaplaning-Gefahr für Autos.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7584,
+    "createdAt": "2026-06-10T17:29:16.614+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.126248055416234,
+    "longitude": 8.204796910285951,
+    "replacingText": "Katastrophale Unebenheiten im Übergang Marschweg/Marschweg und Marschweg/Sodenstich in beide Richtungen ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7585,
+    "createdAt": "2026-06-10T17:41:30.103+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.12415247471215,
+    "longitude": 8.2492733001709,
+    "replacingText": "Wasser läuft nicht ab!",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/2040ffcc-6589-40bc-b8b1-362e8d7b386e_1781113290105_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7586,
+    "createdAt": "2026-06-10T23:49:42.030+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.175311,
+    "longitude": 8.230524,
+    "replacingText": "Der Querschnitt des Straßenseitengrabens vor Triftweg 3 wurde nach der Fertigstellung des Neubaus nicht vollständig wiederhergestellt. Bei einem Starkregen würde weniger Rückhalteraum zur Verfügung stehen und die Hochwassergefährdung der Oberlieger verstärken. Begründung: Laut Starkregengefährdungskarte sind die Grundstücke Triftweg 3 bis Triftweg 15 bei Starkregen hochwassergefährdet",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/e3905972-2d99-42df-853d-b1c2745d9200_1781135382031_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7587,
+    "createdAt": "2026-06-11T00:41:40.687+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.175311,
+    "longitude": 8.230524,
+    "replacingText": "Hiermit melde ich starke Fahrbahnschäden im Triftweg durch mangelhafte Straßenentwässerung.\r\nAm Triftweg von Haus Nr. 3 bis 23 wird die Stabilität der Fahrbahndecke durch stehendes Regenwasser zerstört.\r\nBegründung: Das Straßenbegleitgrün steht höher als die Fahrbahndecke an und blockiert das Abfließen von Regenwasser in die Straßenseitengräben. Dadurch weicht die Bankette auf, wodurch vom Verkehr Kuhlen geschaffen werden, sodass die Pfützen länger bestehen bleiben und die Fahrbahndecke schließlich abbröckelt, siehe Fotos.\r\n",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/1c24929c-f682-4cca-ab40-e7effcd8354e_1781138500688_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7588,
+    "createdAt": "2026-06-11T00:45:26.820+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.175311,
+    "longitude": 8.230524,
+    "replacingText": "Hiermit melde ich weitere starke Fahrbahnschäden im Triftweg durch mangelhafte Straßenentwässerung.\r\nAm Triftweg von Haus Nr. 3 bis 23 wird die Stabilität der Fahrbahndecke durch stehendes Regenwasser zerstört.\r\nBegründung: Das Straßenbegleitgrün steht höher als die Fahrbahndecke an und blockiert das Abfließen von Regenwasser in die Straßenseitengräben. Dadurch weicht die Bankette auf, wodurch vom Verkehr Kuhlen geschaffen werden, sodass die Pfützen länger bestehen bleiben und die Fahrbahndecke schließlich abbröckelt, siehe Fotos.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/d7ef9e82-a338-4d31-ad44-8d70a7ce453e_1781138726820_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7589,
+    "createdAt": "2026-06-11T00:53:05.278+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.174479,
+    "longitude": 8.234303,
+    "replacingText": "Hiermit melde ich starke Fahrbahnschäden im Kreuzungsbereich Triftweg/Etzhorner Weg durch mangelhafte Straßenentwässerung.\r\nDie  Fahrbahndecke wird im Kreuzungsbereich durch stehendes Regenwasser zerstört.\r\nBegründung: Das Straßenbegleitgrün steht höher als die Fahrbahndecke an und blockiert das Abfließen von Regenwasser in die Straßenseitengräben. Dadurch weicht die Bankette auf, wodurch vom Verkehr Kuhlen geschaffen werden, sodass die Pfützen länger bestehen bleiben und die Fahrbahndecke schließlich abbröckelt, siehe Fotos.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/cffa4a74-effa-460c-acb0-15ca76d6bc4d_1781139185279_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7590,
+    "createdAt": "2026-06-11T01:14:03.282+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.175311,
+    "longitude": 8.230524,
+    "replacingText": "Folgende Behinderungen gefährden die Verkehrssicherheit der Fußgänger am Triftweg:\r\n1.) Behinderungen durch mangelhafte Entwässerung.\r\nBegründung: \r\nDas Straßenbegleitgrün steht höher als die Gehwegoberfläche und blockiert das Abfließen von Regenwasser in die Straßenseitengräben. Dadurch bleiben die Pfützen länger bestehen und zwingen Fußgänger, Rollstuhl- und Kinderwagen-Fahrer auf die Fahrbahn, siehe Fotos\r\n2.) Behinderungen durch lose Schottersteine\r\nBegründung:\r\nRollstuhl- und Kinderwagenfahrer werden durch lose Schottersteine auf der Gehwegoberfläche stark am Fortkommen behindert und dadurch auf die Fahrbahn gezwungen. \r\nMeine Meinung:\r\nEin Kehrfahrzeug der Straßenunterhaltung sollte hin und wieder auf dem Gehweg am Triftweg eingesetzt werden.\r\n",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/fbbd5764-cdc9-47e1-b38e-052ab792e954_1781140443283_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7594,
+    "createdAt": "2026-06-11T09:06:56.539+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.143828,
+    "longitude": 8.206299,
+    "replacingText": "Die Katharinenstraße wird vermehrt als Durchgangsstraße von Autofahrern genutzt, obwohl dort die \"Anlieger bzw. Krankenhaus frei\"-Regelung gilt. Ein Grund kann die fehlerhafte bzw. fehlende Beschilderung sein: In der Peterstraße befinden sich immer noch die \"alten\" Abbiegezeichen, die Autofahrern suggerieren, dass eine Einfahrt für alle möglich ist. Auf der Auguststraße fehlen jegliche Hinweise auf die \"Anlieger bzw. Krankenhaus frei\"-Regelung. Autofahrer erfahren also erst im oder nach dem Abbiegevorgang, dass sie in eine Fahrradstraße mit entsprechender Regelung einfahren und müssten dann im Rückwärtsgang zurück auf Peterstraße oder Auguststraße. Ich bitte um die Korrektur der Beschilderung (Peterstraße) und um entsprechende Hinweise (Auguststraße). Vielen Dank!",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/c3f1562f-b89e-419b-aa5d-4708cd46d558_1781168816540_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7596,
+    "createdAt": "2026-06-11T11:20:32.566+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.14297,
+    "longitude": 8.21369,
+    "replacingText": "Mangelmeldung: Unzureichend gesicherte Baustelle und Beeinträchtigung des Stadtbildes am Lappan (Lange Straße 2, Oldenburg)\r\n\r\nInsbesondere der Bereich vor dem Imbiss an der Staulinie befindet sich in einem aus meiner Sicht äußerst unansehnlichen Zustand. Im Außenbereich lagern Bauschutt, Baumaterialien, Geräte und sonstige Gegenstände teilweise frei zugänglich. Der Baustellenbereich wirkt nach meiner Einschätzung nicht ausreichend abgesichert und beeinträchtigt das Erscheinungsbild dieses zentralen Bereichs der Oldenburger Innenstadt erheblich.\r\n\r\nHinzu kommt, dass sich nach dem Brand des benachbarten Gebäudeteils („Schmiede“) im November 2025 weiterhin Bauzäune sowie angesammelter Müll und Gerümpel im Umfeld befinden, wodurch das Gesamtbild zusätzlich beeinträchtigt wird.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/6c1f234c-64f3-4567-b952-2c586a91e7bd_1781176832567_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7605,
+    "createdAt": "2026-06-11T13:20:36.599+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.113656,
+    "longitude": 8.231444,
+    "replacingText": "Im Lärchenring im Wendehammer auf Höhe Hausnummer 63 /65 wurde ein Kinderbuggy entsorgt.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7607,
+    "createdAt": "2026-06-11T14:40:52.669+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.132501999791025,
+    "longitude": 8.171322941780092,
+    "replacingText": "Straße für Auto kaputt",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/581d0a13-1803-4a21-9b5b-46fcf3ef4da3_1781188852670_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7608,
+    "createdAt": "2026-06-11T14:46:14.503+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.121082,
+    "longitude": 8.216785,
+    "replacingText": "Monitor abgeladen",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/6ae71125-45cd-46be-84a4-a1e3879eb183_1781189174504_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7611,
+    "createdAt": "2026-06-11T15:15:05.734+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.15866106096322,
+    "longitude": 8.221126198768617,
+    "replacingText": "An der Bushaltestelle Lüttichstraße  steht immer noch das kaputte Fahrrad. Das hatte ich letzte Woche schon einmal gemeldet.\r\nVielen Dank fürs Kümmern. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/581732b3-495d-45d4-bd8c-c5279d884ecc_1781190905734_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7612,
+    "createdAt": "2026-06-11T15:16:49.244+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.16347140573528,
+    "longitude": 8.217703700065615,
+    "replacingText": "An der Bushaltestelle Scheideweg gegenüber vom Aldi hat jemand ein Sitzkissen entsorgt. Vielen Dank fürs Kümmern. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/4a2a3127-3722-4b5a-b179-28619edf92d3_1781191009245_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7614,
+    "createdAt": "2026-06-11T15:39:45.308+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.14014000990519,
+    "longitude": 8.211837708950045,
+    "replacingText": "beide Beete bei den Bäumen sind vermüllt. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7616,
+    "createdAt": "2026-06-11T17:06:02.094+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.147634731930424,
+    "longitude": 8.234252929687502,
+    "replacingText": "Moin. Leider parkt der Anwohner mit dem und weißen Transporter wiederholt auf der Straße. Auf dem Foto ist deutlich zu erkennen das die durchfährtbreite vom 3m unterschrieten wird. Wir haben die Stadt mehrfach auf unsere Bedenken hingewiesen. Bedenken hinsichtlich durchfahrt von Einsatzfahrzeuge Versorgungs- und anderer Lieferanten.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7631,
+    "createdAt": "2026-06-13T16:18:48.406+00:00",
+    "state": "CLOSED",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.14067711932742,
+    "longitude": 8.171616923880435,
+    "replacingText": "Um die Altglascontainer liegt reichlich Müll.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7632,
+    "createdAt": "2026-06-13T16:19:35.443+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 12,
+    "categoryName": "Danke sagen 🙏",
+    "latitude": 53.14183470580979,
+    "longitude": 8.193470389180126,
+    "replacingText": "Vielen Dank für die neue Asphaltdecke sagen alle Radfahrer!",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7634,
+    "createdAt": "2026-06-13T20:55:35.977+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.142825614567236,
+    "longitude": 8.1574022769928,
+    "replacingText": "In der Hecke zwischen Choletstraße (Sackgassen-Abzweig) und Wiese liegt ein Fernseher.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/0805e2b6-dcf8-425f-8eb7-4fd0df0b5851_1781384135977_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7636,
+    "createdAt": "2026-06-14T08:52:19.907+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 13,
+    "categoryName": "Idee einreichen 💭",
+    "latitude": 53.140324,
+    "longitude": 8.249479,
+    "replacingText": "Hinter Schenker befindet sich die Hundefreilauffläche. Dort gibt es reichlich Mülleimer, das ist gut. Es fehlt aber nochveine Tüten-Spenderbox, die am besten nicht vor der Tür aussen sondern bei den Sitzbänken aufgestellt wird, damit nur Besucher diese benutzen und nicht jugendliche aus spass alles mitnehmen und irgendwo wegwerfen. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7637,
+    "createdAt": "2026-06-14T11:28:37.831+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.097908,
+    "longitude": 8.226197,
+    "replacingText": "Loch im Gehweg. Abgesackter Pflasterstein",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/7f6f8300-4a05-4886-be8f-00fd3a958acb_1781436517832_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7640,
+    "createdAt": "2026-06-14T15:20:21.978+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.15263847155255,
+    "longitude": 8.219135999679567,
+    "replacingText": "Wilde Müllkippe! Erweitert sich täglich mit neuem Müll.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/17329a19-2656-4795-aaf3-dd50687cf241_1781450421980_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7641,
+    "createdAt": "2026-06-14T19:13:20.694+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.15850430262107,
+    "longitude": 8.211421966552736,
+    "replacingText": "Moin. Altkleider auf dem Bürgersteig entsorgt. Liegt schon seit ca. 2 Wochen dort.\r\nLg",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7642,
+    "createdAt": "2026-06-14T20:03:25.856+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.102056,
+    "longitude": 8.205543,
+    "replacingText": "Nach Regengüssen stehen auf der Sandkruger Straße (stadtauswärts) vom Friedhof bis Dorfweg noch stundenlang große Pfützen vor jeder Abflussöffnung am Straßenrand. Das Wasser fließt nicht ab. Wenn Autos durch die Pfützen, die weit auf die Fahrbahn reichen, fahren, wird man als Fußgänger/Fahrradfahrer nass gespritzt.\r\nDie Pfützen sind nur im Bereich der Abflussöffnungen. Anscheinend ist die Wasseraufnahme in die Kanalisation gestört. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7645,
+    "createdAt": "2026-06-15T04:33:10.365+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.128943,
+    "longitude": 8.230243,
+    "replacingText": "Bremer Heerstrasse, gegenüber Hausnummer 11 steht ein nicht zugelassenes Fahrzeug. ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/211446e5-e4c3-49de-a2c0-2ae128131b27_1781497990366_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7649,
+    "createdAt": "2026-06-15T07:22:05.287+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 10,
+    "categoryName": "Privates Grün an Straßen 🌲",
+    "latitude": 53.120943845768714,
+    "longitude": 8.202726244926454,
+    "replacingText": "Leider kommen due Eigentümer des Hauses Theodor-Storm-Str. 9 in Eversten ihrer Gehweg Reinigung in der Lessingstraße Höhe Hausnummer 5 nicht nach. Der Teil des Gehweges grenzt an das Grundstück der Theodor-Storm-Straße 9 und es wird immer mehr zum Urwald. Wenn es regnerisch ist, besteht dort Unfallgefahr durch ausrutschen.  Letztes Jahr musste ich das bereits schon melden, die Eigentümer sind da sehr nachlässig mit den Teil des Gehweges.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/da5cb5d1-c546-46b4-90fb-f83994b7de3a_1781508125288_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7651,
+    "createdAt": "2026-06-15T08:01:21.039+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.107129,
+    "longitude": 8.232691,
+    "replacingText": "Am Ende dieses Weges beim Graben liegt auf der linken Seite ein Fahrrad ",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/3c7b3dd6-af11-4725-ace4-91d1e20cfff8_1781510481040_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7655,
+    "createdAt": "2026-06-15T09:42:26.656+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.165780968739966,
+    "longitude": 8.207795619964601,
+    "replacingText": "Hier fehlt das Straßenschild „Spielstraße“. Die Radfahrenden, die vom Teich kommend auf An de Bullwisch abbiegen, wissen nicht, dass sie sich in einer Spielstraße befinden und rasen entsprechend oft und recht rücksichtslos durch die Spielstraße.\r\nViele Autofahrende, die vom Parkplatz aus kommend die Straße entlang fahren, sind ebenfalls oft deutlich schneller als erlaubt unterwegs. Hier wäre ein Spielstraßenschild sicherlich als Erinnerung auch hilfreich.",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7659,
+    "createdAt": "2026-06-15T11:01:04.466+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.164972,
+    "longitude": 8.203725,
+    "replacingText": "Ich habe bereits 2 x diesen Schaden gemeldet. Der Bordstein und die Rinne ist vor dem Grundstück Bürgerfelder Straße 33-35 abgesenkt, so dass sich dort bei Regen eine große Pfütze bildet und bei PKW Verkehr Spritzgefahr besteht. Vor ca. 4 Wochen waren 2 Monteure vor Ort und haben daran gearbeitet. Jedoch ohne Erfolg. Hat sich kaum verändert. Wer ist dafür zuständig? Mit freundlichen Grüßen",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/6b0bd808-b49e-4e2e-a804-831f2f566896_1781521264467_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7661,
+    "createdAt": "2026-06-15T11:32:52.382+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.15369490904798,
+    "longitude": 8.219519555568697,
+    "replacingText": "Dort steht ein abgestelltes sofa mit einem kleinen Schrank und Müll.\r\nDer wilde Müll kommt vom gegenüber liegendem gelben Haus.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/58107585-9343-44d7-a563-eed8528afda5_1781523172383_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7665,
+    "createdAt": "2026-06-15T14:29:08.573+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.140789335718075,
+    "longitude": 8.2206060885801,
+    "replacingText": "Baustelle auf Geh- und Radweg. Diese sind einfach zu Ende. Keine Umleitung, kein gar nichts. Und das zwischen Hbf und Innenstadt!",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7666,
+    "createdAt": "2026-06-15T15:58:12.403+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.19341,
+    "longitude": 8.199681,
+    "replacingText": "es wurde Sperrmüll entsorgt, Im Ofenerfeld Ecke Gabelweg",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7667,
+    "createdAt": "2026-06-15T16:00:18.649+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.133655,
+    "longitude": 8.234471,
+    "replacingText": "Sperrmüll im Graben (zur Überquerung) abgelegt. \r\n(Leider zum wiederholtem Mal.) \r\n",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/d801c0e1-24b5-486f-b756-8b11a497f562_1781539218649_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7669,
+    "createdAt": "2026-06-15T18:38:03.289+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.115765,
+    "longitude": 8.217019,
+    "replacingText": "Illegale Müllentsorgung",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/309a3448-8b17-4a5d-827a-501d4bd64b26_1781548683290_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7670,
+    "createdAt": "2026-06-15T19:30:46.891+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 10,
+    "categoryName": "Privates Grün an Straßen 🌲",
+    "latitude": 53.111952078143034,
+    "longitude": 8.267694711685182,
+    "replacingText": "Eichenprozessionsspinner. \r\nDie Eiche steht auf dem Grundstück Bremer Heerstraße 432, dies gehört der Stadt OL. \r\nDer Ast an dem das Nest hängt ist direkt über der Zufahrt zur Tankstelle. ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7679,
+    "createdAt": "2026-06-16T08:53:55.442+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.14961889414241,
+    "longitude": 8.193925917148592,
+    "replacingText": "Moin liebe Kolleginnen und Kollegen, \r\n\r\ndas Straßennamensschild an der Ecke Industriestraße - Familie-Mechau-Straße - Landweg am städtischen Schotterparkplatz bei den Glascontainern auf dem Gelände Alte Fleiwa steht bereits seit einigen Wochen komplett schief und erweckt keinen guten Eindruck für die zahlreichen Bürgerinnen und Bürger bzw. Kundinnen und Kunden, die das Gelände und die dortigen Ämter sowie Unternehmen aufsuchen. Können Sie das Schild bitte zeitnah richten/neu aufstellen?\r\n\r\nBesten Dank! ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7682,
+    "createdAt": "2026-06-16T10:07:06.540+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 4,
+    "categoryName": "Verkehrszeichen ⚠️  ",
+    "latitude": 53.15729,
+    "longitude": 8.23032,
+    "replacingText": "Moin Moin, bei dem neu gebauten Fahrradweg zur alten Kaserne, wurde ein Verkehrsschild aus der Verankerung, heraus gerissen. Habe es schon mehrere Male wieder aufgestellt, doch Kinder/Jugendliche haben da irgendwie Spaß dran. Das Schild muss einfach wieder einbetoniert werden. Gruß",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/f65eb587-1e89-413f-8b43-990cfe685a53_1781604426573_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7687,
+    "createdAt": "2026-06-16T18:39:27.312+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.113998245274644,
+    "longitude": 8.231506476555063,
+    "replacingText": "Ein Buggy (Kinderwagen) wurde im Wendehammer hinter der Hausnummer 63 abgestellt. Er steht dort bereits seit ca 2 Wochen. Jetzt steht er auf dem schmalen Rasenstreifen neben der Auffahrt des Hauses zur Abholung bereit.\r\nMit freundlichem Gruß \r\nIlse Greulich",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7701,
+    "createdAt": "2026-06-17T09:50:27.902+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.13077,
+    "longitude": 8.220166,
+    "replacingText": "Müll liegt an der Straße, Höhe Hausnummer 2",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7702,
+    "createdAt": "2026-06-17T09:53:41.387+00:00",
+    "state": "IN_PROCESS",
+    "categoryId": 8,
+    "categoryName": "Wilde Müllkippe 🧹",
+    "latitude": 53.130783,
+    "longitude": 8.222096,
+    "replacingText": "Im Kirchhofsweg gegenüber der Altburgstraße, Höhe Friedhof wurde Müll abgestellt ",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7712,
+    "createdAt": "2026-06-17T17:36:50.725+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 3,
+    "categoryName": "Straßen  🚧 ",
+    "latitude": 53.110741,
+    "longitude": 8.211406,
+    "replacingText": "Münnichstr. 98 in der Zufahrt zum irma.Parkplatz ( in der Sackgasse)sind mehrere Gullys verstopft und bereits mit Gras zugewachsen. Da wäre es gut, wenn die Straßengullys beidseitig gereinigt werden könnten.",
+    "firstPictureUrl": "https://dialog-box-prod-bucket.s3.eu-central-1.amazonaws.com/images/oldenburg/cccf9e84-a7e5-4f15-9ae5-ff5bec26b53b_1781717810726_flaw_reporter_report_picture.png"
+  },
+  {
+    "id": 7718,
+    "createdAt": "2026-06-18T09:55:17.909+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 12,
+    "categoryName": "Danke sagen 🙏",
+    "latitude": 53.169955104933926,
+    "longitude": 8.205456733703615,
+    "replacingText": "Fahrradweg Scheideweg in Richtung Nadorsterstrasse ab Famila sehr hügelig durch Baumwurzeln. Gefährlich im Dunklen, weil man das nicht erkennt. Muss dringend repariert werden . Vlt. kurzfristig Piktogramm auf der Straße anbringen, damit für Autoverkehr erkennbar \r\nUnd am Besten renovieren und gleich breiter machen. Vielen Dank",
+    "firstPictureUrl": ""
+  },
+  {
+    "id": 7720,
+    "createdAt": "2026-06-18T11:15:31.144+00:00",
+    "state": "NOT_RESPONSIBLE",
+    "categoryId": 6,
+    "categoryName": "Ampel 🚦 ",
+    "latitude": 53.12427286873129,
+    "longitude": 8.219360232369583,
+    "replacingText": "Das Ampelsystem an der Auf-/Abfahrt zur Autobahn ist ausgefallen, oder funktioniert zumindest nicht.",
     "firstPictureUrl": ""
   }
 ]
