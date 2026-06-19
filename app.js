@@ -575,23 +575,20 @@ function updateMapMarkers() {
             map.removeLayer(heatmapLayer);
         }
 
-        // When confidence filters are active, keep all time-filtered markers on the
-        // map but gently fade the ones that don't match (DESIGN: inactive categories
-        // recede instead of disappearing).
-        const allReports = getTimeFilteredReports(true);
-        const filterActive = activeFilters.size > 0;
-        const visibleSet = filterActive ? getFilteredReports() : null;
-        const visibleIds = visibleSet ? new Set(visibleSet.map(r => r.id)) : null;
+        // Render only reports that pass all active filters (time, confidence, search).
+        // An empty activeFilters set means "no category filter applied" — show all
+        // time-filtered reports. This keeps the map consistent with the issue list
+        // and heatmap, which use the same getFilteredReports() dataset.
+        const reports = getFilteredReports();
 
-        allReports.forEach(report => {
+        reports.forEach(report => {
             if (!report.latitude || !report.longitude) return;
 
             const markerClass = getMarkerPinClass(report.cyclist_impact_label);
-            const faded = visibleIds ? !visibleIds.has(report.id) : false;
             const emoji = getCategoryEmoji(report.categoryId);
             const markerIcon = L.divIcon({
                 className: 'custom-div-icon',
-                html: `<div class="marker-pin ${markerClass}${faded ? ' marker-faded' : ''}"><span class="pin-emoji">${emoji}</span></div>`,
+                html: `<div class="marker-pin ${markerClass}"><span class="pin-emoji">${emoji}</span></div>`,
                 iconSize: [34, 34],
                 iconAnchor: [17, 17]
             });

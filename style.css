@@ -2014,16 +2014,6 @@ button {
     box-shadow: 0 6px 16px var(--c-possible-glow);
 }
 
-/* Faded markers when a confidence filter is active */
-.marker-pin.marker-faded {
-    opacity: 0.28;
-    filter: saturate(0.5);
-    transform: scale(0.86);
-}
-.marker-pin.marker-faded:hover {
-    opacity: 0.5;
-}
-
 /* Clusters — civic density tiers (mint → sky → coral) */
 .custom-cluster-icon {
     display: flex;
