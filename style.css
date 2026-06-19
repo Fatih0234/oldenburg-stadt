@@ -623,13 +623,16 @@ button { font-family: inherit; }
     flex-direction: column;
     gap: 16px;
     opacity: 0;
-    transform: translateY(8px);
-    transition: opacity var(--t-card) var(--ease-default), transform var(--t-card) var(--ease-default);
+    /* Note: we intentionally avoid `transform` here. A `transform` value
+       (even `translateY(0)`) creates a new containing block, which breaks
+       `position: sticky` on descendants like the MELDUNGSSTROM list header
+       (see .list-header in §5b). The opacity-only fade is a small visual
+       concession for correct sticky behavior. */
+    transition: opacity var(--t-card) var(--ease-default);
 }
 .tab-panel.active {
     display: flex;
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Section headings + HUD-style friendly wayfinding labels */
@@ -846,9 +849,9 @@ button { font-family: inherit; }
    5. Filter / Command panel
    ------------------------------------------------------------------------- */
 .command-filter-panel {
-    position: sticky;
-    top: -1px;
-    z-index: 5;
+    /* Not sticky: the filter scrolls away with the rest of the content
+       so it can never occlude the MELDUNGSSTROM list header below it.
+       The user can always scroll back up to access the filter. */
     border: 1px solid var(--outline);
     border-radius: var(--r-lg);
     padding: 14px;

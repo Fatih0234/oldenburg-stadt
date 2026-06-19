@@ -395,6 +395,14 @@ function initSidebarToggle() {
     });
 }
 
+// ----------------------------------------------------------------------------
+// (Removed: initStickyListHeader)
+// The ARBEITSFILTER card is no longer `position: sticky`, so the
+// MELDUNGSSTROM list header is no longer occluded when the user scrolls
+// the sidebar. The filter simply scrolls away with the rest of the
+// content; the user can scroll back up to access it.
+// ----------------------------------------------------------------------------
+
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     const toggleBtn = document.getElementById('sidebar-toggle');
@@ -428,6 +436,15 @@ function toggleSidebar() {
 // 2.6. Collapsible Monthly Briefing — demoted below the work surface; collapsed
 // by default so the issue stream leads. Persists state to localStorage, mirroring
 // the sidebar-fold pattern above.
+function setBriefingExpanded(open) {
+    const btn = document.getElementById('briefing-disclosure');
+    const body = document.getElementById('briefing-body');
+    if (!btn || !body) return;
+    btn.setAttribute('aria-expanded', String(open));
+    body.hidden = !open;
+    localStorage.setItem('briefing-collapsed', String(!open));
+}
+
 function initBriefingCollapse() {
     const btn = document.getElementById('briefing-disclosure');
     const body = document.getElementById('briefing-body');
@@ -437,14 +454,11 @@ function initBriefingCollapse() {
     // Only an explicit 'false' opens it on load.
     const saved = localStorage.getItem('briefing-collapsed');
     const startOpen = saved === 'false';
-    btn.setAttribute('aria-expanded', String(startOpen));
-    body.hidden = !startOpen;
+    setBriefingExpanded(startOpen);
 
     btn.addEventListener('click', () => {
-        const willOpen = body.hidden;
-        btn.setAttribute('aria-expanded', String(willOpen));
-        body.hidden = !willOpen;
-        localStorage.setItem('briefing-collapsed', String(!willOpen));
+        // body.hidden === true  ⇔  currently collapsed  ⇔  click should open
+        setBriefingExpanded(body.hidden);
     });
 }
 
@@ -1639,34 +1653,54 @@ const TOUR_STEPS = [
         onLeave: null,
     },
     {
+        title: '🔍 Suche & Zeitraum',
+        text: 'Grenzen Sie Meldungen nach Beschreibung, Straße oder ID ein. Der Zeitraum-Filter schränkt auf die letzten 7, 30 oder 90 Tage ein – oder Sie wählen einen eigenen Datumsbereich.',
+        target: '.control-row',
+        position: 'right',
+        onEnter: function() {
+            scrollTargetIntoViewCentered('.control-row');
+        },
+        onLeave: null,
+    },
+    {
+        title: '🎯 KI-Relevanz',
+        text: 'Die KI ordnet jede Meldung einer von vier Klassen zu – Bestätigt, Wahrscheinlich, Möglich und Allgemein. Tippen Sie auf einen Chip, um nur Meldungen dieser Klasse zu sehen; mehrere Chips lassen sich kombinieren.',
+        target: '.confidence-chips',
+        position: 'right',
+        onEnter: function() {
+            scrollTargetIntoViewCentered('.confidence-chips');
+        },
+        onLeave: null,
+    },
+    {
+        title: '📋 Meldungsstrom',
+        text: 'Hier erscheinen die nach Ihren Filtern passenden Meldungen, neueste zuerst. Klicken Sie auf einen Eintrag, um die Detailansicht mit Foto, Satellitenkarte und KI-Begründung zu öffnen.',
+        target: '.issue-list-container',
+        position: 'right',
+        onEnter: function() {
+            scrollTargetIntoViewCentered('.issue-list-container');
+        },
+        onLeave: null,
+    },
+    {
         title: '📈 Monatsbriefing',
-        text: 'Das Monatsbriefing zeigt belastbare Signale aus den letzten 30 Tagen: Trend, häufigster Schwerpunkt und ein konkreter Fokusfall für die Detailprüfung.',
+        text: 'Das Monatsbriefing fasst die letzten 30 Tage zusammen: Trend, häufigster Schwerpunkt und ein konkreter Fokusfall für die Detailprüfung. Klicken Sie auf die Überschrift, um es ein- oder auszuklappen.',
         target: '#monthly-briefing',
         position: 'right',
         onEnter: function() {
-            scrollTargetIntoViewCentered('#monthly-briefing');
+            // Briefing is collapsed by default — open it so the cards are visible
+            // while the tour is on this step. The expand animation is 220 ms, so
+            // wait a bit longer than that before scrolling to the freshly-expanded
+            // target (the section's height has just changed).
+            setBriefingExpanded(true);
+            setTimeout(() => scrollTargetIntoViewCentered('#monthly-briefing'), 280);
         },
-        onLeave: null,
-    },
-    {
-        title: '📊 KI-Konfidenz-Metriken',
-        text: 'Die KI klassifiziert jeden Bericht in vier Kategorien: Bestätigt, Wahrscheinlich, Möglich und Allgemein. Klicken Sie auf eine Karte, um nur Berichte dieser Kategorie zu filtern.',
-        target: '.metrics-grid',
-        position: 'right',
-        onEnter: function() {
-            scrollTargetIntoViewCentered('.metrics-grid');
+        onLeave: function() {
+            // Always collapse on leave (covers 'next', 'back', 'jump', and
+            // 'close' from closeTour) so the briefing returns to its default
+            // closed state regardless of how the user exits this step.
+            setBriefingExpanded(false);
         },
-        onLeave: null,
-    },
-    {
-        title: '🔍 Suche & Zeitfilter',
-        text: 'Durchsuchen Sie Berichte nach Beschreibung, Straße oder ID. Der Zeitfilter schränkt Ergebnisse auf einen bestimmten Zeitraum ein – ideal um aktuelle Probleme im Blick zu behalten.',
-        target: '.control-group',
-        position: 'right',
-        onEnter: function() {
-            scrollTargetIntoViewCentered('.control-group');
-        },
-        onLeave: null,
     },
     {
         title: '📋 Mängel-Detailansicht',
@@ -2119,6 +2153,14 @@ function jumpToTourStep(index) {
 }
 
 function closeTour(markComplete = false) {
+    // Fire the current step's onLeave so any per-step teardown (e.g. collapsing
+    // the Monatsbriefing) runs even when the user exits via X / backdrop / Esc
+    // instead of the Weiter button. The 'close' direction is a no-op for steps
+    // whose onLeave only branches on 'back'.
+    if (tourActive) {
+        const step = TOUR_STEPS[tourCurrentStep];
+        if (step && step.onLeave) step.onLeave('close');
+    }
     tourActive = false;
 
     const backdrop = document.getElementById('onboarding-backdrop');
