@@ -1,7 +1,7 @@
 ---
 
 version: alpha
-name: RadRadar Oldenburg
+name: Rad-Verbesserer Oldenburg
 description: A playful, smart, map-first civic intelligence design system for a cycling infrastructure dashboard in Oldenburg. Designed to feel youthful, energetic, and interactive while remaining credible for city planners, administrations, and cycling advocates.
 colors:
 
@@ -256,7 +256,7 @@ padding: 8px
 
 ## Overview
 
-RadRadar Oldenburg is a playful civic intelligence interface for discovering, understanding, and prioritizing cycling infrastructure issues across the city.
+Rad-Verbesserer Oldenburg is a playful civic intelligence interface for discovering, understanding, and prioritizing cycling infrastructure issues across the city.
 
 The product should feel like a living urban map rather than a static municipal dashboard. It is designed for a mixed audience: city planners and administrations should feel that the tool is credible and evidence-based, while younger citizens and cycling advocates should feel that the interface is approachable, energetic, and worth exploring.
 
@@ -276,7 +276,7 @@ The core metaphor is **a friendly civic radar for cycling safety**: the map dete
 
 ## Colors
 
-The color system should be colorful but controlled. RadRadar Oldenburg should not be dominated by a single brand color. Instead, it uses a neutral civic map foundation with energetic accents.
+The color system should be colorful but controlled. Rad-Verbesserer Oldenburg should not be dominated by a single brand color. Instead, it uses a neutral civic map foundation with energetic accents.
 
 The palette has three layers:
 
@@ -403,7 +403,7 @@ Do not mix very sharp rectangles with very rounded cards in the same area. Consi
 
 The logo should be animated and characterful.
 
-Preferred direction: a small cyclist or bicycle icon moving through a simplified city-map scene, with a radar pulse or route trail forming the RadRadar identity. The logo may animate briefly on app load, then settle into a compact static mark.
+Preferred direction: a small cyclist or bicycle icon moving through a simplified city-map scene, with a radar pulse or route trail forming the project's identity. The logo may animate briefly on app load, then settle into a compact static mark.
 
 Logo animation should be lightweight SVG or CSS animation, not a heavy video. It should suggest movement, cycling, and urban discovery. Avoid mascots that feel childish.
 
@@ -600,7 +600,7 @@ Avoid long explanations. Each onboarding step should spotlight one thing and sho
 
 ### Motion Principles
 
-Motion is part of the RadRadar identity.
+Motion is part of the Rad-Verbesserer identity.
 
 Use motion to explain spatial relationships:
 
@@ -640,7 +640,7 @@ Use SVGs as a major part of the redesign.
 
 Best SVG opportunities:
 
-* animated RadRadar cyclist logo
+* animated Rad-Verbesserer cyclist logo
 * route trail line
 * radar pulse
 * small city skyline or street grid motif
