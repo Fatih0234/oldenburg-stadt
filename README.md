@@ -1,6 +1,6 @@
 # 🚲 Rad-Verbesserer Oldenburg (Cycling Infrastructure Analyzer)
 
-An interactive dark mode web dashboard and data pipeline that maps, filters, and analyzes citizen infrastructure reports in Oldenburg, Germany against the OpenStreetMap (OSM) cycling network.
+An interactive web dashboard and data pipeline that maps, filters, and analyzes citizen infrastructure reports in Oldenburg, Germany against the OpenStreetMap (OSM) cycling network.
 
 The dashboard features a foldable sidebar layout for maximum map visibility, and the repository includes dedicated tools for generating stakeholder presentation slide decks for cycling advocacy.
 
@@ -65,17 +65,17 @@ Tickets are scored ($0$ to $100+$ points) based on their spatial metrics and cat
 * 🟡 **Possibly affects cyclists (Score 20-39):** Street-level reports near cycleways that might impede visibility or traffic.
 * ⚪ **Not cycling-specific (Score < 20):** General road complaints not directly related to cycling infrastructure.
 
-### 5. Interactive Premium Web Dashboard (Zero-CORS)
+### 5. Interactive Web Dashboard (Zero-CORS)
 `generate_data_js.py` compiles the GeoJSON bike network and classified reports into a single unified JavaScript variable file `data.js`. This allows you to run the dashboard locally by opening `index.html` directly in a browser without CORS (Cross-Origin Resource Sharing) local fetch errors.
 
-The dashboard features premium, state-of-the-art interactive upgrades:
+The dashboard features:
 *   **Foldable Sidebar:** A toggle button (with a custom vertical-split panel layout icon) that collapses the sidebar to expand map view. The state is saved in `localStorage`, and an active rendering loop recalculates Leaflet map sizes smoothly on every frame of the transition.
-*   **Marker Clustering & Custom Pins:** Groups 553 reports with density-responsive custom glass-morphic nodes. Individual pins contain category emoji glyphs (e.g., 🚧, 🧹, 🚦) and spring-inflate on hover.
-*   **Smooth Glide & Selection Ripple:** Camera movements are animated using Leaflet's `map.flyTo()`, and the selected marker pulses a glowing ripple halo matching its classification tier.
-*   **Slide-Out Details Panel:** Replaces static boxes with a modern sidebar panel that slides in from off-screen right using custom ease-in-out transitions.
-*   **Dynamic Density Heatmap Mode:** A floating glassmorphic button toggles a Leaflet heat gradient of report hot-spots, weighting intensities based on confidence scores.
+*   **Marker Clustering & Pins:** Groups 553 reports with density-responsive nodes. Individual pins contain category emoji glyphs (e.g., 🚧, 🧹, 🚦).
+*   **Smooth Glide & Selection Highlight:** Camera movements are animated using Leaflet's `map.flyTo()`, and the selected marker is highlighted to match its classification tier.
+*   **Slide-Out Details Panel:** A sidebar panel that slides in from the right with report details.
+*   **Dynamic Density Heatmap Mode:** A button toggles a Leaflet heat gradient of report hot-spots, weighting intensities based on confidence scores.
 *   **Google Satellite & Street View Context:** Features a mini satellite hybrid imagery iframe previewing coordinate surroundings, alongside Google Maps directions and deep-linked Street View panorama buttons.
-*   **Touch-Swipeable Photo Carousel:** Swipe gestures or navigation controls transition horizontally through multiple report photos with indicator dots.
+*   **Touch-Swipeable Photo Carousel:** Swipe gestures or navigation controls transition through multiple report photos for a report.
 *   **Live Search Bar & Time Filters:** Real-time multi-field text search queries integrated with preset (7d, 30d, 90d) and custom range date picker filters.
 
 ---
@@ -85,7 +85,7 @@ The dashboard features premium, state-of-the-art interactive upgrades:
 | File | Description |
 | :--- | :--- |
 | **`index.html`** | Main dashboard structure containing the Leaflet map and Sidebar UI. |
-| **`style.css`** | Premium dark mode styling (`#0b0f19`), glassmorphism overlays, custom glowing pins, and swipable card layouts. |
+| **`style.css`** | Dashboard styling. |
 | **`app.js`** | Interactive mapping logic, filter actions, detail overlays, and sidebar toggle event binding. |
 | **`data.js`** | Unified JavaScript file storing the pre-compiled reports and simplified OSM bike network GeoJSON. |
 | **`download_osm_bike.py`** | Script to fetch bicycle network geometries from OpenStreetMap Overpass mirrors. |
@@ -95,7 +95,7 @@ The dashboard features premium, state-of-the-art interactive upgrades:
 | **`evaluate_rules.py`** | Diagnostic script measuring rule-router performance, confusion-matrix changes, route counts, and false-positive/false-negative samples against silver labels. |
 | **`optimize_regex.py`** | Optimizer utility that performs greedy keyword association search to maximize heuristic alignment with the LLM. |
 | **`prepare_slide_data.py`** | Standalone Python script to aggregate dashboard reports, detect hot-spots, and format statistics for stakeholder slides. |
-| **`presentation.html`** | Offline responsive presentation template using the `bold-signal` visual theme to present safety data to stakeholders. |
+| **`presentation.html`** | Offline responsive presentation template for presenting safety data to stakeholders. |
 | **`classification/labels/labels_v2_silver.json`** | Local JSON database storing all processed LLM classifications to reduce API costs. |
 | **`stadtverbesserer_snapshot.csv`** | Original dataset of 553 citizen reports from the Oldenburg Gemeinsam platform. |
 | **`classified_reports.csv`** | Processed spreadsheet output containing coordinates, distances, scores, and confidence classifications. |
