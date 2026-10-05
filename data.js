@@ -9886,7 +9886,7 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
+    "score_recency": -10,
     "confidence_score": 0,
     "cyclist_impact_label": "Not cycling-specific"
   },
