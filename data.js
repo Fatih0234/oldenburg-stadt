@@ -11839,7 +11839,7 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": 10,
-    "score_recency": 0,
+    "score_recency": -10,
     "confidence_score": 0,
     "cyclist_impact_label": "Not cycling-specific"
   },
@@ -11870,7 +11870,7 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
+    "score_recency": -10,
     "confidence_score": 0,
     "cyclist_impact_label": "Not cycling-specific"
   },
@@ -11901,8 +11901,8 @@ const CLASSIFIED_REPORTS = [
     "score_category": 15,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 50,
+    "score_recency": -10,
+    "confidence_score": 40,
     "cyclist_impact_label": "Likely cycling issue"
   },
   {
