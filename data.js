@@ -12986,8 +12986,8 @@ const CLASSIFIED_REPORTS = [
     "score_category": 15,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 85,
+    "score_recency": -10,
+    "confidence_score": 75,
     "cyclist_impact_label": "Confirmed cycling issue"
   },
   {
@@ -13017,8 +13017,8 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 35,
+    "score_recency": -10,
+    "confidence_score": 25,
     "cyclist_impact_label": "Possibly affects cyclists"
   },
   {
@@ -13048,8 +13048,8 @@ const CLASSIFIED_REPORTS = [
     "score_category": 15,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 85,
+    "score_recency": -10,
+    "confidence_score": 75,
     "cyclist_impact_label": "Confirmed cycling issue"
   },
   {
@@ -13079,8 +13079,8 @@ const CLASSIFIED_REPORTS = [
     "score_category": 15,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 60,
+    "score_recency": -10,
+    "confidence_score": 50,
     "cyclist_impact_label": "Likely cycling issue"
   },
   {
@@ -13110,7 +13110,7 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
+    "score_recency": -10,
     "confidence_score": 0,
     "cyclist_impact_label": "Not cycling-specific"
   },
@@ -13141,8 +13141,8 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 35,
+    "score_recency": -10,
+    "confidence_score": 25,
     "cyclist_impact_label": "Possibly affects cyclists"
   },
   {
@@ -13172,8 +13172,8 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 35,
+    "score_recency": -10,
+    "confidence_score": 25,
     "cyclist_impact_label": "Possibly affects cyclists"
   },
   {
@@ -13203,7 +13203,7 @@ const CLASSIFIED_REPORTS = [
     "score_category": 0,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
+    "score_recency": -10,
     "confidence_score": 0,
     "cyclist_impact_label": "Not cycling-specific"
   },
@@ -13234,9 +13234,9 @@ const CLASSIFIED_REPORTS = [
     "score_category": 15,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 70,
-    "cyclist_impact_label": "Confirmed cycling issue"
+    "score_recency": -10,
+    "confidence_score": 60,
+    "cyclist_impact_label": "Likely cycling issue"
   },
   {
     "id": 6976,
@@ -13265,9 +13265,9 @@ const CLASSIFIED_REPORTS = [
     "score_category": 15,
     "score_corridor": 0,
     "score_state": -15,
-    "score_recency": 0,
-    "confidence_score": 70,
-    "cyclist_impact_label": "Confirmed cycling issue"
+    "score_recency": -10,
+    "confidence_score": 60,
+    "cyclist_impact_label": "Likely cycling issue"
   },
   {
     "id": 6979,
