@@ -718,12 +718,12 @@ Leider sind einige der Dinge inzwischen nicht mehr nutzbar. Vielleicht könnten 
 Danke!
 Viele Grüße 
 Laura Hillen ",,8901934,91er Straße,49.53,False,True,False,unrelated,unrelated,0.95,False,Der Bericht bezieht sich auf die Instandhaltung von Sportgeräten in einer Sportbox und hat keinen Bezug zum Radverkehr.,0,-45,10,0,0,-15,-10,0,Not cycling-specific
-7037,2026-05-11T05:55:02.363+00:00,NOT_RESPONSIBLE,10,Privates Grün an Straßen 🌲,53.117038970596106,8.257722258567812,Hier hängt ein großer Ast auf den Geh- und Radweg. ,,24512441,,6.42,True,True,True,direct,vegetation_block,1.0,False,Ein herabhängender Ast blockiert direkt den kombinierten Geh- und Radweg.,50,0,35,15,0,-15,0,85,Confirmed cycling issue
+7037,2026-05-11T05:55:02.363+00:00,NOT_RESPONSIBLE,10,Privates Grün an Straßen 🌲,53.117038970596106,8.257722258567812,Hier hängt ein großer Ast auf den Geh- und Radweg. ,,24512441,,6.42,True,True,True,direct,vegetation_block,1.0,False,Ein herabhängender Ast blockiert direkt den kombinierten Geh- und Radweg.,50,0,35,15,0,-15,-10,75,Confirmed cycling issue
 7042,2026-05-11T08:35:28.100+00:00,NOT_RESPONSIBLE,6,Ampel 🚦 ,53.16176080819153,8.205767869949343,"Ich hatte diesen Mangel bereits gemeldet, scheinbar ist er verloren gegangen:
 
 Die Ampelschaltung ist in der aktuellen Form gefährlich. Die Autos, die von der Autobahn kommen und rechts abbiegen übersehen oft die zweite Ampel. Insbesondere betrifft das die Autos, die ""noch eben schnell"" bei gelb die erste Ampel (Rechtsabbieger-Ampel) passieren und dann bei rot die Fußgängerampel mit hoher Geschwindigkeit überfahren. Insbesondere da sich die Ampel am BTB und der Freizeitstätte befindet ist die Gefahrenlage (aufgrund vieler Kinder) besonders hoch. Ich überquere diese Ampel täglich 2x und sehe ständig fast-Unfälle.
 Lösungsidee: die Rechtsabbiegerampel 2-3 Sekunden früher rot werden lassen, sodass die Autos, die bei gelb abbiegen auch maximal bei gelb und nicht bei rot die Fußgängerampel überfahren.
-",,309380865,,2.35,True,True,True,indirect,crossing_safety,0.85,False,"Die beschriebene gefährliche Kreuzungssituation betrifft alle schwächeren Verkehrsteilnehmer, einschließlich Radfahrender, die dort die Straße überqueren.",50,0,35,15,0,-15,0,85,Confirmed cycling issue
+",,309380865,,2.35,True,True,True,indirect,crossing_safety,0.85,False,"Die beschriebene gefährliche Kreuzungssituation betrifft alle schwächeren Verkehrsteilnehmer, einschließlich Radfahrender, die dort die Straße überqueren.",50,0,35,15,0,-15,-10,75,Confirmed cycling issue
 7052,2026-05-11T20:06:26.936+00:00,NOT_RESPONSIBLE,4,Verkehrszeichen ⚠️  ,53.16349820034285,8.265634775161745,"Hallo,
 das Strassenschild Grünenkamp, Wellenweg bzw Husteder Weg ist sehr schräg, verbogen und teilweise haben sich Schrauben gelöst.
 Bitte an die Schilderabteilung weiterleiten.
